@@ -46,7 +46,7 @@ class IssueArtifact(BaseModel):
     body_html: str | None
 
     # A short, generated summary of the artifact.
-    description: str | None = None
+    description: str | None
 
     # The user or integration that created the artifact.
     creator: IssueArtifactCreator | None
