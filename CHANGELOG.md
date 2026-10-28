@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/dougyouch/github-apiroute/compare/v0.3.1...v0.4.0) (2026-10-28)
+
+
+### Features
+
+* **specs:** update clients from GitHub's latest API specs ([c8679b7](https://github.com/dougyouch/github-apiroute/commit/c8679b7a5c14b4263080887b480e02513449f202))
+
 ## [0.3.1](https://github.com/dougyouch/github-apiroute/compare/v0.3.0...v0.3.1) (2026-10-28)
 
 
