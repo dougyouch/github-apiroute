@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.2](https://github.com/dougyouch/github-apiroute/compare/v0.4.1...v0.4.2) (2026-10-28)
+
+### Other changes
+
+- ci: each release adds its commits to CHANGELOG.md (a0bb3d9)
+
 ## [0.4.1](https://github.com/dougyouch/github-apiroute/compare/v0.4.0...v0.4.1) (2026-10-28)
 
 ### Other changes
