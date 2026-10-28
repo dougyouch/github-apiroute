@@ -100,7 +100,7 @@ Nothing under `src/github_apiroute/` is written by hand except `auth.py` and `__
 2. If anything changed, it commits the result to `main`:
    - `feat(specs): ...` when GitHub changed a spec or schema, which produces a minor release.
    - `fix(codegen): ...` when only a newer apiroute changed the generated code, which produces a patch release.
-3. **[Release](.github/workflows/release.yml)** (release-please) then updates its release PR, tests it, merges it and publishes the new version to [PyPI](https://pypi.org/project/github-apiroute/). No one has to do anything.
+3. **[Release](.github/workflows/release.yml)** then tests the commit, tags it, publishes the new version to [PyPI](https://pypi.org/project/github-apiroute/) and creates a [GitHub release](https://github.com/dougyouch/github-apiroute/releases) listing its commits. No one has to do anything; every merge to main releases the same way.
 
 [CI](.github/workflows/ci.yml) checks every push. It lints, runs the tests on Python 3.10 to 3.14, and regenerates from the committed specs to confirm the committed code matches them exactly.
 

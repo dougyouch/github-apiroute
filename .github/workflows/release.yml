@@ -1,13 +1,12 @@
 name: Release
 
-# Releases are hands-off. release-please keeps a release PR open that bumps the version in
-# pyproject.toml and CHANGELOG.md from conventional commits; this workflow tests that PR,
-# merges it, has release-please tag it and create the GitHub release, and publishes to PyPI
-# (trusted publishing, environment "pypi"). All in one run: a merge made with GITHUB_TOKEN
-# doesn't trigger the push event that would otherwise release it.
-# It also runs after Build, whose commits (pushed by a workflow) don't trigger push events.
-# A release PR merged by hand still releases through the push event.
-# Run it manually (workflow_dispatch) to retry publishing the current version.
+# Every push to main is a release. CI runs first; then scripts/next_release.py works out the
+# version from the conventional commits since the last tag (feat: minor, ! or BREAKING CHANGE:
+# major, anything else: patch), and the commit is tagged, built (hatch-vcs reads the version
+# from the tag), published to PyPI and given a GitHub release with notes from those commits.
+# Every step skips what's already done, so rerunning a failed release finishes it, and a run
+# on a commit that's already released changes nothing.
+# It also runs after Build, whose commits (pushed with GITHUB_TOKEN) trigger no push event.
 on:
   push:
     branches: [main]
@@ -25,132 +24,43 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # release commits, tags and GitHub releases
-      issues: write # release labels
-      pull-requests: write # the release PR
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
-      pr_branch: ${{ steps.release.outputs.pr && fromJSON(steps.release.outputs.pr).headBranchName || '' }}
-    steps:
-      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
-        id: release
-        with:
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
-
-  # uv.lock records this package's own version, which release-please doesn't update,
-  # so regenerate the lockfile on the release PR branch.
-  sync-lockfile:
-    needs: release-please
-    if: needs.release-please.outputs.pr_branch != ''
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # push to the release PR branch
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          ref: ${{ needs.release-please.outputs.pr_branch }}
-      - uses: astral-sh/setup-uv@v6
-      - run: uv lock
-      - name: Push updated uv.lock
-        run: |
-          git diff --quiet uv.lock && exit 0
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'build(deps): sync uv.lock version' uv.lock
-          git push
-
-  # The release PR is opened with GITHUB_TOKEN, which doesn't trigger CI on it, so test its
-  # branch here (after the lockfile sync), then merge it.
-  release-pr-ci:
-    needs: [release-please, sync-lockfile]
-    if: needs.release-please.outputs.pr_branch != ''
-    uses: ./.github/workflows/ci.yml
-    with:
-      ref: ${{ needs.release-please.outputs.pr_branch }}
-
-  merge-release-pr:
-    needs: [release-please, release-pr-ci]
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write # cancel the release PR's waiting CI runs
-      contents: write # merge, tags and the GitHub release
-      issues: write # release labels
-      pull-requests: write # merge the release PR
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
-    steps:
-      # GitHub holds CI on the bot's release PR for approval. Those runs never start, and once
-      # the merge deletes the branch they fail with "a workflow file issue". release-pr-ci has
-      # tested the branch, so cancel them rather than leave red runs behind.
-      - name: Cancel CI runs waiting on the release PR
-        env:
-          GH_TOKEN: ${{ github.token }}
-          BRANCH: ${{ needs.release-please.outputs.pr_branch }}
-        run: |
-          waiting=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow ci.yml --branch "$BRANCH" \
-            --event pull_request --limit 20 --json databaseId,status \
-            --jq '.[] | select(.status != "completed") | .databaseId')
-          for run in $waiting; do
-            gh run cancel "$run" --repo "$GITHUB_REPOSITORY" || echo "run $run already finished"
-          done
-      - name: Merge the release PR
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh pr merge "${{ needs.release-please.outputs.pr_branch }}" --rebase --repo "$GITHUB_REPOSITORY"
-      # The merge doesn't trigger a push event, so tag and create the release now
-      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
-        id: release
-        with:
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
-
-  # A release PR merged by hand: run the suite before anything is published.
   ci:
-    needs: release-please
-    if: needs.release-please.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch'
+    # after Build only when it succeeded (a failed Build committed nothing)
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     uses: ./.github/workflows/ci.yml
 
-  publish:
-    needs: [release-please, ci, merge-release-pr]
-    # after a hand merge (ci), an automatic one (merge-release-pr), or a manual retry; never
-    # when something it needs failed
-    if: >-
-      always() && !failure() && !cancelled() &&
-      (needs.release-please.outputs.release_created == 'true' ||
-       needs.merge-release-pr.outputs.release_created == 'true' ||
-       github.event_name == 'workflow_dispatch')
+  release:
+    needs: ci
     runs-on: ubuntu-latest
     environment:
       name: pypi
       url: https://pypi.org/project/github-apiroute/
     permissions:
-      contents: write # attach the distributions to the GitHub release
+      contents: write # the tag and the GitHub release
       id-token: write # PyPI trusted publishing (OIDC)
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # the new tag on release; the dispatched commit on a manual retry
-          ref: ${{ needs.merge-release-pr.outputs.tag_name || needs.release-please.outputs.tag_name || github.sha }}
-          persist-credentials: false
+          fetch-depth: 0 # every commit and tag, for the version
       - uses: astral-sh/setup-uv@v6
 
-      - name: Read version
+      - name: Work out the version
         run: |
-          version=$(uv version --short)
+          version=$(python3 scripts/next_release.py)
           echo "VERSION=$version" >> "$GITHUB_ENV"
           echo "TAG=v$version" >> "$GITHUB_ENV"
+          python3 scripts/next_release.py --notes > "$RUNNER_TEMP/notes.md"
+
+      - name: Tag
+        run: |
+          if [ -z "$(git tag --points-at HEAD --list "$TAG")" ]; then
+            git tag "$TAG"
+            git push origin "$TAG"
+          fi
 
       - name: Build
         run: uv build
 
-      # A version that's already on PyPI is skipped, so a manual retry can finish a
-      # partially published release.
       - name: Publish to PyPI
         run: |
           if curl -sf "https://pypi.org/pypi/github-apiroute/$VERSION/json" > /dev/null; then
@@ -159,8 +69,12 @@ jobs:
             uv publish --trusted-publishing always
           fi
 
-      - name: Attach distributions to GitHub release
+      - name: GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --clobber
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+          else
+            gh release create "$TAG" dist/* --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md"
+          fi

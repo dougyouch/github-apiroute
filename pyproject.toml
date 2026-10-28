@@ -1,6 +1,6 @@
 [project]
 name = "github-apiroute"
-version = "0.4.0"
+dynamic = ["version"]  # from the git tag (hatch-vcs): every merge to main is tagged and released
 description = "Python clients for GitHub's REST and GraphQL APIs, generated with apiroute from GitHub's published API description and schema."
 readme = "README.md"
 license = "MIT"
@@ -35,8 +35,11 @@ Changelog = "https://github.com/dougyouch/github-apiroute/blob/main/CHANGELOG.md
 dev = ["apiroute[codegen]>=2.2.2", "pytest>=8", "ruff>=0.6"]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/github_apiroute"]
