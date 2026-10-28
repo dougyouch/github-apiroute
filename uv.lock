@@ -27,14 +27,14 @@ wheels = [
 
 [[package]]
 name = "apiroute"
-version = "2.3.0"
+version = "2.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a2/8f/450dd91ce38629669354c0c4c63464d32c22d0b3f2b6c968e10a59f59f8f/apiroute-2.3.0.tar.gz", hash = "sha256:004f9f70b078a4a2c09e42aad1fa974ccf39c1d4b52e6a751388ab509fc0b3cd", size = 357562, upload-time = "2026-10-28T01:37:22.774Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/59/c3/beb833f7238e1b33a56450ff6a4166c7c81fa88a1ceac9069a974bdede57/apiroute-2.5.0.tar.gz", hash = "sha256:9636bb0d7710bb4c63a0177f660f38f731fa2d99280aa66f93b14794a5500f26", size = 403563, upload-time = "2026-10-28T19:48:41.64Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cf/1d/c4da174b3d91e7870ea6770b64578b3960e997c11e098a79ea1f72c03a05/apiroute-2.3.0-py3-none-any.whl", hash = "sha256:847219c5148c854fc0b645ef063184af29ce1e82ccee06fe70b799428836aada", size = 186788, upload-time = "2026-10-28T01:37:21.375Z" },
+    { url = "https://files.pythonhosted.org/packages/e9/cc/4832c78787e73e3aa55dc32686d380d409727568350d8daccc00b0cbb209/apiroute-2.5.0-py3-none-any.whl", hash = "sha256:de583f89a81bfaa0118147e0ae0f84c67f5662fa721c7813296eb961a7ff19da", size = 212520, upload-time = "2026-10-28T19:48:40.222Z" },
 ]
 
 [package.optional-dependencies]
@@ -101,13 +101,13 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "apiroute", specifier = ">=2.3.0" },
+    { name = "apiroute", specifier = ">=2.5.0" },
     { name = "pydantic", specifier = ">=2.6" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "apiroute", extras = ["codegen"], specifier = ">=2.2.2" },
+    { name = "apiroute", extras = ["codegen"], specifier = ">=2.5.0" },
     { name = "pytest", specifier = ">=8" },
     { name = "ruff", specifier = ">=0.6" },
 ]
