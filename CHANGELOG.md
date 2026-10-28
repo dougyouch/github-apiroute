@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/dougyouch/github-apiroute/compare/v0.2.2...v0.3.0) (2026-10-28)
+
+
+### Features
+
+* nullable_field fix ([acd99c1](https://github.com/dougyouch/github-apiroute/commit/acd99c1632d8b840531617b3ce31c17df202e972))
+
 ## [0.2.2](https://github.com/dougyouch/github-apiroute/compare/v0.2.1...v0.2.2) (2026-10-28)
 
 
