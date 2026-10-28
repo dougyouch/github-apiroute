@@ -16,20 +16,20 @@ class Enterprise(BaseModel):
 
     # A short description of the enterprise.
     description: str | None = None
-    html_url: str
+    html_url: str | None
 
     # The enterprise's website URL.
     website_url: str | None = None
 
     # Unique identifier of the enterprise
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # The name of the enterprise.
-    name: str
+    name: str | None
 
     # The slug url identifier for the enterprise.
-    slug: str
+    slug: str | None
     created_at: str | None
     updated_at: str | None
-    avatar_url: str
+    avatar_url: str | None

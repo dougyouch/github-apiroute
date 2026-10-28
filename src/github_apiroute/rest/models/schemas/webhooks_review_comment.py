@@ -21,35 +21,38 @@ class WebhooksReviewComment(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    links: WebhooksReviewCommentLinks = Field(alias="_links")
+    links: WebhooksReviewCommentLinks | None = Field(alias="_links")
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # The text of the comment.
-    body: str
+    body: str | None
 
     # The SHA of the commit to which the comment applies.
-    commit_id: str
-    created_at: str
+    commit_id: str | None
+    created_at: str | None
 
     # The diff of the line that the comment refers to.
-    diff_hunk: str
+    diff_hunk: str | None
 
     # HTML URL for the pull request review comment.
-    html_url: str
+    html_url: str | None
 
     # The ID of the pull request review comment.
-    id: int
+    id: int | None
 
     # The comment ID to reply to.
     in_reply_to_id: int | None = None
@@ -59,23 +62,23 @@ class WebhooksReviewComment(BaseModel):
     line: int | None
 
     # The node ID of the pull request review comment.
-    node_id: str
+    node_id: str | None
 
     # The SHA of the original commit to which the comment applies.
-    original_commit_id: str
+    original_commit_id: str | None
 
     # The line of the blob to which the comment applies. The last line of the range for a multi-
     # line comment
-    original_line: int
+    original_line: int | None
 
     # The index of the original line in the diff to which the comment applies.
-    original_position: int
+    original_position: int | None
 
     # The first line of the range for a multi-line comment.
     original_start_line: int | None
 
     # The relative path of the file to which the comment applies.
-    path: str
+    path: str | None
 
     # The line index in the diff to which the comment applies.
     position: int | None
@@ -84,11 +87,11 @@ class WebhooksReviewComment(BaseModel):
     pull_request_review_id: int | None
 
     # URL for the pull request that the review comment belongs to.
-    pull_request_url: str
-    reactions: WebhooksReviewCommentReactions
+    pull_request_url: str | None
+    reactions: WebhooksReviewCommentReactions | None
 
     # The side of the first line of the range for a multi-line comment.
-    side: Literal["LEFT", "RIGHT"]
+    side: Literal["LEFT", "RIGHT"] | None
 
     # The first line of the range for a multi-line comment.
     start_line: int | None
@@ -98,8 +101,8 @@ class WebhooksReviewComment(BaseModel):
 
     # The level at which the comment is targeted, can be a diff line or a file.
     subject_type: Literal["line", "file"] | None = None
-    updated_at: str
+    updated_at: str | None
 
     # URL for the pull request review comment
-    url: str
+    url: str | None
     user: WebhooksReviewCommentUser | None

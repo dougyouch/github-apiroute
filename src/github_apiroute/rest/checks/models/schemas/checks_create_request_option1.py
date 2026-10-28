@@ -13,4 +13,4 @@ __all__ = ["ChecksCreateRequestOption1"]
 
 class ChecksCreateRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    status: Literal["completed"]
+    status: Literal["completed"] | None

@@ -13,15 +13,15 @@ class NullableOrganizationSimple(BaseModel):
     """A GitHub organization."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    login: str
-    id: int
-    node_id: str
-    url: str
-    repos_url: str
-    events_url: str
-    hooks_url: str
-    issues_url: str
-    members_url: str
-    public_members_url: str
-    avatar_url: str
+    login: str | None
+    id: int | None
+    node_id: str | None
+    url: str | None
+    repos_url: str | None
+    events_url: str | None
+    hooks_url: str | None
+    issues_url: str | None
+    members_url: str | None
+    public_members_url: str | None
+    avatar_url: str | None
     description: str | None

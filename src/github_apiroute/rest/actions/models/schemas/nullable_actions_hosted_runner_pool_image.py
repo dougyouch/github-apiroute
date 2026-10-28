@@ -18,16 +18,16 @@ class NullableActionsHostedRunnerPoolImage(BaseModel):
 
     # The ID of the image. Use this ID for the `image` parameter when creating a new larger
     # runner.
-    id: str
+    id: str | None
 
     # Image size in GB.
-    size_gb: int
+    size_gb: int | None
 
     # Display name for this image.
-    display_name: str
+    display_name: str | None
 
     # The image provider.
-    source: Literal["github", "partner", "custom"]
+    source: Literal["github", "partner", "custom"] | None
 
     # The image version of the hosted runner pool.
     version: str | None = None

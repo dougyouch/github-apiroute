@@ -16,13 +16,15 @@ class DiffEntry(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     sha: str | None
-    filename: str
-    status: Literal["added", "removed", "modified", "renamed", "copied", "changed", "unchanged"]
-    additions: int
-    deletions: int
-    changes: int
-    blob_url: str
-    raw_url: str
-    contents_url: str
+    filename: str | None
+    status: (
+        Literal["added", "removed", "modified", "renamed", "copied", "changed", "unchanged"] | None
+    )
+    additions: int | None
+    deletions: int | None
+    changes: int | None
+    blob_url: str | None
+    raw_url: str | None
+    contents_url: str | None
     patch: str | None = None
     previous_filename: str | None = None

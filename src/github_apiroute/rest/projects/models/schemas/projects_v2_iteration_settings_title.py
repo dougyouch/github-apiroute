@@ -13,5 +13,5 @@ class ProjectsV2IterationSettingsTitle(BaseModel):
     """The iteration title, in raw text and HTML formats."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    raw: str
-    html: str
+    raw: str | None
+    html: str | None

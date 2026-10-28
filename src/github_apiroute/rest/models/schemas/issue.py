@@ -32,28 +32,28 @@ class Issue(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # URL for the issue
-    url: str
-    repository_url: str
-    labels_url: str
-    comments_url: str
-    events_url: str
-    html_url: str
+    url: str | None
+    repository_url: str | None
+    labels_url: str | None
+    comments_url: str | None
+    events_url: str | None
+    html_url: str | None
 
     # Number uniquely identifying the issue within its repository
-    number: int
+    number: int | None
 
     # State of the issue; either 'open' or 'closed'
-    state: str
+    state: str | None
 
     # The reason for the current state
     state_reason: Literal["completed", "reopened", "not_planned", "duplicate"] | None = None
 
     # Title of the issue
-    title: str
+    title: str | None
 
     # Contents of the issue
     body: str | None = None
@@ -64,7 +64,7 @@ class Issue(BaseModel):
     # Labels to associate with this issue; pass one or more label names to replace the set of
     # labels on this issue; send an empty array to clear all labels from the issue; note that
     # the labels are silently dropped for users without push access to the repository
-    labels: list[str | IssueLabelsItemOption2]
+    labels: list[str | IssueLabelsItemOption2] | None
 
     # A GitHub user.
     assignee: NullableSimpleUser | None
@@ -72,13 +72,13 @@ class Issue(BaseModel):
 
     # A collection of related issues and pull requests.
     milestone: NullableMilestone | None
-    locked: bool
+    locked: bool | None
     active_lock_reason: str | None = None
-    comments: int
+    comments: int | None
     pull_request: IssuePullRequest | None = None
     closed_at: str | None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
     draft: bool | None = None
 
     # A GitHub user.

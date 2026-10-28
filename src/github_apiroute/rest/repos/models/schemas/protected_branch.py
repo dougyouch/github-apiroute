@@ -30,7 +30,7 @@ class ProtectedBranch(BaseModel):
     """Branch protections protect branches"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
 
     # Status Check Policy
     required_status_checks: StatusCheckPolicy | None = None

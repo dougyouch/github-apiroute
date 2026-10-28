@@ -15,17 +15,17 @@ class OrganizationInvitation(BaseModel):
     """Organization Invitation"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
+    id: int | None
     login: str | None
     email: str | None
-    role: str
-    created_at: str
+    role: str | None
+    created_at: str | None
     failed_at: str | None = None
     failed_reason: str | None = None
 
     # A GitHub user.
-    inviter: SimpleUser
-    team_count: int
-    node_id: str
-    invitation_teams_url: str
+    inviter: SimpleUser | None
+    team_count: int | None
+    node_id: str | None
+    invitation_teams_url: str | None
     invitation_source: str | None = None

@@ -17,7 +17,7 @@ class SecretScanningCustomPatternToDelete(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the custom pattern to delete.
-    pattern_id: int
+    pattern_id: int | None
 
     # The version of the entity. This is used to confirm you're updating the current version of
     # the entity and mitigate unintentionally overriding someone else's update.

@@ -18,22 +18,22 @@ class Team(BaseModel):
     """Groups of organization members that gives permissions on specified repositories."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    name: str
-    slug: str
+    id: int | None
+    node_id: str | None
+    name: str | None
+    slug: str | None
     description: str | None
     privacy: str | None = None
     notification_setting: str | None = None
-    permission: str
+    permission: str | None
     permissions: TeamPermissions | None = None
-    url: str
-    html_url: str
-    members_url: str
-    repositories_url: str
+    url: str | None
+    html_url: str | None
+    members_url: str | None
+    repositories_url: str | None
 
     # The ownership type of the team
-    type_: Literal["enterprise", "organization"] = Field(alias="type")
+    type_: Literal["enterprise", "organization"] | None = Field(alias="type")
 
     # How the team's access to the repository was granted. This property is only present when
     # the team is returned in a repository context, such as `GET /repos/{owner}/{repo}/teams`.

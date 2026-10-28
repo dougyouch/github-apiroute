@@ -20,7 +20,7 @@ __all__ = ["WebhookSecurityAdvisoryPublished"]
 
 class WebhookSecurityAdvisoryPublished(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["published"]
+    action: Literal["published"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -42,7 +42,7 @@ class WebhookSecurityAdvisoryPublished(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # The details of the security advisory, including summary, description, and severity.
-    security_advisory: WebhooksSecurityAdvisory
+    security_advisory: WebhooksSecurityAdvisory | None
 
     # A GitHub user.
     sender: SimpleUser | None = None

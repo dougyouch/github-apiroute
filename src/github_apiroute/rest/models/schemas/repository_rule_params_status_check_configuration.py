@@ -15,7 +15,7 @@ class RepositoryRuleParamsStatusCheckConfiguration(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The status check context name that must be present on the commit.
-    context: str
+    context: str | None
 
     # The optional integration ID that this status check must originate from.
     integration_id: int | None = None

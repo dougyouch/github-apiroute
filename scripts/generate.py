@@ -118,6 +118,8 @@ def _generate(api: dict, spec: Path, package_dir: Path) -> None:
         command.append("--models")
     if api.get("base_class"):
         command += ["--base-class", api["base_class"]]
+    if api.get("nullable_fields"):
+        command.append("--nullable-fields")
     if api["format"] == "graphql":
         command += ["--operations", str(ROOT / api["operations"]), "--endpoint", api["endpoint"]]
         for name, target in api.get("scalars", {}).items():

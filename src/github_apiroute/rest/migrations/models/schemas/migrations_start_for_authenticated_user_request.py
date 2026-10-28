@@ -39,4 +39,4 @@ class MigrationsStartForAuthenticatedUserRequest(BaseModel):
 
     # Exclude attributes from the API response to improve performance
     exclude: list[Literal["repositories"]] | None = None
-    repositories: list[str]
+    repositories: list[str] | None

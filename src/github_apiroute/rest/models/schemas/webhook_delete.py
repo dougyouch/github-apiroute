@@ -38,17 +38,17 @@ class WebhookDelete(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # The pusher type for the event. Can be either `user` or a deploy key.
-    pusher_type: WebhooksDeployPusherType
+    pusher_type: WebhooksDeployPusherType | None
 
     # The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
-    ref: WebhooksRef0
+    ref: WebhooksRef0 | None
 
     # The type of Git ref object deleted in the repository.
-    ref_type: Literal["tag", "branch"]
+    ref_type: Literal["tag", "branch"] | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

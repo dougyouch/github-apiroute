@@ -15,7 +15,7 @@ class ReposCreateReleaseRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the tag.
-    tag_name: str
+    tag_name: str | None
 
     # Specifies the commitish value that determines where the Git tag is created from. Can be
     # any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's

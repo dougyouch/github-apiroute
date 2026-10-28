@@ -13,31 +13,31 @@ class BillingUsageReportUserUsageItemsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Date of the usage line item.
-    date: str
+    date: str | None
 
     # Product name.
-    product: str
+    product: str | None
 
     # SKU name.
-    sku: str
+    sku: str | None
 
     # Quantity of the usage line item.
-    quantity: int
+    quantity: int | None
 
     # Unit type of the usage line item.
-    unit_type: str = Field(alias="unitType")
+    unit_type: str | None = Field(alias="unitType")
 
     # Price per unit of the usage line item.
-    price_per_unit: float = Field(alias="pricePerUnit")
+    price_per_unit: float | None = Field(alias="pricePerUnit")
 
     # Gross amount of the usage line item.
-    gross_amount: float = Field(alias="grossAmount")
+    gross_amount: float | None = Field(alias="grossAmount")
 
     # Discount amount of the usage line item.
-    discount_amount: float = Field(alias="discountAmount")
+    discount_amount: float | None = Field(alias="discountAmount")
 
     # Net amount of the usage line item.
-    net_amount: float = Field(alias="netAmount")
+    net_amount: float | None = Field(alias="netAmount")
 
     # Name of the repository.
     repository_name: str | None = Field(None, alias="repositoryName")

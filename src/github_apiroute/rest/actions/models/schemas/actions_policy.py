@@ -24,24 +24,24 @@ class ActionsPolicy(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the policy
-    id: int
+    id: int | None
 
     # The name of the policy
-    name: str
+    name: str | None
 
     # The target of the policy
-    target: Literal["actions"]
+    target: Literal["actions"] | None
 
     # The type of the source of the policy
-    source_type: Literal["Repository", "Organization", "Enterprise"]
+    source_type: Literal["Repository", "Organization", "Enterprise"] | None
 
     # The name of the source
-    source: str
+    source: str | None
 
     # The enforcement level of the ruleset. `evaluate` allows admins to test rules before
     # enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only
     # available with GitHub Enterprise).
-    enforcement: RepositoryRuleEnforcement
+    enforcement: RepositoryRuleEnforcement | None
 
     # When workflow path targeting is available, detailed responses represent an omitted stored
     # workflow condition as `workflow_path` with `include` set to `["~ALL"]` and `exclude` set

@@ -17,9 +17,9 @@ class RepositoryRuleParamsActor(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # ID of the actor that can dismiss reviews.
-    id: int
+    id: int | None
 
     # The type of the actor
-    type_: Literal["User", "Team", "IntegrationInstallation", "RepositoryRole"] = Field(
+    type_: Literal["User", "Team", "IntegrationInstallation", "RepositoryRole"] | None = Field(
         alias="type"
     )

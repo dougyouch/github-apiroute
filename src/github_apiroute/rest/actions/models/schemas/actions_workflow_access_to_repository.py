@@ -17,4 +17,4 @@ class ActionsWorkflowAccessToRepository(BaseModel):
     # Defines the level of access that workflows outside of the repository have to actions and
     # reusable workflows within the repository. `none` means the access is only possible from
     # workflows in this repository. `user` level access allows sharing across user owned private
-    access_level: Literal["none", "user", "organization"]
+    access_level: Literal["none", "user", "organization"] | None

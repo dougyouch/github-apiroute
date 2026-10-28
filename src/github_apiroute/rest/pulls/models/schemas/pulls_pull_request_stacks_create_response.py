@@ -14,14 +14,14 @@ __all__ = ["PullsPullRequestStacksCreateResponse"]
 
 class PullsPullRequestStacksCreateResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    number: int
-    node_id: str
-    url: str
-    base: PullsPullRequestStacksCreateResponseBase
+    id: int | None
+    number: int | None
+    node_id: str | None
+    url: str | None
+    base: PullsPullRequestStacksCreateResponseBase | None
 
     # Whether the stack has any open pull request. False when all pull requests are merged or
     # closed.
-    open: bool
-    created_at: str
-    pull_requests: list[PullRequestStackPullRequest]
+    open: bool | None
+    created_at: str | None
+    pull_requests: list[PullRequestStackPullRequest] | None

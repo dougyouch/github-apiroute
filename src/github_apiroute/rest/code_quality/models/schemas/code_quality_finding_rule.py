@@ -17,19 +17,19 @@ class CodeQualityFindingRule(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A unique identifier for the rule used to detect the finding.
-    id: str
+    id: str | None
 
     # The name of the rule used to detect the finding.
-    title: str
+    title: str | None
 
     # A short description of the rule used to detect the finding.
-    description: str
+    description: str | None
 
     # A detailed description of the rule used to detect the finding.
     help: str | None = None
 
     # The severity of the rule used to detect the finding.
-    severity: Literal["error", "warning", "note", "none"]
+    severity: Literal["error", "warning", "note", "none"] | None
 
     # The category of the rule used to detect the finding.
-    category: Literal["none", "maintainability", "reliability"]
+    category: Literal["none", "maintainability", "reliability"] | None

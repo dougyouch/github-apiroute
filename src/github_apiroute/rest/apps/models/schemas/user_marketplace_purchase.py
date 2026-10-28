@@ -16,13 +16,13 @@ class UserMarketplacePurchase(BaseModel):
     """User Marketplace Purchase"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    billing_cycle: str
+    billing_cycle: str | None
     next_billing_date: str | None
     unit_count: int | None
-    on_free_trial: bool
+    on_free_trial: bool | None
     free_trial_ends_on: str | None
     updated_at: str | None
-    account: MarketplaceAccount
+    account: MarketplaceAccount | None
 
     # Marketplace Listing Plan
-    plan: MarketplaceListingPlan
+    plan: MarketplaceListingPlan | None

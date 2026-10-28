@@ -21,7 +21,7 @@ __all__ = ["WebhookInstallationCreated"]
 
 class WebhookInstallationCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -29,7 +29,7 @@ class WebhookInstallationCreated(BaseModel):
     enterprise: EnterpriseWebhooks | None = None
 
     # Installation
-    installation: Installation
+    installation: Installation | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -45,4 +45,4 @@ class WebhookInstallationCreated(BaseModel):
     requester: WebhooksUser | None = None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

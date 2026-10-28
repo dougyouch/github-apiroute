@@ -13,13 +13,13 @@ __all__ = ["PullRequestLabelsItem"]
 
 class PullRequestLabelsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    url: str
-    name: str
+    id: int | None
+    node_id: str | None
+    url: str | None
+    name: str | None
     description: str | None
-    color: str
-    default: bool
+    color: str | None
+    default: bool | None
 
     # The user who archived the label, or `null` if it has not been archived.
     archived_by: SimpleUser | None

@@ -15,7 +15,7 @@ class AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemS
     BaseModel
 ):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["integer"] = Field(alias="type")
+    type_: Literal["integer"] | None = Field(alias="type")
 
     # The allowed integer values.
     enum: list[int] | None = None

@@ -13,5 +13,5 @@ __all__ = ["ReleaseEvent"]
 
 class ReleaseEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
-    release: ReleaseEventRelease
+    action: str | None
+    release: ReleaseEventRelease | None

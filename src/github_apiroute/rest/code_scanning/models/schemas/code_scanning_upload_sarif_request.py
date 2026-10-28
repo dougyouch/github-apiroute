@@ -17,16 +17,16 @@ class CodeScanningUploadSarifRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The SHA of the commit to which the analysis you are uploading relates.
-    commit_sha: CodeScanningAnalysisCommitSha
+    commit_sha: CodeScanningAnalysisCommitSha | None
 
     # The full Git reference, formatted as `refs/heads/`, `refs/tags/`, `refs/pull//merge`, or
     # `refs/pull//head`.
-    ref: CodeScanningRefFull
+    ref: CodeScanningRefFull | None
 
     # A Base64 string representing the SARIF file to upload. You must first compress your SARIF
     # file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate
     # the contents of the file into a Base64 encoding string. For more information, see "[SARIF
-    sarif: CodeScanningAnalysisSarifFile
+    sarif: CodeScanningAnalysisSarifFile | None
 
     # The base directory used in the analysis, as it appears in the SARIF file. This property is
     # used to convert file paths from absolute to relative, so that alerts can be mapped to

@@ -11,6 +11,6 @@ __all__ = ["Traffic"]
 
 class Traffic(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    timestamp: str
-    uniques: int
-    count: int
+    timestamp: str | None
+    uniques: int | None
+    count: int | None

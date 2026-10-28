@@ -21,6 +21,6 @@ __all__ = ["WebhookPullRequestReviewCommentCreatedCommentLinks"]
 
 class WebhookPullRequestReviewCommentCreatedCommentLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: WebhookPullRequestReviewCommentCreatedCommentLinksHtml
-    pull_request: WebhookPullRequestReviewCommentCreatedCommentLinksPullRequest
-    self: WebhookPullRequestReviewCommentCreatedCommentLinksSelf
+    html: WebhookPullRequestReviewCommentCreatedCommentLinksHtml | None
+    pull_request: WebhookPullRequestReviewCommentCreatedCommentLinksPullRequest | None
+    self: WebhookPullRequestReviewCommentCreatedCommentLinksSelf | None

@@ -20,4 +20,4 @@ class OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequest(B
     # The display name for this app installation's external custom properties in the
     # organization. Must be 1 to 15 characters and contain only letters and numbers.
     # Capitalization is preserved as entered. This can't be changed after the app installation
-    display_name: str
+    display_name: str | None

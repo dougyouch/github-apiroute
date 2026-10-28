@@ -17,4 +17,4 @@ class EnterpriseRulesetConditionsOrganizationIdTarget(BaseModel):
     """Parameters for an organization ID condition"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    organization_id: EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
+    organization_id: EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId | None

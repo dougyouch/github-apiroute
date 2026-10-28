@@ -26,10 +26,10 @@ class WebhookStatus(BaseModel):
     # An array of branch objects containing the status' SHA. Each branch contains the given SHA,
     # but the SHA may or may not be the head of the branch. The array includes a maximum of 10
     # branches.
-    branches: list[WebhookStatusBranchesItem]
-    commit: WebhookStatusCommit
-    context: str
-    created_at: str
+    branches: list[WebhookStatusBranchesItem] | None
+    commit: WebhookStatusCommit | None
+    context: str | None
+    created_at: str | None
 
     # The optional human-readable description added to the status.
     description: str | None
@@ -40,13 +40,13 @@ class WebhookStatus(BaseModel):
     enterprise: EnterpriseWebhooks | None = None
 
     # The unique identifier of the status.
-    id: int
+    id: int | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
     # webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-
     installation: SimpleInstallation | None = None
-    name: str
+    name: str | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -55,17 +55,17 @@ class WebhookStatus(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None
 
     # The Commit SHA.
-    sha: str
+    sha: str | None
 
     # The new state. Can be `pending`, `success`, `failure`, or `error`.
-    state: Literal["pending", "success", "failure", "error"]
+    state: Literal["pending", "success", "failure", "error"] | None
 
     # The optional link added to the status.
     target_url: str | None
-    updated_at: str
+    updated_at: str | None

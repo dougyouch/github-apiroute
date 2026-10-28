@@ -23,7 +23,7 @@ class WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance(BaseModel):
 
     # Identifies the configuration under which the analysis was executed. For example, in GitHub
     # Actions this includes the workflow filename and job name.
-    analysis_key: str
+    analysis_key: str | None
 
     # Identifies the configuration under which the analysis was executed.
     category: str | None = None
@@ -32,12 +32,12 @@ class WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance(BaseModel):
 
     # Identifies the variable values associated with the environment in which the analysis that
     # generated this alert instance was performed, such as the language that was analyzed.
-    environment: str
+    environment: str | None
     location: WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceLocation | None = None
     message: WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage | None = None
 
     # The full Git reference, formatted as `refs/heads/`.
-    ref: str
+    ref: str | None
 
     # State of a code scanning alert.
-    state: Literal["open", "dismissed", "fixed"]
+    state: Literal["open", "dismissed", "fixed"] | None

@@ -21,5 +21,5 @@ class ConcurrencyGroupRunList(BaseModel):
     # The total number of concurrency groups this workflow run participates in, derived from the
     # run's configuration. This count is not filtered by whether the run currently holds or is
     # waiting in each group, so it can include groups whose `group_members` array is empty (for
-    total_count: int
-    concurrency_groups: list[ConcurrencyGroupRunListConcurrencyGroupsItem]
+    total_count: int | None
+    concurrency_groups: list[ConcurrencyGroupRunListConcurrencyGroupsItem] | None

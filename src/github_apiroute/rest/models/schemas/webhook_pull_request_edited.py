@@ -22,10 +22,10 @@ __all__ = ["WebhookPullRequestEdited"]
 
 class WebhookPullRequestEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
+    action: Literal["edited"] | None
 
     # The changes to the comment if the action was `edited`.
-    changes: WebhookPullRequestEditedChanges
+    changes: WebhookPullRequestEditedChanges | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -38,17 +38,17 @@ class WebhookPullRequestEdited(BaseModel):
     installation: SimpleInstallation | None = None
 
     # The pull request number.
-    number: WebhooksNumber
+    number: WebhooksNumber | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
     organization: OrganizationSimpleWebhooks | None = None
-    pull_request: PullRequestWebhook
+    pull_request: PullRequestWebhook | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

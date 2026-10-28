@@ -11,6 +11,6 @@ __all__ = ["CommitSearchResultItemCommitAuthor"]
 
 class CommitSearchResultItemCommitAuthor(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    email: str
-    date: str
+    name: str | None
+    email: str | None
+    date: str | None

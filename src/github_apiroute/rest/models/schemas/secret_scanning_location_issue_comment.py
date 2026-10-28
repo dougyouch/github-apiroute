@@ -17,7 +17,7 @@ class SecretScanningLocationIssueComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The API URL to get the issue comment where the secret was detected.
-    issue_comment_url: str
+    issue_comment_url: str | None
 
     # The GitHub URL for the issue comment where the secret was detected.
     html_url: str | None = None

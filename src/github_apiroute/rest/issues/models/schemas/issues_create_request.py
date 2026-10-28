@@ -16,7 +16,7 @@ class IssuesCreateRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The title of the issue.
-    title: str | int
+    title: str | int | None
 
     # The contents of the issue.
     body: str | None = None

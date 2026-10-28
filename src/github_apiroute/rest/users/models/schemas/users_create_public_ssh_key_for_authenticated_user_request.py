@@ -16,4 +16,4 @@ class UsersCreatePublicSshKeyForAuthenticatedUserRequest(BaseModel):
     title: str | None = None
 
     # The public SSH key to add to your GitHub account.
-    key: str
+    key: str | None

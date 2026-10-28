@@ -15,4 +15,4 @@ class CodeownersErrors(BaseModel):
     """A list of errors found in a repo's CODEOWNERS file"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    errors: list[CodeownersErrorsErrorsItem]
+    errors: list[CodeownersErrorsErrorsItem] | None

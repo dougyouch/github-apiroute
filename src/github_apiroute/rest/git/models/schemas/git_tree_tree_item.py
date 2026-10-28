@@ -11,9 +11,9 @@ __all__ = ["GitTreeTreeItem"]
 
 class GitTreeTreeItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    path: str
-    mode: str
-    type_: str = Field(alias="type")
-    sha: str
+    path: str | None
+    mode: str | None
+    type_: str | None = Field(alias="type")
+    sha: str | None
     size: int | None = None
     url: str | None = None

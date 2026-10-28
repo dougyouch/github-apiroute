@@ -17,7 +17,7 @@ class DeploymentBranchPolicyNamePatternWithType(BaseModel):
     # The name pattern that branches or tags must match in order to deploy to the environment.
     # Wildcard characters will not match `/`. For example, to match branches that begin with
     # `release/` and contain an additional single slash, use `release/*/*`. For more information
-    name: str
+    name: str | None
 
     # Whether this rule targets a branch or tag
     type_: Literal["branch", "tag"] | None = Field(None, alias="type")

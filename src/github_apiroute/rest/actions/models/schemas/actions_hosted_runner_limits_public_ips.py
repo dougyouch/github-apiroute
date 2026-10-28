@@ -15,7 +15,7 @@ class ActionsHostedRunnerLimitsPublicIps(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The maximum number of static public IP addresses that can be used for Hosted Runners.
-    maximum: int
+    maximum: int | None
 
     # The current number of static public IP addresses in use by Hosted Runners.
-    current_usage: int
+    current_usage: int | None

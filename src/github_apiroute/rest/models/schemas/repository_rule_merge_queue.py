@@ -17,5 +17,5 @@ class RepositoryRuleMergeQueue(BaseModel):
     """Merges must be performed via a merge queue."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["merge_queue"] = Field(alias="type")
+    type_: Literal["merge_queue"] | None = Field(alias="type")
     parameters: RepositoryRuleMergeQueueParameters | None = None

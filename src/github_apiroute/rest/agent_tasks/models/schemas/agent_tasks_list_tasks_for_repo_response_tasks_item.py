@@ -34,7 +34,7 @@ class AgentTasksListTasksForRepoResponseTasksItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique task identifier
-    id: str
+    id: str | None
 
     # API URL for this task
     url: str | None = None
@@ -63,16 +63,19 @@ class AgentTasksListTasksForRepoResponseTasksItem(BaseModel):
     repository: AgentTasksListTasksForRepoResponseTasksItemRepository | None = None
 
     # Current state of the task, derived from its most recent session
-    state: Literal[
-        "queued",
-        "in_progress",
-        "completed",
-        "failed",
-        "idle",
-        "waiting_for_user",
-        "timed_out",
-        "cancelled",
-    ]
+    state: (
+        Literal[
+            "queued",
+            "in_progress",
+            "completed",
+            "failed",
+            "idle",
+            "waiting_for_user",
+            "timed_out",
+            "cancelled",
+        ]
+        | None
+    )
 
     # Number of sessions in this task
     session_count: int | None = None
@@ -87,7 +90,7 @@ class AgentTasksListTasksForRepoResponseTasksItem(BaseModel):
     updated_at: str | None = None
 
     # Timestamp when the task was created
-    created_at: str
+    created_at: str | None
 
     # Custom agent metadata associated with this task
     custom_agent: AgentTasksListTasksForRepoResponseTasksItemCustomAgent | None = None

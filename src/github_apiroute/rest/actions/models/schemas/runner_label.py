@@ -20,7 +20,7 @@ class RunnerLabel(BaseModel):
     id: int | None = None
 
     # Name of the label.
-    name: str
+    name: str | None
 
     # The type of label. Read-only labels are applied automatically when the runner is
     # configured.

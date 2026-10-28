@@ -24,7 +24,7 @@ class DependabotCreateOrUpdateOrgSecretRequest(BaseModel):
 
     # Which type of organization repositories have access to the organization secret. `selected`
     # means only the repositories specified by `selected_repository_ids` can access the secret.
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
 
     # An array of repository ids that can access the organization secret. You can only provide a
     # list of repository ids when the `visibility` is set to `selected`. You can manage the list

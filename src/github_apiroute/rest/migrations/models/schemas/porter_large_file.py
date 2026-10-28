@@ -13,7 +13,7 @@ class PorterLargeFile(BaseModel):
     """Porter Large File"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref_name: str
-    path: str
-    oid: str
-    size: int
+    ref_name: str | None
+    path: str | None
+    oid: str | None
+    size: int | None

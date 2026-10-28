@@ -15,4 +15,4 @@ class RepositoryRuleCreation(BaseModel):
     """Only allow users with bypass permission to create matching refs."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["creation"] = Field(alias="type")
+    type_: Literal["creation"] | None = Field(alias="type")

@@ -13,7 +13,7 @@ class ReposUpdateStatusCheckProtectionRequestChecksItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the required check
-    context: str
+    context: str | None
 
     # The ID of the GitHub App that must provide this check. Omit this field to automatically
     # select the GitHub App that has recently provided this check, or any app if it was not set

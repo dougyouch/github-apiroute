@@ -17,28 +17,28 @@ class TimelineReviewedEvent(BaseModel):
     """Timeline Reviewed Event"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    event: str
+    event: str | None
 
     # Unique identifier of the review
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # A GitHub user.
-    user: SimpleUser
+    user: SimpleUser | None
 
     # The text of the review.
     body: str | None
-    state: str
-    html_url: str
-    pull_request_url: str
-    links: TimelineReviewedEventLinks = Field(alias="_links")
+    state: str | None
+    html_url: str | None
+    pull_request_url: str | None
+    links: TimelineReviewedEventLinks | None = Field(alias="_links")
     submitted_at: str | None = None
     updated_at: str | None = None
 
     # A commit SHA for the review.
-    commit_id: str
+    commit_id: str | None
     body_html: str | None = None
     body_text: str | None = None
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
+    author_association: AuthorAssociation | None

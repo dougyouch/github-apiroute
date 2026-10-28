@@ -17,7 +17,7 @@ class CustomProperty(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the property
-    property_name: str
+    property_name: str | None
 
     # The URL that can be used to fetch, update, or delete info about this property via the API.
     url: str | None = None
@@ -26,7 +26,7 @@ class CustomProperty(BaseModel):
     source_type: Literal["organization", "enterprise"] | None = None
 
     # The type of the value for the property
-    value_type: Literal["string", "single_select", "multi_select", "true_false", "url"]
+    value_type: Literal["string", "single_select", "multi_select", "true_false", "url"] | None
 
     # Whether the property is required.
     required: bool | None = None

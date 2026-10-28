@@ -15,5 +15,5 @@ class ReposListDeploymentBranchPoliciesResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of deployment branch policies for the environment.
-    total_count: int
-    branch_policies: list[DeploymentBranchPolicy]
+    total_count: int | None
+    branch_policies: list[DeploymentBranchPolicy] | None

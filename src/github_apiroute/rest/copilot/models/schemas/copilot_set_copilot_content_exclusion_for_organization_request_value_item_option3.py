@@ -11,4 +11,4 @@ __all__ = ["CopilotSetCopilotContentExclusionForOrganizationRequestValueItemOpti
 
 class CopilotSetCopilotContentExclusionForOrganizationRequestValueItemOption3(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    if_none_match: list[str] = Field(alias="ifNoneMatch")
+    if_none_match: list[str] | None = Field(alias="ifNoneMatch")

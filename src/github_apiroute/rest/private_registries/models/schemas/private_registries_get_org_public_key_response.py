@@ -13,7 +13,7 @@ class PrivateRegistriesGetOrgPublicKeyResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The identifier for the key.
-    key_id: str
+    key_id: str | None
 
     # The Base64 encoded public key.
-    key: str
+    key: str | None

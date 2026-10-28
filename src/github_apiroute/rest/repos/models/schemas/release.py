@@ -17,38 +17,38 @@ class Release(BaseModel):
     """A release."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    html_url: str
-    assets_url: str
-    upload_url: str
+    url: str | None
+    html_url: str | None
+    assets_url: str | None
+    upload_url: str | None
     tarball_url: str | None
     zipball_url: str | None
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # The name of the tag.
-    tag_name: str
+    tag_name: str | None
 
     # Specifies the commitish value that determines where the Git tag is created from.
-    target_commitish: str
+    target_commitish: str | None
     name: str | None
     body: str | None = None
 
     # true to create a draft (unpublished) release, false to create a published one.
-    draft: bool
+    draft: bool | None
 
     # Whether to identify the release as a prerelease or a full release.
-    prerelease: bool
+    prerelease: bool | None
 
     # Whether or not the release is immutable.
     immutable: bool | None = None
-    created_at: str
+    created_at: str | None
     published_at: str | None
     updated_at: str | None = None
 
     # A GitHub user.
-    author: SimpleUser
-    assets: list[ReleaseAsset]
+    author: SimpleUser | None
+    assets: list[ReleaseAsset] | None
     body_html: str | None = None
     body_text: str | None = None
     mentions_count: int | None = None

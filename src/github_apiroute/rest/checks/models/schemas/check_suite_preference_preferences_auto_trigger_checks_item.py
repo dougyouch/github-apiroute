@@ -11,5 +11,5 @@ __all__ = ["CheckSuitePreferencePreferencesAutoTriggerChecksItem"]
 
 class CheckSuitePreferencePreferencesAutoTriggerChecksItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    app_id: int
-    setting: bool
+    app_id: int | None
+    setting: bool | None

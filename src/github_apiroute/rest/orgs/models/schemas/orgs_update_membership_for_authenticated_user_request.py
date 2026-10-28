@@ -15,4 +15,4 @@ class OrgsUpdateMembershipForAuthenticatedUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The state that the membership should be in. Only `"active"` will be accepted.
-    state: Literal["active"]
+    state: Literal["active"] | None

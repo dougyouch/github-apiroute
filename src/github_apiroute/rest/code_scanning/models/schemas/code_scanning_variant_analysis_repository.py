@@ -15,15 +15,15 @@ class CodeScanningVariantAnalysisRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A unique identifier of the repository.
-    id: int
+    id: int | None
 
     # The name of the repository.
-    name: str
+    name: str | None
 
     # The full, globally unique, name of the repository.
-    full_name: str
+    full_name: str | None
 
     # Whether the repository is private.
-    private: bool
-    stargazers_count: int
+    private: bool | None
+    stargazers_count: int | None
     updated_at: str | None

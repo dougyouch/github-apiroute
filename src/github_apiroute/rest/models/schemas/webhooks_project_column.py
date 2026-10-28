@@ -12,15 +12,15 @@ __all__ = ["WebhooksProjectColumn"]
 class WebhooksProjectColumn(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     after_id: int | None = None
-    cards_url: str
-    created_at: str
+    cards_url: str | None
+    created_at: str | None
 
     # The unique identifier of the project column
-    id: int
+    id: int | None
 
     # Name of the project column
-    name: str
-    node_id: str
-    project_url: str
-    updated_at: str
-    url: str
+    name: str | None
+    node_id: str | None
+    project_url: str | None
+    updated_at: str | None
+    url: str | None

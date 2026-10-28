@@ -20,14 +20,14 @@ class IssueFieldValue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier for the issue field.
-    issue_field_id: int
+    issue_field_id: int | None
 
     # The human-readable name of the issue field.
     issue_field_name: str | None = None
-    node_id: str
+    node_id: str | None
 
     # The data type of the issue field
-    data_type: Literal["text", "single_select", "multi_select", "number", "date"]
+    data_type: Literal["text", "single_select", "multi_select", "number", "date"] | None
 
     # The value of the issue field
     value: str | float | int | None

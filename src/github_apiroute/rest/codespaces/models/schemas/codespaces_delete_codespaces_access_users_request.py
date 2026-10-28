@@ -14,4 +14,4 @@ class CodespacesDeleteCodespacesAccessUsersRequest(BaseModel):
 
     # The usernames of the organization members and outside collaborators whose codespaces
     # should not be billed to the organization.
-    selected_usernames: list[str]
+    selected_usernames: list[str] | None

@@ -14,7 +14,7 @@ class IssuesAddSubIssueRequest(BaseModel):
 
     # The id of the sub-issue to add. The sub-issue must belong to the same repository owner as
     # the parent issue
-    sub_issue_id: int
+    sub_issue_id: int | None
 
     # Option that, when true, instructs the operation to replace the sub-issues current parent
     # issue

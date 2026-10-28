@@ -13,7 +13,7 @@ __all__ = ["WebhookMetaDeletedHookConfig"]
 
 class WebhookMetaDeletedHookConfig(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    content_type: Literal["json", "form"]
-    insecure_ssl: str
+    content_type: Literal["json", "form"] | None
+    insecure_ssl: str | None
     secret: str | None = None
-    url: str
+    url: str | None

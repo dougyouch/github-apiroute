@@ -18,16 +18,16 @@ class NullableSimpleCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # SHA for the commit
-    id: str
+    id: str | None
 
     # SHA for the commit's tree
-    tree_id: str
+    tree_id: str | None
 
     # Message describing the purpose of the commit
-    message: str
+    message: str | None
 
     # Timestamp of the commit
-    timestamp: str
+    timestamp: str | None
 
     # Information about the Git author
     author: NullableSimpleCommitAuthor | None

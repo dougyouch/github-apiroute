@@ -17,21 +17,21 @@ class CommitComment(BaseModel):
     """Commit Comment"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html_url: str
-    url: str
-    id: int
-    node_id: str
-    body: str
+    html_url: str | None
+    url: str | None
+    id: int | None
+    node_id: str | None
+    body: str | None
     path: str | None
     position: int | None
     line: int | None
-    commit_id: str
+    commit_id: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
+    author_association: AuthorAssociation | None
     reactions: ReactionRollup | None = None

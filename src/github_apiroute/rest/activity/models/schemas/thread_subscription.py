@@ -13,10 +13,10 @@ class ThreadSubscription(BaseModel):
     """Thread Subscription"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    subscribed: bool
-    ignored: bool
+    subscribed: bool | None
+    ignored: bool | None
     reason: str | None
     created_at: str | None
-    url: str
+    url: str | None
     thread_url: str | None = None
     repository_url: str | None = None

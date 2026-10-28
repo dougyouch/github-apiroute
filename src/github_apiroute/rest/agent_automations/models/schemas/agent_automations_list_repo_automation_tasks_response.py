@@ -19,4 +19,4 @@ class AgentAutomationsListRepoAutomationTasksResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Tasks created by the automation.
-    tasks: list[AgentAutomationsListRepoAutomationTasksResponseTasksItem]
+    tasks: list[AgentAutomationsListRepoAutomationTasksResponseTasksItem] | None

@@ -19,14 +19,14 @@ class RepositoryRuleParamsCodeScanningTool(BaseModel):
     # The severity level at which code scanning results that raise alerts block a reference
     # update. For more information on alert severity levels, see "[About code scanning
     # alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-
-    alerts_threshold: Literal["none", "errors", "errors_and_warnings", "all"]
+    alerts_threshold: Literal["none", "errors", "errors_and_warnings", "all"] | None
 
     # The severity level at which code scanning results that raise security alerts block a
     # reference update. For more information on security severity levels, see "[About code
     # scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-
-    security_alerts_threshold: Literal[
-        "none", "critical", "high_or_higher", "medium_or_higher", "all"
-    ]
+    security_alerts_threshold: (
+        Literal["none", "critical", "high_or_higher", "medium_or_higher", "all"] | None
+    )
 
     # The name of a code scanning tool
-    tool: str
+    tool: str | None

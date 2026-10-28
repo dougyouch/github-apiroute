@@ -28,7 +28,7 @@ __all__ = ["WebhookDeploymentReviewApproved"]
 
 class WebhookDeploymentReviewApproved(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["approved"]
+    action: Literal["approved"] | None
     approver: WebhooksApprover | None = None
     comment: str | None = None
 
@@ -45,16 +45,16 @@ class WebhookDeploymentReviewApproved(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
     reviewers: WebhooksReviewers | None = None
 
     # A GitHub user.
-    sender: SimpleUser
-    since: str
+    sender: SimpleUser | None
+    since: str | None
     workflow_job_run: WebhooksWorkflowJobRun | None = None
     workflow_job_runs: list[WebhookDeploymentReviewApprovedWorkflowJobRunsItem] | None = None
     workflow_run: WebhookDeploymentReviewApprovedWorkflowRun | None

@@ -20,7 +20,7 @@ class IssuesGetIssueArtifactResponseOption2(BaseModel):
     # Issue artifacts are named, typed pieces of content attached to an issue. They give people
     # and agents a durable place to preserve context and supporting material alongside the work.
     # Each artifact has a number unique within the issue.
-    artifact: IssueArtifact
+    artifact: IssueArtifact | None
 
     # The artifact version history, ordered from newest to oldest.
-    versions: list[IssuesGetIssueArtifactResponseOption2VersionsItem]
+    versions: list[IssuesGetIssueArtifactResponseOption2VersionsItem] | None

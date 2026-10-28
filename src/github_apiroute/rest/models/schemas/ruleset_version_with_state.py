@@ -17,11 +17,11 @@ class RulesetVersionWithState(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the previous version of the ruleset
-    version_id: int
+    version_id: int | None
 
     # The actor who updated the ruleset
-    actor: RulesetVersionWithStateActor
-    updated_at: str
+    actor: RulesetVersionWithStateActor | None
+    updated_at: str | None
 
     # The state of the ruleset version
-    state: dict[str, Any]
+    state: dict[str, Any] | None

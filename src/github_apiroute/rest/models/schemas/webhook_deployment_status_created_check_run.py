@@ -30,21 +30,21 @@ class WebhookDeploymentStatusCreatedCheckRun(BaseModel):
         ]
         | None
     )
-    details_url: str
-    external_id: str
+    details_url: str | None
+    external_id: str | None
 
     # The SHA of the commit that is being checked.
-    head_sha: str
-    html_url: str
+    head_sha: str | None
+    html_url: str | None
 
     # The id of the check.
-    id: int
+    id: int | None
 
     # The name of the check run.
-    name: str
-    node_id: str
-    started_at: str
+    name: str | None
+    node_id: str | None
+    started_at: str | None
 
     # The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
-    status: Literal["queued", "in_progress", "completed", "waiting", "pending"]
-    url: str
+    status: Literal["queued", "in_progress", "completed", "waiting", "pending"] | None
+    url: str | None

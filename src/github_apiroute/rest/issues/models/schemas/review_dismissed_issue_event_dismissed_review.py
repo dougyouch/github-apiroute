@@ -11,7 +11,7 @@ __all__ = ["ReviewDismissedIssueEventDismissedReview"]
 
 class ReviewDismissedIssueEventDismissedReview(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    state: str
-    review_id: int
+    state: str | None
+    review_id: int | None
     dismissal_message: str | None
     dismissal_commit_id: str | None = None

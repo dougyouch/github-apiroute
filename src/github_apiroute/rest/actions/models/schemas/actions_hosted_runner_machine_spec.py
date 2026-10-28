@@ -15,13 +15,13 @@ class ActionsHostedRunnerMachineSpec(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID used for the `size` parameter when creating a new runner.
-    id: str
+    id: str | None
 
     # The number of cores.
-    cpu_cores: int
+    cpu_cores: int | None
 
     # The available RAM for the machine spec.
-    memory_gb: int
+    memory_gb: int | None
 
     # The available SSD storage for the machine spec.
-    storage_gb: int
+    storage_gb: int | None

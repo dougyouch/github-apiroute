@@ -51,61 +51,69 @@ __all__ = ["WebhookPullRequestReviewCommentDeletedPullRequest"]
 
 class WebhookPullRequestReviewCommentDeletedPullRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    links: WebhookPullRequestReviewCommentDeletedPullRequestLinks = Field(alias="_links")
+    links: WebhookPullRequestReviewCommentDeletedPullRequestLinks | None = Field(alias="_links")
     active_lock_reason: Literal["resolved", "off-topic", "too heated", "spam"] | None
     assignee: WebhookPullRequestReviewCommentDeletedPullRequestAssignee | None
-    assignees: list[WebhookPullRequestReviewCommentDeletedPullRequestAssigneesItem | None]
+    assignees: list[WebhookPullRequestReviewCommentDeletedPullRequestAssigneesItem | None] | None
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # The status of auto merging a pull request.
     auto_merge: WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge | None = None
-    base: WebhookPullRequestReviewCommentDeletedPullRequestBase
+    base: WebhookPullRequestReviewCommentDeletedPullRequestBase | None
     body: str | None
     closed_at: str | None
-    comments_url: str
-    commits_url: str
-    created_at: str
-    diff_url: str
+    comments_url: str | None
+    commits_url: str | None
+    created_at: str | None
+    diff_url: str | None
     draft: bool | None = None
-    head: WebhookPullRequestReviewCommentDeletedPullRequestHead
-    html_url: str
-    id: int
-    issue_url: str
-    labels: list[WebhookPullRequestReviewCommentDeletedPullRequestLabelsItem]
-    locked: bool
+    head: WebhookPullRequestReviewCommentDeletedPullRequestHead | None
+    html_url: str | None
+    id: int | None
+    issue_url: str | None
+    labels: list[WebhookPullRequestReviewCommentDeletedPullRequestLabelsItem] | None
+    locked: bool | None
     merge_commit_sha: str | None
     merged_at: str | None
 
     # A collection of related issues and pull requests.
     milestone: WebhookPullRequestReviewCommentDeletedPullRequestMilestone | None
-    node_id: str
-    number: int
-    patch_url: str
-    requested_reviewers: list[
-        WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemOption1
+    node_id: str | None
+    number: int | None
+    patch_url: str | None
+    requested_reviewers: (
+        list[
+            WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemOption1
+            | None
+            | WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemOption2
+        ]
         | None
-        | WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemOption2
-    ]
-    requested_teams: list[WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeamsItem]
-    review_comment_url: str
-    review_comments_url: str
+    )
+    requested_teams: (
+        list[WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeamsItem] | None
+    )
+    review_comment_url: str | None
+    review_comments_url: str | None
 
     # The stack information associated with a pull request.
     stack: PullRequestStack | None = None
-    state: Literal["open", "closed"]
-    statuses_url: str
-    title: str
-    updated_at: str
-    url: str
+    state: Literal["open", "closed"] | None
+    statuses_url: str | None
+    title: str | None
+    updated_at: str | None
+    url: str | None
     user: WebhookPullRequestReviewCommentDeletedPullRequestUser | None

@@ -15,7 +15,7 @@ class CodespacesCreateForAuthenticatedUserRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Repository id for this codespace
-    repository_id: int
+    repository_id: int | None
 
     # Git ref (typically a branch name) for this codespace
     ref: str | None = None

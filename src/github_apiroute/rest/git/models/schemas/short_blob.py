@@ -13,5 +13,5 @@ class ShortBlob(BaseModel):
     """Short Blob"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    sha: str
+    url: str | None
+    sha: str | None

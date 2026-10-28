@@ -15,6 +15,6 @@ __all__ = ["AppsListReposAccessibleToInstallationResponse"]
 
 class AppsListReposAccessibleToInstallationResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    repositories: list[AppsListReposAccessibleToInstallationResponseRepositoriesItem]
+    total_count: int | None
+    repositories: list[AppsListReposAccessibleToInstallationResponseRepositoriesItem] | None
     repository_selection: str | None = None

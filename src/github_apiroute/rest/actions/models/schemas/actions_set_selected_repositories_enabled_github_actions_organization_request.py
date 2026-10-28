@@ -13,4 +13,4 @@ class ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest(Base
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of repository IDs to enable for GitHub Actions.
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

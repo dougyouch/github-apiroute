@@ -13,5 +13,5 @@ __all__ = ["OrgsListAppInstallationsResponse"]
 
 class OrgsListAppInstallationsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    installations: list[Installation]
+    total_count: int | None
+    installations: list[Installation] | None

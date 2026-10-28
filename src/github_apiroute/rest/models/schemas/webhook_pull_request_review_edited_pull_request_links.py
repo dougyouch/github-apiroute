@@ -36,11 +36,11 @@ __all__ = ["WebhookPullRequestReviewEditedPullRequestLinks"]
 
 class WebhookPullRequestReviewEditedPullRequestLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: WebhookPullRequestReviewEditedPullRequestLinksComments
-    commits: WebhookPullRequestReviewEditedPullRequestLinksCommits
-    html: WebhookPullRequestReviewEditedPullRequestLinksHtml
-    issue: WebhookPullRequestReviewEditedPullRequestLinksIssue
-    review_comment: WebhookPullRequestReviewEditedPullRequestLinksReviewComment
-    review_comments: WebhookPullRequestReviewEditedPullRequestLinksReviewComments
-    self: WebhookPullRequestReviewEditedPullRequestLinksSelf
-    statuses: WebhookPullRequestReviewEditedPullRequestLinksStatuses
+    comments: WebhookPullRequestReviewEditedPullRequestLinksComments | None
+    commits: WebhookPullRequestReviewEditedPullRequestLinksCommits | None
+    html: WebhookPullRequestReviewEditedPullRequestLinksHtml | None
+    issue: WebhookPullRequestReviewEditedPullRequestLinksIssue | None
+    review_comment: WebhookPullRequestReviewEditedPullRequestLinksReviewComment | None
+    review_comments: WebhookPullRequestReviewEditedPullRequestLinksReviewComments | None
+    self: WebhookPullRequestReviewEditedPullRequestLinksSelf | None
+    statuses: WebhookPullRequestReviewEditedPullRequestLinksStatuses | None

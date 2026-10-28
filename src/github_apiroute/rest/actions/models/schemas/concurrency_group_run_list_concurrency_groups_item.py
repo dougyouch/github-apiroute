@@ -17,14 +17,14 @@ class ConcurrencyGroupRunListConcurrencyGroupsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the concurrency group.
-    group_name: str
+    group_name: str | None
 
     # API URL for this concurrency group. May return 404 if the group has no active items at the
     # time it is requested, since the get-by-name endpoint reports the live repo-wide state of a
     # group while this endpoint lists groups associated with a run by configuration.
-    group_url: str
+    group_url: str | None
 
     # Items belonging to this workflow run that are either currently holding or waiting for the
     # concurrency group lease. May be empty if the run no longer has any active or queued items
     # in this group.
-    group_members: list[ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem]
+    group_members: list[ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem] | None

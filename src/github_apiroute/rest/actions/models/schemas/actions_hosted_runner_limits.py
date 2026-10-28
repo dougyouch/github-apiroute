@@ -15,4 +15,4 @@ class ActionsHostedRunnerLimits(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Provides details of static public IP limits for GitHub-hosted Hosted Runners
-    public_ips: ActionsHostedRunnerLimitsPublicIps
+    public_ips: ActionsHostedRunnerLimitsPublicIps | None

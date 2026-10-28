@@ -15,7 +15,7 @@ __all__ = ["WebhookGithubAppAuthorizationRevoked"]
 
 class WebhookGithubAppAuthorizationRevoked(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["revoked"]
+    action: Literal["revoked"] | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

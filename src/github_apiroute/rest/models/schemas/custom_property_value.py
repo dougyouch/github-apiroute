@@ -15,7 +15,7 @@ class CustomPropertyValue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the property
-    property_name: str
+    property_name: str | None
 
     # The value assigned to the property
     value: str | None | list[str] | None

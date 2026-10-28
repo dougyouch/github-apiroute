@@ -13,7 +13,7 @@ class AgentsCreateRepoVariableRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the variable.
-    name: str
+    name: str | None
 
     # The value of the variable.
-    value: str
+    value: str | None

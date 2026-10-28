@@ -15,4 +15,4 @@ class DependencyGraphSpdxSbom(BaseModel):
     """A schema for the SPDX JSON format returned by the Dependency Graph."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    sbom: DependencyGraphSpdxSbomSbom
+    sbom: DependencyGraphSpdxSbomSbom | None

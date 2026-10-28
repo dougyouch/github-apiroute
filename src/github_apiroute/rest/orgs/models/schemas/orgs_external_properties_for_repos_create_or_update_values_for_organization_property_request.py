@@ -16,4 +16,4 @@ class OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyR
 
     # The names of repositories and the values that the named external custom property will be
     # set to.
-    repository_values: list[RepositoryExternalPropertyPayload]
+    repository_values: list[RepositoryExternalPropertyPayload] | None

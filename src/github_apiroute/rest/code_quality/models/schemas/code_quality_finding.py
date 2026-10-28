@@ -21,22 +21,22 @@ class CodeQualityFinding(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The finding number.
-    number: int
+    number: int | None
 
     # State of the code quality finding.
-    state: Literal["open", "dismissed"]
+    state: Literal["open", "dismissed"] | None
 
     # The REST API URL of the code quality finding resource.
-    url: str
+    url: str | None
 
     # Code quality rule
-    rule: CodeQualityFindingRule
+    rule: CodeQualityFindingRule | None
 
     # Code quality file location
-    location: CodeQualityFindingLocation
+    location: CodeQualityFindingLocation | None
 
     # Code quality finding message
-    message: CodeQualityFindingMessage
+    message: CodeQualityFindingMessage | None
 
     # The time the code quality finding was created.
     created_at: str | None = None

@@ -15,7 +15,7 @@ class DependabotAlertWithdrawnWebhookSecurityAdvisory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique GitHub identifier assigned to the advisory.
-    ghsa_id: str
+    ghsa_id: str | None
 
     # The CVE identifier assigned to the advisory, if any.
     cve_id: str | None

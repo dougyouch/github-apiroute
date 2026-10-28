@@ -13,5 +13,5 @@ __all__ = ["ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse"]
 
 class ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    labels: list[RunnerLabel]
+    total_count: int | None
+    labels: list[RunnerLabel] | None

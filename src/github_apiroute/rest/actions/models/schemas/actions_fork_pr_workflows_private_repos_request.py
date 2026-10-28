@@ -14,7 +14,7 @@ class ActionsForkPrWorkflowsPrivateReposRequest(BaseModel):
 
     # Whether workflows triggered by pull requests from forks are allowed to run on private
     # repositories.
-    run_workflows_from_fork_pull_requests: bool
+    run_workflows_from_fork_pull_requests: bool | None
 
     # Whether GitHub Actions can create pull requests or submit approving pull request reviews
     # from a workflow triggered by a fork pull request.

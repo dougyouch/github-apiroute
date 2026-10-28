@@ -17,25 +17,33 @@ class Activity(BaseModel):
     """Activity"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # The SHA of the commit before the activity.
-    before: str
+    before: str | None
 
     # The SHA of the commit after the activity.
-    after: str
+    after: str | None
 
     # The full Git reference, formatted as `refs/heads/`.
-    ref: str
+    ref: str | None
 
     # The time when the activity occurred.
-    timestamp: str
+    timestamp: str | None
 
     # The type of the activity that was performed.
-    activity_type: Literal[
-        "push", "force_push", "branch_deletion", "branch_creation", "pr_merge", "merge_queue_merge"
-    ]
+    activity_type: (
+        Literal[
+            "push",
+            "force_push",
+            "branch_deletion",
+            "branch_creation",
+            "pr_merge",
+            "merge_queue_merge",
+        ]
+        | None
+    )
 
     # A GitHub user.
     actor: NullableSimpleUser | None

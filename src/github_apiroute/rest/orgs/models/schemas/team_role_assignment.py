@@ -21,25 +21,25 @@ class TeamRoleAssignment(BaseModel):
 
     # Determines if the team has a direct, indirect, or mixed relationship to a role
     assignment: Literal["direct", "indirect", "mixed"] | None = None
-    id: int
-    node_id: str
-    name: str
-    slug: str
+    id: int | None
+    node_id: str | None
+    name: str | None
+    slug: str | None
     description: str | None
     privacy: str | None = None
     notification_setting: str | None = None
-    permission: str
+    permission: str | None
     permissions: TeamRoleAssignmentPermissions | None = None
-    url: str
-    html_url: str
-    members_url: str
-    repositories_url: str
+    url: str | None
+    html_url: str | None
+    members_url: str | None
+    repositories_url: str | None
 
     # Groups of organization members that gives permissions on specified repositories.
     parent: NullableTeamSimple | None
 
     # The ownership type of the team
-    type_: Literal["enterprise", "organization"] = Field(alias="type")
+    type_: Literal["enterprise", "organization"] | None = Field(alias="type")
 
     # Unique identifier of the organization to which this team belongs
     organization_id: int | None = None

@@ -16,21 +16,21 @@ class WebhookPullRequestStackedPullRequestRequestedTeamsItemParent(BaseModel):
 
     # Description of the team
     description: str | None
-    html_url: str
+    html_url: str | None
 
     # Unique identifier of the team
-    id: int
-    members_url: str
+    id: int | None
+    members_url: str | None
 
     # Name of the team
-    name: str
-    node_id: str
+    name: str | None
+    node_id: str | None
 
     # Permission that the team will have for its repositories
-    permission: str
-    privacy: Literal["open", "closed", "secret"]
-    repositories_url: str
-    slug: str
+    permission: str | None
+    privacy: Literal["open", "closed", "secret"] | None
+    repositories_url: str | None
+    slug: str | None
 
     # URL for the team
-    url: str
+    url: str | None

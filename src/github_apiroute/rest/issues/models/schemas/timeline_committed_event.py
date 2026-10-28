@@ -22,19 +22,19 @@ class TimelineCommittedEvent(BaseModel):
     event: str | None = None
 
     # SHA for the commit
-    sha: str
-    node_id: str
-    url: str
+    sha: str | None
+    node_id: str | None
+    url: str | None
 
     # Identifying information for the git-user
-    author: TimelineCommittedEventAuthor
+    author: TimelineCommittedEventAuthor | None
 
     # Identifying information for the git-user
-    committer: TimelineCommittedEventCommitter
+    committer: TimelineCommittedEventCommitter | None
 
     # Message describing the purpose of the commit
-    message: str
-    tree: TimelineCommittedEventTree
-    parents: list[TimelineCommittedEventParentsItem]
-    verification: TimelineCommittedEventVerification
-    html_url: str
+    message: str | None
+    tree: TimelineCommittedEventTree | None
+    parents: list[TimelineCommittedEventParentsItem] | None
+    verification: TimelineCommittedEventVerification | None
+    html_url: str | None

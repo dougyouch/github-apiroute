@@ -18,19 +18,19 @@ class WebhooksProject(BaseModel):
 
     # Body of the project
     body: str | None
-    columns_url: str
-    created_at: str
+    columns_url: str | None
+    created_at: str | None
     creator: WebhooksProjectCreator | None
-    html_url: str
-    id: int
+    html_url: str | None
+    id: int | None
 
     # Name of the project
-    name: str
-    node_id: str
-    number: int
-    owner_url: str
+    name: str | None
+    node_id: str | None
+    number: int | None
+    owner_url: str | None
 
     # State of the project; either 'open' or 'closed'
-    state: Literal["open", "closed"]
-    updated_at: str
-    url: str
+    state: Literal["open", "closed"] | None
+    updated_at: str | None
+    url: str | None

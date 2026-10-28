@@ -17,8 +17,8 @@ __all__ = ["PullRequestStackMinimalPullRequestsItem"]
 
 class PullRequestStackMinimalPullRequestsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    number: int
-    state: Literal["open", "closed"]
-    draft: bool
+    number: int | None
+    state: Literal["open", "closed"] | None
+    draft: bool | None
     merged_at: str | None
-    head: PullRequestStackMinimalPullRequestsItemHead
+    head: PullRequestStackMinimalPullRequestsItemHead | None

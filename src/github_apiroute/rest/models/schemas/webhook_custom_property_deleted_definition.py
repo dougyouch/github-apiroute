@@ -13,4 +13,4 @@ class WebhookCustomPropertyDeletedDefinition(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the property that was deleted.
-    property_name: str
+    property_name: str | None

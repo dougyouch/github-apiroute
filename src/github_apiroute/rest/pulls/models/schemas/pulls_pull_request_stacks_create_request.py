@@ -13,4 +13,4 @@ class PullsPullRequestStacksCreateRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # An ordered list of pull request numbers forming the stack from bottom to top.
-    pull_requests: list[int]
+    pull_requests: list[int] | None

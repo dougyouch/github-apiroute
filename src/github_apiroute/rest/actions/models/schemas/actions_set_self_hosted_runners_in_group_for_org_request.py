@@ -13,4 +13,4 @@ class ActionsSetSelfHostedRunnersInGroupForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of runner IDs to add to the runner group.
-    runners: list[int]
+    runners: list[int] | None

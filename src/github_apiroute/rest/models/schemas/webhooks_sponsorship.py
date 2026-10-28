@@ -16,13 +16,13 @@ __all__ = ["WebhooksSponsorship"]
 
 class WebhooksSponsorship(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     maintainer: WebhooksSponsorshipMaintainer | None = None
-    node_id: str
-    privacy_level: str
+    node_id: str | None
+    privacy_level: str | None
     sponsor: WebhooksSponsorshipSponsor | None
     sponsorable: WebhooksSponsorshipSponsorable | None
 
     # The `tier_changed` and `pending_tier_change` will include the original tier before the
     # change or pending change. For more information, see the pending tier change payload.
-    tier: WebhooksSponsorshipTier
+    tier: WebhooksSponsorshipTier | None

@@ -16,10 +16,10 @@ __all__ = ["WebhookStatusCommitCommit"]
 
 class WebhookStatusCommitCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    author: WebhookStatusCommitCommitAuthor
-    comment_count: int
-    committer: WebhookStatusCommitCommitCommitter
-    message: str
-    tree: WebhookStatusCommitCommitTree
-    url: str
-    verification: WebhookStatusCommitCommitVerification
+    author: WebhookStatusCommitCommitAuthor | None
+    comment_count: int | None
+    committer: WebhookStatusCommitCommitCommitter | None
+    message: str | None
+    tree: WebhookStatusCommitCommitTree | None
+    url: str | None
+    verification: WebhookStatusCommitCommitVerification | None

@@ -17,38 +17,41 @@ class GetBudget(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # ID of the budget.
-    id: str
+    id: str | None
 
     # The type of scope for the budget
-    budget_scope: Literal[
-        "enterprise",
-        "organization",
-        "repository",
-        "cost_center",
-        "multi_user_customer",
-        "multi_user_cost_center",
-        "user",
-    ]
+    budget_scope: (
+        Literal[
+            "enterprise",
+            "organization",
+            "repository",
+            "cost_center",
+            "multi_user_customer",
+            "multi_user_cost_center",
+            "user",
+        ]
+        | None
+    )
 
     # The name of the entity to apply the budget to
-    budget_entity_name: str
+    budget_entity_name: str | None
 
     # The user login when the budget is scoped to a single user (`user` scope).
     user: str | None = None
 
     # The budget amount in whole dollars. For license-based products, this represents the number
     # of licenses.
-    budget_amount: int
+    budget_amount: int | None
 
     # Whether to prevent additional spending once the budget is exceeded
-    prevent_further_usage: bool
+    prevent_further_usage: bool | None
 
     # A single product or sku to apply the budget to.
-    budget_product_sku: str
+    budget_product_sku: str | None
 
     # The type of pricing for the budget
-    budget_type: Literal["ProductPricing"] | Literal["SkuPricing"]
-    budget_alerting: GetBudgetBudgetAlerting
+    budget_type: Literal["ProductPricing"] | Literal["SkuPricing"] | None
+    budget_alerting: GetBudgetBudgetAlerting | None
 
     # The current usage amount counted toward the budget. How usage is calculated may vary by
     # budget type.

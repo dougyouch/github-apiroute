@@ -20,4 +20,4 @@ class RepositoryRuleParamsDismissalRestriction(BaseModel):
     allowed_actors: list[RepositoryRuleParamsActor] | None = None
 
     # Whether to restrict review dismissal to specific actors.
-    enabled: bool
+    enabled: bool | None

@@ -15,4 +15,4 @@ class OrgsSetImmutableReleasesSettingsRepositoriesRequest(BaseModel):
     # An array of repository ids for which immutable releases enforcement should be applied. You
     # can only provide a list of repository ids when the `enforced_repositories` is set to
     # `selected`. You can add and remove individual repositories using the [Enable a selected
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

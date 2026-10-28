@@ -17,16 +17,19 @@ class ActionsRuleParamsActor(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # ID of the actor authorized to trigger Actions workflows.
-    id: int
+    id: int | None
 
     # The type of the actor
-    type_: Literal[
-        "User",
-        "Bot",
-        "Team",
-        "BusinessTeam",
-        "EnterpriseTeam",
-        "IntegrationInstallation",
-        "App",
-        "RepositoryRole",
-    ] = Field(alias="type")
+    type_: (
+        Literal[
+            "User",
+            "Bot",
+            "Team",
+            "BusinessTeam",
+            "EnterpriseTeam",
+            "IntegrationInstallation",
+            "App",
+            "RepositoryRole",
+        ]
+        | None
+    ) = Field(alias="type")

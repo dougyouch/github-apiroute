@@ -17,10 +17,10 @@ class RepositoryRulesetConditionsRepositoryPropertySpec(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the repository property to target
-    name: str
+    name: str | None
 
     # The values to match for the repository property
-    property_values: list[str]
+    property_values: list[str] | None
 
     # The source of the repository property. Defaults to 'custom' if not specified.
     source: Literal["custom", "system"] | None = None

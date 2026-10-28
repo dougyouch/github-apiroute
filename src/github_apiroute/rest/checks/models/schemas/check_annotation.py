@@ -13,13 +13,13 @@ class CheckAnnotation(BaseModel):
     """Check Annotation"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    path: str
-    start_line: int
-    end_line: int
+    path: str | None
+    start_line: int | None
+    end_line: int | None
     start_column: int | None
     end_column: int | None
     annotation_level: str | None
     title: str | None
     message: str | None
     raw_details: str | None
-    blob_href: str
+    blob_href: str | None

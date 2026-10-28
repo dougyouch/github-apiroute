@@ -13,10 +13,10 @@ class Blob(BaseModel):
     """Blob"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    content: str
-    encoding: str
-    url: str
-    sha: str
+    content: str | None
+    encoding: str | None
+    url: str | None
+    sha: str | None
     size: int | None
-    node_id: str
+    node_id: str | None
     highlighted_content: str | None = None

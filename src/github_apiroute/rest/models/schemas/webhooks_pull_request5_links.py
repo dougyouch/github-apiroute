@@ -20,11 +20,11 @@ __all__ = ["WebhooksPullRequest5Links"]
 
 class WebhooksPullRequest5Links(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: WebhooksPullRequest5LinksComments
-    commits: WebhooksPullRequest5LinksCommits
-    html: WebhooksPullRequest5LinksHtml
-    issue: WebhooksPullRequest5LinksIssue
-    review_comment: WebhooksPullRequest5LinksReviewComment
-    review_comments: WebhooksPullRequest5LinksReviewComments
-    self: WebhooksPullRequest5LinksSelf
-    statuses: WebhooksPullRequest5LinksStatuses
+    comments: WebhooksPullRequest5LinksComments | None
+    commits: WebhooksPullRequest5LinksCommits | None
+    html: WebhooksPullRequest5LinksHtml | None
+    issue: WebhooksPullRequest5LinksIssue | None
+    review_comment: WebhooksPullRequest5LinksReviewComment | None
+    review_comments: WebhooksPullRequest5LinksReviewComments | None
+    self: WebhooksPullRequest5LinksSelf | None
+    statuses: WebhooksPullRequest5LinksStatuses | None

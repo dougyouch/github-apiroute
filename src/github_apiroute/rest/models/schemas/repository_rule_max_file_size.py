@@ -19,5 +19,5 @@ class RepositoryRuleMaxFileSize(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["max_file_size"] = Field(alias="type")
+    type_: Literal["max_file_size"] | None = Field(alias="type")
     parameters: RepositoryRuleMaxFileSizeParameters | None = None

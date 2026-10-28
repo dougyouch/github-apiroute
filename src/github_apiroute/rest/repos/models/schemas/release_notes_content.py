@@ -15,7 +15,7 @@ class ReleaseNotesContent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The generated name of the release
-    name: str
+    name: str | None
 
     # The generated body describing the contents of the release supporting markdown formatting
-    body: str
+    body: str | None

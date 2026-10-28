@@ -13,8 +13,8 @@ class ChecksSetSuitesPreferencesRequestAutoTriggerChecksItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The `id` of the GitHub App.
-    app_id: int
+    app_id: int | None
 
     # Set to `true` to enable automatic creation of CheckSuite events upon pushes to the
     # repository, or `false` to disable them.
-    setting: bool
+    setting: bool | None

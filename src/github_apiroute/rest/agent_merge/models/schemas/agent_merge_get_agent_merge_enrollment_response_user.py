@@ -15,4 +15,4 @@ class AgentMergeGetAgentMergeEnrollmentResponseUser(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the user
-    id: int
+    id: int | None

@@ -15,7 +15,7 @@ class CodeQualityFindingMessage(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The message text of the code quality finding.
-    text: str
+    text: str | None
 
     # The message text of the code quality finding in markdown format.
-    markdown: str
+    markdown: str | None

@@ -11,5 +11,5 @@ __all__ = ["BranchWithProtectionLinks"]
 
 class BranchWithProtectionLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: str
-    self: str
+    html: str | None
+    self: str | None

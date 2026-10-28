@@ -18,6 +18,6 @@ class InteractionLimitResponse(BaseModel):
 
     # The type of GitHub user that can comment, open issues, or create pull requests while the
     # interaction limit is in effect.
-    limit: InteractionGroup
-    origin: str
-    expires_at: str
+    limit: InteractionGroup | None
+    origin: str | None
+    expires_at: str | None

@@ -85,14 +85,14 @@ class WebhookIssuesReopenedIssuePerformedViaGithubApp(BaseModel):
         | None
     ) = None
     external_url: str | None
-    html_url: str
+    html_url: str | None
 
     # Unique identifier of the GitHub app
     id: int | None
 
     # The name of the GitHub app
-    name: str
-    node_id: str
+    name: str | None
+    node_id: str | None
     owner: WebhookIssuesReopenedIssuePerformedViaGithubAppOwner | None
 
     # The set of permissions for the GitHub app

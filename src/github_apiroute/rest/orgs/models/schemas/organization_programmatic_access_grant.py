@@ -23,35 +23,35 @@ class OrganizationProgrammaticAccessGrant(BaseModel):
 
     # Unique identifier of the fine-grained personal access token grant. The `pat_id` used to
     # get details about an approved fine-grained personal access token.
-    id: int
+    id: int | None
 
     # A GitHub user.
-    owner: SimpleUser
+    owner: SimpleUser | None
 
     # Type of repository selection requested.
-    repository_selection: Literal["none", "all", "subset"]
+    repository_selection: Literal["none", "all", "subset"] | None
 
     # URL to the list of repositories the fine-grained personal access token can access. Only
     # follow when `repository_selection` is `subset`.
-    repositories_url: str
+    repositories_url: str | None
 
     # Permissions requested, categorized by type of permission.
-    permissions: OrganizationProgrammaticAccessGrantPermissions
+    permissions: OrganizationProgrammaticAccessGrantPermissions | None
 
     # Date and time when the fine-grained personal access token was approved to access the
     # organization.
-    access_granted_at: str
+    access_granted_at: str | None
 
     # Unique identifier of the user's token. This field can also be found in audit log events
     # and the organization's settings for their PAT grants.
-    token_id: int
+    token_id: int | None
 
     # The name given to the user's token. This field can also be found in an organization's
     # settings page for Active Tokens.
-    token_name: str
+    token_name: str | None
 
     # Whether the associated fine-grained personal access token has expired.
-    token_expired: bool
+    token_expired: bool | None
 
     # Date and time when the associated fine-grained personal access token expires.
     token_expires_at: str | None

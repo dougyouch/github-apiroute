@@ -17,10 +17,10 @@ class CodeScanningAutofix(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The status of an autofix.
-    status: CodeScanningAutofixStatus
+    status: CodeScanningAutofixStatus | None
 
     # The description of an autofix.
     description: CodeScanningAutofixDescription | None
 
     # The start time of an autofix in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    started_at: CodeScanningAutofixStartedAt
+    started_at: CodeScanningAutofixStartedAt | None

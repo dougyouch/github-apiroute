@@ -13,5 +13,5 @@ __all__ = ["DependabotListOrgSecretsResponse"]
 
 class DependabotListOrgSecretsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    secrets: list[OrganizationDependabotSecret]
+    total_count: int | None
+    secrets: list[OrganizationDependabotSecret] | None

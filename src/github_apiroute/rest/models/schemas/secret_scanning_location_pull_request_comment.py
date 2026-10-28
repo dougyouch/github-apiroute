@@ -17,7 +17,7 @@ class SecretScanningLocationPullRequestComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The API URL to get the pull request comment where the secret was detected.
-    pull_request_comment_url: str
+    pull_request_comment_url: str | None
 
     # The GitHub URL for the pull request comment where the secret was detected.
     html_url: str | None = None

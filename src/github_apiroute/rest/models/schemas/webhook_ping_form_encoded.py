@@ -15,4 +15,4 @@ class WebhookPingFormEncoded(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A URL-encoded string of the ping JSON payload. The decoded payload is a JSON object.
-    payload: str
+    payload: str | None

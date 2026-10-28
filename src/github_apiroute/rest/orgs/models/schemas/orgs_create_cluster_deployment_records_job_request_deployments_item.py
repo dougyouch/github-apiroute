@@ -15,10 +15,10 @@ class OrgsCreateClusterDeploymentRecordsJobRequestDeploymentsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the artifact.
-    name: str
+    name: str | None
 
     # The hex encoded digest of the artifact.
-    digest: str
+    digest: str | None
 
     # The artifact version.
     version: str | None = None
@@ -27,7 +27,7 @@ class OrgsCreateClusterDeploymentRecordsJobRequestDeploymentsItem(BaseModel):
     status: Literal["deployed", "decommissioned"] | None = None
 
     # The unique identifier for the deployment represented by the new record.
-    deployment_name: str
+    deployment_name: str | None
 
     # The name of the GitHub repository associated with the artifact.
     github_repository: str | None = None

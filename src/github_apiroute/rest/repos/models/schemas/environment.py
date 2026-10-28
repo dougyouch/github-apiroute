@@ -20,19 +20,19 @@ class Environment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The id of the environment.
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # The name of the environment.
-    name: str
-    url: str
-    html_url: str
+    name: str | None
+    url: str | None
+    html_url: str | None
 
     # The time that the environment was created, in ISO 8601 format.
-    created_at: str
+    created_at: str | None
 
     # The time that the environment was last updated, in ISO 8601 format.
-    updated_at: str
+    updated_at: str | None
 
     # Built-in deployment protection rules for the environment.
     protection_rules: (

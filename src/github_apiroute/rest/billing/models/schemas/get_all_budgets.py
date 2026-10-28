@@ -16,7 +16,7 @@ class GetAllBudgets(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Array of budget objects for the enterprise
-    budgets: list[Budget]
+    budgets: list[Budget] | None
 
     # User login included when the response is scoped with the `user` query parameter.
     user: str | None = None

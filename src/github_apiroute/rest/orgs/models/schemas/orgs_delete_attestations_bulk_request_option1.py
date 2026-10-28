@@ -13,4 +13,4 @@ class OrgsDeleteAttestationsBulkRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of subject digests associated with the artifact attestations to delete.
-    subject_digests: list[str]
+    subject_digests: list[str] | None

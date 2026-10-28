@@ -11,4 +11,4 @@ __all__ = ["OrgMembershipPermissions"]
 
 class OrgMembershipPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    can_create_repository: bool
+    can_create_repository: bool | None

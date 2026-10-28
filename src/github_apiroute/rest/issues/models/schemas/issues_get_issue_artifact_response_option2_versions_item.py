@@ -17,13 +17,13 @@ class IssuesGetIssueArtifactResponseOption2VersionsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The sequential version number.
-    version: int
+    version: int | None
 
     # The artifact name at this version.
-    name: str
+    name: str | None
 
     # The artifact content at this version.
-    body: str
+    body: str | None
 
     # The artifact content at this version rendered as HTML, or `null` if rendering times out or
     # is skipped to protect the response's time budget. The raw content remains available in

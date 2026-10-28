@@ -15,8 +15,8 @@ class ActionsPolicyEnterpriseConditionsValueOption1WorkflowPath(BaseModel):
     # Array of workflow file paths or glob patterns to include. An empty array includes all
     # workflows not matched by an excluded pattern. Use `~ALL` by itself to include all
     # workflows. `~ALL` cannot be combined with other included patterns.
-    include: list[str]
+    include: list[str] | None
 
     # Array of workflow file paths or glob patterns to exclude. The condition will not pass if
     # any of these patterns match. `~ALL` is not allowed in this array.
-    exclude: list[str]
+    exclude: list[str] | None

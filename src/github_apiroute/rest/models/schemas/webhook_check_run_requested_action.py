@@ -23,10 +23,10 @@ __all__ = ["WebhookCheckRunRequestedAction"]
 
 class WebhookCheckRunRequestedAction(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["requested_action"]
+    action: Literal["requested_action"] | None
 
     # A check performed on the code of a given code change
-    check_run: CheckRunWithSimpleCheckSuite
+    check_run: CheckRunWithSimpleCheckSuite | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -45,10 +45,10 @@ class WebhookCheckRunRequestedAction(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # The action requested by the user.
     requested_action: WebhookCheckRunRequestedActionRequestedAction | None = None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

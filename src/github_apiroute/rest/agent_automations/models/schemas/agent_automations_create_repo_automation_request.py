@@ -21,13 +21,13 @@ class AgentAutomationsCreateRepoAutomationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the automation.
-    name: str
+    name: str | None
 
     # Trigger configuration for the automation.
     triggers: AgentAutomationsCreateRepoAutomationRequestTriggers | None = None
 
     # The prompt for the automation.
-    prompt: str
+    prompt: str | None
 
     # The model to use for sessions triggered by this automation. Omit or leave empty to let the
     # platform select the model.

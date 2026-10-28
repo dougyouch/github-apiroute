@@ -17,27 +17,30 @@ class CopilotSpaceResource(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the resource.
-    id: int
+    id: int | None
 
     # The type of the resource.
-    resource_type: Literal[
-        "repository",
-        "github_file",
-        "free_text",
-        "github_issue",
-        "github_pull_request",
-        "media_content",
-        "uploaded_text_file",
-    ]
+    resource_type: (
+        Literal[
+            "repository",
+            "github_file",
+            "free_text",
+            "github_issue",
+            "github_pull_request",
+            "media_content",
+            "uploaded_text_file",
+        ]
+        | None
+    )
 
     # The ID of the associated chat attachment, if any.
     copilot_chat_attachment_id: int | None = None
 
     # Resource-specific metadata. The keys and values depend on the resource type.
-    metadata: dict[str, Any]
+    metadata: dict[str, Any] | None
 
     # The date and time the resource was created.
-    created_at: str
+    created_at: str | None
 
     # The date and time the resource was last updated.
-    updated_at: str
+    updated_at: str | None

@@ -17,7 +17,7 @@ class RepositoryRuleDetailedValueOption21(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["license_compliance_scanning"] = Field(alias="type")
+    type_: Literal["license_compliance_scanning"] | None = Field(alias="type")
 
     # The type of source for the ruleset that includes this rule.
     ruleset_source_type: Literal["Repository", "Organization"] | None = None

@@ -15,5 +15,5 @@ class CreateBudget(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A message indicating the result of the create operation
-    message: str
-    budget: CreateBudgetBudget
+    message: str | None
+    budget: CreateBudgetBudget | None

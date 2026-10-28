@@ -18,25 +18,25 @@ class GistSimpleForkOf(BaseModel):
     """Gist"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    forks_url: str
-    commits_url: str
-    id: str
-    node_id: str
-    git_pull_url: str
-    git_push_url: str
-    html_url: str
-    files: dict[str, GistSimpleForkOfFilesValue]
-    public: bool
-    created_at: str
-    updated_at: str
+    url: str | None
+    forks_url: str | None
+    commits_url: str | None
+    id: str | None
+    node_id: str | None
+    git_pull_url: str | None
+    git_push_url: str | None
+    html_url: str | None
+    files: dict[str, GistSimpleForkOfFilesValue] | None
+    public: bool | None
+    created_at: str | None
+    updated_at: str | None
     description: str | None
-    comments: int
+    comments: int | None
     comments_enabled: bool | None = None
 
     # A GitHub user.
     user: NullableSimpleUser | None
-    comments_url: str
+    comments_url: str | None
 
     # A GitHub user.
     owner: NullableSimpleUser | None = None

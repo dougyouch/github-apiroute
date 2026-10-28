@@ -15,10 +15,10 @@ __all__ = ["IssuesEvent"]
 
 class IssuesEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
+    action: str | None
 
     # Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-    issue: Issue
+    issue: Issue | None
 
     # A GitHub user.
     assignee: SimpleUser | None = None

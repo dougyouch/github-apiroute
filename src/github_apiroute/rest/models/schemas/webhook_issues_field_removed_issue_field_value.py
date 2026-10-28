@@ -22,7 +22,7 @@ class WebhookIssuesFieldRemovedIssueFieldValue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the issue field value.
-    id: int
+    id: int | None
 
     # The value of the field. Present for text, date, and number field types.
     value: str | float | int | None = None

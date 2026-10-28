@@ -11,4 +11,4 @@ __all__ = ["IssuesSetLabelsRequestOption3LabelsItem"]
 
 class IssuesSetLabelsRequestOption3LabelsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
+    name: str | None

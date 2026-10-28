@@ -13,4 +13,4 @@ class PullsUpdateReviewRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The body text of the pull request review.
-    body: str
+    body: str | None

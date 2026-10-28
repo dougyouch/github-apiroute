@@ -17,4 +17,4 @@ class RepositoryRuleLicenseComplianceScanning(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["license_compliance_scanning"] = Field(alias="type")
+    type_: Literal["license_compliance_scanning"] | None = Field(alias="type")

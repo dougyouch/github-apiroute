@@ -13,6 +13,6 @@ class ReferrerTraffic(BaseModel):
     """Referrer Traffic"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    referrer: str
-    count: int
-    uniques: int
+    referrer: str | None
+    count: int | None
+    uniques: int | None

@@ -21,7 +21,7 @@ class ProjectsV2ItemSimple(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the project item.
-    id: float
+    id: float | None
 
     # The node ID of the project item.
     node_id: str | None = None
@@ -30,16 +30,16 @@ class ProjectsV2ItemSimple(BaseModel):
     content: Issue | PullRequestSimple | ProjectsV2DraftIssue | None = None
 
     # The type of content tracked in a project item
-    content_type: ProjectsV2ItemContentType
+    content_type: ProjectsV2ItemContentType | None
 
     # A GitHub user.
     creator: SimpleUser | None = None
 
     # The time when the item was created.
-    created_at: str
+    created_at: str | None
 
     # The time when the item was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # The time when the item was archived.
     archived_at: str | None

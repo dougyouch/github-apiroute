@@ -17,4 +17,4 @@ class AgentAutomationsListAvailableRepoAutomationToolsResponseMcpServersItemTool
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The tool identifier in / format, for example sentry/list_issues.
-    id: str
+    id: str | None

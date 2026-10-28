@@ -15,10 +15,10 @@ class StargazerHistory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of stars created on each day of the week, starting on Sunday.
-    days: list[int]
+    days: list[int] | None
 
     # The number of stars created during the week.
-    total: int
+    total: int | None
 
     # The start of the week, given as a Unix timestamp.
-    week: int
+    week: int | None

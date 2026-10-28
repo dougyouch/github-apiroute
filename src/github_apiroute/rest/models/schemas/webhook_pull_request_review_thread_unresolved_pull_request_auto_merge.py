@@ -24,8 +24,8 @@ class WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge(BaseModel):
     commit_message: str | None
 
     # Title for the merge commit message.
-    commit_title: str
+    commit_title: str | None
     enabled_by: WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMergeEnabledBy | None
 
     # The merge method to use.
-    merge_method: Literal["merge", "squash", "rebase"]
+    merge_method: Literal["merge", "squash", "rebase"] | None

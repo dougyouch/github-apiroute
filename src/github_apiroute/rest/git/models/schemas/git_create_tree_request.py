@@ -15,7 +15,7 @@ class GitCreateTreeRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
-    tree: list[GitCreateTreeRequestTreeItem]
+    tree: list[GitCreateTreeRequestTreeItem] | None
 
     # The SHA1 of an existing Git tree object which will be used as the base for the new tree.
     # If provided, a new Git tree object will be created from entries in the Git tree object

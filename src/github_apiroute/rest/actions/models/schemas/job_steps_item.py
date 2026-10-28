@@ -15,14 +15,14 @@ class JobStepsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The phase of the lifecycle that the job is currently in.
-    status: Literal["queued", "in_progress", "completed"]
+    status: Literal["queued", "in_progress", "completed"] | None
 
     # The outcome of the job.
     conclusion: str | None
 
     # The name of the job.
-    name: str
-    number: int
+    name: str | None
+    number: int | None
 
     # The time that the step started, in ISO 8601 format.
     started_at: str | None = None

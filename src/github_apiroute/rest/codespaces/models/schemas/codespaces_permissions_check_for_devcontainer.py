@@ -15,4 +15,4 @@ class CodespacesPermissionsCheckForDevcontainer(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether the user has accepted the permissions defined by the devcontainer config
-    accepted: bool
+    accepted: bool | None

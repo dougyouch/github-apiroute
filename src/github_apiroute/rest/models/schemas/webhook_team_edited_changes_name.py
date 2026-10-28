@@ -13,4 +13,4 @@ class WebhookTeamEditedChangesName(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The previous version of the name if the action was `edited`.
-    from_: str = Field(alias="from")
+    from_: str | None = Field(alias="from")

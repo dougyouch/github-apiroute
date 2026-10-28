@@ -13,10 +13,10 @@ class PorterAuthor(BaseModel):
     """Porter Author"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    remote_id: str
-    remote_name: str
-    email: str
-    name: str
-    url: str
-    import_url: str
+    id: int | None
+    remote_id: str | None
+    remote_name: str | None
+    email: str | None
+    name: str | None
+    url: str | None
+    import_url: str | None

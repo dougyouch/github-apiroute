@@ -14,7 +14,7 @@ class GitCreateRefRequest(BaseModel):
 
     # The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start
     # with 'refs' and have at least two slashes, it will be rejected.
-    ref: str
+    ref: str | None
 
     # The SHA1 value for this reference.
-    sha: str
+    sha: str | None

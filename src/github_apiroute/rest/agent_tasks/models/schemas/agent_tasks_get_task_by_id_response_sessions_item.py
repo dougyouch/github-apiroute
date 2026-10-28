@@ -33,7 +33,7 @@ class AgentTasksGetTaskByIdResponseSessionsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Session ID
-    id: str
+    id: str | None
 
     # Session name
     name: str | None = None
@@ -51,19 +51,22 @@ class AgentTasksGetTaskByIdResponseSessionsItem(BaseModel):
     task_id: str | None = None
 
     # Current state of a session
-    state: Literal[
-        "queued",
-        "in_progress",
-        "completed",
-        "failed",
-        "idle",
-        "waiting_for_user",
-        "timed_out",
-        "cancelled",
-    ]
+    state: (
+        Literal[
+            "queued",
+            "in_progress",
+            "completed",
+            "failed",
+            "idle",
+            "waiting_for_user",
+            "timed_out",
+            "cancelled",
+        ]
+        | None
+    )
 
     # Creation timestamp
-    created_at: str
+    created_at: str | None
 
     # Last update timestamp
     updated_at: str | None = None

@@ -19,10 +19,10 @@ class WebhookPageBuildBuild(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     commit: str | None
-    created_at: str
-    duration: int
-    error: WebhookPageBuildBuildError
+    created_at: str | None
+    duration: int | None
+    error: WebhookPageBuildBuildError | None
     pusher: WebhookPageBuildBuildPusher | None
-    status: str
-    updated_at: str
-    url: str
+    status: str | None
+    updated_at: str | None
+    url: str | None

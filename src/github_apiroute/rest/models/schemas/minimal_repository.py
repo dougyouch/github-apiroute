@@ -21,58 +21,58 @@ class MinimalRepository(BaseModel):
     """Minimal Repository"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    name: str
-    full_name: str
+    id: int | None
+    node_id: str | None
+    name: str | None
+    full_name: str | None
 
     # A GitHub user.
-    owner: SimpleUser
-    private: bool
-    html_url: str
+    owner: SimpleUser | None
+    private: bool | None
+    html_url: str | None
     description: str | None
-    fork: bool
-    url: str
-    archive_url: str
-    assignees_url: str
-    blobs_url: str
-    branches_url: str
-    collaborators_url: str
-    comments_url: str
-    commits_url: str
-    compare_url: str
-    contents_url: str
-    contributors_url: str
-    deployments_url: str
-    downloads_url: str
-    events_url: str
-    forks_url: str
-    git_commits_url: str
-    git_refs_url: str
-    git_tags_url: str
+    fork: bool | None
+    url: str | None
+    archive_url: str | None
+    assignees_url: str | None
+    blobs_url: str | None
+    branches_url: str | None
+    collaborators_url: str | None
+    comments_url: str | None
+    commits_url: str | None
+    compare_url: str | None
+    contents_url: str | None
+    contributors_url: str | None
+    deployments_url: str | None
+    downloads_url: str | None
+    events_url: str | None
+    forks_url: str | None
+    git_commits_url: str | None
+    git_refs_url: str | None
+    git_tags_url: str | None
     git_url: str | None = None
-    issue_comment_url: str
-    issue_events_url: str
-    issues_url: str
-    keys_url: str
-    labels_url: str
-    languages_url: str
-    merges_url: str
-    milestones_url: str
-    notifications_url: str
-    pulls_url: str
-    releases_url: str
+    issue_comment_url: str | None
+    issue_events_url: str | None
+    issues_url: str | None
+    keys_url: str | None
+    labels_url: str | None
+    languages_url: str | None
+    merges_url: str | None
+    milestones_url: str | None
+    notifications_url: str | None
+    pulls_url: str | None
+    releases_url: str | None
     ssh_url: str | None = None
-    stargazers_url: str
-    statuses_url: str
-    subscribers_url: str
-    subscription_url: str
-    tags_url: str
-    teams_url: str
-    trees_url: str
+    stargazers_url: str | None
+    statuses_url: str | None
+    subscribers_url: str | None
+    subscription_url: str | None
+    tags_url: str | None
+    teams_url: str | None
+    trees_url: str | None
     clone_url: str | None = None
     mirror_url: str | None = None
-    hooks_url: str
+    hooks_url: str | None
     svn_url: str | None = None
     homepage: str | None = None
     language: str | None = None

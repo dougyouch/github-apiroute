@@ -15,9 +15,10 @@ class CopilotSpacesCreateResourceForUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The type of resource to create.
-    resource_type: Literal[
-        "repository", "github_file", "free_text", "github_issue", "github_pull_request"
-    ]
+    resource_type: (
+        Literal["repository", "github_file", "free_text", "github_issue", "github_pull_request"]
+        | None
+    )
 
     # Resource-specific metadata.
-    metadata: dict[str, Any]
+    metadata: dict[str, Any] | None

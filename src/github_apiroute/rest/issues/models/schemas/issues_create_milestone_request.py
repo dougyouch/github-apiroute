@@ -15,7 +15,7 @@ class IssuesCreateMilestoneRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The title of the milestone.
-    title: str
+    title: str | None
 
     # The state of the milestone. Either `open` or `closed`.
     state: Literal["open", "closed"] | None = None

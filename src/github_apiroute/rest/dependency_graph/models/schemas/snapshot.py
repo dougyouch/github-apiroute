@@ -20,17 +20,17 @@ class Snapshot(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The version of the repository snapshot submission.
-    version: int
-    job: SnapshotJob
+    version: int | None
+    job: SnapshotJob | None
 
     # The commit SHA associated with this dependency snapshot. Maximum length: 64 characters.
-    sha: str
+    sha: str | None
 
     # The repository branch that triggered this snapshot.
-    ref: str
+    ref: str | None
 
     # A description of the detector used.
-    detector: SnapshotDetector
+    detector: SnapshotDetector | None
 
     # User-defined metadata to store domain-specific information limited to 8 keys with scalar
     # values.
@@ -41,4 +41,4 @@ class Snapshot(BaseModel):
     manifests: dict[str, Manifest] | None = None
 
     # The time at which the snapshot was scanned.
-    scanned: str
+    scanned: str | None

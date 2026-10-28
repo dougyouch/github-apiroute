@@ -16,4 +16,4 @@ class ReactionsCreateForIssueRequest(BaseModel):
 
     # The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to
     # add to the issue.
-    content: Literal["+1", "-1", "laugh", "confused", "heart", "hooray", "rocket", "eyes"]
+    content: Literal["+1", "-1", "laugh", "confused", "heart", "hooray", "rocket", "eyes"] | None

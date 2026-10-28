@@ -22,24 +22,24 @@ class IssueArtifact(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The globally unique identifier of the artifact.
-    id: int
+    id: int | None
 
     # The canonical browser URL for the artifact in its issue context.
     html_url: str | None = None
 
     # The artifact number within the issue.
-    number: int
+    number: int | None
 
     # The artifact type. The types supported for external creation and filtering are: -
     # `generic` is a general-purpose Markdown document. - `link` represents a named link. -
     # `plan` is a Markdown plan. - `embedded_html` is a self-contained HTML document. Its `body`
-    type_: str = Field(alias="type")
+    type_: str | None = Field(alias="type")
 
     # The human-readable name of the artifact.
-    name: str
+    name: str | None
 
     # The artifact content. For `embedded_html` artifacts, this is the HTML source.
-    body: str
+    body: str | None
 
     # The artifact content rendered as HTML, or `null` if rendering times out or is skipped to
     # protect the response's time budget. The raw content remains available in `body`.

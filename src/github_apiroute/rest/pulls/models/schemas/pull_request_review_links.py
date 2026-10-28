@@ -14,5 +14,5 @@ __all__ = ["PullRequestReviewLinks"]
 
 class PullRequestReviewLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: PullRequestReviewLinksHtml
-    pull_request: PullRequestReviewLinksPullRequest
+    html: PullRequestReviewLinksHtml | None
+    pull_request: PullRequestReviewLinksPullRequest | None

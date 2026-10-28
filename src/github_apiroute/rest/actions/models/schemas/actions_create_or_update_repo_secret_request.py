@@ -15,7 +15,7 @@ class ActionsCreateOrUpdateRepoSecretRequest(BaseModel):
     # Value for your secret, encrypted with
     # [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the
     # public key retrieved from the [Get a repository public
-    encrypted_value: str
+    encrypted_value: str | None
 
     # ID of the key you used to encrypt the secret.
-    key_id: str
+    key_id: str | None

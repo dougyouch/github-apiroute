@@ -15,5 +15,5 @@ __all__ = ["WebhookPullRequestReviewThreadUnresolvedThread"]
 
 class WebhookPullRequestReviewThreadUnresolvedThread(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: list[WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem]
-    node_id: str
+    comments: list[WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem] | None
+    node_id: str | None

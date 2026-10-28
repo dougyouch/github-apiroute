@@ -17,19 +17,19 @@ class Authorization(BaseModel):
     """The authorization for an OAuth app, GitHub App, or a Personal Access Token."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    url: str
+    id: int | None
+    url: str | None
 
     # A list of scopes that this authorization is in.
     scopes: list[str] | None
-    token: str
+    token: str | None
     token_last_eight: str | None
     hashed_token: str | None
-    app: AuthorizationApp
+    app: AuthorizationApp | None
     note: str | None
     note_url: str | None
-    updated_at: str
-    created_at: str
+    updated_at: str | None
+    created_at: str | None
     fingerprint: str | None
 
     # A GitHub user.

@@ -17,10 +17,10 @@ class NetworkConfiguration(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the network configuration.
-    id: str
+    id: str | None
 
     # The name of the network configuration.
-    name: str
+    name: str | None
 
     # The hosted compute service the network configuration supports.
     compute_service: Literal["none", "actions", "codespaces"] | None = None

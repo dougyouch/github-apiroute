@@ -21,10 +21,10 @@ class ActionsHostedRunner(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the hosted runner.
-    id: int
+    id: int | None
 
     # The name of the hosted runner.
-    name: str
+    name: str | None
 
     # The unique identifier of the group that the hosted runner belongs to.
     runner_group_id: int | None = None
@@ -33,20 +33,20 @@ class ActionsHostedRunner(BaseModel):
     image_details: NullableActionsHostedRunnerPoolImage | None
 
     # Provides details of a particular machine spec.
-    machine_size_details: ActionsHostedRunnerMachineSpec
+    machine_size_details: ActionsHostedRunnerMachineSpec | None
 
     # The status of the runner.
-    status: Literal["Ready", "Provisioning", "Shutdown", "Deleting", "Stuck"]
+    status: Literal["Ready", "Provisioning", "Shutdown", "Deleting", "Stuck"] | None
 
     # The operating system of the image.
-    platform: str
+    platform: str | None
 
     # The maximum amount of hosted runners. Runners will not scale automatically above this
     # number. Use this setting to limit your cost.
     maximum_runners: int | None = None
 
     # Whether public IP is enabled for the hosted runners.
-    public_ip_enabled: bool
+    public_ip_enabled: bool | None
 
     # The public IP ranges when public IP is enabled for the hosted runners.
     public_ips: list[PublicIp] | None = None

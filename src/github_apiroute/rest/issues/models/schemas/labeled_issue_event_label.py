@@ -11,5 +11,5 @@ __all__ = ["LabeledIssueEventLabel"]
 
 class LabeledIssueEventLabel(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    color: str
+    name: str | None
+    color: str | None

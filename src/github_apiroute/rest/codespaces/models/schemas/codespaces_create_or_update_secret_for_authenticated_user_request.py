@@ -18,7 +18,7 @@ class CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(BaseModel):
     encrypted_value: str | None = None
 
     # ID of the key you used to encrypt the secret.
-    key_id: str
+    key_id: str | None
 
     # An array of repository ids that can access the user secret. You can manage the list of
     # selected repositories using the [List selected repositories for a user

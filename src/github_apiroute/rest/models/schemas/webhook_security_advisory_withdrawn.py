@@ -22,7 +22,7 @@ __all__ = ["WebhookSecurityAdvisoryWithdrawn"]
 
 class WebhookSecurityAdvisoryWithdrawn(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["withdrawn"]
+    action: Literal["withdrawn"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -44,7 +44,7 @@ class WebhookSecurityAdvisoryWithdrawn(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # The details of the security advisory, including summary, description, and severity.
-    security_advisory: WebhookSecurityAdvisoryWithdrawnSecurityAdvisory
+    security_advisory: WebhookSecurityAdvisoryWithdrawnSecurityAdvisory | None
 
     # A GitHub user.
     sender: SimpleUser | None = None

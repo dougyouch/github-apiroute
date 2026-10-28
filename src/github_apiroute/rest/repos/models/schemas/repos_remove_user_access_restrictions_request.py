@@ -13,4 +13,4 @@ class ReposRemoveUserAccessRestrictionsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The username for users
-    users: list[str]
+    users: list[str] | None

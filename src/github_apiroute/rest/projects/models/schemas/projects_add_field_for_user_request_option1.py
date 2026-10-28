@@ -15,7 +15,7 @@ class ProjectsAddFieldForUserRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the field.
-    name: str
+    name: str | None
 
     # The field's data type.
-    data_type: Literal["text", "number", "date"]
+    data_type: Literal["text", "number", "date"] | None

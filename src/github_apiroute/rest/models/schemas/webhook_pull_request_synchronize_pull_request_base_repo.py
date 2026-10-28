@@ -41,59 +41,59 @@ class WebhookPullRequestSynchronizePullRequestBaseRepo(BaseModel):
     # Whether to allow squash merges for pull requests.
     allow_squash_merge: bool | None = None
     allow_update_branch: bool | None = None
-    archive_url: str
+    archive_url: str | None
 
     # Whether the repository is archived.
-    archived: bool
-    assignees_url: str
-    blobs_url: str
-    branches_url: str
-    clone_url: str
-    collaborators_url: str
-    comments_url: str
-    commits_url: str
-    compare_url: str
-    contents_url: str
-    contributors_url: str
-    created_at: int | str
+    archived: bool | None
+    assignees_url: str | None
+    blobs_url: str | None
+    branches_url: str | None
+    clone_url: str | None
+    collaborators_url: str | None
+    comments_url: str | None
+    commits_url: str | None
+    compare_url: str | None
+    contents_url: str | None
+    contributors_url: str | None
+    created_at: int | str | None
 
     # The default branch of the repository.
-    default_branch: str
+    default_branch: str | None
 
     # Whether to delete head branches when pull requests are merged
     delete_branch_on_merge: bool | None = None
-    deployments_url: str
+    deployments_url: str | None
     description: str | None
 
     # Returns whether or not this repository is disabled.
     disabled: bool | None = None
-    downloads_url: str
-    events_url: str
-    fork: bool
-    forks: int
-    forks_count: int
-    forks_url: str
-    full_name: str
-    git_commits_url: str
-    git_refs_url: str
-    git_tags_url: str
-    git_url: str
+    downloads_url: str | None
+    events_url: str | None
+    fork: bool | None
+    forks: int | None
+    forks_count: int | None
+    forks_url: str | None
+    full_name: str | None
+    git_commits_url: str | None
+    git_refs_url: str | None
+    git_tags_url: str | None
+    git_url: str | None
 
     # Whether downloads are enabled.
-    has_downloads: bool
+    has_downloads: bool | None
 
     # Whether issues are enabled.
-    has_issues: bool
-    has_pages: bool
+    has_issues: bool | None
+    has_pages: bool | None
 
     # Whether projects are enabled.
-    has_projects: bool
+    has_projects: bool | None
 
     # Whether the wiki is enabled.
-    has_wiki: bool
+    has_wiki: bool | None
 
     # Whether discussions are enabled.
-    has_discussions: bool
+    has_discussions: bool | None
 
     # Whether pull requests are enabled.
     has_pull_requests: bool | None = None
@@ -101,19 +101,19 @@ class WebhookPullRequestSynchronizePullRequestBaseRepo(BaseModel):
     # The policy controlling who can create pull requests: all or collaborators_only.
     pull_request_creation_policy: Literal["all", "collaborators_only"] | None = None
     homepage: str | None
-    hooks_url: str
-    html_url: str
+    hooks_url: str | None
+    html_url: str | None
 
     # Unique identifier of the repository
-    id: int
+    id: int | None
     is_template: bool | None = None
-    issue_comment_url: str
-    issue_events_url: str
-    issues_url: str
-    keys_url: str
-    labels_url: str
+    issue_comment_url: str | None
+    issue_events_url: str | None
+    issues_url: str | None
+    keys_url: str | None
+    labels_url: str | None
     language: str | None
-    languages_url: str
+    languages_url: str | None
     license: WebhookPullRequestSynchronizePullRequestBaseRepoLicense | None
     master_branch: str | None = None
 
@@ -126,28 +126,28 @@ class WebhookPullRequestSynchronizePullRequestBaseRepo(BaseModel):
     # title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge
     # pull request #123 from branch-name).
     merge_commit_title: Literal["PR_TITLE", "MERGE_MESSAGE"] | None = None
-    merges_url: str
-    milestones_url: str
+    merges_url: str | None
+    milestones_url: str | None
     mirror_url: str | None
 
     # The name of the repository.
-    name: str
-    node_id: str
-    notifications_url: str
-    open_issues: int
-    open_issues_count: int
+    name: str | None
+    node_id: str | None
+    notifications_url: str | None
+    open_issues: int | None
+    open_issues_count: int | None
     organization: str | None = None
     owner: WebhookPullRequestSynchronizePullRequestBaseRepoOwner | None
     permissions: WebhookPullRequestSynchronizePullRequestBaseRepoPermissions | None = None
 
     # Whether the repository is private or public.
-    private: bool
+    private: bool | None
     public: bool | None = None
-    pulls_url: str
+    pulls_url: str | None
     pushed_at: int | str | None
-    releases_url: str
+    releases_url: str | None
     role_name: str | None = None
-    size: int
+    size: int | None
 
     # The default value for a squash merge commit message: - `PR_BODY` - default to the pull
     # request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` -
@@ -158,27 +158,27 @@ class WebhookPullRequestSynchronizePullRequestBaseRepo(BaseModel):
     # request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one
     # commit) or the pull request's title (when more than one commit).
     squash_merge_commit_title: Literal["PR_TITLE", "COMMIT_OR_PR_TITLE"] | None = None
-    ssh_url: str
+    ssh_url: str | None
     stargazers: int | None = None
-    stargazers_count: int
-    stargazers_url: str
-    statuses_url: str
-    subscribers_url: str
-    subscription_url: str
-    svn_url: str
-    tags_url: str
-    teams_url: str
-    topics: list[str]
-    trees_url: str
-    updated_at: str
-    url: str
+    stargazers_count: int | None
+    stargazers_url: str | None
+    statuses_url: str | None
+    subscribers_url: str | None
+    subscription_url: str | None
+    svn_url: str | None
+    tags_url: str | None
+    teams_url: str | None
+    topics: list[str] | None
+    trees_url: str | None
+    updated_at: str | None
+    url: str | None
 
     # Whether a squash merge commit can use the pull request title as default. **This property
     # is closing down. Please use `squash_merge_commit_title` instead.
     use_squash_pr_title_as_default: bool | None = None
-    visibility: Literal["public", "private", "internal"]
-    watchers: int
-    watchers_count: int
+    visibility: Literal["public", "private", "internal"] | None
+    watchers: int | None
+    watchers_count: int | None
 
     # Whether to require contributors to sign off on web-based commits
     web_commit_signoff_required: bool | None = None

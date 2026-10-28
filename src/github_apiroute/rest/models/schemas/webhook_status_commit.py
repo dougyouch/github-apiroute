@@ -17,11 +17,11 @@ __all__ = ["WebhookStatusCommit"]
 class WebhookStatusCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     author: WebhookStatusCommitAuthor | None
-    comments_url: str
-    commit: WebhookStatusCommitCommit
+    comments_url: str | None
+    commit: WebhookStatusCommitCommit | None
     committer: WebhookStatusCommitCommitter | None
-    html_url: str
-    node_id: str
-    parents: list[WebhookStatusCommitParentsItem]
-    sha: str
-    url: str
+    html_url: str | None
+    node_id: str | None
+    parents: list[WebhookStatusCommitParentsItem] | None
+    sha: str | None
+    url: str | None

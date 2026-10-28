@@ -15,7 +15,7 @@ class MigrationsStartForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A list of arrays indicating which repositories should be migrated.
-    repositories: list[str]
+    repositories: list[str] | None
 
     # Indicates whether repositories should be locked (to prevent manipulation) while migrating
     # data.

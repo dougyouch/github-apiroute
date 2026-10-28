@@ -13,5 +13,5 @@ __all__ = ["ChecksListForSuiteResponse"]
 
 class ChecksListForSuiteResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    check_runs: list[CheckRun]
+    total_count: int | None
+    check_runs: list[CheckRun] | None

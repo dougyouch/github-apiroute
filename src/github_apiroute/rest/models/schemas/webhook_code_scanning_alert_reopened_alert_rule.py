@@ -15,7 +15,7 @@ class WebhookCodeScanningAlertReopenedAlertRule(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A short description of the rule used to detect the alert.
-    description: str
+    description: str | None
     full_description: str | None = None
     help: str | None = None
 
@@ -23,7 +23,7 @@ class WebhookCodeScanningAlertReopenedAlertRule(BaseModel):
     help_uri: str | None = None
 
     # A unique identifier for the rule used to detect the alert.
-    id: str
+    id: str | None
     name: str | None = None
 
     # The severity of the alert.

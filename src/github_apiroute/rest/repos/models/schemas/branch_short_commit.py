@@ -11,5 +11,5 @@ __all__ = ["BranchShortCommit"]
 
 class BranchShortCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    sha: str
-    url: str
+    sha: str | None
+    url: str | None

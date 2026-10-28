@@ -13,9 +13,9 @@ class Actor(BaseModel):
     """Actor"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    login: str
+    id: int | None
+    login: str | None
     display_login: str | None = None
     gravatar_id: str | None
-    url: str
-    avatar_url: str
+    url: str | None
+    avatar_url: str | None

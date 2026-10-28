@@ -24,10 +24,10 @@ class AgentAutomationsGetRepoAutomationResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the automation.
-    id: str
+    id: str | None
 
     # The name of the automation.
-    name: str
+    name: str | None
 
     # Whether the automation is currently enabled.
     enabled: bool | None = None
@@ -50,7 +50,7 @@ class AgentAutomationsGetRepoAutomationResponse(BaseModel):
     triggers: AgentAutomationsGetRepoAutomationResponseTriggers | None = None
 
     # The prompt for the automation.
-    prompt: str
+    prompt: str | None
 
     # The tools available to the automation.
     tools: list[str] | None = None
@@ -64,10 +64,10 @@ class AgentAutomationsGetRepoAutomationResponse(BaseModel):
     reasoning_effort: str | None = None
 
     # When the automation was created.
-    created_at: str
+    created_at: str | None
 
     # When the automation was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # A GitHub user
-    created_by: AgentAutomationsGetRepoAutomationResponseCreatedBy
+    created_by: AgentAutomationsGetRepoAutomationResponseCreatedBy | None

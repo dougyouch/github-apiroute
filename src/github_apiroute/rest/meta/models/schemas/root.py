@@ -11,36 +11,36 @@ __all__ = ["Root"]
 
 class Root(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    current_user_url: str
-    current_user_authorizations_html_url: str
-    authorizations_url: str
-    code_search_url: str
-    commit_search_url: str
-    emails_url: str
-    emojis_url: str
-    events_url: str
-    feeds_url: str
-    followers_url: str
-    following_url: str
-    gists_url: str
+    current_user_url: str | None
+    current_user_authorizations_html_url: str | None
+    authorizations_url: str | None
+    code_search_url: str | None
+    commit_search_url: str | None
+    emails_url: str | None
+    emojis_url: str | None
+    events_url: str | None
+    feeds_url: str | None
+    followers_url: str | None
+    following_url: str | None
+    gists_url: str | None
     hub_url: str | None = None
-    issue_search_url: str
-    issues_url: str
-    keys_url: str
-    label_search_url: str
-    notifications_url: str
-    organization_url: str
-    organization_repositories_url: str
-    organization_teams_url: str
-    public_gists_url: str
-    rate_limit_url: str
-    repository_url: str
-    repository_search_url: str
-    current_user_repositories_url: str
-    starred_url: str
-    starred_gists_url: str
+    issue_search_url: str | None
+    issues_url: str | None
+    keys_url: str | None
+    label_search_url: str | None
+    notifications_url: str | None
+    organization_url: str | None
+    organization_repositories_url: str | None
+    organization_teams_url: str | None
+    public_gists_url: str | None
+    rate_limit_url: str | None
+    repository_url: str | None
+    repository_search_url: str | None
+    current_user_repositories_url: str | None
+    starred_url: str | None
+    starred_gists_url: str | None
     topic_search_url: str | None = None
-    user_url: str
-    user_organizations_url: str
-    user_repositories_url: str
-    user_search_url: str
+    user_url: str | None
+    user_organizations_url: str | None
+    user_repositories_url: str | None
+    user_search_url: str | None

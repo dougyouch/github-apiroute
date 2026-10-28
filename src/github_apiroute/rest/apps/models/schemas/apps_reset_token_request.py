@@ -13,4 +13,4 @@ class AppsResetTokenRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The access_token of the OAuth or GitHub application.
-    access_token: str
+    access_token: str | None

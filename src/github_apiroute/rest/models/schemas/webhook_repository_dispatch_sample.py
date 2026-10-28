@@ -22,8 +22,8 @@ class WebhookRepositoryDispatchSample(BaseModel):
 
     # The `event_type` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request
     # body.
-    action: str
-    branch: str
+    action: str | None
+    branch: str | None
 
     # The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches`
     # request body.
@@ -37,7 +37,7 @@ class WebhookRepositoryDispatchSample(BaseModel):
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
     # webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-
-    installation: SimpleInstallation
+    installation: SimpleInstallation | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -46,7 +46,7 @@ class WebhookRepositoryDispatchSample(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

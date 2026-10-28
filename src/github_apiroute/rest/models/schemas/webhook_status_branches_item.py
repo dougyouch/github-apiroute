@@ -13,6 +13,6 @@ __all__ = ["WebhookStatusBranchesItem"]
 
 class WebhookStatusBranchesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    commit: WebhookStatusBranchesItemCommit
-    name: str
-    protected: bool
+    commit: WebhookStatusBranchesItemCommit | None
+    name: str | None
+    protected: bool | None

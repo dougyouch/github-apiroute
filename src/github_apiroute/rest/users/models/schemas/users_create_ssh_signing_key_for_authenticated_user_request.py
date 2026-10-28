@@ -18,4 +18,4 @@ class UsersCreateSshSigningKeyForAuthenticatedUserRequest(BaseModel):
     # The public SSH key to add to your GitHub account. For more information, see "[Checking for
     # existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-
     # ssh/checking-for-existing-ssh-keys)."
-    key: str
+    key: str | None

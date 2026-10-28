@@ -25,34 +25,37 @@ class WebhookCommitCommentCreatedComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # The text of the comment.
-    body: str
+    body: str | None
 
     # The SHA of the commit to which the comment applies.
-    commit_id: str
-    created_at: str
-    html_url: str
+    commit_id: str | None
+    created_at: str | None
+    html_url: str | None
 
     # The ID of the commit comment.
-    id: int
+    id: int | None
 
     # The line of the blob to which the comment applies. The last line of the range for a multi-
     # line comment
     line: int | None
 
     # The node ID of the commit comment.
-    node_id: str
+    node_id: str | None
 
     # The relative path of the file to which the comment applies.
     path: str | None
@@ -60,6 +63,6 @@ class WebhookCommitCommentCreatedComment(BaseModel):
     # The line index in the diff to which the comment applies.
     position: int | None
     reactions: WebhookCommitCommentCreatedCommentReactions | None = None
-    updated_at: str
-    url: str
+    updated_at: str | None
+    url: str | None
     user: WebhookCommitCommentCreatedCommentUser | None

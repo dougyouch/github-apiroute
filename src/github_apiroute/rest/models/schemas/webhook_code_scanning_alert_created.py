@@ -22,14 +22,14 @@ __all__ = ["WebhookCodeScanningAlertCreated"]
 
 class WebhookCodeScanningAlertCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # The code scanning alert involved in the event.
-    alert: WebhookCodeScanningAlertCreatedAlert
+    alert: WebhookCodeScanningAlertCreatedAlert | None
 
     # The commit SHA of the code scanning alert. When the action is `reopened_by_user` or
     # `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
-    commit_oid: WebhooksCodeScanningCommitOid
+    commit_oid: WebhooksCodeScanningCommitOid | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -48,11 +48,11 @@ class WebhookCodeScanningAlertCreated(BaseModel):
 
     # The Git reference of the code scanning alert. When the action is `reopened_by_user` or
     # `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
-    ref: WebhooksCodeScanningRef
+    ref: WebhooksCodeScanningRef | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -11,5 +11,5 @@ __all__ = ["ParticipationStats"]
 
 class ParticipationStats(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    all: list[int]
-    owner: list[int]
+    all: list[int] | None
+    owner: list[int] | None

@@ -21,19 +21,19 @@ class GitCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # SHA for the commit
-    sha: str
-    node_id: str
-    url: str
+    sha: str | None
+    node_id: str | None
+    url: str | None
 
     # Identifying information for the git-user
-    author: GitCommitAuthor
+    author: GitCommitAuthor | None
 
     # Identifying information for the git-user
-    committer: GitCommitCommitter
+    committer: GitCommitCommitter | None
 
     # Message describing the purpose of the commit
-    message: str
-    tree: GitCommitTree
-    parents: list[GitCommitParentsItem]
-    verification: GitCommitVerification
-    html_url: str
+    message: str | None
+    tree: GitCommitTree | None
+    parents: list[GitCommitParentsItem] | None
+    verification: GitCommitVerification | None
+    html_url: str | None

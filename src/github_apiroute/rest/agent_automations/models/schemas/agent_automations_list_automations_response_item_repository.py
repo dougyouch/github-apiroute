@@ -15,10 +15,10 @@ class AgentAutomationsListAutomationsResponseItemRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the repository.
-    id: int
+    id: int | None
 
     # The repository owner login.
-    owner: str
+    owner: str | None
 
     # The repository name.
-    name: str
+    name: str | None

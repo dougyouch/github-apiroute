@@ -11,4 +11,4 @@ __all__ = ["PackageVersionMetadataContainer"]
 
 class PackageVersionMetadataContainer(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    tags: list[str]
+    tags: list[str] | None

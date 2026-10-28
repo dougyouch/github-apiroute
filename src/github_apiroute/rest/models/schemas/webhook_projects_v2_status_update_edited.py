@@ -21,7 +21,7 @@ __all__ = ["WebhookProjectsV2StatusUpdateEdited"]
 
 class WebhookProjectsV2StatusUpdateEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
+    action: Literal["edited"] | None
     changes: WebhookProjectsV2StatusUpdateEditedChanges | None = None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
@@ -32,10 +32,10 @@ class WebhookProjectsV2StatusUpdateEdited(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # An status update belonging to a project
-    projects_v2_status_update: ProjectsV2StatusUpdate
+    projects_v2_status_update: ProjectsV2StatusUpdate | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -13,7 +13,7 @@ class RepositoryAdvisoryCwesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The Common Weakness Enumeration (CWE) identifier.
-    cwe_id: str
+    cwe_id: str | None
 
     # The name of the CWE.
-    name: str
+    name: str | None

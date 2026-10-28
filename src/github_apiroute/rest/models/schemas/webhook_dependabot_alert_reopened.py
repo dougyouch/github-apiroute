@@ -20,10 +20,10 @@ __all__ = ["WebhookDependabotAlertReopened"]
 
 class WebhookDependabotAlertReopened(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["reopened"]
+    action: Literal["reopened"] | None
 
     # A Dependabot alert.
-    alert: DependabotAlert
+    alert: DependabotAlert | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -42,7 +42,7 @@ class WebhookDependabotAlertReopened(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

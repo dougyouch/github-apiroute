@@ -17,4 +17,4 @@ class SecretScanningLocationDiscussionComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The API URL to get the discussion comment where the secret was detected.
-    discussion_comment_url: str
+    discussion_comment_url: str | None

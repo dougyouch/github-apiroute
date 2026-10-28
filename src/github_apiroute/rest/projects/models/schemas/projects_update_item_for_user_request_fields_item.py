@@ -13,7 +13,7 @@ class ProjectsUpdateItemForUserRequestFieldsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the project field to update.
-    id: int
+    id: int | None
 
     # The new value for the field: - For text, number, and date fields, provide the new value
     # directly. - For single select and iteration fields, provide the ID of the option or

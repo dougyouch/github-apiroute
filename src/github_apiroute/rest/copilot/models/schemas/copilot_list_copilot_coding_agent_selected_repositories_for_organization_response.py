@@ -13,5 +13,5 @@ __all__ = ["CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResp
 
 class CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    repositories: list[MinimalRepository]
+    total_count: int | None
+    repositories: list[MinimalRepository] | None

@@ -36,10 +36,10 @@ class WebhookTeamAdd(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None
 
     # Groups of organization members that gives permissions on specified repositories.
-    team: WebhooksTeam1
+    team: WebhooksTeam1 | None

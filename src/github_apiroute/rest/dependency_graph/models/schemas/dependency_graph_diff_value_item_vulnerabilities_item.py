@@ -11,7 +11,7 @@ __all__ = ["DependencyGraphDiffValueItemVulnerabilitiesItem"]
 
 class DependencyGraphDiffValueItemVulnerabilitiesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    severity: str
-    advisory_ghsa_id: str
-    advisory_summary: str
-    advisory_url: str
+    severity: str | None
+    advisory_ghsa_id: str | None
+    advisory_summary: str | None
+    advisory_url: str | None

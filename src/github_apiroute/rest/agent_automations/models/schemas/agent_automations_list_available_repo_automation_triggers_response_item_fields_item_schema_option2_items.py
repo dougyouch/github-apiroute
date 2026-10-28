@@ -19,7 +19,7 @@ class AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemS
     BaseModel
 ):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["string"] = Field(alias="type")
+    type_: Literal["string"] | None = Field(alias="type")
 
     # The allowed string item values.
     enum: list[str] | None = None

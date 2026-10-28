@@ -16,7 +16,7 @@ class ReposCreateDeployKeyRequest(BaseModel):
     title: str | None = None
 
     # The contents of the key.
-    key: str
+    key: str | None
 
     # If `true`, the key will only be able to read repository contents. Otherwise, the key will
     # be able to read and write. Deploy keys with write access can perform the same actions as

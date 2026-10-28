@@ -13,6 +13,6 @@ class ValidationErrorSimple(BaseModel):
     """Validation Error Simple"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    message: str
-    documentation_url: str
+    message: str | None
+    documentation_url: str | None
     errors: list[str] | None = None

@@ -13,4 +13,4 @@ class CredentialsRevokeRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A list of credentials to be revoked, up to 1000 per request.
-    credentials: list[str]
+    credentials: list[str] | None

@@ -11,4 +11,4 @@ __all__ = ["WatchEvent"]
 
 class WatchEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
+    action: str | None

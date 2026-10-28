@@ -16,10 +16,10 @@ class GistCommit(BaseModel):
     """Gist Commit"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    version: str
+    url: str | None
+    version: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None
-    change_status: GistCommitChangeStatus
-    committed_at: str
+    change_status: GistCommitChangeStatus | None
+    committed_at: str | None

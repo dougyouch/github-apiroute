@@ -15,13 +15,13 @@ class CustomDeploymentRuleApp(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the deployment protection rule integration.
-    id: int
+    id: int | None
 
     # The slugified name of the deployment protection rule integration.
-    slug: str
+    slug: str | None
 
     # The URL for the endpoint to get details about the app.
-    integration_url: str
+    integration_url: str | None
 
     # The node ID for the deployment protection rule integration.
-    node_id: str
+    node_id: str | None

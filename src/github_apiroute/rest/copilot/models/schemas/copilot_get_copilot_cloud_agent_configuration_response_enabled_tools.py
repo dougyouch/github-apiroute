@@ -15,13 +15,13 @@ class CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether the CodeQL tool is enabled for the Copilot cloud agent.
-    codeql: bool
+    codeql: bool | None
 
     # Whether the Copilot code review tool is enabled for the Copilot cloud agent.
-    copilot_code_review: bool
+    copilot_code_review: bool | None
 
     # Whether the secret scanning tool is enabled for the Copilot cloud agent.
-    secret_scanning: bool
+    secret_scanning: bool | None
 
     # Whether the dependency vulnerability checks tool is enabled for the Copilot cloud agent.
-    dependency_vulnerability_checks: bool
+    dependency_vulnerability_checks: bool | None

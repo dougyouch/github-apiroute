@@ -13,5 +13,5 @@ __all__ = ["CommitCommentEvent"]
 
 class CommitCommentEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
-    comment: CommitCommentEventComment
+    action: str | None
+    comment: CommitCommentEventComment | None

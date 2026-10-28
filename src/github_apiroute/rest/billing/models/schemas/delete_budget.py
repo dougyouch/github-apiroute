@@ -13,7 +13,7 @@ class DeleteBudget(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A message indicating the result of the deletion operation
-    message: str
+    message: str | None
 
     # The ID of the deleted budget
-    id: str
+    id: str | None

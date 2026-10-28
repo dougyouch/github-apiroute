@@ -15,6 +15,6 @@ __all__ = ["WebhookDeploymentReviewRejectedWorkflowRunPullRequestsItemHead"]
 
 class WebhookDeploymentReviewRejectedWorkflowRunPullRequestsItemHead(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    repo: WebhookDeploymentReviewRejectedWorkflowRunPullRequestsItemHeadRepo
-    sha: str
+    ref: str | None
+    repo: WebhookDeploymentReviewRejectedWorkflowRunPullRequestsItemHeadRepo | None
+    sha: str | None

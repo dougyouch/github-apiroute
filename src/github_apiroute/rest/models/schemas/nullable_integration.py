@@ -23,29 +23,29 @@ class NullableIntegration(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the GitHub app
-    id: int
+    id: int | None
 
     # The slug name of the GitHub app
     slug: str | None = None
-    node_id: str
+    node_id: str | None
     client_id: str | None = None
-    owner: SimpleUser | Enterprise
+    owner: SimpleUser | Enterprise | None
 
     # The name of the GitHub app
-    name: str
+    name: str | None
     description: str | None
-    external_url: str
-    html_url: str
-    created_at: str
-    updated_at: str
+    external_url: str | None
+    html_url: str | None
+    created_at: str | None
+    updated_at: str | None
 
     # The set of permissions for the GitHub app
-    permissions: NullableIntegrationPermissions
+    permissions: NullableIntegrationPermissions | None
 
     # The list of events for the GitHub app. Note that the `installation_target`,
     # `security_advisory`, and `meta` events are not included because they are global events and
     # not specific to an installation.
-    events: list[str]
+    events: list[str] | None
 
     # The number of installations associated with the GitHub app. Only returned when the
     # integration is requesting details about itself.

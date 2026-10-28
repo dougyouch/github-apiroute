@@ -15,16 +15,16 @@ class ActionsHostedRunnerCustomImageVersion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The version of image.
-    version: str
+    version: str | None
 
     # The state of image version.
-    state: str
+    state: str | None
 
     # Image version size in GB.
-    size_gb: int
+    size_gb: int | None
 
     # The creation date time of the image version.
-    created_on: str
+    created_on: str | None
 
     # The image version status details.
-    state_details: str
+    state_details: str | None

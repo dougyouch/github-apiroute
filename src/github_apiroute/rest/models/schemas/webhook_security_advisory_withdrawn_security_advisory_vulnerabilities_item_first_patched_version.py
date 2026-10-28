@@ -13,4 +13,4 @@ class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItemFirstPa
     BaseModel
 ):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    identifier: str
+    identifier: str | None

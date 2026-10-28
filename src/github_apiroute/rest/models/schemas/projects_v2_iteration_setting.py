@@ -15,10 +15,10 @@ class ProjectsV2IterationSetting(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the iteration setting.
-    id: str
+    id: str | None
 
     # The iteration title.
-    title: str
+    title: str | None
 
     # The iteration title, rendered as HTML.
     title_html: str | None = None

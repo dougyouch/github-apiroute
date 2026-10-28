@@ -15,4 +15,4 @@ class WorkflowUsage(BaseModel):
     """Workflow Usage"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    billable: WorkflowUsageBillable
+    billable: WorkflowUsageBillable | None

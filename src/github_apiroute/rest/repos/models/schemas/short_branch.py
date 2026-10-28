@@ -16,9 +16,9 @@ class ShortBranch(BaseModel):
     """Short Branch"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    commit: ShortBranchCommit
-    protected: bool
+    name: str | None
+    commit: ShortBranchCommit | None
+    protected: bool | None
 
     # Branch Protection
     protection: BranchProtection | None = None

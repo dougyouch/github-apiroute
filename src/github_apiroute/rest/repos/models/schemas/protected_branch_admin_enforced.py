@@ -13,5 +13,5 @@ class ProtectedBranchAdminEnforced(BaseModel):
     """Protected Branch Admin Enforced"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    enabled: bool
+    url: str | None
+    enabled: bool | None

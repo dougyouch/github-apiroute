@@ -19,12 +19,12 @@ class Reaction(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None
 
     # The reaction to use
-    content: Literal["+1", "-1", "laugh", "confused", "heart", "hooray", "rocket", "eyes"]
-    created_at: str
+    content: Literal["+1", "-1", "laugh", "confused", "heart", "hooray", "rocket", "eyes"] | None
+    created_at: str | None

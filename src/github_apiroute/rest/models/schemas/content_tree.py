@@ -16,16 +16,16 @@ class ContentTree(BaseModel):
     """Content Tree"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: str = Field(alias="type")
-    size: int
-    name: str
-    path: str
-    sha: str
+    type_: str | None = Field(alias="type")
+    size: int | None
+    name: str | None
+    path: str | None
+    sha: str | None
     content: str | None = None
-    url: str
+    url: str | None
     git_url: str | None
     html_url: str | None
     download_url: str | None
     entries: list[ContentTreeEntriesItem] | None = None
     encoding: str | None = None
-    links: ContentTreeLinks = Field(alias="_links")
+    links: ContentTreeLinks | None = Field(alias="_links")

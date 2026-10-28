@@ -19,13 +19,13 @@ class AutoMerge(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A GitHub user.
-    enabled_by: SimpleUser
+    enabled_by: SimpleUser | None
 
     # The merge method to use.
-    merge_method: Literal["merge", "squash", "rebase"]
+    merge_method: Literal["merge", "squash", "rebase"] | None
 
     # Title for the merge commit message.
-    commit_title: str
+    commit_title: str | None
 
     # Commit message for the merge commit.
-    commit_message: str
+    commit_message: str | None

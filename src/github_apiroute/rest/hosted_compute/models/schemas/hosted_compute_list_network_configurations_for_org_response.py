@@ -13,5 +13,5 @@ __all__ = ["HostedComputeListNetworkConfigurationsForOrgResponse"]
 
 class HostedComputeListNetworkConfigurationsForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    network_configurations: list[NetworkConfiguration]
+    total_count: int | None
+    network_configurations: list[NetworkConfiguration] | None

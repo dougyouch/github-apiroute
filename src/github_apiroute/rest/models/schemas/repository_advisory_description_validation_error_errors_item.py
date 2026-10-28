@@ -18,7 +18,7 @@ class RepositoryAdvisoryDescriptionValidationErrorErrorsItem(BaseModel):
     # A machine-readable identifier for the problem. `missing_section`, `empty_section`,
     # `unchecked_required_option`, and `sections_out_of_order` come from validating the
     # description against the repository's report template; other codes are shared with other
-    code: str
+    code: str | None
     index: int | None = None
     value: str | None | int | None | list[str] | None = None
 

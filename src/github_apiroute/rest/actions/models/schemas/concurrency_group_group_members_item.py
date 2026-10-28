@@ -15,10 +15,10 @@ class ConcurrencyGroupGroupMembersItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the workflow run.
-    run_id: int
+    run_id: int | None
 
     # The name of the workflow run.
-    run_name: str
+    run_name: str | None
 
     # API URL for the workflow run.
     run_url: str | None
@@ -38,4 +38,4 @@ class ConcurrencyGroupGroupMembersItem(BaseModel):
 
     # Web URL for the job.
     job_html_url: str | None = None
-    status: Literal["in_progress", "pending"]
+    status: Literal["in_progress", "pending"] | None

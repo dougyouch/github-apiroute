@@ -13,4 +13,4 @@ class GistsCreateCommentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The comment text.
-    body: str
+    body: str | None

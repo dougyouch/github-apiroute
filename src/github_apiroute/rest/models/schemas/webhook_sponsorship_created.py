@@ -20,7 +20,7 @@ __all__ = ["WebhookSponsorshipCreated"]
 
 class WebhookSponsorshipCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -42,5 +42,5 @@ class WebhookSponsorshipCreated(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # A GitHub user.
-    sender: SimpleUser
-    sponsorship: WebhooksSponsorship
+    sender: SimpleUser | None
+    sponsorship: WebhooksSponsorship | None

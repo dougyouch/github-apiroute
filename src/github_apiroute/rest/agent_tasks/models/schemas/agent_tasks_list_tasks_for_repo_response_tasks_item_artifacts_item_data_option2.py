@@ -15,7 +15,7 @@ class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataOption2(BaseMo
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Head branch name
-    head_ref: str
+    head_ref: str | None
 
     # Base branch name
-    base_ref: str
+    base_ref: str | None

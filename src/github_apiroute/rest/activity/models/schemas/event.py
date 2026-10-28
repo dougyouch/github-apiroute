@@ -32,12 +32,12 @@ class Event(BaseModel):
     """Event"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: str
+    id: str | None
     type_: str | None = Field(alias="type")
 
     # Actor
-    actor: Actor
-    repo: EventRepo
+    actor: Actor | None
+    repo: EventRepo | None
 
     # Actor
     org: Actor | None = None
@@ -58,6 +58,7 @@ class Event(BaseModel):
         | CommitCommentEvent
         | ReleaseEvent
         | WatchEvent
+        | None
     )
-    public: bool
+    public: bool | None
     created_at: str | None

@@ -16,12 +16,12 @@ class CombinedCommitStatus(BaseModel):
     """Combined Commit Status"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    state: str
-    statuses: list[SimpleCommitStatus]
-    sha: str
-    total_count: int
+    state: str | None
+    statuses: list[SimpleCommitStatus] | None
+    sha: str | None
+    total_count: int | None
 
     # Minimal Repository
-    repository: MinimalRepository
-    commit_url: str
-    url: str
+    repository: MinimalRepository | None
+    commit_url: str | None
+    url: str | None

@@ -18,28 +18,31 @@ class DeploymentStatus(BaseModel):
     """The status of a deployment."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    id: int
-    node_id: str
+    url: str | None
+    id: int | None
+    node_id: str | None
 
     # The state of the status.
-    state: Literal["error", "failure", "inactive", "pending", "success", "queued", "in_progress"]
+    state: (
+        Literal["error", "failure", "inactive", "pending", "success", "queued", "in_progress"]
+        | None
+    )
 
     # A GitHub user.
     creator: NullableSimpleUser | None
 
     # A short description of the status.
-    description: str
+    description: str | None
 
     # The environment of the deployment that the status is for.
     environment: str | None = None
 
     # Closing down notice: the URL to associate with this status.
-    target_url: str
-    created_at: str
-    updated_at: str
-    deployment_url: str
-    repository_url: str
+    target_url: str | None
+    created_at: str | None
+    updated_at: str | None
+    deployment_url: str | None
+    repository_url: str | None
 
     # The URL for accessing your environment.
     environment_url: str | None = None

@@ -11,8 +11,8 @@ __all__ = ["NullableCollaboratorPermissions"]
 
 class NullableCollaboratorPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    pull: bool
+    pull: bool | None
     triage: bool | None = None
-    push: bool
+    push: bool | None
     maintain: bool | None = None
-    admin: bool
+    admin: bool | None

@@ -17,14 +17,14 @@ class ContentSubmodule(BaseModel):
     """An object describing a submodule"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["submodule"] = Field(alias="type")
-    submodule_git_url: str
-    size: int
-    name: str
-    path: str
-    sha: str
-    url: str
+    type_: Literal["submodule"] | None = Field(alias="type")
+    submodule_git_url: str | None
+    size: int | None
+    name: str | None
+    path: str | None
+    sha: str | None
+    url: str | None
     git_url: str | None
     html_url: str | None
     download_url: str | None
-    links: ContentSubmoduleLinks = Field(alias="_links")
+    links: ContentSubmoduleLinks | None = Field(alias="_links")

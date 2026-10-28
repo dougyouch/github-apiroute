@@ -11,4 +11,4 @@ __all__ = ["WebhookPullRequestReviewRequestedValueOption2PullRequestLinksReviewC
 
 class WebhookPullRequestReviewRequestedValueOption2PullRequestLinksReviewComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    href: str
+    href: str | None

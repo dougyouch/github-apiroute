@@ -16,8 +16,8 @@ class WebhookDiscussionTransferredChanges(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A Discussion in a repository.
-    new_discussion: Discussion
+    new_discussion: Discussion | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    new_repository: RepositoryWebhooks
+    new_repository: RepositoryWebhooks | None

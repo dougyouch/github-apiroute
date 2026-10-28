@@ -15,7 +15,7 @@ class RepositoryRuleDetailedValueOption10(BaseModel):
     """Prevent users with push access from force pushing to refs."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["non_fast_forward"] = Field(alias="type")
+    type_: Literal["non_fast_forward"] | None = Field(alias="type")
 
     # The type of source for the ruleset that includes this rule.
     ruleset_source_type: Literal["Repository", "Organization"] | None = None

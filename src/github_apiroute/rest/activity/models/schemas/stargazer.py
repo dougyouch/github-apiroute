@@ -15,7 +15,7 @@ class Stargazer(BaseModel):
     """Stargazer"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    starred_at: str
+    starred_at: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None

@@ -15,7 +15,8 @@ __all__ = ["CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse"
 
 class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    devcontainers: list[
-        CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem
-    ]
+    total_count: int | None
+    devcontainers: (
+        list[CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem]
+        | None
+    )

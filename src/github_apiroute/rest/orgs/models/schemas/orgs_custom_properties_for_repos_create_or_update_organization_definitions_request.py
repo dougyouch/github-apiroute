@@ -15,4 +15,4 @@ class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest(B
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The array of custom properties to create or update.
-    properties: list[CustomProperty]
+    properties: list[CustomProperty] | None

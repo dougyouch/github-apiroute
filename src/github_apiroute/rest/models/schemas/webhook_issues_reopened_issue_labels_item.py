@@ -21,14 +21,14 @@ class WebhookIssuesReopenedIssueLabelsItem(BaseModel):
     archived_by: SimpleUser | None = None
 
     # 6-character hex code, without the leading #, identifying the color
-    color: str
-    default: bool
+    color: str | None
+    default: bool | None
     description: str | None
-    id: int
+    id: int | None
 
     # The name of the label.
-    name: str
-    node_id: str
+    name: str | None
+    node_id: str | None
 
     # URL for the label
-    url: str
+    url: str | None

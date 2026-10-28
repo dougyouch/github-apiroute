@@ -13,34 +13,34 @@ class BillingAiCreditUsageReportOrgUsageItemsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Product name.
-    product: str
+    product: str | None
 
     # SKU name.
-    sku: str
+    sku: str | None
 
     # Model name.
-    model: str
+    model: str | None
 
     # Unit type of the usage line item.
-    unit_type: str = Field(alias="unitType")
+    unit_type: str | None = Field(alias="unitType")
 
     # Price per unit of the usage line item.
-    price_per_unit: float = Field(alias="pricePerUnit")
+    price_per_unit: float | None = Field(alias="pricePerUnit")
 
     # Gross quantity of the usage line item.
-    gross_quantity: float = Field(alias="grossQuantity")
+    gross_quantity: float | None = Field(alias="grossQuantity")
 
     # Gross amount of the usage line item.
-    gross_amount: float = Field(alias="grossAmount")
+    gross_amount: float | None = Field(alias="grossAmount")
 
     # Discount quantity of the usage line item.
-    discount_quantity: float = Field(alias="discountQuantity")
+    discount_quantity: float | None = Field(alias="discountQuantity")
 
     # Discount amount of the usage line item.
-    discount_amount: float = Field(alias="discountAmount")
+    discount_amount: float | None = Field(alias="discountAmount")
 
     # Net quantity of the usage line item.
-    net_quantity: float = Field(alias="netQuantity")
+    net_quantity: float | None = Field(alias="netQuantity")
 
     # Net amount of the usage line item.
-    net_amount: float = Field(alias="netAmount")
+    net_amount: float | None = Field(alias="netAmount")

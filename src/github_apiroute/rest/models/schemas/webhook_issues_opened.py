@@ -21,7 +21,7 @@ __all__ = ["WebhookIssuesOpened"]
 
 class WebhookIssuesOpened(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["opened"]
+    action: Literal["opened"] | None
     changes: WebhookIssuesOpenedChanges | None = None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
@@ -35,7 +35,7 @@ class WebhookIssuesOpened(BaseModel):
     installation: SimpleInstallation | None = None
 
     # The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-    issue: WebhookIssuesOpenedIssue
+    issue: WebhookIssuesOpenedIssue | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -44,7 +44,7 @@ class WebhookIssuesOpened(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

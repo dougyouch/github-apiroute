@@ -15,7 +15,7 @@ class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestComment(Bas
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Pull request conversation and inline review comment types to match.
-    comment_types: list[Literal["timeline_comment", "review_comment"]]
+    comment_types: list[Literal["timeline_comment", "review_comment"]] | None
 
     # A GitHub issue or pull request search query.
     query: str | None = None

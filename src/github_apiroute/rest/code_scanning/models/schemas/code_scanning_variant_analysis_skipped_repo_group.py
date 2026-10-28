@@ -15,9 +15,9 @@ class CodeScanningVariantAnalysisSkippedRepoGroup(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The total number of repositories that were skipped for this reason.
-    repository_count: int
+    repository_count: int | None
 
     # A list of repositories that were skipped. This list may not include all repositories that
     # were skipped. This is only available when the repository was found and the user has access
     # to it.
-    repositories: list[CodeScanningVariantAnalysisRepository]
+    repositories: list[CodeScanningVariantAnalysisRepository] | None

@@ -13,15 +13,15 @@ class Autolink(BaseModel):
     """An autolink reference."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
+    id: int | None
 
     # The prefix of a key that is linkified.
-    key_prefix: str
+    key_prefix: str | None
 
     # A template for the target URL that is generated if a key was found.
-    url_template: str
+    url_template: str | None
 
     # Whether this autolink reference matches alphanumeric characters. If false, this autolink
     # reference only matches numeric characters.
-    is_alphanumeric: bool
+    is_alphanumeric: bool | None
     updated_at: str | None = None

@@ -15,4 +15,4 @@ class ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The policy that controls whether self-hosted runners can be used in the organization
-    enabled_repositories: Literal["all", "selected", "none"]
+    enabled_repositories: Literal["all", "selected", "none"] | None

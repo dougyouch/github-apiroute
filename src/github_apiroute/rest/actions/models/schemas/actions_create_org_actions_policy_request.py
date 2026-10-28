@@ -17,12 +17,12 @@ class ActionsCreateOrgActionsPolicyRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the policy.
-    name: str
+    name: str | None
 
     # The enforcement level of the ruleset. `evaluate` allows admins to test rules before
     # enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only
     # available with GitHub Enterprise).
-    enforcement: RepositoryRuleEnforcement
+    enforcement: RepositoryRuleEnforcement | None
 
     # Conditions for an organization Actions policy. The conditions object should contain one of
     # `repository_name`, `repository_id`, or `repository_property`, and may also contain

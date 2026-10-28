@@ -28,29 +28,29 @@ __all__ = ["WebhookPackageUpdatedPackagePackageVersion"]
 class WebhookPackageUpdatedPackagePackageVersion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     author: WebhookPackageUpdatedPackagePackageVersionAuthor | None
-    body: str
-    body_html: str
-    created_at: str
-    description: str
+    body: str | None
+    body_html: str | None
+    created_at: str | None
+    description: str | None
     docker_metadata: list[WebhookPackageUpdatedPackagePackageVersionDockerMetadataItem] | None = (
         None
     )
     draft: bool | None = None
-    html_url: str
-    id: int
-    installation_command: str
+    html_url: str | None
+    id: int | None
+    installation_command: str | None
     manifest: str | None = None
-    metadata: list[dict[str, Any]]
-    name: str
-    package_files: list[WebhookPackageUpdatedPackagePackageVersionPackageFilesItem]
+    metadata: list[dict[str, Any]] | None
+    name: str | None
+    package_files: list[WebhookPackageUpdatedPackagePackageVersionPackageFilesItem] | None
     package_url: str | None = None
     prerelease: bool | None = None
     release: WebhookPackageUpdatedPackagePackageVersionRelease | None = None
     rubygems_metadata: list[WebhookRubygemsMetadata] | None = None
     source_url: str | None = None
-    summary: str
+    summary: str | None
     tag_name: str | None = None
-    target_commitish: str
-    target_oid: str
-    updated_at: str
-    version: str
+    target_commitish: str | None
+    target_oid: str | None
+    updated_at: str | None
+    version: str | None

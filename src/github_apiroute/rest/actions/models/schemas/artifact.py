@@ -15,19 +15,19 @@ class Artifact(BaseModel):
     """An artifact"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # The name of the artifact.
-    name: str
+    name: str | None
 
     # The size in bytes of the artifact.
-    size_in_bytes: int
-    url: str
-    archive_download_url: str
+    size_in_bytes: int | None
+    url: str | None
+    archive_download_url: str | None
 
     # Whether or not the artifact has expired.
-    expired: bool
+    expired: bool | None
     created_at: str | None
     expires_at: str | None
     updated_at: str | None

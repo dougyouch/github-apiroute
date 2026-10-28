@@ -30,39 +30,39 @@ class PullRequest(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    id: int
-    node_id: str
-    html_url: str
-    diff_url: str
-    patch_url: str
-    issue_url: str
-    commits_url: str
-    review_comments_url: str
-    review_comment_url: str
-    comments_url: str
-    statuses_url: str
+    url: str | None
+    id: int | None
+    node_id: str | None
+    html_url: str | None
+    diff_url: str | None
+    patch_url: str | None
+    issue_url: str | None
+    commits_url: str | None
+    review_comments_url: str | None
+    review_comment_url: str | None
+    comments_url: str | None
+    statuses_url: str | None
 
     # Number uniquely identifying the pull request within its repository.
-    number: int
+    number: int | None
 
     # State of this Pull Request. Either `open` or `closed`.
-    state: Literal["open", "closed"]
-    locked: bool
+    state: Literal["open", "closed"] | None
+    locked: bool | None
 
     # The title of the pull request.
-    title: str
+    title: str | None
 
     # A GitHub user.
-    user: SimpleUser
+    user: SimpleUser | None
     body: str | None
-    labels: list[PullRequestLabelsItem]
+    labels: list[PullRequestLabelsItem] | None
 
     # A collection of related issues and pull requests.
     milestone: NullableMilestone | None
     active_lock_reason: str | None = None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
     closed_at: str | None
     merged_at: str | None
     merge_commit_sha: str | None
@@ -72,12 +72,12 @@ class PullRequest(BaseModel):
     assignees: list[SimpleUser] | None = None
     requested_reviewers: list[SimpleUser] | None = None
     requested_teams: list[TeamSimple] | None = None
-    head: PullRequestHead
-    base: PullRequestBase
-    links: PullRequestLinks = Field(alias="_links")
+    head: PullRequestHead | None
+    base: PullRequestBase | None
+    links: PullRequestLinks | None = Field(alias="_links")
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
+    author_association: AuthorAssociation | None
 
     # The status of auto merging a pull request.
     auto_merge: AutoMerge | None
@@ -87,19 +87,19 @@ class PullRequest(BaseModel):
 
     # Indicates whether or not the pull request is a draft.
     draft: bool | None = None
-    merged: bool
+    merged: bool | None
     mergeable: bool | None
     rebaseable: bool | None = None
-    mergeable_state: str
+    mergeable_state: str | None
 
     # A GitHub user.
     merged_by: NullableSimpleUser | None
-    comments: int
-    review_comments: int
+    comments: int | None
+    review_comments: int | None
 
     # Indicates whether maintainers can modify the pull request.
-    maintainer_can_modify: bool
-    commits: int
-    additions: int
-    deletions: int
-    changed_files: int
+    maintainer_can_modify: bool | None
+    commits: int | None
+    additions: int | None
+    deletions: int | None
+    changed_files: int | None

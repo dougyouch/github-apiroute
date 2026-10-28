@@ -14,4 +14,4 @@ class ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest(BaseModel):
 
     # The names of the custom labels to set for the runner. You can pass an empty array to
     # remove all custom labels.
-    labels: list[str]
+    labels: list[str] | None

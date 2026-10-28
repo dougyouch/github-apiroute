@@ -22,12 +22,12 @@ class WebhookCommitCommentCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The action performed. Can be `created`.
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # The [commit
     # comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-
     # created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
-    comment: WebhookCommitCommentCreatedComment
+    comment: WebhookCommitCommentCreatedComment | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -46,7 +46,7 @@ class WebhookCommitCommentCreated(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

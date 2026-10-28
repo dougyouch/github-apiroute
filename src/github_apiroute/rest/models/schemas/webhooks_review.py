@@ -18,32 +18,35 @@ class WebhooksReview(BaseModel):
     """The review that was affected."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    links: WebhooksReviewLinks = Field(alias="_links")
+    links: WebhooksReviewLinks | None = Field(alias="_links")
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # The text of the review.
     body: str | None
 
     # A commit SHA for the review.
-    commit_id: str
-    html_url: str
+    commit_id: str | None
+    html_url: str | None
 
     # Unique identifier of the review
-    id: int
-    node_id: str
-    pull_request_url: str
-    state: str
+    id: int | None
+    node_id: str | None
+    pull_request_url: str | None
+    state: str | None
     submitted_at: str | None
     updated_at: str | None = None
     user: WebhooksReviewUser | None

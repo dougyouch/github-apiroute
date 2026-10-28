@@ -14,7 +14,7 @@ class WebhookCodeScanningAlertClosedByUserAlertTool(BaseModel):
     guid: str | None = None
 
     # The name of the tool used to generate the code scanning analysis alert.
-    name: str
+    name: str | None
 
     # The version of the tool used to detect the alert.
     version: str | None

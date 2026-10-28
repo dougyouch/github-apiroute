@@ -17,4 +17,4 @@ class AgentMergePutAgentMergeEnrollmentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The set of actions that Copilot may perform on the pull request.
-    allowed_actions: list[Literal["fix_ci", "resolve_merge_conflicts"]]
+    allowed_actions: list[Literal["fix_ci", "resolve_merge_conflicts"]] | None

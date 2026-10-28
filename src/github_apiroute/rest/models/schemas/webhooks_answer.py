@@ -18,25 +18,28 @@ class WebhooksAnswer(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
-    body: str
-    child_comment_count: int
-    created_at: str
-    discussion_id: int
-    html_url: str
-    id: int
-    node_id: str
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
+    body: str | None
+    child_comment_count: int | None
+    created_at: str | None
+    discussion_id: int | None
+    html_url: str | None
+    id: int | None
+    node_id: str | None
     parent_id: Any
     reactions: WebhooksAnswerReactions | None = None
-    repository_url: str
-    updated_at: str
+    repository_url: str | None
+    updated_at: str | None
     user: WebhooksAnswerUser | None

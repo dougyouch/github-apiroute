@@ -16,5 +16,5 @@ class PullRequestReviewRequest(BaseModel):
     """Pull Request Review Request"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    users: list[SimpleUser]
-    teams: list[Team]
+    users: list[SimpleUser] | None
+    teams: list[Team] | None

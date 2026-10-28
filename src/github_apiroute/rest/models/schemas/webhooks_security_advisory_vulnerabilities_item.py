@@ -19,6 +19,6 @@ __all__ = ["WebhooksSecurityAdvisoryVulnerabilitiesItem"]
 class WebhooksSecurityAdvisoryVulnerabilitiesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     first_patched_version: WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion | None
-    package: WebhooksSecurityAdvisoryVulnerabilitiesItemPackage
-    severity: str
-    vulnerable_version_range: str
+    package: WebhooksSecurityAdvisoryVulnerabilitiesItemPackage | None
+    severity: str | None
+    vulnerable_version_range: str | None

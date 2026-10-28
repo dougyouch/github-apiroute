@@ -17,16 +17,16 @@ class MergeGroup(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The SHA of the merge group.
-    head_sha: str
+    head_sha: str | None
 
     # The full ref of the merge group.
-    head_ref: str
+    head_ref: str | None
 
     # The SHA of the merge group's parent commit.
-    base_sha: str
+    base_sha: str | None
 
     # The full ref of the branch the merge group will be merged into.
-    base_ref: str
+    base_ref: str | None
 
     # A commit.
-    head_commit: SimpleCommit
+    head_commit: SimpleCommit | None

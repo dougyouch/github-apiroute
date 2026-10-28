@@ -14,10 +14,10 @@ __all__ = ["WebhooksPullRequest5Base"]
 
 class WebhooksPullRequest5Base(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    label: str
-    ref: str
+    label: str | None
+    ref: str | None
 
     # A git repository
-    repo: WebhooksPullRequest5BaseRepo
-    sha: str
+    repo: WebhooksPullRequest5BaseRepo | None
+    sha: str | None
     user: WebhooksPullRequest5BaseUser | None

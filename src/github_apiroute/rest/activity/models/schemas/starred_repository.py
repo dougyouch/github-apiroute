@@ -15,7 +15,7 @@ class StarredRepository(BaseModel):
     """Starred Repository"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    starred_at: str
+    starred_at: str | None
 
     # A repository on GitHub.
-    repo: Repository
+    repo: Repository | None

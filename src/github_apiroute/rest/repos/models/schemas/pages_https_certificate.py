@@ -13,22 +13,25 @@ __all__ = ["PagesHttpsCertificate"]
 
 class PagesHttpsCertificate(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    state: Literal[
-        "new",
-        "authorization_created",
-        "authorization_pending",
-        "authorized",
-        "authorization_revoked",
-        "issued",
-        "uploaded",
-        "approved",
-        "errored",
-        "bad_authz",
-        "destroy_pending",
-        "dns_changed",
-    ]
-    description: str
+    state: (
+        Literal[
+            "new",
+            "authorization_created",
+            "authorization_pending",
+            "authorized",
+            "authorization_revoked",
+            "issued",
+            "uploaded",
+            "approved",
+            "errored",
+            "bad_authz",
+            "destroy_pending",
+            "dns_changed",
+        ]
+        | None
+    )
+    description: str | None
 
     # Array of the domain set and its alternate name (if it is configured)
-    domains: list[str]
+    domains: list[str] | None
     expires_at: str | None = None

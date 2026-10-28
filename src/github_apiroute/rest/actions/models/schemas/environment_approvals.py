@@ -20,14 +20,14 @@ class EnvironmentApprovals(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of environments that were approved or rejected
-    environments: list[EnvironmentApprovalsEnvironmentsItem]
+    environments: list[EnvironmentApprovalsEnvironmentsItem] | None
 
     # Whether deployment to the environment(s) was approved or rejected or pending (with
     # comments)
-    state: Literal["approved", "rejected", "pending"]
+    state: Literal["approved", "rejected", "pending"] | None
 
     # A GitHub user.
-    user: SimpleUser
+    user: SimpleUser | None
 
     # The comment submitted with the deployment review
-    comment: str
+    comment: str | None

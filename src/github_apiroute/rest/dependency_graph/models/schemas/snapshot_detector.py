@@ -15,10 +15,10 @@ class SnapshotDetector(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the detector used.
-    name: str
+    name: str | None
 
     # The version of the detector used.
-    version: str
+    version: str | None
 
     # The url of the detector used.
-    url: str
+    url: str | None

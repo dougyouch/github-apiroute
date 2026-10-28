@@ -11,8 +11,8 @@ __all__ = ["GitRefObject"]
 
 class GitRefObject(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: str = Field(alias="type")
+    type_: str | None = Field(alias="type")
 
     # SHA for the reference
-    sha: str
-    url: str
+    sha: str | None
+    url: str | None

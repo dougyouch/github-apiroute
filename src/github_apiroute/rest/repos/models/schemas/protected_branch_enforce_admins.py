@@ -11,5 +11,5 @@ __all__ = ["ProtectedBranchEnforceAdmins"]
 
 class ProtectedBranchEnforceAdmins(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    enabled: bool
+    url: str | None
+    enabled: bool | None

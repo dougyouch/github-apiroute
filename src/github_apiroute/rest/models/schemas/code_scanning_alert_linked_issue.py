@@ -20,22 +20,22 @@ class CodeScanningAlertLinkedIssue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The issue number.
-    number: int
+    number: int | None
 
     # The title of the issue.
-    title: str
+    title: str | None
 
     # The state of the issue.
-    state: str
+    state: str | None
 
     # The REST API URL of the issue.
-    url: str
+    url: str | None
 
     # The URL to view the issue on GitHub.
-    html_url: str
+    html_url: str | None
 
     # A GitHub repository.
-    repository: SimpleRepository
+    repository: SimpleRepository | None
 
     # The type assigned to the issue. This is only present for issues in repositories where
     # issue types are supported.

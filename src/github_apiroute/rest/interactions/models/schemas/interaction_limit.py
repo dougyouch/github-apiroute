@@ -19,7 +19,7 @@ class InteractionLimit(BaseModel):
 
     # The type of GitHub user that can comment, open issues, or create pull requests while the
     # interaction limit is in effect.
-    limit: InteractionGroup
+    limit: InteractionGroup | None
 
     # The duration of the interaction restriction. Default: `one_day`.
     expiry: InteractionExpiry | None = None

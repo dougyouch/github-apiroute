@@ -15,6 +15,6 @@ __all__ = ["ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances
 
 class ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    users: list[SimpleUser]
-    teams: list[Team]
+    users: list[SimpleUser] | None
+    teams: list[Team] | None
     apps: list[Integration | None] | None = None

@@ -20,5 +20,5 @@ class GistsCreateRequest(BaseModel):
     description: str | None = None
 
     # Names and content for the files that make up the gist
-    files: dict[str, GistsCreateRequestFilesValue]
+    files: dict[str, GistsCreateRequestFilesValue] | None
     public: bool | Literal["true", "false"] | None = None

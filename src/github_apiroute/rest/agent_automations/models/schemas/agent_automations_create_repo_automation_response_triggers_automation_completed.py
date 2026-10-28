@@ -15,7 +15,7 @@ class AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompleted(Ba
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Upstream Automation IDs in the same repository.
-    automation_ids: list[str]
+    automation_ids: list[str] | None
 
     # Override the Automation `write_scope` for runs started by this trigger. If omitted, the
     # automation's `write_scope` is used. Organization or repository policy may restrict the

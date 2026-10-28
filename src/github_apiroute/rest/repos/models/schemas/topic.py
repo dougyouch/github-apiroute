@@ -13,4 +13,4 @@ class Topic(BaseModel):
     """A topic aggregates entities that are related to a subject."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    names: list[str]
+    names: list[str] | None

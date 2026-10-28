@@ -22,7 +22,7 @@ class CodeScanningVariantAnalysisSkippedRepositories(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    access_mismatch_repos: CodeScanningVariantAnalysisSkippedRepoGroup
-    not_found_repos: CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos
-    no_codeql_db_repos: CodeScanningVariantAnalysisSkippedRepoGroup
-    over_limit_repos: CodeScanningVariantAnalysisSkippedRepoGroup
+    access_mismatch_repos: CodeScanningVariantAnalysisSkippedRepoGroup | None
+    not_found_repos: CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos | None
+    no_codeql_db_repos: CodeScanningVariantAnalysisSkippedRepoGroup | None
+    over_limit_repos: CodeScanningVariantAnalysisSkippedRepoGroup | None

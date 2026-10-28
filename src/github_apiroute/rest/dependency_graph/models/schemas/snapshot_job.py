@@ -13,12 +13,12 @@ class SnapshotJob(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The external ID of the job.
-    id: str
+    id: str | None
 
     # Correlator provides a key that is used to group snapshots submitted over time. Only the
     # "latest" submitted snapshot for a given combination of `job.correlator` and
     # `detector.name` will be considered when calculating a repository's current dependencies.
-    correlator: str
+    correlator: str | None
 
     # The url for the job.
     html_url: str | None = None

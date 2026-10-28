@@ -15,4 +15,4 @@ __all__ = ["WebhookDiscussionCategoryChangedChangesCategory"]
 
 class WebhookDiscussionCategoryChangedChangesCategory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    from_: WebhookDiscussionCategoryChangedChangesCategoryFrom = Field(alias="from")
+    from_: WebhookDiscussionCategoryChangedChangesCategoryFrom | None = Field(alias="from")

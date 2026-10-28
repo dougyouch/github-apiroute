@@ -11,13 +11,13 @@ __all__ = ["WebhookIssuesReopenedIssueReactions"]
 
 class WebhookIssuesReopenedIssueReactions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    n1: int = Field(alias="+1")
-    n1_2: int = Field(alias="-1")
-    confused: int
-    eyes: int
-    heart: int
-    hooray: int
-    laugh: int
-    rocket: int
-    total_count: int
-    url: str
+    n1: int | None = Field(alias="+1")
+    n1_2: int | None = Field(alias="-1")
+    confused: int | None
+    eyes: int | None
+    heart: int | None
+    hooray: int | None
+    laugh: int | None
+    rocket: int | None
+    total_count: int | None
+    url: str | None

@@ -13,4 +13,4 @@ class RepositoryAdvisorySubmission(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether a private vulnerability report was accepted by the repository's administrators.
-    accepted: bool
+    accepted: bool | None

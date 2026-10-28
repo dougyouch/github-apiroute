@@ -21,16 +21,16 @@ class TeamFull(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the team
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # URL for the team
-    url: str
-    html_url: str
+    url: str | None
+    html_url: str | None
 
     # Name of the team
-    name: str
-    slug: str
+    name: str | None
+    slug: str | None
     description: str | None
 
     # The level of privacy this team should have
@@ -40,26 +40,26 @@ class TeamFull(BaseModel):
     notification_setting: Literal["notifications_enabled", "notifications_disabled"] | None = None
 
     # Permission that the team will have for its repositories
-    permission: str
-    members_url: str
-    repositories_url: str
+    permission: str | None
+    members_url: str | None
+    repositories_url: str | None
 
     # Groups of organization members that gives permissions on specified repositories.
     parent: NullableTeamSimple | None = None
-    members_count: int
-    repos_count: int
-    created_at: str
-    updated_at: str
+    members_count: int | None
+    repos_count: int | None
+    created_at: str | None
+    updated_at: str | None
 
     # Team Organization
-    organization: TeamOrganization
+    organization: TeamOrganization | None
 
     # The [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to
     # map to a team.
     ldap_dn: LdapDn | None = None
 
     # The ownership type of the team
-    type_: Literal["enterprise", "organization"] = Field(alias="type")
+    type_: Literal["enterprise", "organization"] | None = Field(alias="type")
 
     # Unique identifier of the organization to which this team belongs
     organization_id: int | None = None

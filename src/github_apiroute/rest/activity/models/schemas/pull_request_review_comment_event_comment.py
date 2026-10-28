@@ -19,23 +19,23 @@ __all__ = ["PullRequestReviewCommentEventComment"]
 
 class PullRequestReviewCommentEventComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    url: str
+    id: int | None
+    node_id: str | None
+    url: str | None
     pull_request_review_id: int | None
-    diff_hunk: str
-    path: str
+    diff_hunk: str | None
+    path: str | None
     position: int | None
-    original_position: int
+    original_position: int | None
     subject_type: str | None = None
-    commit_id: str
+    commit_id: str | None
     user: PullRequestReviewCommentEventCommentUser | None
-    body: str
-    created_at: str
-    updated_at: str
-    html_url: str
-    pull_request_url: str
-    links: PullRequestReviewCommentEventCommentLinks = Field(alias="_links")
-    original_commit_id: str
-    reactions: PullRequestReviewCommentEventCommentReactions
+    body: str | None
+    created_at: str | None
+    updated_at: str | None
+    html_url: str | None
+    pull_request_url: str | None
+    links: PullRequestReviewCommentEventCommentLinks | None = Field(alias="_links")
+    original_commit_id: str | None
+    reactions: PullRequestReviewCommentEventCommentReactions | None
     in_reply_to_id: int | None = None

@@ -17,7 +17,7 @@ class OidcCustomPropertyInclusion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the custom property that is included in the OIDC token
-    custom_property_name: str
+    custom_property_name: str | None
 
     # Whether the inclusion was defined at the organization or enterprise level
-    inclusion_source: Literal["organization", "enterprise"]
+    inclusion_source: Literal["organization", "enterprise"] | None

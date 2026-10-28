@@ -22,12 +22,12 @@ __all__ = ["WebhookDiscussionCommentEdited"]
 
 class WebhookDiscussionCommentEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
-    changes: WebhookDiscussionCommentEditedChanges
-    comment: WebhooksComment
+    action: Literal["edited"] | None
+    changes: WebhookDiscussionCommentEditedChanges | None
+    comment: WebhooksComment | None
 
     # A Discussion in a repository.
-    discussion: Discussion
+    discussion: Discussion | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -46,7 +46,7 @@ class WebhookDiscussionCommentEdited(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

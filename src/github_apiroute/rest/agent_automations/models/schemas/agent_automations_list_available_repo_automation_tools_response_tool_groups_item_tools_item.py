@@ -17,13 +17,13 @@ class AgentAutomationsListAvailableRepoAutomationToolsResponseToolGroupsItemTool
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the tool accepted when creating or updating an automation.
-    id: str
+    id: str | None
 
     # The human-readable name of the tool.
-    title: str
+    title: str | None
 
     # A short description of what the tool does.
-    description: str
+    description: str | None
 
     # The tool's behavior level. `read` tools only retrieve data. `write` tools can change data.
     # This is not a GitHub token permission.

@@ -15,4 +15,4 @@ __all__ = ["WebhookProjectsV2ItemEditedChangesOption1"]
 
 class WebhookProjectsV2ItemEditedChangesOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    field_value: WebhookProjectsV2ItemEditedChangesOption1FieldValue
+    field_value: WebhookProjectsV2ItemEditedChangesOption1FieldValue | None

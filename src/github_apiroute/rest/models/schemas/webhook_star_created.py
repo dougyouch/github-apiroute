@@ -19,7 +19,7 @@ __all__ = ["WebhookStarCreated"]
 
 class WebhookStarCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -38,10 +38,10 @@ class WebhookStarCreated(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None
 
     # The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-
     # DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.

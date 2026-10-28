@@ -25,13 +25,13 @@ class AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItem(
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The stable identifier of the field.
-    id: str
+    id: str | None
 
     # The human-readable name of the field.
-    label: str
+    label: str | None
 
     # Whether the field must be provided.
-    required: bool
+    required: bool | None
 
     # The human-readable description of the field.
     description: str | None = None
@@ -41,4 +41,5 @@ class AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItem(
         AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemSchemaOption1
         | AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemSchemaOption2
         | AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemSchemaOption3
+        | None
     ) = Field(alias="schema")

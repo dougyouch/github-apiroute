@@ -29,13 +29,13 @@ class AgentAutomationsListAutomationsResponseItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the automation.
-    id: str
+    id: str | None
 
     # Repository identity for an automation in cross-repository list responses.
-    repository: AgentAutomationsListAutomationsResponseItemRepository
+    repository: AgentAutomationsListAutomationsResponseItemRepository | None
 
     # The name of the automation.
-    name: str
+    name: str | None
 
     # Whether the automation is currently enabled.
     enabled: bool | None = None
@@ -62,10 +62,10 @@ class AgentAutomationsListAutomationsResponseItem(BaseModel):
     triggers: AgentAutomationsListAutomationsResponseItemTriggers | None = None
 
     # When the automation was created.
-    created_at: str
+    created_at: str | None
 
     # When the automation was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # A GitHub user
-    created_by: AgentAutomationsListAutomationsResponseItemCreatedBy
+    created_by: AgentAutomationsListAutomationsResponseItemCreatedBy | None

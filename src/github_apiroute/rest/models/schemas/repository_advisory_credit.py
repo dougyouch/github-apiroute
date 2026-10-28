@@ -20,10 +20,10 @@ class RepositoryAdvisoryCredit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A GitHub user.
-    user: SimpleUser
+    user: SimpleUser | None
 
     # The type of credit the user is receiving.
-    type_: SecurityAdvisoryCreditTypes = Field(alias="type")
+    type_: SecurityAdvisoryCreditTypes | None = Field(alias="type")
 
     # The state of the user's acceptance of the credit.
-    state: Literal["accepted", "declined", "pending"]
+    state: Literal["accepted", "declined", "pending"] | None

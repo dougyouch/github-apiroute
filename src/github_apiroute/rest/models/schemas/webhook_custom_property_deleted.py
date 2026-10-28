@@ -19,8 +19,8 @@ __all__ = ["WebhookCustomPropertyDeleted"]
 
 class WebhookCustomPropertyDeleted(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["deleted"]
-    definition: WebhookCustomPropertyDeletedDefinition
+    action: Literal["deleted"] | None
+    definition: WebhookCustomPropertyDeletedDefinition | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an

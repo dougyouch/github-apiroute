@@ -16,10 +16,10 @@ __all__ = ["BillingUsageSummaryReportOrg"]
 
 class BillingUsageSummaryReportOrg(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    time_period: BillingUsageSummaryReportOrgTimePeriod = Field(alias="timePeriod")
+    time_period: BillingUsageSummaryReportOrgTimePeriod | None = Field(alias="timePeriod")
 
     # The unique identifier of the organization.
-    organization: str
+    organization: str | None
 
     # The name of the repository for the usage report.
     repository: str | None = None
@@ -29,4 +29,4 @@ class BillingUsageSummaryReportOrg(BaseModel):
 
     # The SKU for the usage report.
     sku: str | None = None
-    usage_items: list[BillingUsageSummaryReportOrgUsageItemsItem] = Field(alias="usageItems")
+    usage_items: list[BillingUsageSummaryReportOrgUsageItemsItem] | None = Field(alias="usageItems")

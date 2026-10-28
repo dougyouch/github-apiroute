@@ -25,7 +25,7 @@ __all__ = ["WebhookPullRequestReviewRequestedValueOption2"]
 
 class WebhookPullRequestReviewRequestedValueOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["review_requested"]
+    action: Literal["review_requested"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -38,20 +38,20 @@ class WebhookPullRequestReviewRequestedValueOption2(BaseModel):
     installation: SimpleInstallation | None = None
 
     # The pull request number.
-    number: int
+    number: int | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
     organization: OrganizationSimpleWebhooks | None = None
-    pull_request: WebhookPullRequestReviewRequestedValueOption2PullRequest
+    pull_request: WebhookPullRequestReviewRequestedValueOption2PullRequest | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # Groups of organization members that gives permissions on specified repositories.
-    requested_team: WebhookPullRequestReviewRequestedValueOption2RequestedTeam
+    requested_team: WebhookPullRequestReviewRequestedValueOption2RequestedTeam | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -24,7 +24,7 @@ class CodeSecurityCreateConfigurationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the code security configuration. Must be unique within the organization.
-    name: str
+    name: str | None
 
     # A description of the code security configuration
     description: str | None = None

@@ -15,4 +15,4 @@ class OrgsUpdatePatAccessRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Action to apply to the fine-grained personal access token.
-    action: Literal["revoke"]
+    action: Literal["revoke"] | None

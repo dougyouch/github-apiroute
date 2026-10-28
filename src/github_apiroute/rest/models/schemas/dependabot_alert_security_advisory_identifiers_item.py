@@ -17,7 +17,7 @@ class DependabotAlertSecurityAdvisoryIdentifiersItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The type of advisory identifier.
-    type_: Literal["CVE", "GHSA"] = Field(alias="type")
+    type_: Literal["CVE", "GHSA"] | None = Field(alias="type")
 
     # The value of the advisory identifer.
-    value: str
+    value: str | None

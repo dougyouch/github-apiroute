@@ -15,13 +15,13 @@ class PageDeployment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
-    id: int | str
+    id: int | str | None
 
     # The URI to monitor GitHub Pages deployment status.
-    status_url: str
+    status_url: str | None
 
     # The URI to the deployed GitHub Pages.
-    page_url: str
+    page_url: str | None
 
     # The URI to the deployed GitHub Pages preview.
     preview_url: str | None = None

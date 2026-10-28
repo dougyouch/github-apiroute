@@ -16,13 +16,13 @@ __all__ = ["WebhookPackagePublishedPackagePackageVersionRelease"]
 class WebhookPackagePublishedPackagePackageVersionRelease(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     author: WebhookPackagePublishedPackagePackageVersionReleaseAuthor | None
-    created_at: str
-    draft: bool
-    html_url: str
-    id: int
+    created_at: str | None
+    draft: bool | None
+    html_url: str | None
+    id: int | None
     name: str | None
-    prerelease: bool
-    published_at: str
-    tag_name: str
-    target_commitish: str
-    url: str
+    prerelease: bool | None
+    published_at: str | None
+    tag_name: str | None
+    target_commitish: str | None
+    url: str | None

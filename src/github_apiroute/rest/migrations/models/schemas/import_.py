@@ -21,27 +21,30 @@ class Import(BaseModel):
     use_lfs: bool | None = None
 
     # The URL of the originating repository.
-    vcs_url: str
+    vcs_url: str | None
     svc_root: str | None = None
     tfvc_project: str | None = None
-    status: Literal[
-        "auth",
-        "error",
-        "none",
-        "detecting",
-        "choose",
-        "auth_failed",
-        "importing",
-        "mapping",
-        "waiting_to_push",
-        "pushing",
-        "complete",
-        "setup",
-        "unknown",
-        "detection_found_multiple",
-        "detection_found_nothing",
-        "detection_needs_auth",
-    ]
+    status: (
+        Literal[
+            "auth",
+            "error",
+            "none",
+            "detecting",
+            "choose",
+            "auth_failed",
+            "importing",
+            "mapping",
+            "waiting_to_push",
+            "pushing",
+            "complete",
+            "setup",
+            "unknown",
+            "detection_found_multiple",
+            "detection_found_nothing",
+            "detection_needs_auth",
+        ]
+        | None
+    )
     status_text: str | None = None
     failed_step: str | None = None
     error_message: str | None = None
@@ -54,8 +57,8 @@ class Import(BaseModel):
     project_choices: list[ImportProjectChoicesItem] | None = None
     message: str | None = None
     authors_count: int | None = None
-    url: str
-    html_url: str
-    authors_url: str
-    repository_url: str
+    url: str | None
+    html_url: str | None
+    authors_url: str | None
+    repository_url: str | None
     svn_root: str | None = None

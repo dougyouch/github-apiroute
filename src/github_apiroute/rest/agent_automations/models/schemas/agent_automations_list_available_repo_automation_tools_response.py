@@ -24,8 +24,8 @@ class AgentAutomationsListAvailableRepoAutomationToolsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Caller-filtered built-in automation tool groups.
-    tool_groups: list[AgentAutomationsListAvailableRepoAutomationToolsResponseToolGroupsItem]
+    tool_groups: list[AgentAutomationsListAvailableRepoAutomationToolsResponseToolGroupsItem] | None
 
     # Configured repository MCP servers, sorted by name. Empty when repository MCP is disabled
     # or unconfigured.
-    mcp_servers: list[AgentAutomationsListAvailableRepoAutomationToolsResponseMcpServersItem]
+    mcp_servers: list[AgentAutomationsListAvailableRepoAutomationToolsResponseMcpServersItem] | None

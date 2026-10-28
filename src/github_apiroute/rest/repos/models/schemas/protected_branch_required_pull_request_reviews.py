@@ -18,7 +18,7 @@ __all__ = ["ProtectedBranchRequiredPullRequestReviews"]
 
 class ProtectedBranchRequiredPullRequestReviews(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
     dismiss_stale_reviews: bool | None = None
     require_code_owner_reviews: bool | None = None
     required_approving_review_count: int | None = None

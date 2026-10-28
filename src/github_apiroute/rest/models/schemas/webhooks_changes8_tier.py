@@ -16,4 +16,4 @@ class WebhooksChanges8Tier(BaseModel):
 
     # The `tier_changed` and `pending_tier_change` will include the original tier before the
     # change or pending change. For more information, see the pending tier change payload.
-    from_: WebhooksChanges8TierFrom = Field(alias="from")
+    from_: WebhooksChanges8TierFrom | None = Field(alias="from")

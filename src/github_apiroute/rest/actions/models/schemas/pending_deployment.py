@@ -16,18 +16,18 @@ class PendingDeployment(BaseModel):
     """Details of a deployment that is waiting for protection rules to pass"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    environment: PendingDeploymentEnvironment
+    environment: PendingDeploymentEnvironment | None
 
     # The set duration of the wait timer
-    wait_timer: int
+    wait_timer: int | None
 
     # The time that the wait timer began.
     wait_timer_started_at: str | None
 
     # Whether the currently authenticated user can approve the deployment
-    current_user_can_approve: bool
+    current_user_can_approve: bool | None
 
     # The people or teams that may approve jobs that reference the environment. You can list up
     # to six users or teams as reviewers. The reviewers must have at least read access to the
     # repository. Only one of the required reviewers needs to approve the job for it to proceed.
-    reviewers: list[PendingDeploymentReviewersItem]
+    reviewers: list[PendingDeploymentReviewersItem] | None

@@ -16,7 +16,7 @@ class ActionsGetDefaultWorkflowPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
-    default_workflow_permissions: ActionsDefaultWorkflowPermissions
+    default_workflow_permissions: ActionsDefaultWorkflowPermissions | None
 
     # Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
-    can_approve_pull_request_reviews: ActionsCanApprovePullRequestReviews
+    can_approve_pull_request_reviews: ActionsCanApprovePullRequestReviews | None

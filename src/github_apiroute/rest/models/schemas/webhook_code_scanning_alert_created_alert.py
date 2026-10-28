@@ -42,19 +42,19 @@ class WebhookCodeScanningAlertCreatedAlert(BaseModel):
     fixed_at: Any = None
 
     # The GitHub URL of the alert resource.
-    html_url: str
+    html_url: str | None
     instances_url: str | None = None
     most_recent_instance: WebhookCodeScanningAlertCreatedAlertMostRecentInstance | None = None
 
     # The code scanning alert number.
-    number: int
-    rule: WebhookCodeScanningAlertCreatedAlertRule
+    number: int | None
+    rule: WebhookCodeScanningAlertCreatedAlertRule | None
 
     # State of a code scanning alert. Events for alerts found outside the default branch will
     # return a `null` value until they are dismissed or fixed.
     state: Literal["open", "dismissed"] | None
     tool: WebhookCodeScanningAlertCreatedAlertTool | None
     updated_at: str | None = None
-    url: str
+    url: str | None
     dismissal_approved_by: Any = None
     assignees: list[SimpleUser] | None = None

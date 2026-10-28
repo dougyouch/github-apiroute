@@ -11,4 +11,4 @@ __all__ = ["PullsPullRequestStacksCreateResponseBase"]
 
 class PullsPullRequestStacksCreateResponseBase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
+    ref: str | None

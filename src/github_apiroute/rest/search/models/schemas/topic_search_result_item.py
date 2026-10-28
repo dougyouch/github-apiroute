@@ -17,17 +17,17 @@ class TopicSearchResultItem(BaseModel):
     """Topic Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
+    name: str | None
     display_name: str | None
     short_description: str | None
     description: str | None
     created_by: str | None
     released: str | None
-    created_at: str
-    updated_at: str
-    featured: bool
-    curated: bool
-    score: float
+    created_at: str | None
+    updated_at: str | None
+    featured: bool | None
+    curated: bool | None
+    score: float | None
     repository_count: int | None = None
     logo_url: str | None = None
     text_matches: SearchResultTextMatches | None = None

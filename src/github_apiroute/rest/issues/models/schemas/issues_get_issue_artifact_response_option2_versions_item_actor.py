@@ -13,5 +13,5 @@ class IssuesGetIssueArtifactResponseOption2VersionsItemActor(BaseModel):
     """The user or integration that created this version."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    login: str
-    id: int
+    login: str | None
+    id: int | None

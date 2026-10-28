@@ -21,35 +21,35 @@ class WebhookReleasePrereleasedRelease(BaseModel):
     """The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    assets: list[WebhookReleasePrereleasedReleaseAssetsItem | None]
-    assets_url: str
+    assets: list[WebhookReleasePrereleasedReleaseAssetsItem | None] | None
+    assets_url: str | None
     author: WebhookReleasePrereleasedReleaseAuthor | None
     body: str | None
     created_at: str | None
     discussion_url: str | None = None
 
     # Whether the release is a draft or published
-    draft: bool
-    html_url: str
-    id: int
+    draft: bool | None
+    html_url: str | None
+    id: int | None
 
     # Whether or not the release is immutable.
-    immutable: bool
+    immutable: bool | None
     name: str | None
-    node_id: str
+    node_id: str | None
 
     # Whether the release is identified as a prerelease or a full release.
-    prerelease: Literal[True]
+    prerelease: Literal[True] | None
     published_at: str | None
     reactions: WebhookReleasePrereleasedReleaseReactions | None = None
 
     # The name of the tag.
-    tag_name: str
+    tag_name: str | None
     tarball_url: str | None
 
     # Specifies the commitish value that determines where the Git tag is created from.
-    target_commitish: str
-    upload_url: str
+    target_commitish: str | None
+    upload_url: str | None
     updated_at: str | None
-    url: str
+    url: str | None
     zipball_url: str | None

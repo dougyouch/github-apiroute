@@ -19,7 +19,7 @@ class RepositoryRuleDetailedValueOption2(BaseModel):
     """Only allow users with bypass permission to update matching refs."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["update"] = Field(alias="type")
+    type_: Literal["update"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption2Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

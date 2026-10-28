@@ -13,4 +13,4 @@ __all__ = ["GollumEvent"]
 
 class GollumEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    pages: list[GollumEventPagesItem]
+    pages: list[GollumEventPagesItem] | None

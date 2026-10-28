@@ -15,7 +15,7 @@ class TeamsCreateRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the team.
-    name: str
+    name: str | None
 
     # The description of the team.
     description: str | None = None

@@ -1,7 +1,7 @@
 name: Build
 
-# Keeps the clients current: fetches GitHub's latest REST description and GraphQL schema, upgrades apiroute, regenerates,
-# checks, and commits any difference to main. A changed spec is committed as feat(specs)
+# Keeps the clients current: fetches GitHub's latest REST description and GraphQL schema,
+# upgrades apiroute, regenerates, checks (live too), and commits any difference to main. A changed spec is committed as feat(specs)
 # (a minor release); output that changed only because apiroute did, as fix(codegen) (a patch).
 on:
   schedule:
@@ -35,6 +35,13 @@ jobs:
           uv run ruff check .
           uv run ruff format --check .
           uv run pytest
+      # Typed models against what GitHub actually sends: catches a spec that says a field is
+      # never null (or always present) when the API disagrees, before anything is committed.
+      # Read-only; tests about the signed-in user skip, since this token belongs to no user.
+      - name: Live tests
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: uv run pytest tests/live
       - name: Commit changes
         run: |
           if [ -z "$(git status --porcelain)" ]; then

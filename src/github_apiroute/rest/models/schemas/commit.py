@@ -20,14 +20,14 @@ class Commit(BaseModel):
     """Commit"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    sha: str
-    node_id: str
-    html_url: str
-    comments_url: str
-    commit: CommitCommit
+    url: str | None
+    sha: str | None
+    node_id: str | None
+    html_url: str | None
+    comments_url: str | None
+    commit: CommitCommit | None
     author: SimpleUser | EmptyObject | None
     committer: SimpleUser | EmptyObject | None
-    parents: list[CommitParentsItem]
+    parents: list[CommitParentsItem] | None
     stats: CommitStats | None = None
     files: list[DiffEntry] | None = None

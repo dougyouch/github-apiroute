@@ -17,17 +17,17 @@ class GitTag(BaseModel):
     """Metadata for a Git tag"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    node_id: str
+    node_id: str | None
 
     # Name of the tag
-    tag: str
-    sha: str
+    tag: str | None
+    sha: str | None
 
     # URL for the tag
-    url: str
+    url: str | None
 
     # Message describing the purpose of the tag
-    message: str
-    tagger: GitTagTagger
-    object: GitTagObject
+    message: str | None
+    tagger: GitTagTagger | None
+    object: GitTagObject | None
     verification: Verification | None = None

@@ -18,10 +18,10 @@ __all__ = ["WebhookPullRequestReviewRequestRemovedValueOption2PullRequestBase"]
 
 class WebhookPullRequestReviewRequestRemovedValueOption2PullRequestBase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    label: str
-    ref: str
+    label: str | None
+    ref: str | None
 
     # A git repository
-    repo: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestBaseRepo
-    sha: str
+    repo: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestBaseRepo | None
+    sha: str | None
     user: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestBaseUser | None

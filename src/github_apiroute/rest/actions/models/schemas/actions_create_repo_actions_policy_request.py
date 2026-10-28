@@ -17,12 +17,12 @@ class ActionsCreateRepoActionsPolicyRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the policy.
-    name: str
+    name: str | None
 
     # The enforcement level of the ruleset. `evaluate` allows admins to test rules before
     # enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only
     # available with GitHub Enterprise).
-    enforcement: RepositoryRuleEnforcement
+    enforcement: RepositoryRuleEnforcement | None
 
     # Conditions for a repository Actions policy. The object may be empty to preserve or use the
     # default workflow targeting, or contain only `workflow_path`.

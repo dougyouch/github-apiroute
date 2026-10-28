@@ -14,14 +14,14 @@ __all__ = ["PullRequestStackMinimal"]
 
 class PullRequestStackMinimal(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    number: int
-    node_id: str
-    url: str
-    base: PullRequestStackMinimalBase
+    id: int | None
+    number: int | None
+    node_id: str | None
+    url: str | None
+    base: PullRequestStackMinimalBase | None
 
     # Whether the stack has any open pull request. False when all pull requests are merged or
     # closed.
-    open: bool
-    created_at: str
-    pull_requests: list[PullRequestStackMinimalPullRequestsItem]
+    open: bool | None
+    created_at: str | None
+    pull_requests: list[PullRequestStackMinimalPullRequestsItem] | None

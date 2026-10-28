@@ -15,4 +15,4 @@ class RepositoryRuleDeletion(BaseModel):
     """Only allow users with bypass permissions to delete matching refs."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["deletion"] = Field(alias="type")
+    type_: Literal["deletion"] | None = Field(alias="type")

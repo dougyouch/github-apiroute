@@ -13,16 +13,16 @@ class CodeownersErrorsErrorsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The line number where this errors occurs.
-    line: int
+    line: int | None
 
     # The column number where this errors occurs.
-    column: int
+    column: int | None
 
     # The contents of the line where the error occurs.
     source: str | None = None
 
     # The type of error.
-    kind: str
+    kind: str | None
 
     # Suggested action to fix the error. This will usually be `null`, but is provided for some
     # common errors.
@@ -30,7 +30,7 @@ class CodeownersErrorsErrorsItem(BaseModel):
 
     # A human-readable description of the error, combining information from multiple fields,
     # laid out for display in a monospaced typeface (for example, a command-line setting).
-    message: str
+    message: str | None
 
     # The path of the file where the error occured.
-    path: str
+    path: str | None

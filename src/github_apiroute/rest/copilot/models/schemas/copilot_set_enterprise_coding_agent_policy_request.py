@@ -17,9 +17,12 @@ class CopilotSetEnterpriseCodingAgentPolicyRequest(BaseModel):
     # The policy state for Copilot cloud agent in the enterprise. Can be one of
     # `enabled_for_all_orgs`, `disabled_for_all_orgs`, `enabled_for_selected_orgs`, or
     # `configured_by_org_admins`.
-    policy_state: Literal[
-        "enabled_for_all_orgs",
-        "disabled_for_all_orgs",
-        "enabled_for_selected_orgs",
-        "configured_by_org_admins",
-    ]
+    policy_state: (
+        Literal[
+            "enabled_for_all_orgs",
+            "disabled_for_all_orgs",
+            "enabled_for_selected_orgs",
+            "configured_by_org_admins",
+        ]
+        | None
+    )

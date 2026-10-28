@@ -15,7 +15,7 @@ class EnterpriseRulesetConditionsOrganizationPropertySpec(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the organization property to target
-    name: str
+    name: str | None
 
     # The values to match for the organization property
-    property_values: list[str]
+    property_values: list[str] | None

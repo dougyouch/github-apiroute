@@ -11,13 +11,13 @@ __all__ = ["ReactionRollup"]
 
 class ReactionRollup(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    total_count: int
-    n1: int = Field(alias="+1")
-    n1_2: int = Field(alias="-1")
-    laugh: int
-    confused: int
-    heart: int
-    hooray: int
-    eyes: int
-    rocket: int
+    url: str | None
+    total_count: int | None
+    n1: int | None = Field(alias="+1")
+    n1_2: int | None = Field(alias="-1")
+    laugh: int | None
+    confused: int | None
+    heart: int | None
+    hooray: int | None
+    eyes: int | None
+    rocket: int | None

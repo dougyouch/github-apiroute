@@ -13,8 +13,8 @@ class CodeOfConduct(BaseModel):
     """Code Of Conduct"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    key: str
-    name: str
-    url: str
+    key: str | None
+    name: str | None
+    url: str | None
     body: str | None = None
     html_url: str | None

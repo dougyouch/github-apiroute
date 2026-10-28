@@ -15,29 +15,29 @@ class HookDeliveryItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the webhook delivery.
-    id: int
+    id: int | None
 
     # Unique identifier for the event (shared with all deliveries for all webhooks that
     # subscribe to this event).
-    guid: str
+    guid: str | None
 
     # Time when the webhook delivery occurred.
-    delivered_at: str
+    delivered_at: str | None
 
     # Whether the webhook delivery is a redelivery.
-    redelivery: bool
+    redelivery: bool | None
 
     # Time spent delivering.
-    duration: float
+    duration: float | None
 
     # Describes the response returned after attempting the delivery.
-    status: str
+    status: str | None
 
     # Status code received when delivery was made.
-    status_code: int
+    status_code: int | None
 
     # The event that triggered the delivery.
-    event: str
+    event: str | None
 
     # The type of activity for the event that triggered the delivery.
     action: str | None

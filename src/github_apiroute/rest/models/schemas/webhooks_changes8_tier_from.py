@@ -15,12 +15,12 @@ class WebhooksChanges8TierFrom(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
-    description: str
+    created_at: str | None
+    description: str | None
     is_custom_ammount: bool | None = None
     is_custom_amount: bool | None = None
-    is_one_time: bool
-    monthly_price_in_cents: int
-    monthly_price_in_dollars: int
-    name: str
-    node_id: str
+    is_one_time: bool | None
+    monthly_price_in_cents: int | None
+    monthly_price_in_dollars: int | None
+    name: str | None
+    node_id: str | None

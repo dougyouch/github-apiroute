@@ -13,7 +13,7 @@ class ReposTransferRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The username or organization name the repository will be transferred to.
-    new_owner: str
+    new_owner: str | None
 
     # The new name to be given to the repository.
     new_name: str | None = None

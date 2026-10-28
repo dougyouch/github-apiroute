@@ -48,7 +48,7 @@ class CopilotSeatDetails(BaseModel):
 
     # Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601
     # format.
-    created_at: str
+    created_at: str | None
 
     # **Closing down notice:** This field is no longer relevant and is closing down. Use the
     # `created_at` field to determine when the assignee was last granted access to GitHub

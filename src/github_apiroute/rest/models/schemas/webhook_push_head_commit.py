@@ -19,17 +19,17 @@ class WebhookPushHeadCommit(BaseModel):
     added: list[str] | None = None
 
     # Metaproperties for Git author/committer information.
-    author: WebhookPushHeadCommitAuthor
+    author: WebhookPushHeadCommitAuthor | None
 
     # Metaproperties for Git author/committer information.
-    committer: WebhookPushHeadCommitCommitter
+    committer: WebhookPushHeadCommitCommitter | None
 
     # Whether this commit is distinct from any that have been pushed before.
-    distinct: bool
-    id: str
+    distinct: bool | None
+    id: str | None
 
     # The commit message.
-    message: str
+    message: str | None
 
     # An array of files modified by the commit.
     modified: list[str] | None = None
@@ -38,8 +38,8 @@ class WebhookPushHeadCommit(BaseModel):
     removed: list[str] | None = None
 
     # The ISO 8601 timestamp of the commit.
-    timestamp: str
-    tree_id: str
+    timestamp: str | None
+    tree_id: str | None
 
     # URL that points to the commit API resource.
-    url: str
+    url: str | None

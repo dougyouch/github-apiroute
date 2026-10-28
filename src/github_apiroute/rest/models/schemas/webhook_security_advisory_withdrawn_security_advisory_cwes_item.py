@@ -11,5 +11,5 @@ __all__ = ["WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwesItem"]
 
 class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    cwe_id: str
-    name: str
+    cwe_id: str | None
+    name: str | None

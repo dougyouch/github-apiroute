@@ -13,7 +13,7 @@ class PullsRemoveRequestedReviewersRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # An array of user `login`s that will be removed.
-    reviewers: list[str]
+    reviewers: list[str] | None
 
     # An array of team `slug`s that will be removed.
     team_reviewers: list[str] | None = None

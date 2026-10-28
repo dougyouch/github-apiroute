@@ -15,5 +15,5 @@ class OrgsCreateArtifactDeploymentRecordResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of deployment records created
-    total_count: int
+    total_count: int | None
     deployment_records: list[ArtifactDeploymentRecord] | None = None

@@ -18,13 +18,13 @@ class OrganizationUpdateIssueFieldOptionsItem(BaseModel):
     id: int | None = None
 
     # Name of the option.
-    name: str
+    name: str | None
 
     # Description of the option.
     description: str | None = None
 
     # Color for the option.
-    color: Literal["gray", "blue", "green", "yellow", "orange", "red", "pink", "purple"]
+    color: Literal["gray", "blue", "green", "yellow", "orange", "red", "pink", "purple"] | None
 
     # Priority of the option for ordering.
-    priority: int
+    priority: int | None

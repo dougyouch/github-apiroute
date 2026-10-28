@@ -20,8 +20,8 @@ __all__ = ["WebhookSecretScanningAlertAssigned"]
 
 class WebhookSecretScanningAlertAssigned(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["assigned"]
-    alert: SecretScanningAlertWebhook
+    action: Literal["assigned"] | None
+    alert: SecretScanningAlertWebhook | None
 
     # A GitHub user.
     assignee: SimpleUser | None = None
@@ -43,7 +43,7 @@ class WebhookSecretScanningAlertAssigned(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
     sender: SimpleUser | None = None

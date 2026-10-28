@@ -13,4 +13,4 @@ class IssuesRemoveSubIssueRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The id of the sub-issue to remove
-    sub_issue_id: int
+    sub_issue_id: int | None

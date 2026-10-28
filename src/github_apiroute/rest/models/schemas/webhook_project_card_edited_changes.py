@@ -13,4 +13,4 @@ __all__ = ["WebhookProjectCardEditedChanges"]
 
 class WebhookProjectCardEditedChanges(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    note: WebhookProjectCardEditedChangesNote
+    note: WebhookProjectCardEditedChangesNote | None

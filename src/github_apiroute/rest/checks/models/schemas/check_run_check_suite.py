@@ -11,4 +11,4 @@ __all__ = ["CheckRunCheckSuite"]
 
 class CheckRunCheckSuite(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
+    id: int | None

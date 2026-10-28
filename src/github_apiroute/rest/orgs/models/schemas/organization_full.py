@@ -15,17 +15,17 @@ class OrganizationFull(BaseModel):
     """Organization Full"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    login: str
-    id: int
-    node_id: str
-    url: str
-    repos_url: str
-    events_url: str
-    hooks_url: str
-    issues_url: str
-    members_url: str
-    public_members_url: str
-    avatar_url: str
+    login: str | None
+    id: int | None
+    node_id: str | None
+    url: str | None
+    repos_url: str | None
+    events_url: str | None
+    hooks_url: str | None
+    issues_url: str | None
+    members_url: str | None
+    public_members_url: str | None
+    avatar_url: str | None
     description: str | None
     name: str | None = None
     company: str | None = None
@@ -34,14 +34,14 @@ class OrganizationFull(BaseModel):
     email: str | None = None
     twitter_username: str | None = None
     is_verified: bool | None = None
-    has_organization_projects: bool
-    has_repository_projects: bool
-    public_repos: int
-    public_gists: int
-    followers: int
-    following: int
-    html_url: str
-    type_: str = Field(alias="type")
+    has_organization_projects: bool | None
+    has_repository_projects: bool | None
+    public_repos: int | None
+    public_gists: int | None
+    followers: int | None
+    following: int | None
+    html_url: str | None
+    type_: str | None = Field(alias="type")
     total_private_repos: int | None = None
     owned_private_repos: int | None = None
     private_gists: int | None = None
@@ -112,8 +112,8 @@ class OrganizationFull(BaseModel):
 
     # An optional URL string to display to contributors who are blocked from pushing a secret.
     secret_scanning_push_protection_custom_link: str | None = None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
     archived_at: str | None
 
     # Controls whether or not deploy keys may be added and used for repositories in the

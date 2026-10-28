@@ -28,7 +28,7 @@ class CheckRunWithSimpleCheckSuite(BaseModel):
     app: Integration | None
 
     # A suite of checks performed on the code of a given code change
-    check_suite: SimpleCheckSuite
+    check_suite: SimpleCheckSuite | None
     completed_at: str | None
     conclusion: (
         Literal[
@@ -50,23 +50,23 @@ class CheckRunWithSimpleCheckSuite(BaseModel):
     # A deployment created as the result of an Actions check run from a workflow that references
     # an environment
     deployment: DeploymentSimple | None = None
-    details_url: str
-    external_id: str
+    details_url: str | None
+    external_id: str | None
 
     # The SHA of the commit that is being checked.
-    head_sha: str
-    html_url: str
+    head_sha: str | None
+    html_url: str | None
 
     # The id of the check.
-    id: int
+    id: int | None
 
     # The name of the check.
-    name: str
-    node_id: str
-    output: CheckRunWithSimpleCheckSuiteOutput
-    pull_requests: list[PullRequestMinimal]
-    started_at: str
+    name: str | None
+    node_id: str | None
+    output: CheckRunWithSimpleCheckSuiteOutput | None
+    pull_requests: list[PullRequestMinimal] | None
+    started_at: str | None
 
     # The phase of the lifecycle that the check is currently in.
-    status: Literal["queued", "in_progress", "completed", "pending"]
-    url: str
+    status: Literal["queued", "in_progress", "completed", "pending"] | None
+    url: str | None

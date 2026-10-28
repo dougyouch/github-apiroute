@@ -19,7 +19,7 @@ class ActionsOrganizationPermissions(BaseModel):
 
     # The policy that controls the repositories in the organization that are allowed to run
     # GitHub Actions.
-    enabled_repositories: EnabledRepositories
+    enabled_repositories: EnabledRepositories | None
 
     # The API URL to use to get or set the selected repositories that are allowed to run GitHub
     # Actions, when `enabled_repositories` is set to `selected`.

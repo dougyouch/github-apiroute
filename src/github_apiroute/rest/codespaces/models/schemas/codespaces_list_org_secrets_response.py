@@ -13,5 +13,5 @@ __all__ = ["CodespacesListOrgSecretsResponse"]
 
 class CodespacesListOrgSecretsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    secrets: list[CodespacesOrgSecret]
+    total_count: int | None
+    secrets: list[CodespacesOrgSecret] | None

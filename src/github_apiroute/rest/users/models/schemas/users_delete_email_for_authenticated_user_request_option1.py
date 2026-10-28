@@ -19,4 +19,4 @@ class UsersDeleteEmailForAuthenticatedUserRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Email addresses associated with the GitHub user account.
-    emails: list[str]
+    emails: list[str] | None

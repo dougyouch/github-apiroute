@@ -20,16 +20,16 @@ class RepositoryAdvisoryCreate(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A short summary of the advisory.
-    summary: str
+    summary: str | None
 
     # A detailed description of what the advisory impacts.
-    description: str
+    description: str | None
 
     # The Common Vulnerabilities and Exposures (CVE) ID.
     cve_id: str | None = None
 
     # A product affected by the vulnerability detailed in a repository security advisory.
-    vulnerabilities: list[RepositoryAdvisoryCreateVulnerabilitiesItem]
+    vulnerabilities: list[RepositoryAdvisoryCreateVulnerabilitiesItem] | None
 
     # A list of Common Weakness Enumeration (CWE) IDs.
     cwe_ids: list[str] | None = None

@@ -20,5 +20,5 @@ class ActionsPolicyOrgConditionsValueOption1(BaseModel):
     """Parameters for a repository name condition"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    repository_name: ActionsPolicyOrgConditionsValueOption1RepositoryName
+    repository_name: ActionsPolicyOrgConditionsValueOption1RepositoryName | None
     workflow_path: ActionsPolicyOrgConditionsValueOption1WorkflowPath | None = None

@@ -19,7 +19,7 @@ class AgentAutomationsListRepoAutomationsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of automations in the repository
-    automations: list[AgentAutomationsListRepoAutomationsResponseAutomationsItem]
+    automations: list[AgentAutomationsListRepoAutomationsResponseAutomationsItem] | None
 
     # Total count of caller-visible automations matching the supplied filters (across all pages)
-    total_count: int
+    total_count: int | None

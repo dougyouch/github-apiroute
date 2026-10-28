@@ -19,9 +19,9 @@ class ConcurrencyGroup(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the concurrency group.
-    group_name: str
+    group_name: str | None
 
     # API URL for this concurrency group.
-    group_url: str
-    total_count: int
-    group_members: list[ConcurrencyGroupGroupMembersItem]
+    group_url: str | None
+    total_count: int | None
+    group_members: list[ConcurrencyGroupGroupMembersItem] | None

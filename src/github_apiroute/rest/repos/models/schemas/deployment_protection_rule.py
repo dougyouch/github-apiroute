@@ -17,13 +17,13 @@ class DeploymentProtectionRule(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier for the deployment protection rule.
-    id: int
+    id: int | None
 
     # The node ID for the deployment protection rule.
-    node_id: str
+    node_id: str | None
 
     # Whether the deployment protection rule is enabled for the environment.
-    enabled: bool
+    enabled: bool | None
 
     # A GitHub App that is providing a custom deployment protection rule.
-    app: CustomDeploymentRuleApp
+    app: CustomDeploymentRuleApp | None

@@ -15,4 +15,4 @@ class DeploymentBranchPolicyNamePattern(BaseModel):
     # The name pattern that branches must match in order to deploy to the environment. Wildcard
     # characters will not match `/`. For example, to match branches that begin with `release/`
     # and contain an additional single slash, use `release/*/*`. For more information about
-    name: str
+    name: str | None

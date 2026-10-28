@@ -17,16 +17,16 @@ class PackageVersion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the package version.
-    id: int
+    id: int | None
 
     # The name of the package version.
-    name: str
-    url: str
-    package_html_url: str
+    name: str | None
+    url: str | None
+    package_html_url: str | None
     html_url: str | None = None
     license: str | None = None
     description: str | None = None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
     deleted_at: str | None = None
     metadata: PackageVersionMetadata | None = None

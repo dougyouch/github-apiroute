@@ -14,5 +14,5 @@ class CheckRunOutput(BaseModel):
     title: str | None
     summary: str | None
     text: str | None
-    annotations_count: int
-    annotations_url: str
+    annotations_count: int | None
+    annotations_url: str | None

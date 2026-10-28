@@ -13,7 +13,7 @@ class CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestCustomPropertie
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the custom property to filter by.
-    property_name: str
+    property_name: str | None
 
     # The values of the custom property to match.
-    values: list[str]
+    values: list[str] | None

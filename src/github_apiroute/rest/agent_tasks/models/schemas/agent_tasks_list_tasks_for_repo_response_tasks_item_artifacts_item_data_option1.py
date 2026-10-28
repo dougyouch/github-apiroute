@@ -15,7 +15,7 @@ class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataOption1(BaseMo
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # GitHub resource ID
-    id: int
+    id: int | None
 
     # GraphQL global ID
     global_id: str | None = None

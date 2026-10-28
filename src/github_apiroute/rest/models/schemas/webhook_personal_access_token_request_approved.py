@@ -19,10 +19,10 @@ __all__ = ["WebhookPersonalAccessTokenRequestApproved"]
 
 class WebhookPersonalAccessTokenRequestApproved(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["approved"]
+    action: Literal["approved"] | None
 
     # Details of a Personal Access Token Request.
-    personal_access_token_request: PersonalAccessTokenRequest
+    personal_access_token_request: PersonalAccessTokenRequest | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -32,12 +32,12 @@ class WebhookPersonalAccessTokenRequestApproved(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
     # webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-
-    installation: SimpleInstallation
+    installation: SimpleInstallation | None

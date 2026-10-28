@@ -15,7 +15,7 @@ class ReposCreateCommitStatusRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The state of the status.
-    state: Literal["error", "failure", "pending", "success"]
+    state: Literal["error", "failure", "pending", "success"] | None
 
     # The target URL to associate with this status. This URL will be linked from the GitHub UI
     # to allow users to easily see the source of the status. For example, if your continuous

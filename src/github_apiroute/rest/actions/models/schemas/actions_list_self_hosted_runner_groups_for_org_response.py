@@ -13,5 +13,5 @@ __all__ = ["ActionsListSelfHostedRunnerGroupsForOrgResponse"]
 
 class ActionsListSelfHostedRunnerGroupsForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: float
-    runner_groups: list[RunnerGroupsOrg]
+    total_count: float | None
+    runner_groups: list[RunnerGroupsOrg] | None

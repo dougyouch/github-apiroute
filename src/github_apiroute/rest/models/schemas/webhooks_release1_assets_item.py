@@ -17,21 +17,21 @@ class WebhooksRelease1AssetsItem(BaseModel):
     """Data related to a release."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    browser_download_url: str
-    content_type: str
-    created_at: str
-    download_count: int
-    id: int
+    browser_download_url: str | None
+    content_type: str | None
+    created_at: str | None
+    download_count: int | None
+    id: int | None
     label: str | None
 
     # The file name of the asset.
-    name: str
-    node_id: str
-    size: int
+    name: str | None
+    node_id: str | None
+    size: int | None
     digest: str | None
 
     # State of the release asset.
-    state: Literal["uploaded"]
-    updated_at: str
+    state: Literal["uploaded"] | None
+    updated_at: str | None
     uploader: WebhooksRelease1AssetsItemUploader | None = None
-    url: str
+    url: str | None

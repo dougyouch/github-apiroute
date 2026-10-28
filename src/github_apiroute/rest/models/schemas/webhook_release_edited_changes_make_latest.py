@@ -13,4 +13,4 @@ class WebhookReleaseEditedChangesMakeLatest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether this release was explicitly `edited` to be the latest.
-    to: bool
+    to: bool | None

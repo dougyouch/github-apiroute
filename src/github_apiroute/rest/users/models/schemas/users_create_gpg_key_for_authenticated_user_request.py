@@ -16,4 +16,4 @@ class UsersCreateGpgKeyForAuthenticatedUserRequest(BaseModel):
     name: str | None = None
 
     # A GPG key in ASCII-armored format.
-    armored_public_key: str
+    armored_public_key: str | None

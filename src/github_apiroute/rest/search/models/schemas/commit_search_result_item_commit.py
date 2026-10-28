@@ -16,12 +16,12 @@ __all__ = ["CommitSearchResultItemCommit"]
 
 class CommitSearchResultItemCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    author: CommitSearchResultItemCommitAuthor
+    author: CommitSearchResultItemCommitAuthor | None
 
     # Metaproperties for Git author/committer information.
     committer: NullableGitUser | None
-    comment_count: int
-    message: str
-    tree: CommitSearchResultItemCommitTree
-    url: str
+    comment_count: int | None
+    message: str | None
+    tree: CommitSearchResultItemCommitTree | None
+    url: str | None
     verification: Verification | None = None

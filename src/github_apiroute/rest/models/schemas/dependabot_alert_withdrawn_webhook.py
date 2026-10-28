@@ -28,32 +28,32 @@ class DependabotAlertWithdrawnWebhook(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the withdrawn alert.
-    id: int
+    id: int | None
 
     # The GraphQL node ID of the withdrawn alert.
-    node_id: str
+    node_id: str | None
 
     # The security alert number.
-    number: AlertNumber
+    number: AlertNumber | None
 
     # The state of the Dependabot alert.
-    state: Literal["withdrawn"]
+    state: Literal["withdrawn"] | None
 
     # Details for the vulnerable dependency.
-    dependency: DependabotAlertWithdrawnWebhookDependency
+    dependency: DependabotAlertWithdrawnWebhookDependency | None
 
     # Identifiers of the advisory that produced the withdrawn alert.
-    security_advisory: DependabotAlertWithdrawnWebhookSecurityAdvisory
+    security_advisory: DependabotAlertWithdrawnWebhookSecurityAdvisory | None
 
     # The REST API URL of the alert resource.
-    url: AlertUrl
+    url: AlertUrl | None
 
     # The GitHub URL of the alert resource.
-    html_url: AlertHtmlUrl
+    html_url: AlertHtmlUrl | None
 
     # The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    created_at: AlertCreatedAt
+    created_at: AlertCreatedAt | None
 
     # The time that the alert was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. This is
     # not the advisory's withdrawal time.
-    withdrawn_at: str
+    withdrawn_at: str | None

@@ -20,15 +20,15 @@ __all__ = ["WebhookRegistryPackageUpdatedRegistryPackage"]
 
 class WebhookRegistryPackageUpdatedRegistryPackage(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     description: Any
-    ecosystem: str
-    html_url: str
-    id: int
-    name: str
-    namespace: str
-    owner: WebhookRegistryPackageUpdatedRegistryPackageOwner
-    package_type: str
-    package_version: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion
+    ecosystem: str | None
+    html_url: str | None
+    id: int | None
+    name: str | None
+    namespace: str | None
+    owner: WebhookRegistryPackageUpdatedRegistryPackageOwner | None
+    package_type: str | None
+    package_version: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion | None
     registry: dict[str, Any] | None
-    updated_at: str
+    updated_at: str | None

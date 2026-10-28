@@ -15,14 +15,14 @@ class OrgHook(BaseModel):
     """Org Hook"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    url: str
-    ping_url: str
+    id: int | None
+    url: str | None
+    ping_url: str | None
     deliveries_url: str | None = None
-    name: str
-    events: list[str]
-    active: bool
-    config: OrgHookConfig
-    updated_at: str
-    created_at: str
-    type_: str = Field(alias="type")
+    name: str | None
+    events: list[str] | None
+    active: bool | None
+    config: OrgHookConfig | None
+    updated_at: str | None
+    created_at: str | None
+    type_: str | None = Field(alias="type")

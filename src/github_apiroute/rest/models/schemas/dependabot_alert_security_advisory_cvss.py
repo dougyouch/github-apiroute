@@ -15,7 +15,7 @@ class DependabotAlertSecurityAdvisoryCvss(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The overall CVSS score of the advisory.
-    score: float
+    score: float | None
 
     # The full CVSS vector string for the advisory.
     vector_string: str | None

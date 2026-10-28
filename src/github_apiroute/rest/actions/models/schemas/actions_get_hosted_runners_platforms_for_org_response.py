@@ -11,5 +11,5 @@ __all__ = ["ActionsGetHostedRunnersPlatformsForOrgResponse"]
 
 class ActionsGetHostedRunnersPlatformsForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    platforms: list[str]
+    total_count: int | None
+    platforms: list[str] | None

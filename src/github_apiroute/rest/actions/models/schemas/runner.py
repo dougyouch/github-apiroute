@@ -17,21 +17,21 @@ class Runner(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the runner.
-    id: int
+    id: int | None
 
     # The ID of the runner group.
     runner_group_id: int | None = None
 
     # The name of the runner.
-    name: str
+    name: str | None
 
     # The Operating System of the runner.
-    os: str
+    os: str | None
 
     # The status of the runner.
-    status: str
-    busy: bool
-    labels: list[RunnerLabel]
+    status: str | None
+    busy: bool | None
+    labels: list[RunnerLabel] | None
     ephemeral: bool | None = None
 
     # The version of the GitHub Actions Runner software. This is only set if the runner has

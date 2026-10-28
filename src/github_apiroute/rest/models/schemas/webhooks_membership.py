@@ -17,8 +17,8 @@ class WebhooksMembership(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    organization_url: str
-    role: str
+    organization_url: str | None
+    role: str | None
 
     # Whether the user has direct membership in the organization.
     direct_membership: bool | None = None
@@ -26,6 +26,6 @@ class WebhooksMembership(BaseModel):
     # The slugs of the enterprise teams providing the user with indirect membership in the
     # organization. A limit of 100 enterprise team slugs is returned.
     enterprise_teams_providing_indirect_membership: list[str] | None = None
-    state: str
-    url: str
+    state: str | None
+    url: str | None
     user: WebhooksMembershipUser | None

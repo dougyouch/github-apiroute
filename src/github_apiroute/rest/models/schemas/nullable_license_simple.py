@@ -13,9 +13,9 @@ class NullableLicenseSimple(BaseModel):
     """License Simple"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    key: str
-    name: str
+    key: str | None
+    name: str | None
     url: str | None
     spdx_id: str | None
-    node_id: str
+    node_id: str | None
     html_url: str | None = None

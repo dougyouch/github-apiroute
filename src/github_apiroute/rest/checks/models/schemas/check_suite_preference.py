@@ -16,7 +16,7 @@ class CheckSuitePreference(BaseModel):
     """Check suite configuration preferences for a repository."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    preferences: CheckSuitePreferencePreferences
+    preferences: CheckSuitePreferencePreferences | None
 
     # Minimal Repository
-    repository: MinimalRepository
+    repository: MinimalRepository | None

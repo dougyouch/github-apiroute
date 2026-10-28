@@ -19,24 +19,24 @@ class Job(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The id of the job.
-    id: int
+    id: int | None
 
     # The id of the associated workflow run.
-    run_id: int
-    run_url: str
+    run_id: int | None
+    run_url: str | None
 
     # Attempt number of the associated workflow run, 1 for first attempt and higher if the
     # workflow was re-run.
     run_attempt: int | None = None
-    node_id: str
+    node_id: str | None
 
     # The SHA of the commit that is being run.
-    head_sha: str
-    url: str
+    head_sha: str | None
+    url: str | None
     html_url: str | None
 
     # The phase of the lifecycle that the job is currently in.
-    status: Literal["queued", "in_progress", "completed", "waiting", "requested", "pending"]
+    status: Literal["queued", "in_progress", "completed", "waiting", "requested", "pending"] | None
 
     # The outcome of the job.
     conclusion: (
@@ -47,24 +47,24 @@ class Job(BaseModel):
     )
 
     # The time that the job created, in ISO 8601 format.
-    created_at: str
+    created_at: str | None
 
     # The time that the job started, in ISO 8601 format.
-    started_at: str
+    started_at: str | None
 
     # The time that the job finished, in ISO 8601 format.
     completed_at: str | None
 
     # The name of the job.
-    name: str
+    name: str | None
 
     # Steps in this job.
     steps: list[JobStepsItem] | None = None
-    check_run_url: str
+    check_run_url: str | None
 
     # Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow
     # file.
-    labels: list[str]
+    labels: list[str] | None
 
     # The ID of the runner to which this job has been assigned. (If a runner hasn't yet been
     # assigned, this will be null.)

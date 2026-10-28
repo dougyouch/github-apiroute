@@ -18,8 +18,8 @@ class SecretScanningCreatePushProtectionBypassRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The reason for bypassing push protection.
-    reason: SecretScanningPushProtectionBypassReason
+    reason: SecretScanningPushProtectionBypassReason | None
 
     # The ID of the push protection bypass placeholder. This value is returned on any push
     # protected routes.
-    placeholder_id: SecretScanningPushProtectionBypassPlaceholderId
+    placeholder_id: SecretScanningPushProtectionBypassPlaceholderId | None

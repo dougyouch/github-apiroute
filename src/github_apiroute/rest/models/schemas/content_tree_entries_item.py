@@ -13,13 +13,13 @@ __all__ = ["ContentTreeEntriesItem"]
 
 class ContentTreeEntriesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: str = Field(alias="type")
-    size: int
-    name: str
-    path: str
-    sha: str
-    url: str
+    type_: str | None = Field(alias="type")
+    size: int | None
+    name: str | None
+    path: str | None
+    sha: str | None
+    url: str | None
     git_url: str | None
     html_url: str | None
     download_url: str | None
-    links: ContentTreeEntriesItemLinks = Field(alias="_links")
+    links: ContentTreeEntriesItemLinks | None = Field(alias="_links")

@@ -21,5 +21,5 @@ class RepositoryRuleMaxFilePathLength(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["max_file_path_length"] = Field(alias="type")
+    type_: Literal["max_file_path_length"] | None = Field(alias="type")
     parameters: RepositoryRuleMaxFilePathLengthParameters | None = None

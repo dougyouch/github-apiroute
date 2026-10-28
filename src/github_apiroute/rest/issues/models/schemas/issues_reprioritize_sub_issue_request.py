@@ -13,7 +13,7 @@ class IssuesReprioritizeSubIssueRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The id of the sub-issue to reprioritize
-    sub_issue_id: int
+    sub_issue_id: int | None
 
     # The id of the sub-issue to be prioritized after (either positional argument after OR
     # before should be specified).

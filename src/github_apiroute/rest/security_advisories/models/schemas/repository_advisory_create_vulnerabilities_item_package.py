@@ -17,7 +17,7 @@ class RepositoryAdvisoryCreateVulnerabilitiesItemPackage(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The package's language or package management ecosystem.
-    ecosystem: SecurityAdvisoryEcosystems
+    ecosystem: SecurityAdvisoryEcosystems | None
 
     # The unique package name within its ecosystem.
     name: str | None = None

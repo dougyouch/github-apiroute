@@ -17,13 +17,13 @@ class ProjectsV2DraftIssue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the draft issue
-    id: float
+    id: float | None
 
     # The node ID of the draft issue
-    node_id: str
+    node_id: str | None
 
     # The title of the draft issue
-    title: str
+    title: str | None
 
     # The body content of the draft issue
     body: str | None = None
@@ -32,7 +32,7 @@ class ProjectsV2DraftIssue(BaseModel):
     user: NullableSimpleUser | None
 
     # The time the draft issue was created
-    created_at: str
+    created_at: str | None
 
     # The time the draft issue was last updated
-    updated_at: str
+    updated_at: str | None

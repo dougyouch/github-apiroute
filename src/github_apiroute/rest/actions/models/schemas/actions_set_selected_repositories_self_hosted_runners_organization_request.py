@@ -13,4 +13,4 @@ class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest(BaseMod
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # IDs of repositories that can use repository-level self-hosted runners
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

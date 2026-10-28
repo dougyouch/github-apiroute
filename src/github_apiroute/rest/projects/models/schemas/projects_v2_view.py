@@ -19,45 +19,45 @@ class ProjectsV2View(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the view.
-    id: int
+    id: int | None
 
     # The number of the view within the project.
-    number: int
+    number: int | None
 
     # The name of the view.
-    name: str
+    name: str | None
 
     # The layout of the view.
-    layout: Literal["table", "board", "roadmap"]
+    layout: Literal["table", "board", "roadmap"] | None
 
     # The node ID of the view.
-    node_id: str
+    node_id: str | None
 
     # The API URL of the project that contains the view.
-    project_url: str
+    project_url: str | None
 
     # The web URL of the view.
-    html_url: str
-    creator: SimpleUser
+    html_url: str | None
+    creator: SimpleUser | None
 
     # The time when the view was created.
-    created_at: str
+    created_at: str | None
 
     # The time when the view was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # The filter query for the view.
     filter: str | None = None
 
     # The list of field IDs that are visible in the view.
-    visible_fields: list[int]
+    visible_fields: list[int] | None
 
     # The sorting configuration for the view. Each element is a tuple of [field_id, direction]
     # where direction is "asc" or "desc".
-    sort_by: list[list[int | str]]
+    sort_by: list[list[int | str]] | None
 
     # The list of field IDs used for horizontal grouping.
-    group_by: list[int]
+    group_by: list[int] | None
 
     # The list of field IDs used for vertical grouping (board layout).
-    vertical_group_by: list[int]
+    vertical_group_by: list[int] | None

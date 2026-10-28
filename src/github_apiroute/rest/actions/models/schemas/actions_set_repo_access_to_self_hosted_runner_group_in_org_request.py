@@ -13,4 +13,4 @@ class ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of repository IDs that can access the runner group.
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

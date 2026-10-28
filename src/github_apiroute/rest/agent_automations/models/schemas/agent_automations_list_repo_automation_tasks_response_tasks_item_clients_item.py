@@ -13,12 +13,12 @@ class AgentAutomationsListRepoAutomationTasksResponseTasksItemClientsItem(BaseMo
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Server-resolved integration identity for the client product.
-    integration_id: str
+    integration_id: str | None
 
     # Stable client product identifier, not an agent or host identifier. Clients must tolerate
     # unknown future slugs.
-    slug: str
+    slug: str | None
 
     # True only when the service has explicit evidence this client created the containing
     # session or task. False does not imply the original client is known.
-    creator: bool
+    creator: bool | None

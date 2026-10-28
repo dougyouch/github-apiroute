@@ -15,13 +15,13 @@ __all__ = ["EnvironmentProtectionRulesItemOption2"]
 
 class EnvironmentProtectionRulesItemOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # Whether deployments to this environment can be approved by the user who created the
     # deployment.
     prevent_self_review: bool | None = None
-    type_: str = Field(alias="type")
+    type_: str | None = Field(alias="type")
 
     # The people or teams that may approve jobs that reference the environment. You can list up
     # to six users or teams as reviewers. The reviewers must have at least read access to the

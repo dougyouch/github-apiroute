@@ -20,7 +20,7 @@ class Page(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The API address for accessing this Page resource.
-    url: str
+    url: str | None
 
     # The status of the most recent build of the Page.
     status: Literal["built", "building", "errored"] | None
@@ -35,7 +35,7 @@ class Page(BaseModel):
     pending_domain_unverified_at: str | None = None
 
     # Whether the Page has a custom 404 page.
-    custom_404: bool
+    custom_404: bool | None
 
     # The web address the Page can be accessed from.
     html_url: str | None = None
@@ -47,7 +47,7 @@ class Page(BaseModel):
     # Whether the GitHub Pages site is publicly visible. If set to `true`, the site is
     # accessible to anyone on the internet. If set to `false`, the site will only be accessible
     # to users who have at least `read` access to the repository that published the site.
-    public: bool
+    public: bool | None
     https_certificate: PagesHttpsCertificate | None = None
 
     # Whether https is enabled on the domain

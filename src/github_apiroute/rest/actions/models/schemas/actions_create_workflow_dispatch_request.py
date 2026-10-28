@@ -15,7 +15,7 @@ class ActionsCreateWorkflowDispatchRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The git reference for the workflow. The reference can be a branch or tag name.
-    ref: str
+    ref: str | None
 
     # Input keys and values configured in the workflow file. The maximum number of properties is
     # 25. Any default properties configured in the workflow file will be used when `inputs` are

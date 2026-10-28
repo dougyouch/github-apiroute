@@ -19,5 +19,5 @@ class ActionsRuleRestrictActionsActors(BaseModel):
     """Choose specific actors that are authorized to trigger Actions workflows."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["restrict_actions_actors"] = Field(alias="type")
+    type_: Literal["restrict_actions_actors"] | None = Field(alias="type")
     parameters: ActionsRuleRestrictActionsActorsParameters | None = None

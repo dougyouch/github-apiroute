@@ -24,10 +24,10 @@ class RepositoryRuleset(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the ruleset
-    id: int
+    id: int | None
 
     # The name of the ruleset
-    name: str
+    name: str | None
 
     # The target of the ruleset
     target: Literal["branch", "tag", "push", "repository"] | None = None
@@ -36,12 +36,12 @@ class RepositoryRuleset(BaseModel):
     source_type: Literal["Repository", "Organization", "Enterprise"] | None = None
 
     # The name of the source
-    source: str
+    source: str | None
 
     # The enforcement level of the ruleset. `evaluate` allows admins to test rules before
     # enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only
     # available with GitHub Enterprise).
-    enforcement: RepositoryRuleEnforcement
+    enforcement: RepositoryRuleEnforcement | None
 
     # The actors that can bypass the rules in this ruleset
     bypass_actors: list[RepositoryRulesetBypassActor] | None = None

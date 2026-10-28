@@ -13,7 +13,7 @@ class ProjectsCreateDraftItemForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The title of the draft issue item to create in the project.
-    title: str
+    title: str | None
 
     # The body content of the draft issue item to create in the project.
     body: str | None = None

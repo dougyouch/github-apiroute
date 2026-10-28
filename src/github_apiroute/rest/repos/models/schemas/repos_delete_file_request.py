@@ -16,10 +16,10 @@ class ReposDeleteFileRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The commit message.
-    message: str
+    message: str | None
 
     # The blob SHA of the file being deleted.
-    sha: str
+    sha: str | None
 
     # The branch name. Default: the repository’s default branch
     branch: str | None = None

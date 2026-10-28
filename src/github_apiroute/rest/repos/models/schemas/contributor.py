@@ -29,9 +29,9 @@ class Contributor(BaseModel):
     repos_url: str | None = None
     events_url: str | None = None
     received_events_url: str | None = None
-    type_: str = Field(alias="type")
+    type_: str | None = Field(alias="type")
     site_admin: bool | None = None
-    contributions: int
+    contributions: int | None
     email: str | None = None
     name: str | None = None
     user_view_type: str | None = None

@@ -13,4 +13,4 @@ class ActionsArtifactAndLogRetention(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of days to retain checks, workflow runs, commit statuses, artifacts, and logs
-    days: int
+    days: int | None

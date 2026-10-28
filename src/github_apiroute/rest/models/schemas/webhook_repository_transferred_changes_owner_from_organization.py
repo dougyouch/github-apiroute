@@ -11,16 +11,16 @@ __all__ = ["WebhookRepositoryTransferredChangesOwnerFromOrganization"]
 
 class WebhookRepositoryTransferredChangesOwnerFromOrganization(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    avatar_url: str
+    avatar_url: str | None
     description: str | None
-    events_url: str
-    hooks_url: str
+    events_url: str | None
+    hooks_url: str | None
     html_url: str | None = None
-    id: int
-    issues_url: str
-    login: str
-    members_url: str
-    node_id: str
-    public_members_url: str
-    repos_url: str
-    url: str
+    id: int | None
+    issues_url: str | None
+    login: str | None
+    members_url: str | None
+    node_id: str | None
+    public_members_url: str | None
+    repos_url: str | None
+    url: str | None

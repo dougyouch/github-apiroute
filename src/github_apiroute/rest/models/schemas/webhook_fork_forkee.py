@@ -34,91 +34,91 @@ class WebhookForkForkee(BaseModel):
     # Whether to allow squash merges for pull requests.
     allow_squash_merge: bool | None = None
     allow_update_branch: bool | None = None
-    archive_url: str
-    archived: bool
-    assignees_url: str
-    blobs_url: str
-    branches_url: str
-    clone_url: str
-    collaborators_url: str
-    comments_url: str
-    commits_url: str
-    compare_url: str
-    contents_url: str
-    contributors_url: str
-    created_at: str
-    default_branch: str
+    archive_url: str | None
+    archived: bool | None
+    assignees_url: str | None
+    blobs_url: str | None
+    branches_url: str | None
+    clone_url: str | None
+    collaborators_url: str | None
+    comments_url: str | None
+    commits_url: str | None
+    compare_url: str | None
+    contents_url: str | None
+    contributors_url: str | None
+    created_at: str | None
+    default_branch: str | None
 
     # Whether to delete head branches when pull requests are merged
     delete_branch_on_merge: bool | None = None
-    deployments_url: str
+    deployments_url: str | None
     description: str | None
     disabled: bool | None = None
-    downloads_url: str
-    events_url: str
-    fork: Literal[True]
-    forks: int
-    forks_count: int
-    forks_url: str
-    full_name: str
-    git_commits_url: str
-    git_refs_url: str
-    git_tags_url: str
-    git_url: str
-    has_downloads: bool
-    has_issues: bool
-    has_pages: bool
-    has_projects: bool
-    has_wiki: bool
+    downloads_url: str | None
+    events_url: str | None
+    fork: Literal[True] | None
+    forks: int | None
+    forks_count: int | None
+    forks_url: str | None
+    full_name: str | None
+    git_commits_url: str | None
+    git_refs_url: str | None
+    git_tags_url: str | None
+    git_url: str | None
+    has_downloads: bool | None
+    has_issues: bool | None
+    has_pages: bool | None
+    has_projects: bool | None
+    has_wiki: bool | None
     homepage: str | None
-    hooks_url: str
-    html_url: str
-    id: int
+    hooks_url: str | None
+    html_url: str | None
+    id: int | None
     is_template: bool | None = None
-    issue_comment_url: str
-    issue_events_url: str
-    issues_url: str
-    keys_url: str
-    labels_url: str
+    issue_comment_url: str | None
+    issue_events_url: str | None
+    issues_url: str | None
+    keys_url: str | None
+    labels_url: str | None
     language: Any
-    languages_url: str
+    languages_url: str | None
     license: dict[str, Any] | None
     master_branch: str | None = None
-    merges_url: str
-    milestones_url: str
+    merges_url: str | None
+    milestones_url: str | None
     mirror_url: Any
-    name: str
-    node_id: str
-    notifications_url: str
-    open_issues: int
-    open_issues_count: int
+    name: str | None
+    node_id: str | None
+    notifications_url: str | None
+    open_issues: int | None
+    open_issues_count: int | None
     organization: str | None = None
-    owner: WebhookForkForkeeOwner
+    owner: WebhookForkForkeeOwner | None
     permissions: WebhookForkForkeePermissions | None = None
-    private: bool
+    private: bool | None
     public: bool | None = None
-    pulls_url: str
-    pushed_at: str
-    releases_url: str
+    pulls_url: str | None
+    pushed_at: str | None
+    releases_url: str | None
     role_name: str | None = None
-    size: int
-    ssh_url: str
+    size: int | None
+    ssh_url: str | None
     stargazers: int | None = None
-    stargazers_count: int
-    stargazers_url: str
-    statuses_url: str
-    subscribers_url: str
-    subscription_url: str
-    svn_url: str
-    tags_url: str
-    teams_url: str
-    topics: list[Any]
-    trees_url: str
-    updated_at: str
-    url: str
-    visibility: str
-    watchers: int
-    watchers_count: int
+    stargazers_count: int | None
+    stargazers_url: str | None
+    statuses_url: str | None
+    subscribers_url: str | None
+    subscription_url: str | None
+    svn_url: str | None
+    tags_url: str | None
+    teams_url: str | None
+    topics: list[Any] | None
+    trees_url: str | None
+    updated_at: str | None
+    url: str | None
+    visibility: str | None
+    watchers: int | None
+    watchers_count: int | None
 
     # Whether to require contributors to sign off on web-based commits
     web_commit_signoff_required: bool | None = None

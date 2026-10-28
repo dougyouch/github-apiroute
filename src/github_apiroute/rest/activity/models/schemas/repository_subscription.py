@@ -15,11 +15,11 @@ class RepositorySubscription(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Determines if notifications should be received from this repository.
-    subscribed: bool
+    subscribed: bool | None
 
     # Determines if all notifications should be blocked from this repository.
-    ignored: bool
+    ignored: bool | None
     reason: str | None
-    created_at: str
-    url: str
-    repository_url: str
+    created_at: str | None
+    url: str | None
+    repository_url: str | None

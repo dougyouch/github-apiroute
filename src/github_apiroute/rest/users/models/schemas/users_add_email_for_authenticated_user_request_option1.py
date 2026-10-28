@@ -15,4 +15,4 @@ class UsersAddEmailForAuthenticatedUserRequestOption1(BaseModel):
     # Adds one or more email addresses to your GitHub account. Must contain at least one email
     # address. **Note:** Alternatively, you can pass a single email address or an `array` of
     # emails addresses directly, but we recommend that you pass an object using the `emails`
-    emails: list[str]
+    emails: list[str] | None

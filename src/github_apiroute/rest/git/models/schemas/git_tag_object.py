@@ -11,6 +11,6 @@ __all__ = ["GitTagObject"]
 
 class GitTagObject(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    sha: str
-    type_: str = Field(alias="type")
-    url: str
+    sha: str | None
+    type_: str | None = Field(alias="type")
+    url: str | None

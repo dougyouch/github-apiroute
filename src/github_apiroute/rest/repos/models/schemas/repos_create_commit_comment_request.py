@@ -13,7 +13,7 @@ class ReposCreateCommitCommentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The contents of the comment.
-    body: str
+    body: str | None
 
     # Relative path of the file to comment on.
     path: str | None = None

@@ -35,12 +35,12 @@ class WebhookWorkflowDispatch(BaseModel):
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
     organization: OrganizationSimpleWebhooks | None = None
-    ref: str
+    ref: str | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
-    workflow: str
+    sender: SimpleUser | None
+    workflow: str | None

@@ -23,13 +23,13 @@ class WebhookRegistryPackagePublishedRegistryPackage(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     created_at: str | None
     description: str | None
-    ecosystem: str
-    html_url: str
-    id: int
-    name: str
-    namespace: str
-    owner: WebhookRegistryPackagePublishedRegistryPackageOwner
-    package_type: str
+    ecosystem: str | None
+    html_url: str | None
+    id: int | None
+    name: str | None
+    namespace: str | None
+    owner: WebhookRegistryPackagePublishedRegistryPackageOwner | None
+    package_type: str | None
     package_version: WebhookRegistryPackagePublishedRegistryPackagePackageVersion | None
     registry: WebhookRegistryPackagePublishedRegistryPackageRegistry | None
     updated_at: str | None

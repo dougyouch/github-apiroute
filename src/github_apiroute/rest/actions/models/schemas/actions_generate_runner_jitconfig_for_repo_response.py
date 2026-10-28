@@ -15,7 +15,7 @@ class ActionsGenerateRunnerJitconfigForRepoResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A self hosted runner
-    runner: Runner
+    runner: Runner | None
 
     # The base64 encoded runner configuration.
-    encoded_jit_config: str
+    encoded_jit_config: str | None

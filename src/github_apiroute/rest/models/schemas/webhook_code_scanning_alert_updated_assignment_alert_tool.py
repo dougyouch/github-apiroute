@@ -13,7 +13,7 @@ class WebhookCodeScanningAlertUpdatedAssignmentAlertTool(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the tool used to generate the code scanning analysis alert.
-    name: str
+    name: str | None
 
     # The version of the tool used to detect the alert.
     version: str | None

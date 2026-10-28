@@ -13,5 +13,5 @@ class SocialAccount(BaseModel):
     """Social media account"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    provider: str
-    url: str
+    provider: str | None
+    url: str | None

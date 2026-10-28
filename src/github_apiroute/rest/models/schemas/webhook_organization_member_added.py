@@ -20,7 +20,7 @@ __all__ = ["WebhookOrganizationMemberAdded"]
 
 class WebhookOrganizationMemberAdded(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["member_added"]
+    action: Literal["member_added"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -34,16 +34,16 @@ class WebhookOrganizationMemberAdded(BaseModel):
 
     # The membership between the user and the organization. Not present when the action is
     # `member_invited`.
-    membership: WebhooksMembership
+    membership: WebhooksMembership | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
     repository: RepositoryWebhooks | None = None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

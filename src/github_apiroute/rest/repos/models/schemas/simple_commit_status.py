@@ -12,13 +12,13 @@ __all__ = ["SimpleCommitStatus"]
 class SimpleCommitStatus(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     description: str | None
-    id: int
-    node_id: str
-    state: str
-    context: str
+    id: int | None
+    node_id: str | None
+    state: str | None
+    context: str | None
     target_url: str | None
     required: bool | None = None
     avatar_url: str | None
-    url: str
-    created_at: str
-    updated_at: str
+    url: str | None
+    created_at: str | None
+    updated_at: str | None

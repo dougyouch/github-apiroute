@@ -16,7 +16,7 @@ class AgentAutomationsCreateRepoAutomationRequestTriggersAutomationFailed(BaseMo
 
     # Upstream Automation IDs in the same repository. An Automation cannot list itself, and a
     # user-owned Automation can only be listed by its creator's user-owned Automations.
-    automation_ids: list[str]
+    automation_ids: list[str] | None
 
     # Failure reasons to match. Omit to match only reported failures.
     reasons: list[Literal["reported", "crashed", "timed_out"]] | None = None

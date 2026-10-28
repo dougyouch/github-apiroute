@@ -15,4 +15,4 @@ class OidcCustomPropertyInclusionInput(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the custom property to include in the OIDC token
-    custom_property_name: str
+    custom_property_name: str | None

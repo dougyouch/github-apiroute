@@ -20,7 +20,7 @@ class SimpleInstallation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the installation.
-    id: int
+    id: int | None
 
     # The global node ID of the installation.
-    node_id: str
+    node_id: str | None

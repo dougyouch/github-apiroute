@@ -18,14 +18,14 @@ class NullableScopedInstallation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The permissions granted to the fine-grained access token.
-    permissions: AppPermissions
+    permissions: AppPermissions | None
 
     # Describe whether all repositories have been selected or there's a selection involved
-    repository_selection: Literal["all", "selected"]
+    repository_selection: Literal["all", "selected"] | None
     single_file_name: str | None
     has_multiple_single_files: bool | None = None
     single_file_paths: list[str] | None = None
-    repositories_url: str
+    repositories_url: str | None
 
     # A GitHub user.
-    account: SimpleUser
+    account: SimpleUser | None

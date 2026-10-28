@@ -15,9 +15,9 @@ __all__ = ["PullRequestEvent"]
 
 class PullRequestEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
-    number: int
-    pull_request: PullRequestMinimal
+    action: str | None
+    number: int | None
+    pull_request: PullRequestMinimal | None
 
     # A GitHub user.
     assignee: SimpleUser | None = None

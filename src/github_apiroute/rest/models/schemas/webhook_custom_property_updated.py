@@ -19,10 +19,10 @@ __all__ = ["WebhookCustomPropertyUpdated"]
 
 class WebhookCustomPropertyUpdated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["updated"]
+    action: Literal["updated"] | None
 
     # Custom property defined on an organization
-    definition: CustomProperty
+    definition: CustomProperty | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an

@@ -11,14 +11,14 @@ __all__ = ["WebhooksRepositoriesAddedValueItem"]
 
 class WebhooksRepositoriesAddedValueItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    full_name: str
+    full_name: str | None
 
     # Unique identifier of the repository
-    id: int
+    id: int | None
 
     # The name of the repository.
-    name: str
-    node_id: str
+    name: str | None
+    node_id: str | None
 
     # Whether the repository is private or public.
-    private: bool
+    private: bool | None

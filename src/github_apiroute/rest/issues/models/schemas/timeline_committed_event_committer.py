@@ -15,10 +15,10 @@ class TimelineCommittedEventCommitter(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Timestamp of the commit
-    date: str
+    date: str | None
 
     # Git email address of the user
-    email: str
+    email: str | None
 
     # Name of the git user
-    name: str
+    name: str | None

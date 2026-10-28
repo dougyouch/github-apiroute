@@ -11,9 +11,9 @@ __all__ = ["CreateEvent"]
 
 class CreateEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    ref_type: str
-    full_ref: str
-    master_branch: str
+    ref: str | None
+    ref_type: str | None
+    full_ref: str | None
+    master_branch: str | None
     description: str | None = None
-    pusher_type: str
+    pusher_type: str | None

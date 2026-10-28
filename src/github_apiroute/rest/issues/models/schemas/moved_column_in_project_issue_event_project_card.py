@@ -11,9 +11,9 @@ __all__ = ["MovedColumnInProjectIssueEventProjectCard"]
 
 class MovedColumnInProjectIssueEventProjectCard(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    url: str
-    project_id: int
-    project_url: str
-    column_name: str
+    id: int | None
+    url: str | None
+    project_id: int | None
+    project_url: str | None
+    column_name: str | None
     previous_column_name: str | None = None

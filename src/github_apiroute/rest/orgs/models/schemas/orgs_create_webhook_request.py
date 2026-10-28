@@ -15,10 +15,10 @@ class OrgsCreateWebhookRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Must be passed as "web".
-    name: str
+    name: str | None
 
     # Key/value pairs to provide settings for this webhook.
-    config: OrgsCreateWebhookRequestConfig
+    config: OrgsCreateWebhookRequestConfig | None
 
     # Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is
     # triggered for. Set to `["*"]` to receive all possible events.

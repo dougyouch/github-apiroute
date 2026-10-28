@@ -17,36 +17,36 @@ class TeamSimple(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the team
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # URL for the team
-    url: str
-    members_url: str
+    url: str | None
+    members_url: str | None
 
     # Name of the team
-    name: str
+    name: str | None
 
     # Description of the team
     description: str | None
 
     # Permission that the team will have for its repositories
-    permission: str
+    permission: str | None
 
     # The level of privacy this team should have
     privacy: str | None = None
 
     # The notification setting the team has set
     notification_setting: str | None = None
-    html_url: str
-    repositories_url: str
-    slug: str
+    html_url: str | None
+    repositories_url: str | None
+    slug: str | None
 
     # Distinguished Name (DN) that team maps to within LDAP environment
     ldap_dn: str | None = None
 
     # The ownership type of the team
-    type_: Literal["enterprise", "organization"] = Field(alias="type")
+    type_: Literal["enterprise", "organization"] | None = Field(alias="type")
 
     # Unique identifier of the organization to which this team belongs
     organization_id: int | None = None

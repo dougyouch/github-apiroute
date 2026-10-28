@@ -32,24 +32,24 @@ class PersonalAccessTokenRequest(BaseModel):
 
     # Unique identifier of the request for access via fine-grained personal access token. Used
     # as the `pat_request_id` parameter in the list and review API calls.
-    id: int
+    id: int | None
 
     # A GitHub user.
-    owner: SimpleUser
+    owner: SimpleUser | None
 
     # New requested permissions, categorized by type of permission.
-    permissions_added: PersonalAccessTokenRequestPermissionsAdded
+    permissions_added: PersonalAccessTokenRequestPermissionsAdded | None
 
     # Requested permissions that elevate access for a previously approved request for access,
     # categorized by type of permission.
-    permissions_upgraded: PersonalAccessTokenRequestPermissionsUpgraded
+    permissions_upgraded: PersonalAccessTokenRequestPermissionsUpgraded | None
 
     # Permissions requested, categorized by type of permission. This field incorporates
     # `permissions_added` and `permissions_upgraded`.
-    permissions_result: PersonalAccessTokenRequestPermissionsResult
+    permissions_result: PersonalAccessTokenRequestPermissionsResult | None
 
     # Type of repository selection requested.
-    repository_selection: Literal["none", "all", "subset"]
+    repository_selection: Literal["none", "all", "subset"] | None
 
     # The number of repositories the token is requesting access to. This field is only populated
     # when `repository_selection` is `subset`.
@@ -60,18 +60,18 @@ class PersonalAccessTokenRequest(BaseModel):
     repositories: list[PersonalAccessTokenRequestRepositoriesItem] | None
 
     # Date and time when the request for access was created.
-    created_at: str
+    created_at: str | None
 
     # Unique identifier of the user's token. This field can also be found in audit log events
     # and the organization's settings for their PAT grants.
-    token_id: int
+    token_id: int | None
 
     # The name given to the user's token. This field can also be found in an organization's
     # settings page for Active Tokens.
-    token_name: str
+    token_name: str | None
 
     # Whether the associated fine-grained personal access token has expired.
-    token_expired: bool
+    token_expired: bool | None
 
     # Date and time when the associated fine-grained personal access token expires.
     token_expires_at: str | None

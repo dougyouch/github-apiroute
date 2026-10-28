@@ -11,6 +11,6 @@ __all__ = ["PullRequestStackPullRequestBaseRepo"]
 
 class PullRequestStackPullRequestBaseRepo(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    url: str
-    name: str
+    id: int | None
+    url: str | None
+    name: str | None

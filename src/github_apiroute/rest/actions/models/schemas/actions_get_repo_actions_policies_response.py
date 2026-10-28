@@ -15,7 +15,7 @@ class ActionsGetRepoActionsPoliciesResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The total number of Actions policies.
-    total_count: int
+    total_count: int | None
 
     # An array of Actions policies.
-    policies: list[ActionsPolicy]
+    policies: list[ActionsPolicy] | None

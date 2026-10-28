@@ -25,33 +25,33 @@ class PullRequestSimple(BaseModel):
     """Pull Request Simple"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    id: int
-    node_id: str
-    html_url: str
-    diff_url: str
-    patch_url: str
-    issue_url: str
-    commits_url: str
-    review_comments_url: str
-    review_comment_url: str
-    comments_url: str
-    statuses_url: str
-    number: int
-    state: str
-    locked: bool
-    title: str
+    url: str | None
+    id: int | None
+    node_id: str | None
+    html_url: str | None
+    diff_url: str | None
+    patch_url: str | None
+    issue_url: str | None
+    commits_url: str | None
+    review_comments_url: str | None
+    review_comment_url: str | None
+    comments_url: str | None
+    statuses_url: str | None
+    number: int | None
+    state: str | None
+    locked: bool | None
+    title: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None
     body: str | None
-    labels: list[PullRequestSimpleLabelsItem]
+    labels: list[PullRequestSimpleLabelsItem] | None
 
     # A collection of related issues and pull requests.
     milestone: NullableMilestone | None
     active_lock_reason: str | None = None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
     closed_at: str | None
     merged_at: str | None
     merge_commit_sha: str | None
@@ -61,12 +61,12 @@ class PullRequestSimple(BaseModel):
     assignees: list[SimpleUser] | None = None
     requested_reviewers: list[SimpleUser] | None = None
     requested_teams: list[Team] | None = None
-    head: PullRequestSimpleHead
-    base: PullRequestSimpleBase
-    links: PullRequestSimpleLinks = Field(alias="_links")
+    head: PullRequestSimpleHead | None
+    base: PullRequestSimpleBase | None
+    links: PullRequestSimpleLinks | None = Field(alias="_links")
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
+    author_association: AuthorAssociation | None
 
     # The status of auto merging a pull request.
     auto_merge: AutoMerge | None

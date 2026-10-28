@@ -17,10 +17,10 @@ class GetAllBudgetsEffectiveBudget(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the effective budget.
-    id: str
+    id: str | None
 
     # The budget amount for the effective budget.
-    budget_amount: int
+    budget_amount: int | None
 
     # The consumed amount for the specified user within the effective budget.
-    consumed_amount: float
+    consumed_amount: float | None

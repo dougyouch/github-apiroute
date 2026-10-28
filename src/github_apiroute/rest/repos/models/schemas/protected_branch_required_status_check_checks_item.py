@@ -11,5 +11,5 @@ __all__ = ["ProtectedBranchRequiredStatusCheckChecksItem"]
 
 class ProtectedBranchRequiredStatusCheckChecksItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    context: str
+    context: str | None
     app_id: int | None

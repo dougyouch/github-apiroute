@@ -10,6 +10,9 @@ apis:
     module: rest
     client: GitHubRestApi
     base_class: github_apiroute.auth:GitHubAuth
+    # GitHub's description declares some fields never null that the API does send as null
+    # (a label's description, for one), so typed models accept null in every field
+    nullable_fields: true
   - name: graphql
     title: GraphQL API
     format: graphql
@@ -26,4 +29,3 @@ apis:
     module: graphql
     client: GitHubGraphQLApi
     base_class: github_apiroute.auth:GitHubAuth
-    nullable_fields: true

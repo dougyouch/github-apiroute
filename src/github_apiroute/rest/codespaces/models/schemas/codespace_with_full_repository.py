@@ -23,10 +23,10 @@ class CodespaceWithFullRepository(BaseModel):
     """A codespace."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
+    id: int | None
 
     # Automatically generated name of this codespace.
-    name: str
+    name: str | None
 
     # Display name for this codespace.
     display_name: str | None = None
@@ -35,13 +35,13 @@ class CodespaceWithFullRepository(BaseModel):
     environment_id: str | None
 
     # A GitHub user.
-    owner: SimpleUser
+    owner: SimpleUser | None
 
     # A GitHub user.
-    billable_owner: SimpleUser
+    billable_owner: SimpleUser | None
 
     # Full Repository
-    repository: FullRepository
+    repository: FullRepository | None
 
     # A description of the machine powering a codespace.
     machine: NullableCodespaceMachine | None
@@ -51,64 +51,67 @@ class CodespaceWithFullRepository(BaseModel):
 
     # Whether the codespace was created from a prebuild.
     prebuild: bool | None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
 
     # Last known time this codespace was started.
-    last_used_at: str
+    last_used_at: str | None
 
     # State of this codespace.
-    state: Literal[
-        "Unknown",
-        "Created",
-        "Queued",
-        "Provisioning",
-        "Available",
-        "Awaiting",
-        "Unavailable",
-        "Deleted",
-        "Moved",
-        "Shutdown",
-        "Archived",
-        "Starting",
-        "ShuttingDown",
-        "Failed",
-        "Exporting",
-        "Updating",
-        "Rebuilding",
-    ]
+    state: (
+        Literal[
+            "Unknown",
+            "Created",
+            "Queued",
+            "Provisioning",
+            "Available",
+            "Awaiting",
+            "Unavailable",
+            "Deleted",
+            "Moved",
+            "Shutdown",
+            "Archived",
+            "Starting",
+            "ShuttingDown",
+            "Failed",
+            "Exporting",
+            "Updating",
+            "Rebuilding",
+        ]
+        | None
+    )
 
     # API URL for this codespace.
-    url: str
+    url: str | None
 
     # Details about the codespace's git repository.
-    git_status: CodespaceWithFullRepositoryGitStatus
+    git_status: CodespaceWithFullRepositoryGitStatus | None
 
     # The initally assigned location of a new codespace.
-    location: Literal["EastUs", "SouthEastAsia", "WestEurope", "WestUs2"]
+    location: Literal["EastUs", "SouthEastAsia", "WestEurope", "WestUs2"] | None
 
     # The number of minutes of inactivity after which this codespace will be automatically
     # stopped.
     idle_timeout_minutes: int | None
 
     # URL to access this codespace on the web.
-    web_url: str
+    web_url: str | None
 
     # API URL to access available alternate machine types for this codespace.
-    machines_url: str
+    machines_url: str | None
 
     # API URL to start this codespace.
-    start_url: str
+    start_url: str | None
 
     # API URL to stop this codespace.
-    stop_url: str
+    stop_url: str | None
 
     # API URL to publish this codespace to a new repository.
     publish_url: str | None = None
 
     # API URL for the Pull Request associated with this codespace, if any.
     pulls_url: str | None
-    recent_folders: list[str]
+    recent_folders: list[str] | None
     runtime_constraints: CodespaceWithFullRepositoryRuntimeConstraints | None = None
 
     # Whether or not a codespace has a pending async operation. This would mean that the

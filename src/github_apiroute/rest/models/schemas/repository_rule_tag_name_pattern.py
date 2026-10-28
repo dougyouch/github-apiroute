@@ -17,5 +17,5 @@ class RepositoryRuleTagNamePattern(BaseModel):
     """Parameters to be used for the tag_name_pattern rule"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["tag_name_pattern"] = Field(alias="type")
+    type_: Literal["tag_name_pattern"] | None = Field(alias="type")
     parameters: RepositoryRuleTagNamePatternParameters | None = None

@@ -15,4 +15,4 @@ __all__ = ["WebhookDiscussionCommentEditedChanges"]
 
 class WebhookDiscussionCommentEditedChanges(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    body: WebhookDiscussionCommentEditedChangesBody
+    body: WebhookDiscussionCommentEditedChangesBody | None

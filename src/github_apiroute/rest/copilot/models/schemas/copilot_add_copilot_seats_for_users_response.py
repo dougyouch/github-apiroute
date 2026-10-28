@@ -13,4 +13,4 @@ class CopilotAddCopilotSeatsForUsersResponse(BaseModel):
     """The total number of seats created for the specified user(s)."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    seats_created: int
+    seats_created: int | None

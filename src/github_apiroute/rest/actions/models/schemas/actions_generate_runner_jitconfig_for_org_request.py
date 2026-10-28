@@ -13,14 +13,14 @@ class ActionsGenerateRunnerJitconfigForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the new runner.
-    name: str
+    name: str | None
 
     # The ID of the runner group to register the runner to.
-    runner_group_id: int
+    runner_group_id: int | None
 
     # The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum
     # items**: 100.
-    labels: list[str]
+    labels: list[str] | None
 
     # The working directory to be used for job execution, relative to the runner install
     # directory.

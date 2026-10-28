@@ -18,10 +18,10 @@ class AgentAutomationsCreateRepoAutomationTaskResponse(BaseModel):
 
     # The preallocated ID of the accepted run. The task may not yet be readable, and downstream
     # skips or failures can prevent its creation.
-    task_id: str
+    task_id: str | None
 
     # The ID of the automation that was triggered.
-    automation_id: str
+    automation_id: str | None
 
     # The trigger event name, always "manual" for public API runs.
-    event: Literal["manual"]
+    event: Literal["manual"] | None

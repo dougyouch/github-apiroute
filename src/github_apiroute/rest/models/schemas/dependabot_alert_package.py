@@ -15,7 +15,7 @@ class DependabotAlertPackage(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The package's language or package management ecosystem.
-    ecosystem: str
+    ecosystem: str | None
 
     # The unique package name within its ecosystem.
-    name: str
+    name: str | None

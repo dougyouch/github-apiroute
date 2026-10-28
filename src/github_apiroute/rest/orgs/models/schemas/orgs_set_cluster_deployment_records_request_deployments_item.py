@@ -15,10 +15,10 @@ class OrgsSetClusterDeploymentRecordsRequestDeploymentsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the artifact.
-    name: str
+    name: str | None
 
     # The hex encoded digest of the artifact.
-    digest: str
+    digest: str | None
 
     # The artifact version.
     version: str | None = None
@@ -29,7 +29,7 @@ class OrgsSetClusterDeploymentRecordsRequestDeploymentsItem(BaseModel):
     # The unique identifier for the deployment represented by the new record. To accommodate
     # differing containers and namespaces within a record set, the following format is
     # recommended: {namespaceName}-{deploymentName}-{containerName}. The deployment_name must be
-    deployment_name: str
+    deployment_name: str | None
 
     # The name of the GitHub repository associated with the artifact. This should be used when
     # there are no provenance attestations available for the artifact. The repository must

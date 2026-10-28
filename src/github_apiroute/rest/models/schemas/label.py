@@ -19,23 +19,23 @@ class Label(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier for the label.
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # URL for the label
-    url: str
+    url: str | None
 
     # The name of the label.
-    name: str
+    name: str | None
 
     # Optional description of the label, such as its purpose.
     description: str | None
 
     # 6-character hex code, without the leading #, identifying the color
-    color: str
+    color: str | None
 
     # Whether this label comes by default in a new repository.
-    default: bool
+    default: bool | None
 
     # Timestamp indicating when the label was archived, or `null` if it has not been archived.
     archived_at: str | None

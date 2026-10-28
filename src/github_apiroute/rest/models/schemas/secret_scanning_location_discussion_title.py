@@ -17,4 +17,4 @@ class SecretScanningLocationDiscussionTitle(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The URL to the discussion where the secret was detected.
-    discussion_title_url: str
+    discussion_title_url: str | None

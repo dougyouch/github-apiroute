@@ -11,8 +11,8 @@ __all__ = ["CheckRunWithSimpleCheckSuiteOutput"]
 
 class CheckRunWithSimpleCheckSuiteOutput(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    annotations_count: int
-    annotations_url: str
+    annotations_count: int | None
+    annotations_url: str | None
     summary: str | None
     text: str | None
     title: str | None

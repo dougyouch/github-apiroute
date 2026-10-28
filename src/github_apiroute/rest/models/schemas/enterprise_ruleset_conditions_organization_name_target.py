@@ -17,4 +17,4 @@ class EnterpriseRulesetConditionsOrganizationNameTarget(BaseModel):
     """Parameters for an organization name condition"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    organization_name: EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName
+    organization_name: EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName | None

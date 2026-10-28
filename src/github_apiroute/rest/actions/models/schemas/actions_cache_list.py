@@ -17,7 +17,7 @@ class ActionsCacheList(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Total number of caches
-    total_count: int
+    total_count: int | None
 
     # Array of caches
-    actions_caches: list[ActionsCacheListActionsCachesItem]
+    actions_caches: list[ActionsCacheListActionsCachesItem] | None

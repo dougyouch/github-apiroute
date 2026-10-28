@@ -22,30 +22,30 @@ class Installation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the installation.
-    id: int
+    id: int | None
     account: SimpleUser | Enterprise | None
 
     # Describe whether all repositories have been selected or there's a selection involved
-    repository_selection: Literal["all", "selected"]
-    access_tokens_url: str
-    repositories_url: str
-    html_url: str
-    app_id: int
+    repository_selection: Literal["all", "selected"] | None
+    access_tokens_url: str | None
+    repositories_url: str | None
+    html_url: str | None
+    app_id: int | None
     client_id: str | None = None
 
     # The ID of the user or organization this token is being scoped to.
-    target_id: int
-    target_type: str
+    target_id: int | None
+    target_type: str | None
 
     # The permissions granted to the fine-grained access token.
-    permissions: AppPermissions
-    events: list[str]
-    created_at: str
-    updated_at: str
+    permissions: AppPermissions | None
+    events: list[str] | None
+    created_at: str | None
+    updated_at: str | None
     single_file_name: str | None
     has_multiple_single_files: bool | None = None
     single_file_paths: list[str] | None = None
-    app_slug: str
+    app_slug: str | None
 
     # A GitHub user.
     suspended_by: NullableSimpleUser | None

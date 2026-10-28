@@ -33,46 +33,49 @@ class WebhookIssuesLabeledIssue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     active_lock_reason: Literal["resolved", "off-topic", "too heated", "spam"] | None
     assignee: WebhookIssuesLabeledIssueAssignee | None = None
-    assignees: list[WebhookIssuesLabeledIssueAssigneesItem | None]
+    assignees: list[WebhookIssuesLabeledIssueAssigneesItem | None] | None
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # Contents of the issue
     body: str | None
     closed_at: str | None
-    comments: int
-    comments_url: str
-    created_at: str
+    comments: int | None
+    comments_url: str | None
+    created_at: str | None
     draft: bool | None = None
-    events_url: str
-    html_url: str
-    id: int
+    events_url: str | None
+    html_url: str | None
+    id: int | None
     labels: list[WebhookIssuesLabeledIssueLabelsItem] | None = None
-    labels_url: str
+    labels_url: str | None
     locked: bool | None = None
 
     # A collection of related issues and pull requests.
     milestone: WebhookIssuesLabeledIssueMilestone | None
-    node_id: str
-    number: int
+    node_id: str | None
+    number: int | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come
     # with granular permissions and built-in webhooks. GitHub apps are first class actors within
     performed_via_github_app: WebhookIssuesLabeledIssuePerformedViaGithubApp | None = None
     pull_request: WebhookIssuesLabeledIssuePullRequest | None = None
-    reactions: WebhookIssuesLabeledIssueReactions
-    repository_url: str
+    reactions: WebhookIssuesLabeledIssueReactions | None
+    repository_url: str | None
 
     # Comments provide a way for people to collaborate on an issue.
     pinned_comment: NullableIssueComment | None = None
@@ -90,9 +93,9 @@ class WebhookIssuesLabeledIssue(BaseModel):
     type_: IssueType | None = Field(None, alias="type")
 
     # Title of the issue
-    title: str
-    updated_at: str
+    title: str | None
+    updated_at: str | None
 
     # URL for the issue
-    url: str
+    url: str | None
     user: WebhookIssuesLabeledIssueUser | None

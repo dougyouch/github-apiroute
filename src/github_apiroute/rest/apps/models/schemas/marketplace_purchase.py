@@ -18,11 +18,11 @@ class MarketplacePurchase(BaseModel):
     """Marketplace Purchase"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    type_: str = Field(alias="type")
-    id: int
-    login: str
+    url: str | None
+    type_: str | None = Field(alias="type")
+    id: int | None
+    login: str | None
     organization_billing_email: str | None = None
     email: str | None = None
     marketplace_pending_change: MarketplacePurchaseMarketplacePendingChange | None = None
-    marketplace_purchase: MarketplacePurchaseMarketplacePurchase
+    marketplace_purchase: MarketplacePurchaseMarketplacePurchase | None

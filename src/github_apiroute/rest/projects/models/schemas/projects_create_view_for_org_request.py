@@ -15,10 +15,10 @@ class ProjectsCreateViewForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the view.
-    name: str
+    name: str | None
 
     # The layout of the view.
-    layout: Literal["table", "board", "roadmap"]
+    layout: Literal["table", "board", "roadmap"] | None
 
     # The filter query for the view. See [Filtering
     # projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-
