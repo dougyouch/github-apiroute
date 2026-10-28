@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/dougyouch/github-apiroute/compare/v0.3.0...v0.3.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* typed REST models accept null where GitHub sends it ([5656acb](https://github.com/dougyouch/github-apiroute/commit/5656acb5145fa3009b2289de2e5b51c931ae52c0))
+
 ## [0.3.0](https://github.com/dougyouch/github-apiroute/compare/v0.2.2...v0.3.0) (2026-10-28)
 
 
