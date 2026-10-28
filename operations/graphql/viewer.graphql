@@ -1,10 +1,9 @@
-# The user the token belongs to.
+# The user the token belongs to. (No email: reading it needs the user:email or read:user scope.)
 query Viewer {
   viewer {
     id
     login
     name
-    email
     bio
     company
     location

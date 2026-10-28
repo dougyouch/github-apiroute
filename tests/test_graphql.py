@@ -11,7 +11,6 @@ VIEWER = {
     "id": "U_1",
     "login": "octocat",
     "name": "The Octocat",
-    "email": "",
     "bio": None,
     "company": "@github",
     "location": None,
