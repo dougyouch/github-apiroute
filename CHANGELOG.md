@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/dougyouch/github-apiroute/compare/v0.2.1...v0.2.2) (2026-10-28)
+
+
+### Bug Fixes
+
+* **codegen:** regenerate clients with apiroute 2.3.0 ([33179e8](https://github.com/dougyouch/github-apiroute/commit/33179e8999728fa60ef80cdba5376b0ed3968f39))
+* updated apiroute ([740cf4f](https://github.com/dougyouch/github-apiroute/commit/740cf4f14a5784e083a2581feb6b7919a516185a))
+
 ## [0.2.1](https://github.com/dougyouch/github-apiroute/compare/v0.2.0...v0.2.1) (2026-10-28)
 
 
