@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.0](https://github.com/dougyouch/github-apiroute/compare/v0.4.2...v0.5.0) (2026-10-28)
+
+### Features
+
+- feat: REST list operations gain _all methods that follow Link headers (25f1003)
+
 ## [0.4.2](https://github.com/dougyouch/github-apiroute/compare/v0.4.1...v0.4.2) (2026-10-28)
 
 ### Other changes
