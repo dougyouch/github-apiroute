@@ -9,7 +9,7 @@ MINE = {"owner": "dougyouch", "name": "apiroute"}
 BUSY = {"owner": "pallets", "name": "flask"}
 
 
-def test_viewer(gql, signed_in):
+def test_viewer(gql):
     viewer = gql.models.viewer().viewer
     assert viewer.login and viewer.created_at.year >= 2008
 

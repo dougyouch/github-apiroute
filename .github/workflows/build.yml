@@ -37,7 +37,7 @@ jobs:
           uv run pytest
       # Typed models against what GitHub actually sends: catches a spec that says a field is
       # never null (or always present) when the API disagrees, before anything is committed.
-      # Read-only; tests about the signed-in user skip, since this token belongs to no user.
+      # Read-only; tests of what this token may not read (the signed-in user, gists) skip.
       - name: Live tests
         env:
           GITHUB_TOKEN: ${{ github.token }}
