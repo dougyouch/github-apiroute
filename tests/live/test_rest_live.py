@@ -125,7 +125,7 @@ CALLS = {
 }
 
 
-# about the signed-in user: these need a user's token
+# about the signed-in user: these need a user's token (skipped with the Actions token)
 USER_CALLS = {
     "repos.list_for_authenticated_user": lambda r: r.repos.models.list_for_authenticated_user(
         **FEW
@@ -159,7 +159,7 @@ def test_typed_rest_call(rest, name):
 
 
 @pytest.mark.parametrize("name", list(USER_CALLS))
-def test_typed_rest_call_for_the_signed_in_user(rest, signed_in, name):
+def test_typed_rest_call_for_the_signed_in_user(rest, name):
     assert _typed(USER_CALLS[name](rest))
 
 
