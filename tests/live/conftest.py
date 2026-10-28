@@ -9,6 +9,7 @@ Every call reads; nothing is created, changed or starred. Lists are kept to a fe
 import os
 
 import pytest
+from apiroute import UnexpectedResponse
 
 from github_apiroute.graphql import GitHubGraphQLApi
 from github_apiroute.rest import GitHubRestApi
@@ -51,3 +52,15 @@ def rest() -> GitHubRestApi:
 @pytest.fixture(scope="session")
 def gql() -> GitHubGraphQLApi:
     return GitHubGraphQLApi(token=TOKEN)
+
+
+@pytest.fixture(scope="session")
+def signed_in(rest) -> None:
+    """Skips a test about the signed-in user when the token belongs to no user, as the Actions
+    token doesn't: GitHub refuses it GET /user, and answers /user/issues with a plain 404."""
+    try:
+        rest.users.get_authenticated()
+    except UnexpectedResponse as error:
+        if NOT_ACCESSIBLE not in _detail(error):
+            raise
+        pytest.skip("the token belongs to no user")
