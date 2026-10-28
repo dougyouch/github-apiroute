@@ -159,7 +159,7 @@ def test_typed_rest_call(rest, name):
 
 
 @pytest.mark.parametrize("name", list(USER_CALLS))
-def test_typed_rest_call_for_the_signed_in_user(rest, name):
+def test_typed_rest_call_for_the_signed_in_user(rest, signed_in, name):
     assert _typed(USER_CALLS[name](rest))
 
 
