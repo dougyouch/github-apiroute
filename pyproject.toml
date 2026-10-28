@@ -1,6 +1,6 @@
 [project]
 name = "github-apiroute"
-version = "0.2.0"
+version = "0.2.1"
 description = "Python clients for GitHub's REST and GraphQL APIs, generated with apiroute from GitHub's published API description and schema."
 readme = "README.md"
 license = "MIT"
