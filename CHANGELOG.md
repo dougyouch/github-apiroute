@@ -1,6 +1,11 @@
 # Changelog
 
-Releases after 0.4.0 are listed on [GitHub Releases](https://github.com/dougyouch/github-apiroute/releases), with notes from their commits: every merge to main is released on its own. Earlier releases are below.
+## [0.4.1](https://github.com/dougyouch/github-apiroute/compare/v0.4.0...v0.4.1) (2026-10-28)
+
+### Other changes
+
+- docs: refresh the client-repository skill from apiroute (2176244)
+- ci: release every merge to main, without a release PR (eaa9189)
 
 ## [0.4.0](https://github.com/dougyouch/github-apiroute/compare/v0.3.1...v0.4.0) (2026-10-28)
 
