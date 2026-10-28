@@ -26,3 +26,4 @@ apis:
     module: graphql
     client: GitHubGraphQLApi
     base_class: github_apiroute.auth:GitHubAuth
+    nullable_fields: true
