@@ -1,0 +1,21 @@
+# Stars a repository (or anything starrable) by its node ID.
+mutation AddStar($starrableId: ID!) {
+  addStar(input: {starrableId: $starrableId}) {
+    starrable {
+      id
+      stargazerCount
+      viewerHasStarred
+    }
+  }
+}
+
+# Unstars it.
+mutation RemoveStar($starrableId: ID!) {
+  removeStar(input: {starrableId: $starrableId}) {
+    starrable {
+      id
+      stargazerCount
+      viewerHasStarred
+    }
+  }
+}

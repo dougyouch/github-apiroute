@@ -1,0 +1,25 @@
+# The user the token belongs to.
+query Viewer {
+  viewer {
+    id
+    login
+    name
+    email
+    bio
+    company
+    location
+    url
+    avatarUrl
+    createdAt
+  }
+}
+
+# The API rate limit left for the token.
+query RateLimit {
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
+  }
+}

@@ -1,0 +1,21 @@
+# Opens an issue in a repository (by its node ID).
+mutation CreateIssue($repositoryId: ID!, $title: String!, $body: String) {
+  createIssue(input: {repositoryId: $repositoryId, title: $title, body: $body}) {
+    issue {
+      ...IssueFields
+    }
+  }
+}
+
+# Comments on an issue or pull request (by its node ID).
+mutation AddComment($subjectId: ID!, $body: String!) {
+  addComment(input: {subjectId: $subjectId, body: $body}) {
+    commentEdge {
+      node {
+        id
+        url
+        createdAt
+      }
+    }
+  }
+}

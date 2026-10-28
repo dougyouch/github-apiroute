@@ -1,0 +1,28 @@
+# Every API this package generates a client for. scripts/generate.py reads it; edit it and
+# regenerate (`uv run python scripts/generate.py --fetch`), never the generated code.
+package: github_apiroute
+apis:
+  - name: rest
+    title: REST API
+    format: openapi
+    spec: https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json
+    docs: https://docs.github.com/en/rest
+    module: rest
+    client: GitHubRestApi
+    base_class: github_apiroute.auth:GitHubAuth
+  - name: graphql
+    title: GraphQL API
+    format: graphql
+    spec: https://api.github.com/graphql          # introspected into specs/graphql.graphql
+    spec_headers:                                 # values name environment variables
+      Authorization: "Bearer ${GITHUB_TOKEN}"
+    operations: operations/graphql                # hand-written; each folder is a section
+    endpoint: https://api.github.com/graphql
+    scalars:
+      DateTime: datetime:datetime
+      GitTimestamp: datetime:datetime
+      Date: datetime:date
+    docs: https://docs.github.com/en/graphql
+    module: graphql
+    client: GitHubGraphQLApi
+    base_class: github_apiroute.auth:GitHubAuth

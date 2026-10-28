@@ -1,0 +1,57 @@
+name: Build
+
+# Keeps the clients current: fetches GitHub's latest REST description and GraphQL schema, upgrades apiroute, regenerates,
+# checks, and commits any difference to main. A changed spec is committed as feat(specs)
+# (a minor release); output that changed only because apiroute did, as fix(codegen) (a patch).
+on:
+  schedule:
+    - cron: "41 7 * * 1" # Mondays 07:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit regenerated clients
+
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.14"
+      - name: Use the newest apiroute
+        run: uv lock --upgrade-package apiroute
+      - run: uv sync
+      - name: Fetch the latest specs and regenerate
+        env:
+          GITHUB_TOKEN: ${{ github.token }} # introspecting the GraphQL schema needs a token
+        run: uv run python scripts/generate.py --fetch
+      - name: Check
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run pytest
+      - name: Commit changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Specs and generated clients are unchanged."
+            exit 0
+          fi
+          specs=$(git status --porcelain -- specs | awk '{print $2}' | xargs -r -n1 basename | sed 's/\..*$//' | sort -u | paste -sd ' ' -)
+          if [ -n "$specs" ]; then
+            subject="feat(specs): update clients from GitHub's latest API specs"
+            body="Changed specs: $specs"
+          else
+            version=$(uv run python -c "import importlib.metadata as m; print(m.version('apiroute'))")
+            subject="fix(codegen): regenerate clients with apiroute $version"
+            body="No spec changed; the generated code did, with the newer apiroute."
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "$subject" -m "$body"
+          git push

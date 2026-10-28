@@ -1,0 +1,49 @@
+# Repositories matching a search query (GitHub's search syntax), every page.
+query SearchRepositories($query: String!, $after: String) {
+  search(query: $query, type: REPOSITORY, first: 50, after: $after) @paginate {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    nodes {
+      ... on Repository {
+        ...RepositoryFields
+      }
+    }
+  }
+}
+
+# Issues and pull requests matching a search query, every page.
+query SearchIssues($query: String!, $after: String) {
+  search(query: $query, type: ISSUE, first: 50, after: $after) @paginate {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    nodes {
+      ... on Issue {
+        ...IssueFields
+        repository {
+          nameWithOwner
+        }
+      }
+      ... on PullRequest {
+        id
+        number
+        title
+        pullRequestState: state  # an Issue's state is another type, so it can't share the name
+        isDraft
+        url
+        createdAt
+        updatedAt
+        mergedAt
+        author {
+          ...ActorFields
+        }
+        repository {
+          nameWithOwner
+        }
+      }
+    }
+  }
+}

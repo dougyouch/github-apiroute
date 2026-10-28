@@ -1,0 +1,35 @@
+# A user by login.
+query User($login: String!) {
+  user(login: $login) {
+    id
+    login
+    name
+    bio
+    company
+    location
+    url
+    avatarUrl
+    createdAt
+    followers {
+      totalCount
+    }
+    following {
+      totalCount
+    }
+  }
+}
+
+# A user's own repositories, most recently pushed first, every page.
+query UserRepositories($login: String!, $after: String) {
+  user(login: $login) {
+    repositories(first: 100, after: $after, ownerAffiliations: [OWNER], orderBy: {field: PUSHED_AT, direction: DESC}) @paginate {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      nodes {
+        ...RepositoryFields
+      }
+    }
+  }
+}

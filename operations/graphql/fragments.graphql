@@ -1,0 +1,65 @@
+# Shared selections, used by the operations in every folder.
+
+fragment ActorFields on Actor {
+  login
+  url
+  avatarUrl
+}
+
+fragment RepositoryFields on Repository {
+  id
+  nameWithOwner
+  description
+  url
+  isPrivate
+  isFork
+  isArchived
+  stargazerCount
+  forkCount
+  primaryLanguage {
+    name
+  }
+  createdAt
+  updatedAt
+  pushedAt
+}
+
+fragment IssueFields on Issue {
+  id
+  number
+  title
+  state
+  url
+  createdAt
+  updatedAt
+  closedAt
+  author {
+    ...ActorFields
+  }
+  labels(first: 20) {
+    nodes {
+      name
+      color
+    }
+  }
+  comments {
+    totalCount
+  }
+}
+
+fragment PullRequestFields on PullRequest {
+  id
+  number
+  title
+  state
+  isDraft
+  url
+  createdAt
+  updatedAt
+  mergedAt
+  baseRefName
+  headRefName
+  author {
+    ...ActorFields
+  }
+}
