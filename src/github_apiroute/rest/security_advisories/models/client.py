@@ -13,8 +13,11 @@ if TYPE_CHECKING:
         GlobalAdvisory,
         PrivateVulnerabilityReportCreate,
         RepositoryAdvisory,
+        RepositoryAdvisoryComment,
         RepositoryAdvisoryCreate,
         RepositoryAdvisoryUpdate,
+        SecurityAdvisoriesCreateRepositoryAdvisoryCommentRequest,
+        SecurityAdvisoriesUpdateRepositoryAdvisoryCommentRequest,
         SecurityAdvisoryEcosystems,
     )
 
@@ -179,6 +182,83 @@ class SecurityAdvisoriesModels(TypedClient):
             owner=owner,
             repo=repo,
             ghsa_id=ghsa_id,
+            body=body,
+        )
+
+    def list_repository_advisory_comments(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        *,
+        since: str | None = None,
+        per_page: int | None = None,
+        page: int | None = None,
+    ) -> list[RepositoryAdvisoryComment]:
+        """List repository security advisory comments"""
+        return self._call(
+            "list_repository_advisory_comments",
+            "list[RepositoryAdvisoryComment]",
+            owner=owner,
+            repo=repo,
+            ghsa_id=ghsa_id,
+            since=since,
+            per_page=per_page,
+            page=page,
+        )
+
+    def create_repository_advisory_comment(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        *,
+        body: SecurityAdvisoriesCreateRepositoryAdvisoryCommentRequest,
+    ) -> RepositoryAdvisoryComment:
+        """Create a repository advisory comment"""
+        return self._call(
+            "create_repository_advisory_comment",
+            "RepositoryAdvisoryComment",
+            owner=owner,
+            repo=repo,
+            ghsa_id=ghsa_id,
+            body=body,
+        )
+
+    def get_repository_advisory_comment(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        comment_id: int,
+    ) -> RepositoryAdvisoryComment:
+        """Get a repository advisory comment"""
+        return self._call(
+            "get_repository_advisory_comment",
+            "RepositoryAdvisoryComment",
+            owner=owner,
+            repo=repo,
+            ghsa_id=ghsa_id,
+            comment_id=comment_id,
+        )
+
+    def update_repository_advisory_comment(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        comment_id: int,
+        *,
+        body: SecurityAdvisoriesUpdateRepositoryAdvisoryCommentRequest,
+    ) -> RepositoryAdvisoryComment:
+        """Update a repository advisory comment"""
+        return self._call(
+            "update_repository_advisory_comment",
+            "RepositoryAdvisoryComment",
+            owner=owner,
+            repo=repo,
+            ghsa_id=ghsa_id,
+            comment_id=comment_id,
             body=body,
         )
 

@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from .schemas.private_vulnerability_report_create_vulnerabilities_item_package import (
         PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage,
     )
+    from .schemas.repository_advisory_comment import RepositoryAdvisoryComment
     from .schemas.repository_advisory_create import RepositoryAdvisoryCreate
     from .schemas.repository_advisory_create_credits_item import RepositoryAdvisoryCreateCreditsItem
     from .schemas.repository_advisory_create_vulnerabilities_item import (
@@ -38,6 +39,12 @@ if TYPE_CHECKING:
     from .schemas.repository_advisory_update_vulnerabilities_item_package import (
         RepositoryAdvisoryUpdateVulnerabilitiesItemPackage,
     )
+    from .schemas.security_advisories_create_repository_advisory_comment_request import (
+        SecurityAdvisoriesCreateRepositoryAdvisoryCommentRequest,
+    )
+    from .schemas.security_advisories_update_repository_advisory_comment_request import (
+        SecurityAdvisoriesUpdateRepositoryAdvisoryCommentRequest,
+    )
     from .schemas.vulnerability import Vulnerability
     from .schemas.vulnerability_package import VulnerabilityPackage
 
@@ -52,6 +59,7 @@ __all__ = [
     "PrivateVulnerabilityReportCreateVulnerabilitiesItem",
     "PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage",
     "RepositoryAdvisory",
+    "RepositoryAdvisoryComment",
     "RepositoryAdvisoryCreate",
     "RepositoryAdvisoryCreateCreditsItem",
     "RepositoryAdvisoryCreateVulnerabilitiesItem",
@@ -60,6 +68,8 @@ __all__ = [
     "RepositoryAdvisoryUpdateCreditsItem",
     "RepositoryAdvisoryUpdateVulnerabilitiesItem",
     "RepositoryAdvisoryUpdateVulnerabilitiesItemPackage",
+    "SecurityAdvisoriesCreateRepositoryAdvisoryCommentRequest",
+    "SecurityAdvisoriesUpdateRepositoryAdvisoryCommentRequest",
     "SecurityAdvisoryEcosystems",
     "Vulnerability",
     "VulnerabilityPackage",
@@ -78,6 +88,7 @@ __getattr__, __dir__ = lazy_exports(
         "PrivateVulnerabilityReportCreateVulnerabilitiesItem": ".schemas.private_vulnerability_report_create_vulnerabilities_item",
         "PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage": ".schemas.private_vulnerability_report_create_vulnerabilities_item_package",
         "RepositoryAdvisory": "...models.schemas.repository_advisory",
+        "RepositoryAdvisoryComment": ".schemas.repository_advisory_comment",
         "RepositoryAdvisoryCreate": ".schemas.repository_advisory_create",
         "RepositoryAdvisoryCreateCreditsItem": ".schemas.repository_advisory_create_credits_item",
         "RepositoryAdvisoryCreateVulnerabilitiesItem": ".schemas.repository_advisory_create_vulnerabilities_item",
@@ -86,6 +97,8 @@ __getattr__, __dir__ = lazy_exports(
         "RepositoryAdvisoryUpdateCreditsItem": ".schemas.repository_advisory_update_credits_item",
         "RepositoryAdvisoryUpdateVulnerabilitiesItem": ".schemas.repository_advisory_update_vulnerabilities_item",
         "RepositoryAdvisoryUpdateVulnerabilitiesItemPackage": ".schemas.repository_advisory_update_vulnerabilities_item_package",
+        "SecurityAdvisoriesCreateRepositoryAdvisoryCommentRequest": ".schemas.security_advisories_create_repository_advisory_comment_request",
+        "SecurityAdvisoriesUpdateRepositoryAdvisoryCommentRequest": ".schemas.security_advisories_update_repository_advisory_comment_request",
         "SecurityAdvisoryEcosystems": "...models.schemas.security_advisory_ecosystems",
         "Vulnerability": ".schemas.vulnerability",
         "VulnerabilityPackage": ".schemas.vulnerability_package",

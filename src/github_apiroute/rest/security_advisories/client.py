@@ -181,6 +181,72 @@ class SecurityAdvisoriesSection(Section):
         ...
 
     @route(
+        "GET",
+        "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/comments",
+        operation="security-advisories/list-repository-advisory-comments",
+    )
+    def list_repository_advisory_comments(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        *,
+        since: Annotated[str | None, Query("since")] = None,
+        per_page: Annotated[int | None, Query("per_page")] = None,
+        page: Annotated[int | None, Query("page")] = None,
+    ) -> list[Any]:
+        """List repository security advisory comments"""
+        ...
+
+    @route(
+        "POST",
+        "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/comments",
+        operation="security-advisories/create-repository-advisory-comment",
+    )
+    def create_repository_advisory_comment(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        *,
+        body: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Create a repository advisory comment"""
+        ...
+
+    @route(
+        "GET",
+        "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/comments/{comment_id}",
+        operation="security-advisories/get-repository-advisory-comment",
+    )
+    def get_repository_advisory_comment(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        comment_id: int,
+    ) -> dict[str, Any]:
+        """Get a repository advisory comment"""
+        ...
+
+    @route(
+        "PATCH",
+        "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/comments/{comment_id}",
+        operation="security-advisories/update-repository-advisory-comment",
+    )
+    def update_repository_advisory_comment(
+        self,
+        owner: str,
+        repo: str,
+        ghsa_id: str,
+        comment_id: int,
+        *,
+        body: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Update a repository advisory comment"""
+        ...
+
+    @route(
         "POST",
         "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve",
         operation="security-advisories/create-repository-advisory-cve-request",

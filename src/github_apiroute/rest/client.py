@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from .actions.client import ActionsSection
     from .activity.client import ActivitySection
     from .agent_automations.client import AgentAutomationsSection
+    from .agent_merge.client import AgentMergeSection
     from .agent_tasks.client import AgentTasksSection
     from .agents.client import AgentsSection
     from .apps.client import AppsSection
@@ -71,6 +72,7 @@ class GitHubRestApi(GitHubAuth):
     agent_automations: AgentAutomationsSection = lazy(
         ".agent_automations.client", "AgentAutomationsSection"
     )
+    agent_merge: AgentMergeSection = lazy(".agent_merge.client", "AgentMergeSection")
     agent_tasks: AgentTasksSection = lazy(".agent_tasks.client", "AgentTasksSection")
     apps: AppsSection = lazy(".apps.client", "AppsSection")
     classroom: ClassroomSection = lazy(".classroom.client", "ClassroomSection")
