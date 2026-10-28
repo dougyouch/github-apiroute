@@ -1,0 +1,107 @@
+# Which REST operations get a paginated <name>_all method, and how they page. GitHub pages
+# every list with a Link header (rel="next"); the rules differ only in where the items are.
+# Rules are tried in order, and generate.py prints how many operations each matched.
+- name: arrays
+  response: array
+  has_parameter: [page]
+  paginate: {type: next_url}
+- name: items
+  has_parameter: [page]
+  response: {has: [total_count, items]}
+  paginate: {type: next_url, items: items}
+- name: repositories
+  has_parameter: [page]
+  response: {has: [total_count, repositories]}
+  paginate: {type: next_url, items: repositories}
+- name: secrets
+  has_parameter: [page]
+  response: {has: [total_count, secrets]}
+  paginate: {type: next_url, items: secrets}
+- name: variables
+  has_parameter: [page]
+  response: {has: [total_count, variables]}
+  paginate: {type: next_url, items: variables}
+- name: runners
+  has_parameter: [page]
+  response: {has: [total_count, runners]}
+  paginate: {type: next_url, items: runners}
+- name: codespaces
+  has_parameter: [page]
+  response: {has: [total_count, codespaces]}
+  paginate: {type: next_url, items: codespaces}
+- name: installations
+  has_parameter: [page]
+  response: {has: [total_count, installations]}
+  paginate: {type: next_url, items: installations}
+- name: artifacts
+  has_parameter: [page]
+  response: {has: [total_count, artifacts]}
+  paginate: {type: next_url, items: artifacts}
+- name: workflow_runs
+  has_parameter: [page]
+  response: {has: [total_count, workflow_runs]}
+  paginate: {type: next_url, items: workflow_runs}
+- name: jobs
+  has_parameter: [page]
+  response: {has: [total_count, jobs]}
+  paginate: {type: next_url, items: jobs}
+- name: check_runs
+  has_parameter: [page]
+  response: {has: [total_count, check_runs]}
+  paginate: {type: next_url, items: check_runs}
+- name: workflows
+  has_parameter: [page]
+  response: {has: [total_count, workflows]}
+  paginate: {type: next_url, items: workflows}
+- name: runner_groups
+  has_parameter: [page]
+  response: {has: [total_count, runner_groups]}
+  paginate: {type: next_url, items: runner_groups}
+- name: environments
+  has_parameter: [page]
+  response: {has: [total_count, environments]}
+  paginate: {type: next_url, items: environments}
+- name: check_suites
+  has_parameter: [page]
+  response: {has: [total_count, check_suites]}
+  paginate: {type: next_url, items: check_suites}
+- name: statuses
+  has_parameter: [page]
+  response: {has: [total_count, statuses]}
+  paginate: {type: next_url, items: statuses}
+- name: branch_policies
+  has_parameter: [page]
+  response: {has: [total_count, branch_policies]}
+  paginate: {type: next_url, items: branch_policies}
+- name: actions_caches
+  has_parameter: [page]
+  response: {has: [total_count, actions_caches]}
+  paginate: {type: next_url, items: actions_caches}
+- name: repository_cache_usages
+  has_parameter: [page]
+  response: {has: [total_count, repository_cache_usages]}
+  paginate: {type: next_url, items: repository_cache_usages}
+- name: policies
+  has_parameter: [page]
+  response: {has: [total_count, policies]}
+  paginate: {type: next_url, items: policies}
+- name: configurations
+  has_parameter: [page]
+  response: {has: [total_count, configurations]}
+  paginate: {type: next_url, items: configurations}
+- name: network_configurations
+  has_parameter: [page]
+  response: {has: [total_count, network_configurations]}
+  paginate: {type: next_url, items: network_configurations}
+- name: devcontainers
+  has_parameter: [page]
+  response: {has: [total_count, devcontainers]}
+  paginate: {type: next_url, items: devcontainers}
+- name: budgets
+  has_parameter: [page]
+  response: {has: [total_count, budgets]}
+  paginate: {type: next_url, items: budgets}
+- name: automations
+  has_parameter: [page]
+  response: {has: [total_count, automations]}
+  paginate: {type: next_url, items: automations}

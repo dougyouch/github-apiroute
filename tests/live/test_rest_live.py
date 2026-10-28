@@ -166,3 +166,31 @@ def test_typed_rest_call_for_the_signed_in_user(rest, signed_in, name):
 def test_async_typed_rest_call(rest):
     repo = asyncio.run(rest.repos.models.aio.get(OWNER, REPO))
     assert repo.full_name == f"{OWNER}/{REPO}"
+
+
+def test_all_methods_page_past_the_first_page(rest):
+    seen = []
+    issues = rest.issues.models.list_for_repo_all(OWNER, REPO, state="all", per_page=2)
+    for issue in issues:
+        seen.append(issue.number)
+        if len(seen) == 5:
+            break
+    assert len(set(seen)) == 5  # three pages of two, without repeats
+
+
+def test_wrapped_lists_page_too(rest):
+    pages = rest.search.repos_all(q="flask in:name", per_page=2).pages()
+    first, second = next(pages), next(pages)
+    assert len(first.items) == len(second.items) == 2
+    assert {r["id"] for r in first.items}.isdisjoint(r["id"] for r in second.items)
+
+
+def test_async_all_methods(rest):
+    async def five():
+        numbers = []
+        async for issue in rest.issues.aio.list_for_repo_all(OWNER, REPO, state="all", per_page=2):
+            numbers.append(issue["number"])
+            if len(numbers) == 5:
+                return numbers
+
+    assert len(set(asyncio.run(five()))) == 5

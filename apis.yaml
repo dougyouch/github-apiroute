@@ -13,6 +13,8 @@ apis:
     # GitHub's description declares some fields never null that the API does send as null
     # (a label's description, for one), so typed models accept null in every field
     nullable_fields: true
+    # list operations gain <name>_all methods following GitHub's Link headers across pages
+    pagination: specs/rest.pagination.yaml
   - name: graphql
     title: GraphQL API
     format: graphql

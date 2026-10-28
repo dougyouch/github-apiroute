@@ -36,11 +36,16 @@ repo = gh.repos.get("octocat", "Hello-World")  # a dict
 repo = gh.repos.models.get("octocat", "Hello-World")  # FullRepository
 print(repo.full_name, repo.stargazers_count)
 
-issues = gh.issues.list_for_repo("octocat", "Hello-World", state="open", per_page=100)
+issues = gh.issues.list_for_repo("octocat", "Hello-World", state="open", per_page=100)  # one page
 issues = await gh.issues.aio.list_for_repo("octocat", "Hello-World")
+
+for issue in gh.issues.models.list_for_repo_all("octocat", "Hello-World", per_page=100):
+    print(issue.number, issue.title)  # every page, fetched as you iterate
 ```
 
-Sections follow GitHub's REST documentation (`repos`, `issues`, `pulls`, `actions` and so on), and each method is named after its operation. Every call sends `X-GitHub-Api-Version: 2022-11-28`; pass `api_version=` to request another version. REST list endpoints are paged with `page` and `per_page`.
+Sections follow GitHub's REST documentation (`repos`, `issues`, `pulls`, `actions` and so on), and each method is named after its operation. Every call sends `X-GitHub-Api-Version: 2022-11-28`; pass `api_version=` to request another version.
+
+List operations have a `_all` twin (`list_for_repo_all`, `search.repos_all`, `actions.list_workflow_runs_for_repo_all` …) that takes the same arguments and iterates the items of every page, following GitHub's `Link` headers; `async for` works through `.aio`, and `.pages()` gives whole pages. Cap it with `itertools.islice` or `break`. Which operations get one is set by [`specs/rest.pagination.yaml`](specs/rest.pagination.yaml).
 
 ## GraphQL API
 
