@@ -16,14 +16,14 @@ class Thread(BaseModel):
     """Thread"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: str
+    id: str | None
 
     # Minimal Repository
-    repository: MinimalRepository
-    subject: ThreadSubject
-    reason: str
-    unread: bool
-    updated_at: str
+    repository: MinimalRepository | None
+    subject: ThreadSubject | None
+    reason: str | None
+    unread: bool | None
+    updated_at: str | None
     last_read_at: str | None
-    url: str
-    subscription_url: str
+    url: str | None
+    subscription_url: str | None

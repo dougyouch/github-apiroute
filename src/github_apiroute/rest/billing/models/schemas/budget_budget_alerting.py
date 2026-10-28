@@ -14,8 +14,8 @@ class BudgetBudgetAlerting(BaseModel):
 
     # Whether alerts are enabled for this budget. Ignored for user-scope as alerting is disabled
     # for them.
-    will_alert: bool
+    will_alert: bool | None
 
     # Array of user login names who will receive alerts. Ignored for user-scope as alerting is
     # disabled for them.
-    alert_recipients: list[str]
+    alert_recipients: list[str] | None

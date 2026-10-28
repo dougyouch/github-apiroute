@@ -18,17 +18,17 @@ class WebhookProjectCardDeletedProjectCard(BaseModel):
     after_id: int | None = None
 
     # Whether or not the card is archived
-    archived: bool
+    archived: bool | None
     column_id: int | None
-    column_url: str
+    column_url: str | None
     content_url: str | None = None
-    created_at: str
+    created_at: str | None
     creator: WebhookProjectCardDeletedProjectCardCreator | None
 
     # The project card's ID
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
     note: str | None
-    project_url: str
-    updated_at: str
-    url: str
+    project_url: str | None
+    updated_at: str | None
+    url: str | None

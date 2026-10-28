@@ -21,37 +21,37 @@ class ProjectsV2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the project.
-    id: float
+    id: float | None
 
     # The node ID of the project.
-    node_id: str
+    node_id: str | None
 
     # A GitHub user.
-    owner: SimpleUser
+    owner: SimpleUser | None
 
     # A GitHub user.
-    creator: SimpleUser
+    creator: SimpleUser | None
 
     # The project title.
-    title: str
+    title: str | None
 
     # A short description of the project.
     description: str | None
 
     # Whether the project is visible to anyone with access to the owner.
-    public: bool
+    public: bool | None
 
     # The time when the project was closed.
     closed_at: str | None
 
     # The time when the project was created.
-    created_at: str
+    created_at: str | None
 
     # The time when the project was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # The project number.
-    number: int
+    number: int | None
 
     # A concise summary of the project.
     short_description: str | None

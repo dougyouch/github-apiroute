@@ -17,13 +17,13 @@ class OrgsSetClusterDeploymentRecordsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The stage of the deployment.
-    logical_environment: str
+    logical_environment: str | None
 
     # The physical region of the deployment.
     physical_environment: str | None = None
 
     # The list of deployments to record.
-    deployments: list[OrgsSetClusterDeploymentRecordsRequestDeploymentsItem]
+    deployments: list[OrgsSetClusterDeploymentRecordsRequestDeploymentsItem] | None
 
     # When enabled, deployments associated with repositories the actor can write to are
     # processed while deployments associated with repositories that cannot be resolved or

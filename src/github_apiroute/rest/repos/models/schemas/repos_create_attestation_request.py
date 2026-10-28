@@ -17,4 +17,4 @@ class ReposCreateAttestationRequest(BaseModel):
     # The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle
     # Specification](https://github.com/sigstore/protobuf-
     # specs/blob/main/protos/sigstore_bundle.proto) for more information.
-    bundle: ReposCreateAttestationRequestBundle
+    bundle: ReposCreateAttestationRequestBundle | None

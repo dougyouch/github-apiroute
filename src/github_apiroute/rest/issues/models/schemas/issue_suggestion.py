@@ -17,16 +17,16 @@ class IssueSuggestion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the suggestion.
-    id: int
+    id: int | None
 
     # The unique identifier of the issue the suggestion applies to.
-    issue_id: int
+    issue_id: int | None
 
     # The kind of change proposed.
-    action: Literal["set_type", "add_label", "add_field", "add_assignee", "close_issue"]
+    action: Literal["set_type", "add_label", "add_field", "add_assignee", "close_issue"] | None
 
     # The suggestion's lifecycle state.
-    state: Literal["pending", "applied", "approved", "dismissed", "replaced", "invalidated"]
+    state: Literal["pending", "applied", "approved", "dismissed", "replaced", "invalidated"] | None
 
     # The identifier of the target the change applies to (issue type, label, field, assignee, or
     # duplicate issue), when applicable.
@@ -52,7 +52,7 @@ class IssueSuggestion(BaseModel):
     resolved_by: int | None
 
     # The time the suggestion was created.
-    created_at: str
+    created_at: str | None
 
     # The time the suggestion was last updated.
-    updated_at: str
+    updated_at: str | None

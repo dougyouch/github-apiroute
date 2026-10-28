@@ -15,7 +15,7 @@ class IssuesCreateLabelRequest(BaseModel):
     # The name of the label. Emoji can be added to label names, using either native emoji or
     # colon-style markup. For example, typing `:strawberry:` will render the emoji
     # ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png
-    name: str
+    name: str | None
 
     # The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading
     # `#`.

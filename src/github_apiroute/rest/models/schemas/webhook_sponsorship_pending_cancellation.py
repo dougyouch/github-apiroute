@@ -21,7 +21,7 @@ __all__ = ["WebhookSponsorshipPendingCancellation"]
 
 class WebhookSponsorshipPendingCancellation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["pending_cancellation"]
+    action: Literal["pending_cancellation"] | None
 
     # The `pending_cancellation` and `pending_tier_change` event types will include the date the
     # cancellation or tier change will take effect.
@@ -47,5 +47,5 @@ class WebhookSponsorshipPendingCancellation(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # A GitHub user.
-    sender: SimpleUser
-    sponsorship: WebhooksSponsorship
+    sender: SimpleUser | None
+    sponsorship: WebhooksSponsorship | None

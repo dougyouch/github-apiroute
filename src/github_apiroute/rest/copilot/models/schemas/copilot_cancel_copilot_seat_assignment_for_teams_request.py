@@ -13,4 +13,4 @@ class CopilotCancelCopilotSeatAssignmentForTeamsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The names of teams from which to revoke access to GitHub Copilot.
-    selected_teams: list[str]
+    selected_teams: list[str] | None

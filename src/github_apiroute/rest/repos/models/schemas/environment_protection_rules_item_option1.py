@@ -13,9 +13,9 @@ __all__ = ["EnvironmentProtectionRulesItemOption1"]
 
 class EnvironmentProtectionRulesItemOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    type_: str = Field(alias="type")
+    id: int | None
+    node_id: str | None
+    type_: str | None = Field(alias="type")
 
     # The amount of time to delay a job after the job is initially triggered. The time (in
     # minutes) must be an integer between 0 and 43,200 (30 days).

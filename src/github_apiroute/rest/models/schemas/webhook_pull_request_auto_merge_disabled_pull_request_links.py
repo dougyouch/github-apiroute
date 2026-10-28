@@ -36,11 +36,11 @@ __all__ = ["WebhookPullRequestAutoMergeDisabledPullRequestLinks"]
 
 class WebhookPullRequestAutoMergeDisabledPullRequestLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: WebhookPullRequestAutoMergeDisabledPullRequestLinksComments
-    commits: WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits
-    html: WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml
-    issue: WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue
-    review_comment: WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment
-    review_comments: WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments
-    self: WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf
-    statuses: WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses
+    comments: WebhookPullRequestAutoMergeDisabledPullRequestLinksComments | None
+    commits: WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits | None
+    html: WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml | None
+    issue: WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue | None
+    review_comment: WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment | None
+    review_comments: WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments | None
+    self: WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf | None
+    statuses: WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses | None

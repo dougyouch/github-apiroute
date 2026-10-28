@@ -13,5 +13,5 @@ __all__ = ["ActionsListOrgVariablesResponse"]
 
 class ActionsListOrgVariablesResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    variables: list[OrganizationActionsVariable]
+    total_count: int | None
+    variables: list[OrganizationActionsVariable] | None

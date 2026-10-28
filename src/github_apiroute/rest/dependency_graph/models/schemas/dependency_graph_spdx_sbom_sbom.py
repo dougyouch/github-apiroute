@@ -19,22 +19,22 @@ class DependencyGraphSpdxSbomSbom(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The SPDX identifier for the SPDX document.
-    spdxid: str = Field(alias="SPDXID")
+    spdxid: str | None = Field(alias="SPDXID")
 
     # The version of the SPDX specification that this document conforms to.
-    spdx_version: str = Field(alias="spdxVersion")
+    spdx_version: str | None = Field(alias="spdxVersion")
 
     # An optional comment about the SPDX document.
     comment: str | None = None
-    creation_info: DependencyGraphSpdxSbomSbomCreationInfo = Field(alias="creationInfo")
+    creation_info: DependencyGraphSpdxSbomSbomCreationInfo | None = Field(alias="creationInfo")
 
     # The name of the SPDX document.
-    name: str
+    name: str | None
 
     # The license under which the SPDX document is licensed.
-    data_license: str = Field(alias="dataLicense")
+    data_license: str | None = Field(alias="dataLicense")
 
     # The namespace for the SPDX document.
-    document_namespace: str = Field(alias="documentNamespace")
-    packages: list[DependencyGraphSpdxSbomSbomPackagesItem]
+    document_namespace: str | None = Field(alias="documentNamespace")
+    packages: list[DependencyGraphSpdxSbomSbomPackagesItem] | None
     relationships: list[DependencyGraphSpdxSbomSbomRelationshipsItem] | None = None

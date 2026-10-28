@@ -13,4 +13,4 @@ class RepositoryRuleDetailedValueOption6Parameters(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The environments that must be successfully deployed to before branches can be merged.
-    required_deployment_environments: list[str]
+    required_deployment_environments: list[str] | None

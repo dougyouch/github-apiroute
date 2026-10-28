@@ -17,16 +17,16 @@ class TimelineAssignedIssueEvent(BaseModel):
     """Timeline Assigned Issue Event"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    url: str
+    id: int | None
+    node_id: str | None
+    url: str | None
 
     # A GitHub user.
-    actor: SimpleUser
-    event: str
+    actor: SimpleUser | None
+    event: str | None
     commit_id: str | None
     commit_url: str | None
-    created_at: str
+    created_at: str | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come
@@ -34,7 +34,7 @@ class TimelineAssignedIssueEvent(BaseModel):
     performed_via_github_app: NullableIntegration | None
 
     # A GitHub user.
-    assignee: SimpleUser
+    assignee: SimpleUser | None
 
     # The intent behind an agent's action on an issue, including the rationale and confidence.
     # Present (and `null` when the event carried no agent intent) on supported event types while

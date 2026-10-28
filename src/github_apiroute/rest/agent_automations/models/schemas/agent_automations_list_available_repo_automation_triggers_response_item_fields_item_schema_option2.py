@@ -19,9 +19,10 @@ class AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemS
     BaseModel
 ):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["array"] = Field(alias="type")
+    type_: Literal["array"] | None = Field(alias="type")
     items: (
         AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItemSchemaOption2Items
+        | None
     )
 
     # The minimum accepted number of array items.

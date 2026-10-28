@@ -21,32 +21,32 @@ class WebhookWorkflowJobInProgressWorkflowJob(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    check_run_url: str
+    check_run_url: str | None
     completed_at: str | None
     conclusion: str | None
 
     # The time that the job created.
-    created_at: str
-    head_sha: str
-    html_url: str
-    id: int
-    labels: list[str]
-    name: str
-    node_id: str
-    run_attempt: int
-    run_id: int
-    run_url: str
+    created_at: str | None
+    head_sha: str | None
+    html_url: str | None
+    id: int | None
+    labels: list[str] | None
+    name: str | None
+    node_id: str | None
+    run_attempt: int | None
+    run_id: int | None
+    run_url: str | None
     runner_group_id: float | None
     runner_group_name: str | None
     runner_id: float | None
     runner_name: str | None
-    started_at: str
-    status: Literal["in_progress", "completed", "queued"]
+    started_at: str | None
+    status: Literal["in_progress", "completed", "queued"] | None
 
     # The name of the current branch.
     head_branch: str | None
 
     # The name of the workflow.
     workflow_name: str | None
-    steps: list[WebhookWorkflowJobInProgressWorkflowJobStepsItem]
-    url: str
+    steps: list[WebhookWorkflowJobInProgressWorkflowJobStepsItem] | None
+    url: str | None

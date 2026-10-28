@@ -13,5 +13,5 @@ class IssueEventRename(BaseModel):
     """Issue Event Rename"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    from_: str = Field(alias="from")
-    to: str
+    from_: str | None = Field(alias="from")
+    to: str | None

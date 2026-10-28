@@ -22,16 +22,16 @@ class WebhooksSecurityAdvisory(BaseModel):
     """The details of the security advisory, including summary, description, and severity."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    cvss: WebhooksSecurityAdvisoryCvss
+    cvss: WebhooksSecurityAdvisoryCvss | None
     cvss_severities: CvssSeverities | None = None
-    cwes: list[WebhooksSecurityAdvisoryCwesItem]
-    description: str
-    ghsa_id: str
-    identifiers: list[WebhooksSecurityAdvisoryIdentifiersItem]
-    published_at: str
-    references: list[WebhooksSecurityAdvisoryReferencesItem]
-    severity: str
-    summary: str
-    updated_at: str
-    vulnerabilities: list[WebhooksSecurityAdvisoryVulnerabilitiesItem]
+    cwes: list[WebhooksSecurityAdvisoryCwesItem] | None
+    description: str | None
+    ghsa_id: str | None
+    identifiers: list[WebhooksSecurityAdvisoryIdentifiersItem] | None
+    published_at: str | None
+    references: list[WebhooksSecurityAdvisoryReferencesItem] | None
+    severity: str | None
+    summary: str | None
+    updated_at: str | None
+    vulnerabilities: list[WebhooksSecurityAdvisoryVulnerabilitiesItem] | None
     withdrawn_at: str | None

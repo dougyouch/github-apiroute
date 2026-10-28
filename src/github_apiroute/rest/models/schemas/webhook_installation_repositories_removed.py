@@ -25,7 +25,7 @@ __all__ = ["WebhookInstallationRepositoriesRemoved"]
 
 class WebhookInstallationRepositoriesRemoved(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["removed"]
+    action: Literal["removed"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -33,7 +33,7 @@ class WebhookInstallationRepositoriesRemoved(BaseModel):
     enterprise: EnterpriseWebhooks | None = None
 
     # Installation
-    installation: Installation
+    installation: Installation | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -41,19 +41,19 @@ class WebhookInstallationRepositoriesRemoved(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # An array of repository objects, which were added to the installation.
-    repositories_added: WebhooksRepositoriesAdded
+    repositories_added: WebhooksRepositoriesAdded | None
 
     # An array of repository objects, which were removed from the installation. When
     # `repository_selection` changes from `all` to `selected`, this array is empty.
-    repositories_removed: list[WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem]
+    repositories_removed: list[WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem] | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
     repository: RepositoryWebhooks | None = None
 
     # Describe whether all repositories have been selected or there's a selection involved
-    repository_selection: WebhooksRepositorySelection
+    repository_selection: WebhooksRepositorySelection | None
     requester: WebhooksUser | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

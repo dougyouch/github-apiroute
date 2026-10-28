@@ -21,8 +21,8 @@ __all__ = ["WebhookMarketplacePurchaseCancelled"]
 
 class WebhookMarketplacePurchaseCancelled(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["cancelled"]
-    effective_date: str
+    action: Literal["cancelled"] | None
+    effective_date: str | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -33,7 +33,7 @@ class WebhookMarketplacePurchaseCancelled(BaseModel):
     # event is configured for and sent to a GitHub App. For more information, see "[Using
     # webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-
     installation: SimpleInstallation | None = None
-    marketplace_purchase: WebhooksMarketplacePurchase
+    marketplace_purchase: WebhooksMarketplacePurchase | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -46,4 +46,4 @@ class WebhookMarketplacePurchaseCancelled(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -16,12 +16,12 @@ class LabelSearchResultItem(BaseModel):
     """Label Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    url: str
-    name: str
-    color: str
-    default: bool
+    id: int | None
+    node_id: str | None
+    url: str | None
+    name: str | None
+    color: str | None
+    default: bool | None
     description: str | None
 
     # Timestamp indicating when the label was archived, or `null` if it has not been archived.
@@ -29,5 +29,5 @@ class LabelSearchResultItem(BaseModel):
 
     # The user who archived the label, or `null` if it has not been archived.
     archived_by: SimpleUser | None
-    score: float
+    score: float | None
     text_matches: SearchResultTextMatches | None = None

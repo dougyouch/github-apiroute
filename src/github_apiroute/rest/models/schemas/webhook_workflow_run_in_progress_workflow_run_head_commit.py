@@ -20,11 +20,11 @@ class WebhookWorkflowRunInProgressWorkflowRunHeadCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Metaproperties for Git author/committer information.
-    author: WebhookWorkflowRunInProgressWorkflowRunHeadCommitAuthor
+    author: WebhookWorkflowRunInProgressWorkflowRunHeadCommitAuthor | None
 
     # Metaproperties for Git author/committer information.
-    committer: WebhookWorkflowRunInProgressWorkflowRunHeadCommitCommitter
-    id: str
-    message: str
-    timestamp: str
-    tree_id: str
+    committer: WebhookWorkflowRunInProgressWorkflowRunHeadCommitCommitter | None
+    id: str | None
+    message: str | None
+    timestamp: str | None
+    tree_id: str | None

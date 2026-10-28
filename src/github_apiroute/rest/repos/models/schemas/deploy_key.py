@@ -13,13 +13,13 @@ class DeployKey(BaseModel):
     """An SSH key granting access to a single repository."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    key: str
-    url: str
-    title: str
-    verified: bool
-    created_at: str
-    read_only: bool
+    id: int | None
+    key: str | None
+    url: str | None
+    title: str | None
+    verified: bool | None
+    created_at: str | None
+    read_only: bool | None
     added_by: str | None = None
     last_used: str | None = None
     enabled: bool | None = None

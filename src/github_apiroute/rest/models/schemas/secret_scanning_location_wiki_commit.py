@@ -17,30 +17,30 @@ class SecretScanningLocationWikiCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The file path of the wiki page
-    path: str
+    path: str | None
 
     # Line number at which the secret starts in the file
-    start_line: float
+    start_line: float | None
 
     # Line number at which the secret ends in the file
-    end_line: float
+    end_line: float | None
 
     # The column at which the secret starts within the start line when the file is interpreted
     # as 8-bit ASCII.
-    start_column: float
+    start_column: float | None
 
     # The column at which the secret ends within the end line when the file is interpreted as
     # 8-bit ASCII.
-    end_column: float
+    end_column: float | None
 
     # SHA-1 hash ID of the associated blob
-    blob_sha: str
+    blob_sha: str | None
 
     # The GitHub URL to get the associated wiki page
-    page_url: str
+    page_url: str | None
 
     # SHA-1 hash ID of the associated commit
-    commit_sha: str
+    commit_sha: str | None
 
     # The GitHub URL to get the associated wiki commit
-    commit_url: str
+    commit_url: str | None

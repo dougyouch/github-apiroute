@@ -13,4 +13,4 @@ class AppsDeleteAuthorizationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The OAuth access token used to authenticate to the GitHub API.
-    access_token: str
+    access_token: str | None

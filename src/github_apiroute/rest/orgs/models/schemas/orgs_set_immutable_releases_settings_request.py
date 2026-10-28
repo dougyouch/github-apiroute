@@ -15,7 +15,7 @@ class OrgsSetImmutableReleasesSettingsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The policy that controls how immutable releases are enforced in the organization.
-    enforced_repositories: Literal["all", "none", "selected"]
+    enforced_repositories: Literal["all", "none", "selected"] | None
 
     # An array of repository ids for which immutable releases enforcement should be applied. You
     # can only provide a list of repository ids when the `enforced_repositories` is set to

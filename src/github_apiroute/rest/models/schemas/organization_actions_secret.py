@@ -17,10 +17,10 @@ class OrganizationActionsSecret(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the secret.
-    name: str
-    created_at: str
-    updated_at: str
+    name: str | None
+    created_at: str | None
+    updated_at: str | None
 
     # Visibility of a secret
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
     selected_repositories_url: str | None = None

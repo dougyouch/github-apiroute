@@ -13,4 +13,4 @@ class ReposMergeUpstreamRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the branch which should be updated to match upstream.
-    branch: str
+    branch: str | None

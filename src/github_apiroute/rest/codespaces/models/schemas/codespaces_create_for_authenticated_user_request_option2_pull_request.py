@@ -15,7 +15,7 @@ class CodespacesCreateForAuthenticatedUserRequestOption2PullRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Pull request number
-    pull_request_number: int
+    pull_request_number: int | None
 
     # Repository id for this codespace
-    repository_id: int
+    repository_id: int | None

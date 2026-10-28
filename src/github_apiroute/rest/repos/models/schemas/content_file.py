@@ -17,17 +17,17 @@ class ContentFile(BaseModel):
     """Content File"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["file"] = Field(alias="type")
-    encoding: str
-    size: int
-    name: str
-    path: str
-    content: str
-    sha: str
-    url: str
+    type_: Literal["file"] | None = Field(alias="type")
+    encoding: str | None
+    size: int | None
+    name: str | None
+    path: str | None
+    content: str | None
+    sha: str | None
+    url: str | None
     git_url: str | None
     html_url: str | None
     download_url: str | None
-    links: ContentFileLinks = Field(alias="_links")
+    links: ContentFileLinks | None = Field(alias="_links")
     target: str | None = None
     submodule_git_url: str | None = None

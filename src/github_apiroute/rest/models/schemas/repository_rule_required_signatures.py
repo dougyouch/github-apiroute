@@ -15,4 +15,4 @@ class RepositoryRuleRequiredSignatures(BaseModel):
     """Commits pushed to matching refs must have verified signatures."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["required_signatures"] = Field(alias="type")
+    type_: Literal["required_signatures"] | None = Field(alias="type")

@@ -18,13 +18,13 @@ class ProjectsV2SingleSelectOptions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the option.
-    id: str
+    id: str | None
 
     # The display name of the option, in raw text and HTML formats.
-    name: ProjectsV2SingleSelectOptionsName
+    name: ProjectsV2SingleSelectOptionsName | None
 
     # The description of the option, in raw text and HTML formats.
-    description: ProjectsV2SingleSelectOptionsDescription
+    description: ProjectsV2SingleSelectOptionsDescription | None
 
     # The color associated with the option.
-    color: str
+    color: str | None

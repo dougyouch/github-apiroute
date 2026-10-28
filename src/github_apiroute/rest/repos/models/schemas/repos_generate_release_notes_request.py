@@ -13,7 +13,7 @@ class ReposGenerateReleaseNotesRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The tag name for the release. This can be an existing tag or a new one.
-    tag_name: str
+    tag_name: str | None
 
     # Specifies the commitish value that will be the target for the release's tag. Required if
     # the supplied tag_name does not reference an existing tag. Ignored if the tag_name already

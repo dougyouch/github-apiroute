@@ -18,20 +18,20 @@ class CommitComparison(BaseModel):
     """Commit Comparison"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    html_url: str
-    permalink_url: str
-    diff_url: str
-    patch_url: str
+    url: str | None
+    html_url: str | None
+    permalink_url: str | None
+    diff_url: str | None
+    patch_url: str | None
 
     # Commit
-    base_commit: Commit
+    base_commit: Commit | None
 
     # Commit
-    merge_base_commit: Commit
-    status: Literal["diverged", "ahead", "behind", "identical"]
-    ahead_by: int
-    behind_by: int
-    total_commits: int
-    commits: list[Commit]
+    merge_base_commit: Commit | None
+    status: Literal["diverged", "ahead", "behind", "identical"] | None
+    ahead_by: int | None
+    behind_by: int | None
+    total_commits: int | None
+    commits: list[Commit] | None
     files: list[DiffEntry] | None = None

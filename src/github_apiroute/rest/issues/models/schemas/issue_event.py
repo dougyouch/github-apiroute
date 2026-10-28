@@ -27,16 +27,16 @@ class IssueEvent(BaseModel):
     """Issue Event"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    url: str
+    id: int | None
+    node_id: str | None
+    url: str | None
 
     # A GitHub user.
     actor: NullableSimpleUser | None
-    event: str
+    event: str | None
     commit_id: str | None
     commit_url: str | None
-    created_at: str
+    created_at: str | None
 
     # Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
     issue: NullableIssue | None = None

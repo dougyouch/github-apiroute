@@ -20,19 +20,19 @@ class IssueReference(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of the referenced issue.
-    number: int
+    number: int | None
 
     # The title of the referenced issue.
-    title: str
+    title: str | None
 
     # The state of the referenced issue.
-    state: str
+    state: str | None
 
     # The reason for the referenced issue's state.
     state_reason: str | None = None
 
     # A GitHub repository.
-    repository: SimpleRepository
+    repository: SimpleRepository | None
 
     # The type of the referenced issue.
     issue_type: IssueReferenceIssueType | None

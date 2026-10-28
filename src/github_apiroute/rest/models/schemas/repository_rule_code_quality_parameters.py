@@ -16,4 +16,4 @@ class RepositoryRuleCodeQualityParameters(BaseModel):
 
     # The lowest severity level at which code quality reviews need to be resolved before commits
     # can be merged.
-    severity: Literal["errors", "warnings", "notes", "all"]
+    severity: Literal["errors", "warnings", "notes", "all"] | None

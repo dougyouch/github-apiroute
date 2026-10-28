@@ -21,13 +21,13 @@ class WebhookPageBuild(BaseModel):
 
     # The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-
     # builds) itself.
-    build: WebhookPageBuildBuild
+    build: WebhookPageBuildBuild | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
     # enterprise account. For more information, see "[About enterprise
     enterprise: EnterpriseWebhooks | None = None
-    id: int
+    id: int | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -41,7 +41,7 @@ class WebhookPageBuild(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

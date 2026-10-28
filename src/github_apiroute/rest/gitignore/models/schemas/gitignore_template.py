@@ -13,5 +13,5 @@ class GitignoreTemplate(BaseModel):
     """Gitignore Template"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    source: str
+    name: str | None
+    source: str | None

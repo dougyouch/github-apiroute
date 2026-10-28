@@ -17,8 +17,8 @@ class WorkflowDispatchResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the workflow run.
-    workflow_run_id: WorkflowRunId
+    workflow_run_id: WorkflowRunId | None
 
     # The URL to the workflow run.
-    run_url: str
-    html_url: str
+    run_url: str | None
+    html_url: str | None

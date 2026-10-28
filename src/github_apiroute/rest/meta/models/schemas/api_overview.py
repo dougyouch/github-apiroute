@@ -16,7 +16,7 @@ class ApiOverview(BaseModel):
     """Api Overview"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    verifiable_password_authentication: bool
+    verifiable_password_authentication: bool | None
     ssh_key_fingerprints: ApiOverviewSshKeyFingerprints | None = None
     ssh_keys: list[str] | None = None
     hooks: list[str] | None = None

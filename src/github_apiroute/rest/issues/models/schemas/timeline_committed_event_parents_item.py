@@ -13,6 +13,6 @@ class TimelineCommittedEventParentsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # SHA for the commit
-    sha: str
-    url: str
-    html_url: str
+    sha: str | None
+    url: str | None
+    html_url: str | None

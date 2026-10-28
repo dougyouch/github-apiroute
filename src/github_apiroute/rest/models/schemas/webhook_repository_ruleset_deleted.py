@@ -20,7 +20,7 @@ __all__ = ["WebhookRepositoryRulesetDeleted"]
 
 class WebhookRepositoryRulesetDeleted(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["deleted"]
+    action: Literal["deleted"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -42,7 +42,7 @@ class WebhookRepositoryRulesetDeleted(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # A set of rules to apply when specified conditions are met.
-    repository_ruleset: RepositoryRuleset
+    repository_ruleset: RepositoryRuleset | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

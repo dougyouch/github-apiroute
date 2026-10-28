@@ -35,8 +35,8 @@ class WebhookDeploymentStatusCreatedWorkflowRun(BaseModel):
     actor: WebhookDeploymentStatusCreatedWorkflowRunActor | None
     artifacts_url: str | None = None
     cancel_url: str | None = None
-    check_suite_id: int
-    check_suite_node_id: str
+    check_suite_id: int | None
+    check_suite_node_id: str | None
     check_suite_url: str | None = None
     conclusion: (
         Literal[
@@ -51,33 +51,33 @@ class WebhookDeploymentStatusCreatedWorkflowRun(BaseModel):
         ]
         | None
     )
-    created_at: str
-    display_title: str
-    event: str
-    head_branch: str
+    created_at: str | None
+    display_title: str | None
+    event: str | None
+    head_branch: str | None
     head_commit: Any = None
     head_repository: WebhookDeploymentStatusCreatedWorkflowRunHeadRepository | None = None
-    head_sha: str
-    html_url: str
-    id: int
+    head_sha: str | None
+    html_url: str | None
+    id: int | None
     jobs_url: str | None = None
     logs_url: str | None = None
-    name: str
-    node_id: str
-    path: str
+    name: str | None
+    node_id: str | None
+    path: str | None
     previous_attempt_url: Any = None
-    pull_requests: list[WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem]
+    pull_requests: list[WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem] | None
     referenced_workflows: (
         list[WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem] | None
     ) = None
     repository: WebhookDeploymentStatusCreatedWorkflowRunRepository | None = None
     rerun_url: str | None = None
-    run_attempt: int
-    run_number: int
-    run_started_at: str
-    status: Literal["requested", "in_progress", "completed", "queued", "waiting", "pending"]
+    run_attempt: int | None
+    run_number: int | None
+    run_started_at: str | None
+    status: Literal["requested", "in_progress", "completed", "queued", "waiting", "pending"] | None
     triggering_actor: WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor | None
-    updated_at: str
-    url: str
-    workflow_id: int
+    updated_at: str | None
+    url: str | None
+    workflow_id: int | None
     workflow_url: str | None = None

@@ -16,14 +16,14 @@ class HostedComputeCreateNetworkConfigurationForOrgRequest(BaseModel):
 
     # Name of the network configuration. Must be between 1 and 100 characters and may only
     # contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
-    name: str
+    name: str | None
 
     # The hosted compute service to use for the network configuration.
     compute_service: Literal["none", "actions"] | None = None
 
     # A list of identifiers of the network settings resources to use for the network
     # configuration. Exactly one resource identifier must be specified in the list.
-    network_settings_ids: list[str]
+    network_settings_ids: list[str] | None
 
     # A list of identifiers of the failover network settings resources to use for the network
     # configuration. Exactly one resource identifier must be specified in the list.

@@ -29,13 +29,13 @@ __all__ = ["WebhookDeploymentReviewRequested"]
 
 class WebhookDeploymentReviewRequested(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["requested"]
+    action: Literal["requested"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
     # enterprise account. For more information, see "[About enterprise
     enterprise: EnterpriseWebhooks | None = None
-    environment: str
+    environment: str | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -45,16 +45,16 @@ class WebhookDeploymentReviewRequested(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
     requestor: WebhooksUser | None
-    reviewers: list[WebhookDeploymentReviewRequestedReviewersItem]
+    reviewers: list[WebhookDeploymentReviewRequestedReviewersItem] | None
 
     # A GitHub user.
-    sender: SimpleUser
-    since: str
-    workflow_job_run: WebhookDeploymentReviewRequestedWorkflowJobRun
+    sender: SimpleUser | None
+    since: str | None
+    workflow_job_run: WebhookDeploymentReviewRequestedWorkflowJobRun | None
     workflow_run: WebhookDeploymentReviewRequestedWorkflowRun | None

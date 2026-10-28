@@ -20,11 +20,11 @@ class WebhookCheckSuiteCompletedCheckSuiteHeadCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Metaproperties for Git author/committer information.
-    author: WebhookCheckSuiteCompletedCheckSuiteHeadCommitAuthor
+    author: WebhookCheckSuiteCompletedCheckSuiteHeadCommitAuthor | None
 
     # Metaproperties for Git author/committer information.
-    committer: WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter
-    id: str
-    message: str
-    timestamp: str
-    tree_id: str
+    committer: WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter | None
+    id: str | None
+    message: str | None
+    timestamp: str | None
+    tree_id: str | None

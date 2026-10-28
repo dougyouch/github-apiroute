@@ -23,19 +23,19 @@ class CheckRun(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The id of the check.
-    id: int
+    id: int | None
 
     # The SHA of the commit that is being checked.
-    head_sha: str
-    node_id: str
+    head_sha: str | None
+    node_id: str | None
     external_id: str | None
-    url: str
+    url: str | None
     html_url: str | None
     details_url: str | None
 
     # The phase of the lifecycle that the check is currently in. Statuses of waiting, requested,
     # and pending are reserved for GitHub Actions check runs.
-    status: Literal["queued", "in_progress", "completed", "waiting", "requested", "pending"]
+    status: Literal["queued", "in_progress", "completed", "waiting", "requested", "pending"] | None
     conclusion: (
         Literal[
             "success", "failure", "neutral", "cancelled", "skipped", "timed_out", "action_required"
@@ -44,10 +44,10 @@ class CheckRun(BaseModel):
     )
     started_at: str | None
     completed_at: str | None
-    output: CheckRunOutput
+    output: CheckRunOutput | None
 
     # The name of the check.
-    name: str
+    name: str | None
     check_suite: CheckRunCheckSuite | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
@@ -57,7 +57,7 @@ class CheckRun(BaseModel):
 
     # Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The
     # returned pull requests do not necessarily indicate pull requests that triggered the check.
-    pull_requests: list[PullRequestMinimal]
+    pull_requests: list[PullRequestMinimal] | None
 
     # A deployment created as the result of an Actions check run from a workflow that references
     # an environment

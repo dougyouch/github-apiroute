@@ -16,27 +16,27 @@ class RepositoryRuleMergeQueueParameters(BaseModel):
 
     # Maximum time for a required status check to report a conclusion. After this much time has
     # elapsed, checks that have not reported a conclusion will be assumed to have failed
-    check_response_timeout_minutes: int
+    check_response_timeout_minutes: int | None
 
     # When set to ALLGREEN, the merge commit created by merge queue for each PR in the group
     # must pass all required checks to merge. When set to HEADGREEN, only the commit at the head
     # of the merge group, i.e. the commit containing changes from all of the PRs in the group,
-    grouping_strategy: Literal["ALLGREEN", "HEADGREEN"]
+    grouping_strategy: Literal["ALLGREEN", "HEADGREEN"] | None
 
     # Limit the number of queued pull requests requesting checks and workflow runs at the same
     # time.
-    max_entries_to_build: int
+    max_entries_to_build: int | None
 
     # The maximum number of PRs that will be merged together in a group.
-    max_entries_to_merge: int
+    max_entries_to_merge: int | None
 
     # Method to use when merging changes from queued pull requests.
-    merge_method: Literal["MERGE", "SQUASH", "REBASE"]
+    merge_method: Literal["MERGE", "SQUASH", "REBASE"] | None
 
     # The minimum number of PRs that will be merged together in a group.
-    min_entries_to_merge: int
+    min_entries_to_merge: int | None
 
     # The time merge queue should wait after the first PR is added to the queue for the minimum
     # group size to be met. After this time has elapsed, the minimum group size will be ignored
     # and a smaller group will be merged.
-    min_entries_to_merge_wait_minutes: int
+    min_entries_to_merge_wait_minutes: int | None

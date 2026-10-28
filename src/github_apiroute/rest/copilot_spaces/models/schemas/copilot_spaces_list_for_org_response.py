@@ -15,4 +15,4 @@ class CopilotSpacesListForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of Copilot Spaces on this page of results.
-    spaces: list[CopilotSpace]
+    spaces: list[CopilotSpace] | None

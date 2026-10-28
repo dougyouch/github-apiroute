@@ -15,4 +15,4 @@ class AgentsSetSelectedReposForOrgSecretRequest(BaseModel):
     # An array of repository ids that can access the organization secret. You can only provide a
     # list of repository ids when the `visibility` is set to `selected`. You can add and remove
     # individual repositories using the [Add selected repository to an organization
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

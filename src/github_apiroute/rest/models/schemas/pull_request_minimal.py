@@ -14,8 +14,8 @@ __all__ = ["PullRequestMinimal"]
 
 class PullRequestMinimal(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    number: int
-    url: str
-    head: PullRequestMinimalHead
-    base: PullRequestMinimalBase
+    id: int | None
+    number: int | None
+    url: str | None
+    head: PullRequestMinimalHead | None
+    base: PullRequestMinimalBase | None

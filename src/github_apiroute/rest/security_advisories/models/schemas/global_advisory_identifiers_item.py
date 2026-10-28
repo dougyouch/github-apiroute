@@ -15,7 +15,7 @@ class GlobalAdvisoryIdentifiersItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The type of identifier.
-    type_: Literal["CVE", "GHSA"] = Field(alias="type")
+    type_: Literal["CVE", "GHSA"] | None = Field(alias="type")
 
     # The identifier value.
-    value: str
+    value: str | None

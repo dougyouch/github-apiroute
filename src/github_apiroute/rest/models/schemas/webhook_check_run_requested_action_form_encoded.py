@@ -16,4 +16,4 @@ class WebhookCheckRunRequestedActionFormEncoded(BaseModel):
 
     # A URL-encoded string of the check_run.requested_action JSON payload. The decoded payload
     # is a JSON object.
-    payload: str
+    payload: str | None

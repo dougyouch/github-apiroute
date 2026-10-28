@@ -14,5 +14,5 @@ __all__ = ["TimelineReviewedEventLinks"]
 
 class TimelineReviewedEventLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: TimelineReviewedEventLinksHtml
-    pull_request: TimelineReviewedEventLinksPullRequest
+    html: TimelineReviewedEventLinksHtml | None
+    pull_request: TimelineReviewedEventLinksPullRequest | None

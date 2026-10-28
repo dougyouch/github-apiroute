@@ -18,9 +18,9 @@ class AgentTasksGetTaskByIdResponseSessionsItemUsage(BaseModel):
 
     # Billing unit used for this session. New sessions since June 1, 2026 use `ai_credits`, but
     # older sessions use `premium_requests`.
-    type_: Literal["ai_credits", "premium_requests"] = Field(alias="type")
+    type_: Literal["ai_credits", "premium_requests"] | None = Field(alias="type")
 
     # Number of billing units used by this session. When the `type` is `ai_credits`, the value
     # is a whole number, expressed in nano units. When presenting this to a human, divide by
     # 1,000,000,000 and round to one decimal place. When aggregating (for example, summing usage
-    amount: float
+    amount: float | None

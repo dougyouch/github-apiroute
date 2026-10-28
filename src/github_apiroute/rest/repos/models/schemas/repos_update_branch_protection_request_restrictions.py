@@ -17,10 +17,10 @@ class ReposUpdateBranchProtectionRequestRestrictions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of user `login`s with push access
-    users: list[str]
+    users: list[str] | None
 
     # The list of team `slug`s with push access
-    teams: list[str]
+    teams: list[str] | None
 
     # The list of app `slug`s with push access
     apps: list[str] | None = None

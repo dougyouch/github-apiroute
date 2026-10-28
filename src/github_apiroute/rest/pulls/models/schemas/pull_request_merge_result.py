@@ -13,6 +13,6 @@ class PullRequestMergeResult(BaseModel):
     """Pull Request Merge Result"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    sha: str
-    merged: bool
-    message: str
+    sha: str | None
+    merged: bool | None
+    message: str | None

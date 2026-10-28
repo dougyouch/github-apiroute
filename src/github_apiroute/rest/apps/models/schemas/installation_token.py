@@ -18,8 +18,8 @@ class InstallationToken(BaseModel):
     """Authentication token for a GitHub App installed on a user or org."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    token: str
-    expires_at: str
+    token: str | None
+    expires_at: str | None
 
     # The permissions granted to the fine-grained access token.
     permissions: AppPermissions | None = None

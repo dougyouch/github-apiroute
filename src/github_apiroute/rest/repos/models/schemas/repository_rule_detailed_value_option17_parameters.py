@@ -17,4 +17,4 @@ class RepositoryRuleDetailedValueOption17Parameters(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Tools that must provide code scanning results for this rule to pass.
-    code_scanning_tools: list[RepositoryRuleParamsCodeScanningTool]
+    code_scanning_tools: list[RepositoryRuleParamsCodeScanningTool] | None

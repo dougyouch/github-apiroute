@@ -17,33 +17,33 @@ class SecretScanningLocationCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The file path in the repository
-    path: str
+    path: str | None
 
     # Line number at which the secret starts in the file
-    start_line: float
+    start_line: float | None
 
     # Line number at which the secret ends in the file
-    end_line: float
+    end_line: float | None
 
     # The column at which the secret starts within the start line when the file is interpreted
     # as 8BIT ASCII
-    start_column: float
+    start_column: float | None
 
     # The column at which the secret ends within the end line when the file is interpreted as
     # 8BIT ASCII
-    end_column: float
+    end_column: float | None
 
     # SHA-1 hash ID of the associated blob
-    blob_sha: str
+    blob_sha: str | None
 
     # The API URL to get the associated blob resource
-    blob_url: str
+    blob_url: str | None
 
     # SHA-1 hash ID of the associated commit
-    commit_sha: str
+    commit_sha: str | None
 
     # The API URL to get the associated commit resource
-    commit_url: str
+    commit_url: str | None
 
     # The GitHub URL to get the associated commit resource.
     html_url: str | None = None

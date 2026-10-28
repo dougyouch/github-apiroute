@@ -17,7 +17,7 @@ class RepositoryRuleParamsReviewer(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # ID of the reviewer which must review changes to matching files.
-    id: int
+    id: int | None
 
     # The type of the reviewer
-    type_: Literal["Team"] = Field(alias="type")
+    type_: Literal["Team"] | None = Field(alias="type")

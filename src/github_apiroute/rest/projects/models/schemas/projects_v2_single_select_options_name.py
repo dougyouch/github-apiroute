@@ -13,5 +13,5 @@ class ProjectsV2SingleSelectOptionsName(BaseModel):
     """The display name of the option, in raw text and HTML formats."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    raw: str
-    html: str
+    raw: str | None
+    html: str | None

@@ -13,4 +13,4 @@ class CopilotCancelCopilotSeatAssignmentForUsersRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The usernames of the organization members for which to revoke access to GitHub Copilot.
-    selected_usernames: list[str]
+    selected_usernames: list[str] | None

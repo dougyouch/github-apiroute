@@ -15,5 +15,5 @@ class PullsDismissReviewRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The message for the pull request review dismissal
-    message: str
+    message: str | None
     event: Literal["DISMISS"] | None = None

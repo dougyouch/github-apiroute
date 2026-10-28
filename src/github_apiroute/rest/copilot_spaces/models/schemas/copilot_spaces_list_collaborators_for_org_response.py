@@ -15,4 +15,4 @@ class CopilotSpacesListCollaboratorsForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of collaborators for this Copilot Space.
-    collaborators: list[CopilotSpaceCollaborator]
+    collaborators: list[CopilotSpaceCollaborator] | None

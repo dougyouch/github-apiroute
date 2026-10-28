@@ -15,4 +15,4 @@ class OrganizationExternalPropertyInstallationInstallation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the GitHub App installation.
-    id: int
+    id: int | None

@@ -31,19 +31,19 @@ class RepositoryAdvisory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The GitHub Security Advisory ID.
-    ghsa_id: str
+    ghsa_id: str | None
 
     # The Common Vulnerabilities and Exposures (CVE) ID.
     cve_id: str | None
 
     # The API URL for the advisory.
-    url: str
+    url: str | None
 
     # The URL for the advisory.
-    html_url: str
+    html_url: str | None
 
     # A short summary of the advisory.
-    summary: str
+    summary: str | None
 
     # A detailed description of what the advisory entails.
     description: str | None
@@ -56,10 +56,10 @@ class RepositoryAdvisory(BaseModel):
 
     # The publisher of the advisory.
     publisher: RepositoryAdvisoryPublisher | None
-    identifiers: list[RepositoryAdvisoryIdentifiersItem]
+    identifiers: list[RepositoryAdvisoryIdentifiersItem] | None
 
     # The state of the advisory.
-    state: Literal["published", "closed", "withdrawn", "draft", "triage"]
+    state: Literal["published", "closed", "withdrawn", "draft", "triage"] | None
 
     # The date and time of when the advisory was created, in ISO 8601 format.
     created_at: str | None

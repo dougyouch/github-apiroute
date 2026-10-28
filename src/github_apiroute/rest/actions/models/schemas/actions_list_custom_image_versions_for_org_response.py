@@ -13,5 +13,5 @@ __all__ = ["ActionsListCustomImageVersionsForOrgResponse"]
 
 class ActionsListCustomImageVersionsForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    image_versions: list[ActionsHostedRunnerCustomImageVersion]
+    total_count: int | None
+    image_versions: list[ActionsHostedRunnerCustomImageVersion] | None

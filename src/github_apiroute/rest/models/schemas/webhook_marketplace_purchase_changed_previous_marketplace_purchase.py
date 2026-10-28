@@ -18,10 +18,10 @@ __all__ = ["WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase"]
 
 class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    account: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount
-    billing_cycle: str
+    account: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount | None
+    billing_cycle: str | None
     free_trial_ends_on: str | None
     next_billing_date: str | None = None
     on_free_trial: bool | None
-    plan: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan
-    unit_count: int
+    plan: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan | None
+    unit_count: int | None

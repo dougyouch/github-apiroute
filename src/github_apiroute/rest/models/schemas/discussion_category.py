@@ -11,13 +11,13 @@ __all__ = ["DiscussionCategory"]
 
 class DiscussionCategory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
-    description: str
-    emoji: str
-    id: int
-    is_answerable: bool
-    name: str
+    created_at: str | None
+    description: str | None
+    emoji: str | None
+    id: int | None
+    is_answerable: bool | None
+    name: str | None
     node_id: str | None = None
-    repository_id: int
-    slug: str
-    updated_at: str
+    repository_id: int | None
+    slug: str | None
+    updated_at: str | None

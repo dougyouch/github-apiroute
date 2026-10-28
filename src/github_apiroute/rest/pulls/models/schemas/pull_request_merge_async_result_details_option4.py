@@ -13,5 +13,5 @@ class PullRequestMergeAsyncResultDetailsOption4(BaseModel):
     """When the pull request has been merged"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    message: str
-    sha: str
+    message: str | None
+    sha: str | None

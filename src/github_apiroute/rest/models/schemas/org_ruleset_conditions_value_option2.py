@@ -19,4 +19,4 @@ class OrgRulesetConditionsValueOption2(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     ref_name: OrgRulesetConditionsValueOption2RefName | None = None
-    repository_id: OrgRulesetConditionsValueOption2RepositoryId
+    repository_id: OrgRulesetConditionsValueOption2RepositoryId | None

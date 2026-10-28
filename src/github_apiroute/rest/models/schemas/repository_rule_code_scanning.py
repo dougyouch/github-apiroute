@@ -20,5 +20,5 @@ class RepositoryRuleCodeScanning(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["code_scanning"] = Field(alias="type")
+    type_: Literal["code_scanning"] | None = Field(alias="type")
     parameters: RepositoryRuleCodeScanningParameters | None = None

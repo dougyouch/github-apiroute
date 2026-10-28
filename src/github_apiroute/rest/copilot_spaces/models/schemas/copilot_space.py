@@ -23,13 +23,13 @@ class CopilotSpace(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the space.
-    id: int
+    id: int | None
 
     # The number that identifies the space within its owner.
-    number: int
+    number: int | None
 
     # The display name of the space.
-    name: str
+    name: str | None
 
     # A description of the space.
     description: str | None = None
@@ -40,25 +40,25 @@ class CopilotSpace(BaseModel):
     # The base role that determines default permissions. - `no_access`: No default access -
     # `reader`: Default read permissions - `writer`: Default write permissions (organization
     # spaces only) - `admin`: Default admin permissions (organization spaces only)
-    base_role: Literal["reader", "writer", "admin", "no_access"]
+    base_role: Literal["reader", "writer", "admin", "no_access"] | None
 
     # The user or organization that owns this space.
-    owner: SimpleUser | OrganizationSimple
+    owner: SimpleUser | OrganizationSimple | None
 
     # A GitHub user.
-    creator: SimpleUser
+    creator: SimpleUser | None
 
     # The date and time the space was created.
-    created_at: str
+    created_at: str | None
 
     # The date and time the space was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # The HTML URL of the space.
-    html_url: str
+    html_url: str | None
 
     # The API URL of the space.
-    api_url: str
+    api_url: str | None
 
     # Resources attached to the space.
     resources_attributes: list[CopilotSpaceResourcesAttributesItem] | None = None

@@ -14,6 +14,6 @@ __all__ = ["PullRequestReviewEvent"]
 
 class PullRequestReviewEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
-    review: PullRequestReviewEventReview
-    pull_request: PullRequestMinimal
+    action: str | None
+    review: PullRequestReviewEventReview | None
+    pull_request: PullRequestMinimal | None

@@ -21,11 +21,11 @@ class WorkflowRun(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the workflow run.
-    id: int
+    id: int | None
 
     # The name of the workflow run.
     name: str | None = None
-    node_id: str
+    node_id: str | None
 
     # The ID of the associated check suite.
     check_suite_id: int | None = None
@@ -35,34 +35,34 @@ class WorkflowRun(BaseModel):
     head_branch: str | None
 
     # The SHA of the head commit that points to the version of the workflow being run.
-    head_sha: str
+    head_sha: str | None
 
     # The full path of the workflow
-    path: str
+    path: str | None
 
     # The auto incrementing run number for the workflow run.
-    run_number: int
+    run_number: int | None
 
     # Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
     run_attempt: int | None = None
     referenced_workflows: list[ReferencedWorkflow] | None = None
-    event: str
+    event: str | None
     status: str | None
     conclusion: str | None
 
     # The ID of the parent workflow.
-    workflow_id: int
+    workflow_id: int | None
 
     # The URL to the workflow run.
-    url: str
-    html_url: str
+    url: str | None
+    html_url: str | None
 
     # Pull requests that are open with a `head_sha` or `head_branch` that matches the workflow
     # run. The returned pull requests do not necessarily indicate pull requests that triggered
     # the run.
     pull_requests: list[PullRequestMinimal] | None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None
 
     # A GitHub user.
     actor: SimpleUser | None = None
@@ -74,39 +74,39 @@ class WorkflowRun(BaseModel):
     run_started_at: str | None = None
 
     # The URL to the jobs for the workflow run.
-    jobs_url: str
+    jobs_url: str | None
 
     # The URL to download the logs for the workflow run.
-    logs_url: str
+    logs_url: str | None
 
     # The URL to the associated check suite.
-    check_suite_url: str
+    check_suite_url: str | None
 
     # The URL to the artifacts for the workflow run.
-    artifacts_url: str
+    artifacts_url: str | None
 
     # The URL to cancel the workflow run.
-    cancel_url: str
+    cancel_url: str | None
 
     # The URL to rerun the workflow run.
-    rerun_url: str
+    rerun_url: str | None
 
     # The URL to the previous attempted run of this workflow, if one exists.
     previous_attempt_url: str | None = None
 
     # The URL to the workflow.
-    workflow_url: str
+    workflow_url: str | None
 
     # A commit.
     head_commit: NullableSimpleCommit | None
 
     # Minimal Repository
-    repository: MinimalRepository
+    repository: MinimalRepository | None
 
     # Minimal Repository
-    head_repository: MinimalRepository
+    head_repository: MinimalRepository | None
     head_repository_id: int | None = None
 
     # The event-specific title associated with the run or the run-name if set, or the value of
     # `run-name` if it is set in the workflow.
-    display_title: str
+    display_title: str | None

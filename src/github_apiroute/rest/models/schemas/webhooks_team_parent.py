@@ -16,30 +16,30 @@ class WebhooksTeamParent(BaseModel):
 
     # Description of the team
     description: str | None
-    html_url: str
+    html_url: str | None
 
     # Unique identifier of the team
-    id: int
-    members_url: str
+    id: int | None
+    members_url: str | None
 
     # Name of the team
-    name: str
-    node_id: str
+    name: str | None
+    node_id: str | None
 
     # Permission that the team will have for its repositories
-    permission: str
-    privacy: Literal["open", "closed", "secret"]
+    permission: str | None
+    privacy: Literal["open", "closed", "secret"] | None
 
     # Whether team members will receive notifications when their team is @mentioned
-    notification_setting: Literal["notifications_enabled", "notifications_disabled"]
-    repositories_url: str
-    slug: str
+    notification_setting: Literal["notifications_enabled", "notifications_disabled"] | None
+    repositories_url: str | None
+    slug: str | None
 
     # URL for the team
-    url: str
+    url: str | None
 
     # The ownership type of the team
-    type_: Literal["enterprise", "organization"] = Field(alias="type")
+    type_: Literal["enterprise", "organization"] | None = Field(alias="type")
 
     # Unique identifier of the organization to which this team belongs
     organization_id: int | None = None

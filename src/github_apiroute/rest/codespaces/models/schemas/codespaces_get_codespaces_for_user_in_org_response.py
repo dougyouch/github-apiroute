@@ -13,5 +13,5 @@ __all__ = ["CodespacesGetCodespacesForUserInOrgResponse"]
 
 class CodespacesGetCodespacesForUserInOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    codespaces: list[Codespace]
+    total_count: int | None
+    codespaces: list[Codespace] | None

@@ -15,17 +15,17 @@ class WebhookGollumPagesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The action that was performed on the page. Can be `created` or `edited`.
-    action: Literal["created", "edited"]
+    action: Literal["created", "edited"] | None
 
     # Points to the HTML wiki page.
-    html_url: str
+    html_url: str | None
 
     # The name of the page.
-    page_name: str
+    page_name: str | None
 
     # The latest commit SHA of the page.
-    sha: str
+    sha: str | None
     summary: str | None
 
     # The current page title.
-    title: str
+    title: str | None

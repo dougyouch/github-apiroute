@@ -15,4 +15,4 @@ __all__ = ["WebhookTeamEditedChangesRepository"]
 
 class WebhookTeamEditedChangesRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    permissions: WebhookTeamEditedChangesRepositoryPermissions
+    permissions: WebhookTeamEditedChangesRepositoryPermissions | None

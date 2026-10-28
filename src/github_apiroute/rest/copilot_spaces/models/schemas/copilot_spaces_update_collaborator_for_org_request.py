@@ -15,4 +15,4 @@ class CopilotSpacesUpdateCollaboratorForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
-    role: Literal["reader", "writer", "admin", "no_access"]
+    role: Literal["reader", "writer", "admin", "no_access"] | None

@@ -21,7 +21,7 @@ class RepositoryRuleCommitterEmailPatternParameters(BaseModel):
     negate: bool | None = None
 
     # The operator to use for matching.
-    operator: Literal["starts_with", "ends_with", "contains", "regex"]
+    operator: Literal["starts_with", "ends_with", "contains", "regex"] | None
 
     # The pattern to match with.
-    pattern: str
+    pattern: str | None

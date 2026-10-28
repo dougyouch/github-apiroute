@@ -13,7 +13,7 @@ class ActionsGetRunnerVersionDeprecationForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The runner version string.
-    runner_version: str
+    runner_version: str | None
 
     # The date after which this runner version can no longer register. Only set for runner
     # versions below the minimum version required to register (currently 2.329.0); `null` for

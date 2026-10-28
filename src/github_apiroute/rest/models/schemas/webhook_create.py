@@ -36,7 +36,7 @@ class WebhookCreate(BaseModel):
     installation: SimpleInstallation | None = None
 
     # The name of the repository's default branch (usually `main`).
-    master_branch: str
+    master_branch: str | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -44,17 +44,17 @@ class WebhookCreate(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # The pusher type for the event. Can be either `user` or a deploy key.
-    pusher_type: WebhooksDeployPusherType
+    pusher_type: WebhooksDeployPusherType | None
 
     # The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
-    ref: WebhooksRef0
+    ref: WebhooksRef0 | None
 
     # The type of Git ref object created in the repository.
-    ref_type: Literal["tag", "branch"]
+    ref_type: Literal["tag", "branch"] | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

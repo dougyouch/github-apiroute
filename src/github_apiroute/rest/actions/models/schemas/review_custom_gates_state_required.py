@@ -15,10 +15,10 @@ class ReviewCustomGatesStateRequired(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the environment to approve or reject.
-    environment_name: str
+    environment_name: str | None
 
     # Whether to approve or reject deployment to the specified environments.
-    state: Literal["approved", "rejected"]
+    state: Literal["approved", "rejected"] | None
 
     # Optional comment to include with the review.
     comment: str | None = None

@@ -15,4 +15,4 @@ class ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest(BaseMod
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A list of custom property names and associated values to apply to the repositories.
-    properties: list[CustomPropertyValue]
+    properties: list[CustomPropertyValue] | None

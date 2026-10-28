@@ -18,10 +18,10 @@ class GitCreateCommitRequestAuthor(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the author (or committer) of the commit
-    name: str
+    name: str | None
 
     # The email of the author (or committer) of the commit
-    email: str
+    email: str | None
 
     # Indicates when this commit was authored (or committed). This is a timestamp in [ISO
     # 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.

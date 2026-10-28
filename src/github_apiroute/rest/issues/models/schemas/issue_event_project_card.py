@@ -13,9 +13,9 @@ class IssueEventProjectCard(BaseModel):
     """Issue Event Project Card"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    id: int
-    project_url: str
-    project_id: int
-    column_name: str
+    url: str | None
+    id: int | None
+    project_url: str | None
+    project_id: int | None
+    column_name: str | None
     previous_column_name: str | None = None

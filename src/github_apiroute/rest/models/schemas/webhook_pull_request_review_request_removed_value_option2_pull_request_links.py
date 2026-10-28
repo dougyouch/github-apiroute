@@ -36,13 +36,15 @@ __all__ = ["WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinks"]
 
 class WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksComments
-    commits: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksCommits
-    html: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksHtml
-    issue: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksIssue
-    review_comment: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksReviewComment
-    review_comments: (
-        WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksReviewComments
+    comments: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksComments | None
+    commits: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksCommits | None
+    html: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksHtml | None
+    issue: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksIssue | None
+    review_comment: (
+        WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksReviewComment | None
     )
-    self: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksSelf
-    statuses: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksStatuses
+    review_comments: (
+        WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksReviewComments | None
+    )
+    self: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksSelf | None
+    statuses: WebhookPullRequestReviewRequestRemovedValueOption2PullRequestLinksStatuses | None

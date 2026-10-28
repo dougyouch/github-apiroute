@@ -19,5 +19,5 @@ class ContributorActivity(BaseModel):
 
     # A GitHub user.
     author: NullableSimpleUser | None
-    total: int
-    weeks: list[ContributorActivityWeeksItem]
+    total: int | None
+    weeks: list[ContributorActivityWeeksItem] | None

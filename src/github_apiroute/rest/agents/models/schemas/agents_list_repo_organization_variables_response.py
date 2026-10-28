@@ -13,5 +13,5 @@ __all__ = ["AgentsListRepoOrganizationVariablesResponse"]
 
 class AgentsListRepoOrganizationVariablesResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    variables: list[ActionsVariable]
+    total_count: int | None
+    variables: list[ActionsVariable] | None

@@ -15,4 +15,4 @@ class SecretScanningBulkCreateOrgCustomPatternsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of custom patterns to create (maximum 100).
-    patterns: list[SecretScanningCustomPatternToCreate]
+    patterns: list[SecretScanningCustomPatternToCreate] | None

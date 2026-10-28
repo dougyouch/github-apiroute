@@ -13,10 +13,10 @@ class IssueFieldValueMultiSelectOptionsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier for the option.
-    id: int
+    id: int | None
 
     # The name of the option
-    name: str
+    name: str | None
 
     # The color of the option
-    color: str
+    color: str | None

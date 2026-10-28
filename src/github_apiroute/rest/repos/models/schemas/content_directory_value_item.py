@@ -15,14 +15,14 @@ __all__ = ["ContentDirectoryValueItem"]
 
 class ContentDirectoryValueItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["dir", "file", "submodule", "symlink"] = Field(alias="type")
-    size: int
-    name: str
-    path: str
+    type_: Literal["dir", "file", "submodule", "symlink"] | None = Field(alias="type")
+    size: int | None
+    name: str | None
+    path: str | None
     content: str | None = None
-    sha: str
-    url: str
+    sha: str | None
+    url: str | None
     git_url: str | None
     html_url: str | None
     download_url: str | None
-    links: ContentDirectoryValueItemLinks = Field(alias="_links")
+    links: ContentDirectoryValueItemLinks | None = Field(alias="_links")

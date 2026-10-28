@@ -15,16 +15,16 @@ class NetworkSettings(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the network settings resource.
-    id: str
+    id: str | None
 
     # The identifier of the network configuration that is using this settings resource.
     network_configuration_id: str | None = None
 
     # The name of the network settings resource.
-    name: str
+    name: str | None
 
     # The subnet this network settings resource is configured for.
-    subnet_id: str
+    subnet_id: str | None
 
     # The location of the subnet this network settings resource is configured for.
-    region: str
+    region: str | None

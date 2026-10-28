@@ -29,27 +29,27 @@ class IssueSearchResultItem(BaseModel):
     """Issue Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    repository_url: str
-    labels_url: str
-    comments_url: str
-    events_url: str
-    html_url: str
-    id: int
-    node_id: str
-    number: int
-    title: str
-    locked: bool
+    url: str | None
+    repository_url: str | None
+    labels_url: str | None
+    comments_url: str | None
+    events_url: str | None
+    html_url: str | None
+    id: int | None
+    node_id: str | None
+    number: int | None
+    title: str | None
+    locked: bool | None
     active_lock_reason: str | None = None
     assignees: list[SimpleUser] | None = None
 
     # A GitHub user.
     user: NullableSimpleUser | None
-    labels: list[IssueSearchResultItemLabelsItem]
+    labels: list[IssueSearchResultItemLabelsItem] | None
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
-    state: str
+    state: str | None
     state_reason: str | None = None
 
     # A GitHub user.
@@ -57,17 +57,17 @@ class IssueSearchResultItem(BaseModel):
 
     # A collection of related issues and pull requests.
     milestone: NullableMilestone | None
-    comments: int
-    created_at: str
-    updated_at: str
+    comments: int | None
+    created_at: str | None
+    updated_at: str | None
     closed_at: str | None
     text_matches: SearchResultTextMatches | None = None
     pull_request: IssueSearchResultItemPullRequest | None = None
     body: str | None = None
-    score: float
+    score: float | None
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
+    author_association: AuthorAssociation | None
     draft: bool | None = None
 
     # A repository on GitHub.

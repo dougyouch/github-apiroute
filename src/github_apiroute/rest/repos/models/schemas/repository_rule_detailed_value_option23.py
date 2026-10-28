@@ -21,7 +21,7 @@ class RepositoryRuleDetailedValueOption23(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["max_file_path_length"] = Field(alias="type")
+    type_: Literal["max_file_path_length"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption23Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

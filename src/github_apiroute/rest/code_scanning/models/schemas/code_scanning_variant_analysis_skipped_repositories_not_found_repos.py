@@ -13,8 +13,8 @@ class CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The total number of repositories that were skipped for this reason.
-    repository_count: int
+    repository_count: int | None
 
     # A list of full repository names that were skipped. This list may not include all
     # repositories that were skipped.
-    repository_full_names: list[str]
+    repository_full_names: list[str] | None

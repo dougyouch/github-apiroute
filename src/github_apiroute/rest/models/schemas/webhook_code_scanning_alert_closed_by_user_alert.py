@@ -36,10 +36,10 @@ class WebhookCodeScanningAlertClosedByUserAlert(BaseModel):
     assignees: list[SimpleUser] | None = None
 
     # The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
-    created_at: str
+    created_at: str | None
 
     # The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    dismissed_at: str
+    dismissed_at: str | None
     dismissed_by: WebhookCodeScanningAlertClosedByUserAlertDismissedBy | None
 
     # The dismissal comment associated with the dismissal of the alert.
@@ -52,17 +52,17 @@ class WebhookCodeScanningAlertClosedByUserAlert(BaseModel):
     fixed_at: Any = None
 
     # The GitHub URL of the alert resource.
-    html_url: str
+    html_url: str | None
     most_recent_instance: WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance | None = None
 
     # The code scanning alert number.
-    number: int
-    rule: WebhookCodeScanningAlertClosedByUserAlertRule
+    number: int | None
+    rule: WebhookCodeScanningAlertClosedByUserAlertRule | None
 
     # State of a code scanning alert.
-    state: Literal["dismissed", "fixed"]
-    tool: WebhookCodeScanningAlertClosedByUserAlertTool
-    url: str
+    state: Literal["dismissed", "fixed"] | None
+    tool: WebhookCodeScanningAlertClosedByUserAlertTool | None
+    url: str | None
     dismissal_approved_by: WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy | None = (
         None
     )

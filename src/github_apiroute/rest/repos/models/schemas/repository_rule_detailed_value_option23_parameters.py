@@ -13,4 +13,4 @@ class RepositoryRuleDetailedValueOption23Parameters(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The maximum amount of characters allowed in file paths.
-    max_file_path_length: int
+    max_file_path_length: int | None

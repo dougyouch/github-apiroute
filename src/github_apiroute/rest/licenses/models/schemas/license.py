@@ -13,16 +13,16 @@ class License(BaseModel):
     """License"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    key: str
-    name: str
+    key: str | None
+    name: str | None
     spdx_id: str | None
     url: str | None
-    node_id: str
-    html_url: str
-    description: str
-    implementation: str
-    permissions: list[str]
-    conditions: list[str]
-    limitations: list[str]
-    body: str
-    featured: bool
+    node_id: str | None
+    html_url: str | None
+    description: str | None
+    implementation: str | None
+    permissions: list[str] | None
+    conditions: list[str] | None
+    limitations: list[str] | None
+    body: str | None
+    featured: bool | None

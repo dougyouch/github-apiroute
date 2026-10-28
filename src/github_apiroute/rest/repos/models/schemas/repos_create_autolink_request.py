@@ -14,11 +14,11 @@ class ReposCreateAutolinkRequest(BaseModel):
 
     # This prefix appended by certain characters will generate a link any time it is found in an
     # issue, pull request, or commit.
-    key_prefix: str
+    key_prefix: str | None
 
     # The URL must contain `` for the reference number. `` matches different characters
     # depending on the value of `is_alphanumeric`.
-    url_template: str
+    url_template: str | None
 
     # Whether this autolink reference matches alphanumeric characters. If true, the `` parameter
     # of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and

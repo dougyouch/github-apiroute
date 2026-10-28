@@ -13,5 +13,5 @@ __all__ = ["AgentsListRepoSecretsResponse"]
 
 class AgentsListRepoSecretsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    secrets: list[ActionsSecret]
+    total_count: int | None
+    secrets: list[ActionsSecret] | None

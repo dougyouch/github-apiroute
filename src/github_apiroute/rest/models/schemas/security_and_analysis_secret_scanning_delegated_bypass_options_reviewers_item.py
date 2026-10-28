@@ -15,10 +15,10 @@ class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(BaseM
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the team or role selected as a bypass reviewer
-    reviewer_id: int
+    reviewer_id: int | None
 
     # The type of the bypass reviewer
-    reviewer_type: Literal["TEAM", "ROLE"]
+    reviewer_type: Literal["TEAM", "ROLE"] | None
 
     # The bypass mode for the reviewer
     mode: Literal["ALWAYS", "EXEMPT"] | None = None

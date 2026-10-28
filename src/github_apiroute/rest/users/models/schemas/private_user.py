@@ -15,25 +15,25 @@ class PrivateUser(BaseModel):
     """Private User"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    login: str
-    id: int
+    login: str | None
+    id: int | None
     user_view_type: str | None = None
-    node_id: str
-    avatar_url: str
+    node_id: str | None
+    avatar_url: str | None
     gravatar_id: str | None
-    url: str
-    html_url: str
-    followers_url: str
-    following_url: str
-    gists_url: str
-    starred_url: str
-    subscriptions_url: str
-    organizations_url: str
-    repos_url: str
-    events_url: str
-    received_events_url: str
-    type_: str = Field(alias="type")
-    site_admin: bool
+    url: str | None
+    html_url: str | None
+    followers_url: str | None
+    following_url: str | None
+    gists_url: str | None
+    starred_url: str | None
+    subscriptions_url: str | None
+    organizations_url: str | None
+    repos_url: str | None
+    events_url: str | None
+    received_events_url: str | None
+    type_: str | None = Field(alias="type")
+    site_admin: bool | None
     name: str | None
     company: str | None
     blog: str | None
@@ -43,18 +43,18 @@ class PrivateUser(BaseModel):
     hireable: bool | None
     bio: str | None
     twitter_username: str | None = None
-    public_repos: int
-    public_gists: int
-    followers: int
-    following: int
-    created_at: str
-    updated_at: str
-    private_gists: int
-    total_private_repos: int
-    owned_private_repos: int
-    disk_usage: int
-    collaborators: int
-    two_factor_authentication: bool
+    public_repos: int | None
+    public_gists: int | None
+    followers: int | None
+    following: int | None
+    created_at: str | None
+    updated_at: str | None
+    private_gists: int | None
+    total_private_repos: int | None
+    owned_private_repos: int | None
+    disk_usage: int | None
+    collaborators: int | None
+    two_factor_authentication: bool | None
     plan: PrivateUserPlan | None = None
     business_plus: bool | None = None
     ldap_dn: str | None = None

@@ -17,7 +17,7 @@ class AgentAutomationsCreateRepoAutomationTaskRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The event to trigger. Only `manual` is supported.
-    event: Literal["manual"]
+    event: Literal["manual"] | None
 
     # Additional context for this automation run, up to 10,000 characters. Supported only when
     # `event` is `manual`. The context supplements the automation's configured instructions.

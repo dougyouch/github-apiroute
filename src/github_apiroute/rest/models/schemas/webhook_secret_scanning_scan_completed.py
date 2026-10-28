@@ -19,21 +19,21 @@ __all__ = ["WebhookSecretScanningScanCompleted"]
 
 class WebhookSecretScanningScanCompleted(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["completed"]
+    action: Literal["completed"] | None
 
     # What type of scan was completed
-    type_: Literal["backfill", "custom-pattern-backfill", "pattern-version-backfill"] = Field(
-        alias="type"
+    type_: Literal["backfill", "custom-pattern-backfill", "pattern-version-backfill"] | None = (
+        Field(alias="type")
     )
 
     # What type of content was scanned
-    source: Literal["git", "issues", "pull-requests", "discussions", "wiki"]
+    source: Literal["git", "issues", "pull-requests", "discussions", "wiki"] | None
 
     # The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    started_at: str
+    started_at: str | None
 
     # The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    completed_at: str
+    completed_at: str | None
 
     # List of patterns that were updated. This will be empty for normal backfill scans or custom
     # pattern updates

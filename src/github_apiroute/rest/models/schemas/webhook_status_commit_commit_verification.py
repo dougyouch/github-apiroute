@@ -14,23 +14,26 @@ __all__ = ["WebhookStatusCommitCommitVerification"]
 class WebhookStatusCommitCommitVerification(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     payload: str | None
-    reason: Literal[
-        "expired_key",
-        "not_signing_key",
-        "gpgverify_error",
-        "gpgverify_unavailable",
-        "unsigned",
-        "unknown_signature_type",
-        "no_user",
-        "unverified_email",
-        "bad_email",
-        "unknown_key",
-        "malformed_signature",
-        "invalid",
-        "valid",
-        "bad_cert",
-        "ocsp_pending",
-    ]
+    reason: (
+        Literal[
+            "expired_key",
+            "not_signing_key",
+            "gpgverify_error",
+            "gpgverify_unavailable",
+            "unsigned",
+            "unknown_signature_type",
+            "no_user",
+            "unverified_email",
+            "bad_email",
+            "unknown_key",
+            "malformed_signature",
+            "invalid",
+            "valid",
+            "bad_cert",
+            "ocsp_pending",
+        ]
+        | None
+    )
     signature: str | None
-    verified: bool
+    verified: bool | None
     verified_at: str | None

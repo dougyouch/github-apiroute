@@ -22,7 +22,7 @@ class WebhookDeploymentReviewRequestedReviewersItemReviewer(BaseModel):
     gists_url: str | None = None
     gravatar_id: str | None = None
     html_url: str | None = None
-    id: int
+    id: int | None
     login: str | None = None
     name: str | None = None
     node_id: str | None = None

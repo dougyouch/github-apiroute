@@ -16,26 +16,26 @@ class Hook(BaseModel):
     """Webhooks for repositories."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: str = Field(alias="type")
+    type_: str | None = Field(alias="type")
 
     # Unique identifier of the webhook.
-    id: int
+    id: int | None
 
     # The name of a valid service, use 'web' for a webhook.
-    name: str
+    name: str | None
 
     # Determines whether the hook is actually triggered on pushes.
-    active: bool
+    active: bool | None
 
     # Determines what events the hook is triggered for. Default: ['push'].
-    events: list[str]
+    events: list[str] | None
 
     # Configuration object of the webhook
-    config: WebhookConfig
-    updated_at: str
-    created_at: str
-    url: str
-    test_url: str
-    ping_url: str
+    config: WebhookConfig | None
+    updated_at: str | None
+    created_at: str | None
+    url: str | None
+    test_url: str | None
+    ping_url: str | None
     deliveries_url: str | None = None
-    last_response: HookResponse
+    last_response: HookResponse | None

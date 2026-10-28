@@ -15,10 +15,10 @@ class WebhookCodeScanningAlertUpdatedAssignmentAlertRule(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A short description of the rule used to detect the alert.
-    description: str
+    description: str | None
 
     # A unique identifier for the rule used to detect the alert.
-    id: str
+    id: str | None
 
     # The severity of the alert.
     severity: Literal["none", "note", "warning", "error"] | None

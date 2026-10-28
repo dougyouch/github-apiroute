@@ -13,7 +13,7 @@ class GitCreateBlobRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The new blob's content.
-    content: str
+    content: str | None
 
     # The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
     encoding: str | None = None

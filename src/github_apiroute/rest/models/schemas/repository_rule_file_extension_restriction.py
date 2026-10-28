@@ -21,5 +21,5 @@ class RepositoryRuleFileExtensionRestriction(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["file_extension_restriction"] = Field(alias="type")
+    type_: Literal["file_extension_restriction"] | None = Field(alias="type")
     parameters: RepositoryRuleFileExtensionRestrictionParameters | None = None

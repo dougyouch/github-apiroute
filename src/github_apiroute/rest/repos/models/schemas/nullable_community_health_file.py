@@ -11,5 +11,5 @@ __all__ = ["NullableCommunityHealthFile"]
 
 class NullableCommunityHealthFile(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    html_url: str
+    url: str | None
+    html_url: str | None

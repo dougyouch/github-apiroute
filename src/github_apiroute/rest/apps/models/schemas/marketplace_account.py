@@ -11,10 +11,10 @@ __all__ = ["MarketplaceAccount"]
 
 class MarketplaceAccount(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    id: int
-    type_: str = Field(alias="type")
+    url: str | None
+    id: int | None
+    type_: str | None = Field(alias="type")
     node_id: str | None = None
-    login: str
+    login: str | None
     email: str | None = None
     organization_billing_email: str | None = None

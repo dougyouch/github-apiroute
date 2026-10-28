@@ -19,66 +19,69 @@ class WebhookMetaDeletedHook(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    active: bool
-    config: WebhookMetaDeletedHookConfig
-    created_at: str
-    events: list[
-        Literal[
-            "*",
-            "branch_protection_rule",
-            "check_run",
-            "check_suite",
-            "code_scanning_alert",
-            "commit_comment",
-            "create",
-            "delete",
-            "deployment",
-            "deployment_status",
-            "deploy_key",
-            "discussion",
-            "discussion_comment",
-            "fork",
-            "gollum",
-            "issues",
-            "issue_comment",
-            "label",
-            "member",
-            "membership",
-            "meta",
-            "milestone",
-            "organization",
-            "org_block",
-            "package",
-            "page_build",
-            "project",
-            "project_card",
-            "project_column",
-            "public",
-            "pull_request",
-            "pull_request_review",
-            "pull_request_review_comment",
-            "pull_request_review_thread",
-            "push",
-            "registry_package",
-            "release",
-            "repository",
-            "repository_import",
-            "repository_vulnerability_alert",
-            "secret_scanning_alert",
-            "secret_scanning_alert_location",
-            "security_and_analysis",
-            "star",
-            "status",
-            "team",
-            "team_add",
-            "watch",
-            "workflow_job",
-            "workflow_run",
-            "repository_dispatch",
-            "projects_v2_item",
+    active: bool | None
+    config: WebhookMetaDeletedHookConfig | None
+    created_at: str | None
+    events: (
+        list[
+            Literal[
+                "*",
+                "branch_protection_rule",
+                "check_run",
+                "check_suite",
+                "code_scanning_alert",
+                "commit_comment",
+                "create",
+                "delete",
+                "deployment",
+                "deployment_status",
+                "deploy_key",
+                "discussion",
+                "discussion_comment",
+                "fork",
+                "gollum",
+                "issues",
+                "issue_comment",
+                "label",
+                "member",
+                "membership",
+                "meta",
+                "milestone",
+                "organization",
+                "org_block",
+                "package",
+                "page_build",
+                "project",
+                "project_card",
+                "project_column",
+                "public",
+                "pull_request",
+                "pull_request_review",
+                "pull_request_review_comment",
+                "pull_request_review_thread",
+                "push",
+                "registry_package",
+                "release",
+                "repository",
+                "repository_import",
+                "repository_vulnerability_alert",
+                "secret_scanning_alert",
+                "secret_scanning_alert_location",
+                "security_and_analysis",
+                "star",
+                "status",
+                "team",
+                "team_add",
+                "watch",
+                "workflow_job",
+                "workflow_run",
+                "repository_dispatch",
+                "projects_v2_item",
+            ]
         ]
-    ]
-    id: int
-    name: str
-    type_: str = Field(alias="type")
-    updated_at: str
+        | None
+    )
+    id: int | None
+    name: str | None
+    type_: str | None = Field(alias="type")
+    updated_at: str | None

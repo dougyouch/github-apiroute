@@ -13,5 +13,5 @@ __all__ = ["ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse"]
 
 class ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: float
-    repositories: list[MinimalRepository]
+    total_count: float | None
+    repositories: list[MinimalRepository] | None

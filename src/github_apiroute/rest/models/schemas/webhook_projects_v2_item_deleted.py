@@ -18,7 +18,7 @@ __all__ = ["WebhookProjectsV2ItemDeleted"]
 
 class WebhookProjectsV2ItemDeleted(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["deleted"]
+    action: Literal["deleted"] | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -28,10 +28,10 @@ class WebhookProjectsV2ItemDeleted(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # An item belonging to a project
-    projects_v2_item: ProjectsV2Item
+    projects_v2_item: ProjectsV2Item | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -21,7 +21,7 @@ class AgentAutomationsCreateRepoAutomationRequestTriggersPullRequestReviewSubmit
     paths: list[str] | None = None
 
     # Submitted review states to match.
-    states: list[Literal["approved", "changes_requested", "commented"]]
+    states: list[Literal["approved", "changes_requested", "commented"]] | None
 
     # Override the Automation `write_scope` for runs started by this trigger. If omitted, the
     # automation's `write_scope` is used. Organization or repository policy may restrict the

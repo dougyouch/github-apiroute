@@ -15,8 +15,8 @@ class RepositoryCollaboratorPermission(BaseModel):
     """Repository Collaborator Permission"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    permission: str
-    role_name: str
+    permission: str | None
+    role_name: str | None
 
     # Collaborator
     user: NullableCollaborator | None

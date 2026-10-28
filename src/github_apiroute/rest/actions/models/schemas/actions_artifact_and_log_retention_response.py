@@ -14,7 +14,7 @@ class ActionsArtifactAndLogRetentionResponse(BaseModel):
 
     # The number of days checks, workflow runs, commit statuses, artifacts, and logs are
     # retained
-    days: int
+    days: int | None
 
     # The maximum number of days that can be configured
-    maximum_allowed_days: int
+    maximum_allowed_days: int | None

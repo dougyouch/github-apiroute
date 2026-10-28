@@ -13,4 +13,4 @@ class PullRequestMergeAsyncResultDetailsOption2(BaseModel):
     """When the pull request is in a merge queue"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    message: str
+    message: str | None

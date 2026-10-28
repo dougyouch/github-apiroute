@@ -22,7 +22,7 @@ class RepositoryRuleDetailedValueOption17(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["code_scanning"] = Field(alias="type")
+    type_: Literal["code_scanning"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption17Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

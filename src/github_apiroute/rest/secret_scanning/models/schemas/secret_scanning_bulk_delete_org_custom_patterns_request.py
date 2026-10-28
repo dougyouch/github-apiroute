@@ -17,7 +17,7 @@ class SecretScanningBulkDeleteOrgCustomPatternsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of custom patterns to delete.
-    patterns: list[SecretScanningCustomPatternToDelete]
+    patterns: list[SecretScanningCustomPatternToDelete] | None
 
     # What to do with alerts associated with the deleted patterns. `delete_alerts` permanently
     # removes the alerts. `resolve_alerts` resolves the alerts as "pattern deleted". Defaults to

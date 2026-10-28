@@ -20,7 +20,7 @@ class OrgsUpdateWebhookRequestConfig(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The URL to which the payloads will be delivered.
-    url: WebhookConfigUrl
+    url: WebhookConfigUrl | None
 
     # The media type used to serialize the payloads. Supported values include `json` and `form`.
     # The default is `form`.

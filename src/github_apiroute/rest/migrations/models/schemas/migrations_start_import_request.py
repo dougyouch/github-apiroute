@@ -15,7 +15,7 @@ class MigrationsStartImportRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The URL of the originating repository.
-    vcs_url: str
+    vcs_url: str | None
 
     # The originating VCS type. Without this parameter, the import job will take additional time
     # to detect the VCS type before beginning the import. This detection step will be reflected

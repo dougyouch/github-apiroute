@@ -15,7 +15,7 @@ class ReposCreateForAuthenticatedUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the repository.
-    name: str
+    name: str | None
 
     # A short description of the repository.
     description: str | None = None

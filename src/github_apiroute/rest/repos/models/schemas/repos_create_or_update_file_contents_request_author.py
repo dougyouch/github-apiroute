@@ -18,9 +18,9 @@ class ReposCreateOrUpdateFileContentsRequestAuthor(BaseModel):
 
     # The name of the author or committer of the commit. You'll receive a `422` status code if
     # `name` is omitted.
-    name: str
+    name: str | None
 
     # The email of the author or committer of the commit. You'll receive a `422` status code if
     # `email` is omitted.
-    email: str
+    email: str | None
     date: str | None = None

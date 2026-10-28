@@ -17,7 +17,7 @@ class AgentTasksListTasksForRepoResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of tasks
-    tasks: list[AgentTasksListTasksForRepoResponseTasksItem]
+    tasks: list[AgentTasksListTasksForRepoResponseTasksItem] | None
 
     # Total count of active (non-archived) tasks
     total_active_count: int | None = None

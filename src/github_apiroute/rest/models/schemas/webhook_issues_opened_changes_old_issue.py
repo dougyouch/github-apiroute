@@ -71,7 +71,7 @@ class WebhookIssuesOpenedChangesOldIssue(BaseModel):
     draft: bool | None = None
     events_url: str | None = None
     html_url: str | None = None
-    id: int
+    id: int | None
     labels: list[WebhookIssuesOpenedChangesOldIssueLabelsItem] | None = None
     labels_url: str | None = None
     locked: bool | None = None
@@ -79,7 +79,7 @@ class WebhookIssuesOpenedChangesOldIssue(BaseModel):
     # A collection of related issues and pull requests.
     milestone: WebhookIssuesOpenedChangesOldIssueMilestone | None = None
     node_id: str | None = None
-    number: int
+    number: int | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come

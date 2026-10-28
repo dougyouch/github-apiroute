@@ -16,13 +16,13 @@ class PageBuild(BaseModel):
     """Page Build"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    status: str
-    error: PageBuildError
+    url: str | None
+    status: str | None
+    error: PageBuildError | None
 
     # A GitHub user.
     pusher: NullableSimpleUser | None
-    commit: str
-    duration: int
-    created_at: str
-    updated_at: str
+    commit: str | None
+    duration: int | None
+    created_at: str | None
+    updated_at: str | None

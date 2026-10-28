@@ -13,7 +13,7 @@ class KeySimple(BaseModel):
     """Key Simple"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    key: str
+    id: int | None
+    key: str | None
     created_at: str | None = None
     last_used: str | None = None

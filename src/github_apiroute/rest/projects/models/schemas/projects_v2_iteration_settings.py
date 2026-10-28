@@ -17,16 +17,16 @@ class ProjectsV2IterationSettings(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the iteration setting.
-    id: str
+    id: str | None
 
     # The start date of the iteration.
-    start_date: str
+    start_date: str | None
 
     # The duration of the iteration in days.
-    duration: int
+    duration: int | None
 
     # The iteration title, in raw text and HTML formats.
-    title: ProjectsV2IterationSettingsTitle
+    title: ProjectsV2IterationSettingsTitle | None
 
     # Whether the iteration has been completed.
-    completed: bool
+    completed: bool | None

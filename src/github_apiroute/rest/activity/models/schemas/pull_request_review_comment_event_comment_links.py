@@ -21,6 +21,6 @@ __all__ = ["PullRequestReviewCommentEventCommentLinks"]
 
 class PullRequestReviewCommentEventCommentLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: PullRequestReviewCommentEventCommentLinksHtml
-    pull_request: PullRequestReviewCommentEventCommentLinksPullRequest
-    self: PullRequestReviewCommentEventCommentLinksSelf
+    html: PullRequestReviewCommentEventCommentLinksHtml | None
+    pull_request: PullRequestReviewCommentEventCommentLinksPullRequest | None
+    self: PullRequestReviewCommentEventCommentLinksSelf | None

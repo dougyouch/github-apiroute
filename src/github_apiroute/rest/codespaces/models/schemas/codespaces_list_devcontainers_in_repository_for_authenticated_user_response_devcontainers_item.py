@@ -13,6 +13,6 @@ class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcont
     BaseModel
 ):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    path: str
+    path: str | None
     name: str | None = None
     display_name: str | None = None

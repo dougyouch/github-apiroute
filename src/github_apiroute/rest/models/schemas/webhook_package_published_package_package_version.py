@@ -41,30 +41,30 @@ class WebhookPackagePublishedPackagePackageVersion(BaseModel):
     body_html: str | None = None
     container_metadata: WebhookPackagePublishedPackagePackageVersionContainerMetadata | None = None
     created_at: str | None = None
-    description: str
+    description: str | None
     docker_metadata: list[WebhookPackagePublishedPackagePackageVersionDockerMetadataItem] | None = (
         None
     )
     draft: bool | None = None
-    html_url: str
-    id: int
-    installation_command: str
+    html_url: str | None
+    id: int | None
+    installation_command: str | None
     manifest: str | None = None
-    metadata: list[dict[str, Any]]
-    name: str
+    metadata: list[dict[str, Any]] | None
+    name: str | None
     npm_metadata: WebhookPackagePublishedPackagePackageVersionNpmMetadata | None = None
     nuget_metadata: list[WebhookPackagePublishedPackagePackageVersionNugetMetadataItem] | None = (
         None
     )
-    package_files: list[WebhookPackagePublishedPackagePackageVersionPackageFilesItem]
+    package_files: list[WebhookPackagePublishedPackagePackageVersionPackageFilesItem] | None
     package_url: str | None = None
     prerelease: bool | None = None
     release: WebhookPackagePublishedPackagePackageVersionRelease | None = None
     rubygems_metadata: list[WebhookRubygemsMetadata] | None = None
     source_url: str | None = None
-    summary: str
+    summary: str | None
     tag_name: str | None = None
     target_commitish: str | None = None
     target_oid: str | None = None
     updated_at: str | None = None
-    version: str
+    version: str | None

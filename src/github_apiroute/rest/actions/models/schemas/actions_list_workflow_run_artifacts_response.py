@@ -13,5 +13,5 @@ __all__ = ["ActionsListWorkflowRunArtifactsResponse"]
 
 class ActionsListWorkflowRunArtifactsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    artifacts: list[Artifact]
+    total_count: int | None
+    artifacts: list[Artifact] | None

@@ -16,10 +16,10 @@ class CodeScanningVariantAnalysisRepoTask(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A GitHub repository.
-    repository: SimpleRepository
+    repository: SimpleRepository | None
 
     # The new status of the CodeQL variant analysis repository task.
-    analysis_status: CodeScanningVariantAnalysisStatus
+    analysis_status: CodeScanningVariantAnalysisStatus | None
 
     # The size of the artifact. This is only available for successful analyses.
     artifact_size_in_bytes: int | None = None

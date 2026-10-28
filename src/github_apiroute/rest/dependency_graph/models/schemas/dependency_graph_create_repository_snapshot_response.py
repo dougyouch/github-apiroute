@@ -13,16 +13,16 @@ class DependencyGraphCreateRepositorySnapshotResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # ID of the created snapshot.
-    id: int
+    id: int | None
 
     # The time at which the snapshot was created.
-    created_at: str
+    created_at: str | None
 
     # Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was
     # successfully created and the repository's dependencies were updated. "ACCEPTED" indicates
     # that the snapshot was successfully created, but the repository's dependencies were not
-    result: str
+    result: str | None
 
     # A message providing further details about the result, such as why the dependencies were
     # not updated.
-    message: str
+    message: str | None

@@ -18,7 +18,7 @@ class ActionsSetGithubActionsPermissionsOrganizationRequest(BaseModel):
 
     # The policy that controls the repositories in the organization that are allowed to run
     # GitHub Actions.
-    enabled_repositories: EnabledRepositories
+    enabled_repositories: EnabledRepositories | None
 
     # The permissions policy that controls the actions and reusable workflows that are allowed
     # to run.

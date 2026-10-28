@@ -13,4 +13,4 @@ class ReposRenameBranchRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The new name of the branch.
-    new_name: str
+    new_name: str | None

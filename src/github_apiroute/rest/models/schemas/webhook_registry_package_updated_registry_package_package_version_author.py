@@ -11,22 +11,22 @@ __all__ = ["WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor"]
 
 class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    avatar_url: str
-    events_url: str
-    followers_url: str
-    following_url: str
-    gists_url: str
-    gravatar_id: str
-    html_url: str
-    id: int
-    login: str
-    node_id: str
-    organizations_url: str
-    received_events_url: str
-    repos_url: str
-    site_admin: bool
-    starred_url: str
-    subscriptions_url: str
-    type_: str = Field(alias="type")
-    url: str
+    avatar_url: str | None
+    events_url: str | None
+    followers_url: str | None
+    following_url: str | None
+    gists_url: str | None
+    gravatar_id: str | None
+    html_url: str | None
+    id: int | None
+    login: str | None
+    node_id: str | None
+    organizations_url: str | None
+    received_events_url: str | None
+    repos_url: str | None
+    site_admin: bool | None
+    starred_url: str | None
+    subscriptions_url: str | None
+    type_: str | None = Field(alias="type")
+    url: str | None
     user_view_type: str | None = None

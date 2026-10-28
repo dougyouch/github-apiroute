@@ -19,5 +19,5 @@ class RepositoryRuleCommitAuthorEmailPattern(BaseModel):
     """Parameters to be used for the commit_author_email_pattern rule"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["commit_author_email_pattern"] = Field(alias="type")
+    type_: Literal["commit_author_email_pattern"] | None = Field(alias="type")
     parameters: RepositoryRuleCommitAuthorEmailPatternParameters | None = None

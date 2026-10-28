@@ -22,7 +22,7 @@ class OrganizationExternalPropertyInstallation(BaseModel):
 
     # The display name assigned to the app installation's external custom properties in the
     # organization.
-    display_name: str
+    display_name: str | None
 
     # The GitHub App installation that was registered.
-    installation: OrganizationExternalPropertyInstallationInstallation
+    installation: OrganizationExternalPropertyInstallationInstallation | None

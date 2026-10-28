@@ -11,6 +11,6 @@ __all__ = ["AuthorizationApp"]
 
 class AuthorizationApp(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    client_id: str
-    name: str
-    url: str
+    client_id: str | None
+    name: str | None
+    url: str | None

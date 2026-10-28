@@ -13,7 +13,7 @@ class NullableCodeOfConductSimple(BaseModel):
     """Code of Conduct Simple"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    key: str
-    name: str
+    url: str | None
+    key: str | None
+    name: str | None
     html_url: str | None

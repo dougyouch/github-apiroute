@@ -21,11 +21,11 @@ class CopilotOrganizationDetails(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The breakdown of Copilot Business seats for the organization.
-    seat_breakdown: CopilotOrganizationSeatBreakdown
+    seat_breakdown: CopilotOrganizationSeatBreakdown | None
 
     # The organization policy for allowing or blocking suggestions matching public code
     # (duplication detection filter).
-    public_code_suggestions: Literal["allow", "block", "unconfigured"]
+    public_code_suggestions: Literal["allow", "block", "unconfigured"] | None
 
     # The organization policy for allowing or disallowing Copilot Chat in the IDE.
     ide_chat: Literal["enabled", "disabled", "unconfigured"] | None = None
@@ -37,7 +37,9 @@ class CopilotOrganizationDetails(BaseModel):
     cli: Literal["enabled", "disabled", "unconfigured"] | None = None
 
     # The mode of assigning new seats.
-    seat_management_setting: Literal["assign_all", "assign_selected", "disabled", "unconfigured"]
+    seat_management_setting: (
+        Literal["assign_all", "assign_selected", "disabled", "unconfigured"] | None
+    )
 
     # The Copilot plan of the organization, or the parent enterprise, when applicable.
     plan_type: Literal["business", "enterprise", "access"] | None = None

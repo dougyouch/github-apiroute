@@ -19,4 +19,4 @@ class WebhookIssuesFieldAddedChangesIssueFieldValue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The previous value of the issue field before the update.
-    from_: WebhookIssuesFieldAddedChangesIssueFieldValueFrom = Field(alias="from")
+    from_: WebhookIssuesFieldAddedChangesIssueFieldValueFrom | None = Field(alias="from")

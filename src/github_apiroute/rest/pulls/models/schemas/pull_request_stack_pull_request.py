@@ -17,17 +17,17 @@ __all__ = ["PullRequestStackPullRequest"]
 
 class PullRequestStackPullRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    number: int
-    url: str
-    head: PullRequestStackPullRequestHead
-    base: PullRequestStackPullRequestBase
-    node_id: str
-    title: str
-    state: Literal["open", "closed"]
+    id: int | None
+    number: int | None
+    url: str | None
+    head: PullRequestStackPullRequestHead | None
+    base: PullRequestStackPullRequestBase | None
+    node_id: str | None
+    title: str | None
+    state: Literal["open", "closed"] | None
     merged_at: str | None
-    draft: bool
-    html_url: str
+    draft: bool | None
+    html_url: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None

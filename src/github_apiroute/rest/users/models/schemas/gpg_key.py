@@ -16,18 +16,18 @@ class GpgKey(BaseModel):
     """A unique encryption key"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
+    id: int | None
     name: str | None = None
     primary_key_id: int | None
-    key_id: str
-    public_key: str
-    emails: list[GpgKeyEmailsItem]
-    subkeys: list[GpgKeySubkeysItem]
-    can_sign: bool
-    can_encrypt_comms: bool
-    can_encrypt_storage: bool
-    can_certify: bool
-    created_at: str
+    key_id: str | None
+    public_key: str | None
+    emails: list[GpgKeyEmailsItem] | None
+    subkeys: list[GpgKeySubkeysItem] | None
+    can_sign: bool | None
+    can_encrypt_comms: bool | None
+    can_encrypt_storage: bool | None
+    can_certify: bool | None
+    created_at: str | None
     expires_at: str | None
-    revoked: bool
+    revoked: bool | None
     raw_key: str | None

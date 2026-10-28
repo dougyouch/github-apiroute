@@ -24,92 +24,92 @@ class FullRepository(BaseModel):
     """Full Repository"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    name: str
-    full_name: str
+    id: int | None
+    node_id: str | None
+    name: str | None
+    full_name: str | None
 
     # A GitHub user.
-    owner: SimpleUser
-    private: bool
-    html_url: str
+    owner: SimpleUser | None
+    private: bool | None
+    html_url: str | None
     description: str | None
-    fork: bool
-    url: str
-    archive_url: str
-    assignees_url: str
-    blobs_url: str
-    branches_url: str
-    collaborators_url: str
-    comments_url: str
-    commits_url: str
-    compare_url: str
-    contents_url: str
-    contributors_url: str
-    deployments_url: str
-    downloads_url: str
-    events_url: str
-    forks_url: str
-    git_commits_url: str
-    git_refs_url: str
-    git_tags_url: str
-    git_url: str
-    issue_comment_url: str
-    issue_events_url: str
-    issues_url: str
-    keys_url: str
-    labels_url: str
-    languages_url: str
-    merges_url: str
-    milestones_url: str
-    notifications_url: str
-    pulls_url: str
-    releases_url: str
-    ssh_url: str
-    stargazers_url: str
-    statuses_url: str
-    subscribers_url: str
-    subscription_url: str
-    tags_url: str
-    teams_url: str
-    trees_url: str
-    clone_url: str
+    fork: bool | None
+    url: str | None
+    archive_url: str | None
+    assignees_url: str | None
+    blobs_url: str | None
+    branches_url: str | None
+    collaborators_url: str | None
+    comments_url: str | None
+    commits_url: str | None
+    compare_url: str | None
+    contents_url: str | None
+    contributors_url: str | None
+    deployments_url: str | None
+    downloads_url: str | None
+    events_url: str | None
+    forks_url: str | None
+    git_commits_url: str | None
+    git_refs_url: str | None
+    git_tags_url: str | None
+    git_url: str | None
+    issue_comment_url: str | None
+    issue_events_url: str | None
+    issues_url: str | None
+    keys_url: str | None
+    labels_url: str | None
+    languages_url: str | None
+    merges_url: str | None
+    milestones_url: str | None
+    notifications_url: str | None
+    pulls_url: str | None
+    releases_url: str | None
+    ssh_url: str | None
+    stargazers_url: str | None
+    statuses_url: str | None
+    subscribers_url: str | None
+    subscription_url: str | None
+    tags_url: str | None
+    teams_url: str | None
+    trees_url: str | None
+    clone_url: str | None
     mirror_url: str | None
-    hooks_url: str
-    svn_url: str
+    hooks_url: str | None
+    svn_url: str | None
     homepage: str | None
     language: str | None
-    forks_count: int
-    stargazers_count: int
-    watchers_count: int
+    forks_count: int | None
+    stargazers_count: int | None
+    watchers_count: int | None
 
     # The size of the repository, in kilobytes. Size is calculated hourly. When a repository is
     # initially created, the size is 0.
-    size: int
-    default_branch: str
-    open_issues_count: int
+    size: int | None
+    default_branch: str | None
+    open_issues_count: int | None
     is_template: bool | None = None
     topics: list[str] | None = None
-    has_issues: bool
-    has_projects: bool
-    has_wiki: bool
-    has_pages: bool
+    has_issues: bool | None
+    has_projects: bool | None
+    has_wiki: bool | None
+    has_pages: bool | None
     has_downloads: bool | None = None
-    has_discussions: bool
+    has_discussions: bool | None
     has_pull_requests: bool | None = None
 
     # The policy controlling who can create pull requests: all or collaborators_only.
     pull_request_creation_policy: Literal["all", "collaborators_only"] | None = None
-    archived: bool
+    archived: bool | None
 
     # Returns whether or not this repository disabled.
-    disabled: bool
+    disabled: bool | None
 
     # The repository visibility: public, private, or internal.
     visibility: str | None = None
-    pushed_at: str
-    created_at: str
-    updated_at: str
+    pushed_at: str | None
+    created_at: str | None
+    updated_at: str | None
     permissions: FullRepositoryPermissions | None = None
     allow_rebase_merge: bool | None = None
 
@@ -148,8 +148,8 @@ class FullRepository(BaseModel):
     merge_commit_message: Literal["PR_BODY", "PR_TITLE", "BLANK"] | None = None
     allow_forking: bool | None = None
     web_commit_signoff_required: bool | None = None
-    subscribers_count: int
-    network_count: int
+    subscribers_count: int | None
+    network_count: int | None
 
     # License Simple
     license: NullableLicenseSimple | None
@@ -162,10 +162,10 @@ class FullRepository(BaseModel):
 
     # A repository on GitHub.
     source: Repository | None = None
-    forks: int
+    forks: int | None
     master_branch: str | None = None
-    open_issues: int
-    watchers: int
+    open_issues: int | None
+    watchers: int | None
 
     # Whether anonymous git access is allowed.
     anonymous_access_enabled: bool | None = None

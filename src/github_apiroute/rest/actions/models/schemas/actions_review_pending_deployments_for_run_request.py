@@ -15,10 +15,10 @@ class ActionsReviewPendingDeploymentsForRunRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of environment ids to approve or reject
-    environment_ids: list[int]
+    environment_ids: list[int] | None
 
     # Whether to approve or reject deployment to the specified environments.
-    state: Literal["approved", "rejected"]
+    state: Literal["approved", "rejected"] | None
 
     # A comment to accompany the deployment review
-    comment: str
+    comment: str | None

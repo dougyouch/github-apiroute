@@ -13,7 +13,7 @@ class ContentTraffic(BaseModel):
     """Content Traffic"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    path: str
-    title: str
-    count: int
-    uniques: int
+    path: str | None
+    title: str | None
+    count: int | None
+    uniques: int | None

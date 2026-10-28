@@ -20,5 +20,5 @@ class RateLimitOverview(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    resources: RateLimitOverviewResources
-    rate: RateLimit
+    resources: RateLimitOverviewResources | None
+    rate: RateLimit | None

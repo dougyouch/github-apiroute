@@ -13,6 +13,6 @@ __all__ = ["SearchCommitsResponse"]
 
 class SearchCommitsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    incomplete_results: bool
-    items: list[CommitSearchResultItem]
+    total_count: int | None
+    incomplete_results: bool | None
+    items: list[CommitSearchResultItem] | None

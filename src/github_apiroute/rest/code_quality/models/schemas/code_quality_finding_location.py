@@ -15,7 +15,7 @@ class CodeQualityFindingLocation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The file path where the finding was detected.
-    path: str
+    path: str | None
 
     # The line number where the finding starts.
     start_line: int | None = None

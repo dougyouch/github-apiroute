@@ -28,10 +28,11 @@ class PullRequestMergeAsyncResult(BaseModel):
     """Pull Request Merge Async Result"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    status: Literal["pending", "merged", "enqueued", "failed"]
+    status: Literal["pending", "merged", "enqueued", "failed"] | None
     details: (
         PullRequestMergeAsyncResultDetailsOption1
         | PullRequestMergeAsyncResultDetailsOption2
         | PullRequestMergeAsyncResultDetailsOption3
         | PullRequestMergeAsyncResultDetailsOption4
+        | None
     )

@@ -13,9 +13,9 @@ class IssuesSetIssueFieldValuesRequestIssueFieldValuesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the issue field to set
-    field_id: int
+    field_id: int | None
 
     # The value to set for the field. The type depends on the field's data type: - For text
     # fields: provide a string value - For single_select fields: provide the option name as a
     # string (must match an existing option) - For number fields: provide a numeric value - For
-    value: str | float
+    value: str | float | None

@@ -13,5 +13,5 @@ __all__ = ["PrivateRegistriesListOrgPrivateRegistriesResponse"]
 
 class PrivateRegistriesListOrgPrivateRegistriesResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    configurations: list[OrgPrivateRegistryConfiguration]
+    total_count: int | None
+    configurations: list[OrgPrivateRegistryConfiguration] | None

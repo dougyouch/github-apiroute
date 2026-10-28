@@ -15,8 +15,8 @@ class Feed(BaseModel):
     """Feed"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    timeline_url: str
-    user_url: str
+    timeline_url: str | None
+    user_url: str | None
     current_user_public_url: str | None = None
     current_user_url: str | None = None
     current_user_actor_url: str | None = None
@@ -29,4 +29,4 @@ class Feed(BaseModel):
 
     # A feed of discussions for a given repository and category.
     repository_discussions_category_url: str | None = None
-    links: FeedLinks = Field(alias="_links")
+    links: FeedLinks | None = Field(alias="_links")

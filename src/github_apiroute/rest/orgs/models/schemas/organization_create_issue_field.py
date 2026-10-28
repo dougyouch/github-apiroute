@@ -17,13 +17,13 @@ class OrganizationCreateIssueField(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Name of the issue field.
-    name: str
+    name: str | None
 
     # Description of the issue field.
     description: str | None = None
 
     # The data type of the issue field.
-    data_type: Literal["text", "date", "single_select", "multi_select", "number"]
+    data_type: Literal["text", "date", "single_select", "multi_select", "number"] | None
 
     # The visibility of the issue field. Can be `organization_members_only` (visible only within
     # the organization) or `all` (visible to all users who can see issues). Only used when the

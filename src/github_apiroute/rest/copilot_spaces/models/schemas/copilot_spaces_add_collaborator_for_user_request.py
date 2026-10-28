@@ -15,10 +15,10 @@ class CopilotSpacesAddCollaboratorForUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).
-    actor_type: Literal["User", "Team"]
+    actor_type: Literal["User", "Team"] | None
 
     # The username of the collaborator. The numeric user ID is also accepted.
-    actor_identifier: str
+    actor_identifier: str | None
 
     # The role to grant to the collaborator.
-    role: Literal["reader", "writer", "admin"]
+    role: Literal["reader", "writer", "admin"] | None

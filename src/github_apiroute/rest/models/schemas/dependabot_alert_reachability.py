@@ -22,7 +22,10 @@ class DependabotAlertReachability(BaseModel):
     # The reachability verdict for the alert. - `reachable`: a path from the repository's code
     # reaches a vulnerable function. - `unreachable`: no path from the repository's code reaches
     # a vulnerable function. - `potentially_reachable`: reachability could not be determined
-    verdict: Literal["reachable", "unreachable", "potentially_reachable", "unavailable", "disabled"]
+    verdict: (
+        Literal["reachable", "unreachable", "potentially_reachable", "unavailable", "disabled"]
+        | None
+    )
 
     # The reason for the reachability verdict. This field is omitted when reachability analysis
     # is disabled or no result has been computed.

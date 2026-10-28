@@ -22,9 +22,10 @@ class RepositoryRulesetBypassActor(BaseModel):
     actor_id: int | None = None
 
     # The type of actor that can bypass a ruleset.
-    actor_type: Literal[
-        "Integration", "OrganizationAdmin", "RepositoryRole", "Team", "DeployKey", "User"
-    ]
+    actor_type: (
+        Literal["Integration", "OrganizationAdmin", "RepositoryRole", "Team", "DeployKey", "User"]
+        | None
+    )
 
     # When the specified actor can bypass the ruleset. `pull_request` means that an actor can
     # only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey`

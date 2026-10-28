@@ -15,14 +15,14 @@ __all__ = ["CommitCommit"]
 
 class CommitCommit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
 
     # Metaproperties for Git author/committer information.
     author: NullableGitUser | None
 
     # Metaproperties for Git author/committer information.
     committer: NullableGitUser | None
-    message: str
-    comment_count: int
-    tree: CommitCommitTree
+    message: str | None
+    comment_count: int | None
+    tree: CommitCommitTree | None
     verification: Verification | None = None

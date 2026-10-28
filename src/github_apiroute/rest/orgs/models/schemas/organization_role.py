@@ -19,10 +19,10 @@ class OrganizationRole(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the role.
-    id: int
+    id: int | None
 
     # The name of the role.
-    name: str
+    name: str | None
 
     # A short description about who this role is for or what permissions it grants.
     description: str | None = None
@@ -34,13 +34,13 @@ class OrganizationRole(BaseModel):
     source: Literal["Organization", "Enterprise", "Predefined"] | None = None
 
     # A list of permissions included in this role.
-    permissions: list[str]
+    permissions: list[str] | None
 
     # A GitHub user.
     organization: NullableSimpleUser | None
 
     # The date and time the role was created.
-    created_at: str
+    created_at: str | None
 
     # The date and time the role was last updated.
-    updated_at: str
+    updated_at: str | None

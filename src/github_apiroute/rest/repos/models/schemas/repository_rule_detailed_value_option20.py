@@ -21,7 +21,7 @@ class RepositoryRuleDetailedValueOption20(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["copilot_code_review"] = Field(alias="type")
+    type_: Literal["copilot_code_review"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption20Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

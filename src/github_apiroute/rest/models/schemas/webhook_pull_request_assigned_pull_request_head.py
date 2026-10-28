@@ -19,9 +19,9 @@ __all__ = ["WebhookPullRequestAssignedPullRequestHead"]
 class WebhookPullRequestAssignedPullRequestHead(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     label: str | None
-    ref: str
+    ref: str | None
 
     # A git repository
     repo: WebhookPullRequestAssignedPullRequestHeadRepo | None
-    sha: str
+    sha: str | None
     user: WebhookPullRequestAssignedPullRequestHeadUser | None

@@ -20,12 +20,12 @@ class CheckSuite(BaseModel):
     """A suite of checks performed on the code of a given code change"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
     head_branch: str | None
 
     # The SHA of the head commit that is being checked.
-    head_sha: str
+    head_sha: str | None
 
     # The phase of the lifecycle that the check suite is currently in. Statuses of waiting,
     # requested, and pending are reserved for GitHub Actions check suites.
@@ -55,13 +55,13 @@ class CheckSuite(BaseModel):
     app: NullableIntegration | None
 
     # Minimal Repository
-    repository: MinimalRepository
+    repository: MinimalRepository | None
     created_at: str | None
     updated_at: str | None
 
     # A commit.
-    head_commit: SimpleCommit
-    latest_check_runs_count: int
-    check_runs_url: str
+    head_commit: SimpleCommit | None
+    latest_check_runs_count: int | None
+    check_runs_url: str | None
     rerequestable: bool | None = None
     runs_rerequestable: bool | None = None

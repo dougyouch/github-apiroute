@@ -17,8 +17,8 @@ class RulesetVersion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the previous version of the ruleset
-    version_id: int
+    version_id: int | None
 
     # The actor who updated the ruleset
-    actor: RulesetVersionActor
-    updated_at: str
+    actor: RulesetVersionActor | None
+    updated_at: str | None

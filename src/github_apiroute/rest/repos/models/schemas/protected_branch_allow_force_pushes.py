@@ -11,4 +11,4 @@ __all__ = ["ProtectedBranchAllowForcePushes"]
 
 class ProtectedBranchAllowForcePushes(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    enabled: bool
+    enabled: bool | None

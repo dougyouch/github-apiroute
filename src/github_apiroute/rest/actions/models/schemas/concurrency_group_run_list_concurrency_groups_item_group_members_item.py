@@ -15,10 +15,10 @@ class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the workflow run.
-    run_id: int
+    run_id: int | None
 
     # The name of the workflow run.
-    run_name: str
+    run_name: str | None
 
     # API URL for the workflow run.
     run_url: str | None
@@ -28,10 +28,10 @@ class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(BaseModel):
 
     # Queue position. 0 means the item holds the concurrency lease (in_progress), 1 or higher
     # means queued (pending).
-    position: int
+    position: int | None
 
     # API URL to get items ahead of this item in the concurrency group.
-    position_url: str
+    position_url: str | None
 
     # The ID of the job, when the item represents a job-level or reusable-workflow-level lease.
     job_id: int | None = None
@@ -45,4 +45,4 @@ class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(BaseModel):
 
     # Web URL for the job.
     job_html_url: str | None = None
-    status: Literal["in_progress", "pending"]
+    status: Literal["in_progress", "pending"] | None

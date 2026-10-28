@@ -13,5 +13,5 @@ __all__ = ["ActionsListRepoWorkflowsResponse"]
 
 class ActionsListRepoWorkflowsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    workflows: list[Workflow]
+    total_count: int | None
+    workflows: list[Workflow] | None

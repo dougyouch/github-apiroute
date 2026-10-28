@@ -15,10 +15,10 @@ class ActionsCacheUsageByRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The repository owner and name for the cache usage being shown.
-    full_name: str
+    full_name: str | None
 
     # The sum of the size in bytes of all the active cache items in the repository.
-    active_caches_size_in_bytes: int
+    active_caches_size_in_bytes: int | None
 
     # The number of active caches in the repository.
-    active_caches_count: int
+    active_caches_count: int | None

@@ -23,7 +23,7 @@ __all__ = ["WebhookIssuesFieldAdded"]
 
 class WebhookIssuesFieldAdded(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["field_added"]
+    action: Literal["field_added"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -36,10 +36,10 @@ class WebhookIssuesFieldAdded(BaseModel):
     installation: SimpleInstallation | None = None
 
     # The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-    issue: WebhooksIssue
+    issue: WebhooksIssue | None
 
     # The issue field whose value was set or updated on the issue.
-    issue_field: WebhookIssuesFieldAddedIssueField
+    issue_field: WebhookIssuesFieldAddedIssueField | None
 
     # The value that was set or updated for the issue field. When updating an existing value,
     # the previous value is available in `changes`.
@@ -55,7 +55,7 @@ class WebhookIssuesFieldAdded(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

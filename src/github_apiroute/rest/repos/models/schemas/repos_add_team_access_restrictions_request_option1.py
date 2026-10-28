@@ -13,4 +13,4 @@ class ReposAddTeamAccessRestrictionsRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The slug values for teams
-    teams: list[str]
+    teams: list[str] | None

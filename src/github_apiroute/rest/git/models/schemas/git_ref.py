@@ -15,7 +15,7 @@ class GitRef(BaseModel):
     """Git references within a repository"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    node_id: str
-    url: str
-    object: GitRefObject
+    ref: str | None
+    node_id: str | None
+    url: str | None
+    object: GitRefObject | None

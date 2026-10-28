@@ -15,10 +15,10 @@ class IssuesUpdateRequestIssueFieldValuesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the issue field to set
-    field_id: int
+    field_id: int | None
 
     # The value to set for the field. For multi-select fields, provide an array of option names.
-    value: str | float | list[str]
+    value: str | float | list[str] | None
 
     # Optional reasoning for setting this field value.
     rationale: str | None = None

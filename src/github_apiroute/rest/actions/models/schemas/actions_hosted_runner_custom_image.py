@@ -16,25 +16,25 @@ class ActionsHostedRunnerCustomImage(BaseModel):
 
     # The ID of the image. Use this ID for the `image` parameter when creating a new larger
     # runner.
-    id: int
+    id: int | None
 
     # The operating system of the image.
-    platform: str
+    platform: str | None
 
     # Total size of all the image versions in GB.
-    total_versions_size: int
+    total_versions_size: int | None
 
     # Display name for this image.
-    name: str
+    name: str | None
 
     # The image provider.
-    source: str
+    source: str | None
 
     # The number of image versions associated with the image.
-    versions_count: int
+    versions_count: int | None
 
     # The latest image version associated with the image.
-    latest_version: str
+    latest_version: str | None
 
     # The number of image versions associated with the image.
-    state: str
+    state: str | None

@@ -14,6 +14,6 @@ class ValidationErrorErrorsItem(BaseModel):
     resource: str | None = None
     field: str | None = None
     message: str | None = None
-    code: str
+    code: str | None
     index: int | None = None
     value: str | None | int | None | list[str] | None = None

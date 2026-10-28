@@ -13,7 +13,7 @@ class AgentTasksCreateTaskInRepoRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The user's prompt for the agent
-    prompt: str
+    prompt: str | None
 
     # The model to use for this task. The allowed models may change over time and depend on the
     # user's GitHub Copilot plan and organization policies. Currently supported values: `claude-

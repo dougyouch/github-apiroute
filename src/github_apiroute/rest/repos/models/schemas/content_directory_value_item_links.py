@@ -13,4 +13,4 @@ class ContentDirectoryValueItemLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     git: str | None
     html: str | None
-    self: str
+    self: str | None

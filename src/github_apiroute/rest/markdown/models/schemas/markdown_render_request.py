@@ -15,7 +15,7 @@ class MarkdownRenderRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The Markdown text to render in HTML.
-    text: str
+    text: str | None
 
     # The rendering mode.
     mode: Literal["markdown", "gfm"] | None = None

@@ -13,7 +13,7 @@ class WebhookStatusCommitCommitCommitter(BaseModel):
     """Metaproperties for Git author/committer information."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    date: str
-    email: str
-    name: str
+    date: str | None
+    email: str | None
+    name: str | None
     username: str | None = None

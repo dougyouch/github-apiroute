@@ -15,15 +15,15 @@ class CopilotSpaceCollaboratorValueOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The collaborator actor type.
-    actor_type: Literal["Team"]
+    actor_type: Literal["Team"] | None
 
     # The role granted to the collaborator
-    role: Literal["reader", "writer", "admin"]
-    id: int
-    node_id: str
-    name: str
-    slug: str
-    type_: Literal["Team"] = Field(alias="type")
+    role: Literal["reader", "writer", "admin"] | None
+    id: int | None
+    node_id: str | None
+    name: str | None
+    slug: str | None
+    type_: Literal["Team"] | None = Field(alias="type")
     description: str | None = None
     privacy: str | None = None
     notification_setting: str | None = None

@@ -19,5 +19,5 @@ class ActionsRuleRestrictActionEvents(BaseModel):
     """Choose specific GitHub events that will trigger Actions workflows."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["restrict_action_events"] = Field(alias="type")
+    type_: Literal["restrict_action_events"] | None = Field(alias="type")
     parameters: ActionsRuleRestrictActionEventsParameters | None = None

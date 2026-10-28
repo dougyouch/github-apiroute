@@ -15,7 +15,7 @@ class ActionsCreateSelfHostedRunnerGroupForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Name of the runner group.
-    name: str
+    name: str | None
 
     # Visibility of a runner group. You can select all repositories, select individual
     # repositories, or limit access to private repositories.

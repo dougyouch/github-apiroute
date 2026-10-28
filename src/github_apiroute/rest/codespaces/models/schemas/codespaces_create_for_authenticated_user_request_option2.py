@@ -19,7 +19,7 @@ class CodespacesCreateForAuthenticatedUserRequestOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Pull request number for this codespace
-    pull_request: CodespacesCreateForAuthenticatedUserRequestOption2PullRequest
+    pull_request: CodespacesCreateForAuthenticatedUserRequestOption2PullRequest | None
 
     # The requested location for a new codespace. Best efforts are made to respect this upon
     # creation. Assigned by IP if not provided.

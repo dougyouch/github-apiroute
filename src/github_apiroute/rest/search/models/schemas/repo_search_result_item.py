@@ -20,90 +20,90 @@ class RepoSearchResultItem(BaseModel):
     """Repo Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    name: str
-    full_name: str
+    id: int | None
+    node_id: str | None
+    name: str | None
+    full_name: str | None
 
     # A GitHub user.
     owner: NullableSimpleUser | None
-    private: bool
-    html_url: str
+    private: bool | None
+    html_url: str | None
     description: str | None
-    fork: bool
-    url: str
-    created_at: str
-    updated_at: str
-    pushed_at: str
+    fork: bool | None
+    url: str | None
+    created_at: str | None
+    updated_at: str | None
+    pushed_at: str | None
     homepage: str | None
-    size: int
-    stargazers_count: int
-    watchers_count: int
+    size: int | None
+    stargazers_count: int | None
+    watchers_count: int | None
     language: str | None
-    forks_count: int
-    open_issues_count: int
+    forks_count: int | None
+    open_issues_count: int | None
     master_branch: str | None = None
-    default_branch: str
-    score: float
-    forks_url: str
-    keys_url: str
-    collaborators_url: str
-    teams_url: str
-    hooks_url: str
-    issue_events_url: str
-    events_url: str
-    assignees_url: str
-    branches_url: str
-    tags_url: str
-    blobs_url: str
-    git_tags_url: str
-    git_refs_url: str
-    trees_url: str
-    statuses_url: str
-    languages_url: str
-    stargazers_url: str
-    contributors_url: str
-    subscribers_url: str
-    subscription_url: str
-    commits_url: str
-    git_commits_url: str
-    comments_url: str
-    issue_comment_url: str
-    contents_url: str
-    compare_url: str
-    merges_url: str
-    archive_url: str
-    downloads_url: str
-    issues_url: str
-    pulls_url: str
-    milestones_url: str
-    notifications_url: str
-    labels_url: str
-    releases_url: str
-    deployments_url: str
-    git_url: str
-    ssh_url: str
-    clone_url: str
-    svn_url: str
-    forks: int
-    open_issues: int
-    watchers: int
+    default_branch: str | None
+    score: float | None
+    forks_url: str | None
+    keys_url: str | None
+    collaborators_url: str | None
+    teams_url: str | None
+    hooks_url: str | None
+    issue_events_url: str | None
+    events_url: str | None
+    assignees_url: str | None
+    branches_url: str | None
+    tags_url: str | None
+    blobs_url: str | None
+    git_tags_url: str | None
+    git_refs_url: str | None
+    trees_url: str | None
+    statuses_url: str | None
+    languages_url: str | None
+    stargazers_url: str | None
+    contributors_url: str | None
+    subscribers_url: str | None
+    subscription_url: str | None
+    commits_url: str | None
+    git_commits_url: str | None
+    comments_url: str | None
+    issue_comment_url: str | None
+    contents_url: str | None
+    compare_url: str | None
+    merges_url: str | None
+    archive_url: str | None
+    downloads_url: str | None
+    issues_url: str | None
+    pulls_url: str | None
+    milestones_url: str | None
+    notifications_url: str | None
+    labels_url: str | None
+    releases_url: str | None
+    deployments_url: str | None
+    git_url: str | None
+    ssh_url: str | None
+    clone_url: str | None
+    svn_url: str | None
+    forks: int | None
+    open_issues: int | None
+    watchers: int | None
     topics: list[str] | None = None
     mirror_url: str | None
-    has_issues: bool
-    has_projects: bool
-    has_pages: bool
-    has_wiki: bool
-    has_downloads: bool
+    has_issues: bool | None
+    has_projects: bool | None
+    has_pages: bool | None
+    has_wiki: bool | None
+    has_downloads: bool | None
     has_discussions: bool | None = None
     has_pull_requests: bool | None = None
 
     # The policy controlling who can create pull requests: all or collaborators_only.
     pull_request_creation_policy: Literal["all", "collaborators_only"] | None = None
-    archived: bool
+    archived: bool | None
 
     # Returns whether or not this repository disabled.
-    disabled: bool
+    disabled: bool | None
 
     # The repository visibility: public, private, or internal.
     visibility: str | None = None

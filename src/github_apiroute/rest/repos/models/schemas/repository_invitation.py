@@ -20,10 +20,10 @@ class RepositoryInvitation(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the repository invitation.
-    id: int
+    id: int | None
 
     # Minimal Repository
-    repository: MinimalRepository
+    repository: MinimalRepository | None
 
     # A GitHub user.
     invitee: NullableSimpleUser | None
@@ -32,13 +32,13 @@ class RepositoryInvitation(BaseModel):
     inviter: NullableSimpleUser | None
 
     # The permission associated with the invitation.
-    permissions: Literal["read", "write", "admin", "triage", "triage_plus", "maintain"]
-    created_at: str
+    permissions: Literal["read", "write", "admin", "triage", "triage_plus", "maintain"] | None
+    created_at: str | None
 
     # Whether or not the invitation has expired
     expired: bool | None = None
 
     # URL for the repository invitation
-    url: str
-    html_url: str
-    node_id: str
+    url: str | None
+    html_url: str | None
+    node_id: str | None

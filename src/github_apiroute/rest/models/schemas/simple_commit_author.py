@@ -15,7 +15,7 @@ class SimpleCommitAuthor(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Name of the commit's author
-    name: str
+    name: str | None
 
     # Git email address of the commit's author
-    email: str
+    email: str | None

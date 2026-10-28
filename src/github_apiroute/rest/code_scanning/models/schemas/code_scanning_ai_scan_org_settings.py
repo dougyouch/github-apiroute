@@ -19,4 +19,4 @@ class CodeScanningAiScanOrgSettings(BaseModel):
     # Whether AI Scan on pull requests is enabled for the organization. The organization setting
     # respects enterprise policy, and repositories inherit it: when disabled, repositories
     # cannot enable AI Scan; when enabled, repositories can still opt out.
-    pr_scan: Literal["enabled", "disabled"]
+    pr_scan: Literal["enabled", "disabled"] | None

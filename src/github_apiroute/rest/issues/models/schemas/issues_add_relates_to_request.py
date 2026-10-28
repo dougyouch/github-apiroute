@@ -13,4 +13,4 @@ class IssuesAddRelatesToRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The id of the issue to mark as related to the current issue
-    issue_id: int
+    issue_id: int | None

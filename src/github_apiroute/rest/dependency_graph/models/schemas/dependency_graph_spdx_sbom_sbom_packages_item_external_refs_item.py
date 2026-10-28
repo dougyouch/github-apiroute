@@ -13,10 +13,10 @@ class DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The category of reference to an external resource this reference refers to.
-    reference_category: str = Field(alias="referenceCategory")
+    reference_category: str | None = Field(alias="referenceCategory")
 
     # A locator for the particular external resource this reference refers to.
-    reference_locator: str = Field(alias="referenceLocator")
+    reference_locator: str | None = Field(alias="referenceLocator")
 
     # The category of reference to an external resource this reference refers to.
-    reference_type: str = Field(alias="referenceType")
+    reference_type: str | None = Field(alias="referenceType")

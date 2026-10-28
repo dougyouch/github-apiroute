@@ -13,4 +13,4 @@ class ActionsSetSelectedReposForOrgVariableRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The IDs of the repositories that can access the organization variable.
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

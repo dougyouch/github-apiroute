@@ -14,10 +14,10 @@ __all__ = ["IssueCommentEvent"]
 
 class IssueCommentEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
+    action: str | None
 
     # Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-    issue: Issue
+    issue: Issue | None
 
     # Comments provide a way for people to collaborate on an issue.
-    comment: IssueComment
+    comment: IssueComment | None

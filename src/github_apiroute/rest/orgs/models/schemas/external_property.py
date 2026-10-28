@@ -15,4 +15,4 @@ class ExternalProperty(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the external property
-    property_name: str
+    property_name: str | None

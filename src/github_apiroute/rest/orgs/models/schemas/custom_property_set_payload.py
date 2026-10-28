@@ -17,7 +17,7 @@ class CustomPropertySetPayload(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The type of the value for the property
-    value_type: Literal["string", "single_select", "multi_select", "true_false", "url"]
+    value_type: Literal["string", "single_select", "multi_select", "true_false", "url"] | None
 
     # Whether the property is required.
     required: bool | None = None

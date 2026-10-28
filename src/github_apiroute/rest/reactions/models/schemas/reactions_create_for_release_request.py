@@ -16,4 +16,4 @@ class ReactionsCreateForReleaseRequest(BaseModel):
 
     # The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to
     # add to the release.
-    content: Literal["+1", "laugh", "heart", "hooray", "rocket", "eyes"]
+    content: Literal["+1", "laugh", "heart", "hooray", "rocket", "eyes"] | None

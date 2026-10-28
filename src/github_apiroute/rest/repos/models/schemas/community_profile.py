@@ -15,9 +15,9 @@ class CommunityProfile(BaseModel):
     """Community Profile"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    health_percentage: int
+    health_percentage: int | None
     description: str | None
     documentation: str | None
-    files: CommunityProfileFiles
+    files: CommunityProfileFiles | None
     updated_at: str | None
     content_reports_enabled: bool | None = None

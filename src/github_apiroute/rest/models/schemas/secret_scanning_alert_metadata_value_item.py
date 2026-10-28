@@ -13,7 +13,7 @@ class SecretScanningAlertMetadataValueItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The metadata key.
-    key: str
+    key: str | None
 
     # The metadata value.
-    value: str
+    value: str | None

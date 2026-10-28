@@ -20,8 +20,8 @@ class RepositoryRuleDetailedValueOption9Parameters(BaseModel):
     do_not_enforce_on_create: bool | None = None
 
     # Status checks that are required.
-    required_status_checks: list[RepositoryRuleParamsStatusCheckConfiguration]
+    required_status_checks: list[RepositoryRuleParamsStatusCheckConfiguration] | None
 
     # Whether pull requests targeting a matching branch must be tested with the latest code.
     # This setting will not take effect unless at least one status check is enabled.
-    strict_required_status_checks_policy: bool
+    strict_required_status_checks_policy: bool | None

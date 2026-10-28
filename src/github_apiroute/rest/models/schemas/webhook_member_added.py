@@ -21,7 +21,7 @@ __all__ = ["WebhookMemberAdded"]
 
 class WebhookMemberAdded(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["added"]
+    action: Literal["added"] | None
     changes: WebhookMemberAddedChanges | None = None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
@@ -42,7 +42,7 @@ class WebhookMemberAdded(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

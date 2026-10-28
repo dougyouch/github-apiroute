@@ -11,5 +11,5 @@ __all__ = ["HovercardContextsItem"]
 
 class HovercardContextsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    message: str
-    octicon: str
+    message: str | None
+    octicon: str | None

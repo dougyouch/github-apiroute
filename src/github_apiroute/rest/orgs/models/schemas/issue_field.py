@@ -21,19 +21,19 @@ class IssueField(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the issue field.
-    id: int
+    id: int | None
 
     # The node identifier of the issue field.
-    node_id: str
+    node_id: str | None
 
     # The name of the issue field.
-    name: str
+    name: str | None
 
     # The description of the issue field.
     description: str | None = None
 
     # The data type of the issue field.
-    data_type: Literal["text", "date", "single_select", "multi_select", "number"]
+    data_type: Literal["text", "date", "single_select", "multi_select", "number"] | None
 
     # The visibility of the issue field. Can be `organization_members_only` (visible only within
     # the organization) or `all` (visible to all users who can see issues).

@@ -14,7 +14,7 @@ __all__ = ["WebhookInstallationTargetRenamedAccount"]
 class WebhookInstallationTargetRenamedAccount(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     archived_at: str | None = None
-    avatar_url: str
+    avatar_url: str | None
     created_at: str | None = None
     description: Any = None
     events_url: str | None = None
@@ -27,14 +27,14 @@ class WebhookInstallationTargetRenamedAccount(BaseModel):
     has_organization_projects: bool | None = None
     has_repository_projects: bool | None = None
     hooks_url: str | None = None
-    html_url: str
-    id: int
+    html_url: str | None
+    id: int | None
     is_verified: bool | None = None
     issues_url: str | None = None
     login: str | None = None
     members_url: str | None = None
     name: str | None = None
-    node_id: str
+    node_id: str | None
     organizations_url: str | None = None
     public_gists: int | None = None
     public_members_url: str | None = None

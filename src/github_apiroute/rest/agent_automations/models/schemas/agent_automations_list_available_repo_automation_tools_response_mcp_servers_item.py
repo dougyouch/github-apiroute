@@ -21,12 +21,14 @@ class AgentAutomationsListAvailableRepoAutomationToolsResponseMcpServersItem(Bas
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The server name from the repository MCP configuration.
-    name: str
+    name: str | None
 
     # Explicitly configured tools with server-qualified IDs, in configuration order. Empty when
     # the server's allowlist is ["*"].
-    tools: list[AgentAutomationsListAvailableRepoAutomationToolsResponseMcpServersItemToolsItem]
+    tools: (
+        list[AgentAutomationsListAvailableRepoAutomationToolsResponseMcpServersItemToolsItem] | None
+    )
 
     # Whether the effective repository configuration permits selecting all tools on this server
     # using ["*"], including future tools. Mutually exclusive with a non-empty tools list.
-    supports_wildcard: bool
+    supports_wildcard: bool | None

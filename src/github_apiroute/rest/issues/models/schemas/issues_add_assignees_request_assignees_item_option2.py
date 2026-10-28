@@ -15,7 +15,7 @@ class IssuesAddAssigneesRequestAssigneesItemOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The login of the user to assign.
-    login: str
+    login: str | None
 
     # Optional reasoning for adding this assignee.
     rationale: str | None = None

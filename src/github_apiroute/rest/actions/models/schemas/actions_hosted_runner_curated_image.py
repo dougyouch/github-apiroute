@@ -18,16 +18,16 @@ class ActionsHostedRunnerCuratedImage(BaseModel):
 
     # The ID of the image. Use this ID for the `image` parameter when creating a new larger
     # runner.
-    id: str
+    id: str | None
 
     # The operating system of the image.
-    platform: str
+    platform: str | None
 
     # Image size in GB.
-    size_gb: int
+    size_gb: int | None
 
     # Display name for this image.
-    display_name: str
+    display_name: str | None
 
     # The image provider.
-    source: Literal["github", "partner", "custom"]
+    source: Literal["github", "partner", "custom"] | None

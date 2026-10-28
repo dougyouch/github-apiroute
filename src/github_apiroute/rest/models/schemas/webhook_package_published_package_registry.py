@@ -11,8 +11,8 @@ __all__ = ["WebhookPackagePublishedPackageRegistry"]
 
 class WebhookPackagePublishedPackageRegistry(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    about_url: str
-    name: str
-    type_: str = Field(alias="type")
-    url: str
-    vendor: str
+    about_url: str | None
+    name: str | None
+    type_: str | None = Field(alias="type")
+    url: str | None
+    vendor: str | None

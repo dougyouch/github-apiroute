@@ -15,13 +15,13 @@ class PullRequestMergeAsyncResultDetailsOption1(BaseModel):
     """When the asynchronous merge request is pending"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    message: str
-    uuid: str
-    merge_method: Literal["default", "merge", "squash", "rebase"]
-    merge_action: Literal["default", "merge_queue", "direct_merge"]
+    message: str | None
+    uuid: str | None
+    merge_method: Literal["default", "merge", "squash", "rebase"] | None
+    merge_action: Literal["default", "merge_queue", "direct_merge"] | None
 
     # SHA that the pull request head must match for the enqueued merge to proceed.
-    expected_head_sha: str
+    expected_head_sha: str | None
 
     # Whether the asynchronous merge request will attempt to bypass repository rules that the
     # authenticated actor is permitted to bypass.

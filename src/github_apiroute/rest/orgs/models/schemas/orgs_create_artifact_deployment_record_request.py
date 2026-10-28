@@ -15,19 +15,19 @@ class OrgsCreateArtifactDeploymentRecordRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the artifact.
-    name: str
+    name: str | None
 
     # The hex encoded digest of the artifact.
-    digest: str
+    digest: str | None
 
     # The artifact version.
     version: str | None = None
 
     # The status of the artifact. Can be either deployed or decommissioned.
-    status: Literal["deployed", "decommissioned"]
+    status: Literal["deployed", "decommissioned"] | None
 
     # The stage of the deployment.
-    logical_environment: str
+    logical_environment: str | None
 
     # The physical region of the deployment.
     physical_environment: str | None = None
@@ -38,7 +38,7 @@ class OrgsCreateArtifactDeploymentRecordRequest(BaseModel):
     # The unique identifier for the deployment represented by the new record. To accommodate
     # differing containers and namespaces within a cluster, the following format is recommended:
     # {namespaceName}-{deploymentName}-{containerName}.
-    deployment_name: str
+    deployment_name: str | None
 
     # The tags associated with the deployment.
     tags: dict[str, str] | None = None

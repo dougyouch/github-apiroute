@@ -25,36 +25,39 @@ class WebhooksIssueComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # Contents of the issue comment
-    body: str
-    created_at: str
-    html_url: str
+    body: str | None
+    created_at: str | None
+    html_url: str | None
 
     # Unique identifier of the issue comment
-    id: int
-    issue_url: str
-    node_id: str
+    id: int | None
+    issue_url: str | None
+    node_id: str | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come
     # with granular permissions and built-in webhooks. GitHub apps are first class actors within
     performed_via_github_app: Integration | None
-    reactions: WebhooksIssueCommentReactions
-    updated_at: str
+    reactions: WebhooksIssueCommentReactions | None
+    updated_at: str | None
 
     # URL for the issue comment
-    url: str
+    url: str | None
     user: WebhooksIssueCommentUser | None
 
     # Context around who pinned an issue comment and when it was pinned.

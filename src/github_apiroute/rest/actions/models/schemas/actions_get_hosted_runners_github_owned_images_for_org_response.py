@@ -13,5 +13,5 @@ __all__ = ["ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse"]
 
 class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    images: list[ActionsHostedRunnerCuratedImage]
+    total_count: int | None
+    images: list[ActionsHostedRunnerCuratedImage] | None

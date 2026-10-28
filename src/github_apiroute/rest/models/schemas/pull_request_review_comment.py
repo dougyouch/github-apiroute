@@ -22,22 +22,22 @@ class PullRequestReviewComment(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # URL for the pull request review comment
-    url: str
+    url: str | None
 
     # The ID of the pull request review to which the comment belongs.
     pull_request_review_id: int | None
 
     # The ID of the pull request review comment.
-    id: int
+    id: int | None
 
     # The node ID of the pull request review comment.
-    node_id: str
+    node_id: str | None
 
     # The diff of the line that the comment refers to.
-    diff_hunk: str
+    diff_hunk: str | None
 
     # The relative path of the file to which the comment applies.
-    path: str
+    path: str | None
 
     # The line index in the diff to which the comment applies. This field is closing down; use
     # `line` instead.
@@ -48,10 +48,10 @@ class PullRequestReviewComment(BaseModel):
     original_position: int | None = None
 
     # The SHA of the commit to which the comment applies.
-    commit_id: str
+    commit_id: str | None
 
     # The SHA of the original commit to which the comment applies.
-    original_commit_id: str
+    original_commit_id: str | None
 
     # The comment ID to reply to.
     in_reply_to_id: int | None = None
@@ -60,19 +60,19 @@ class PullRequestReviewComment(BaseModel):
     user: NullableSimpleUser | None
 
     # The text of the comment.
-    body: str
-    created_at: str
-    updated_at: str
+    body: str | None
+    created_at: str | None
+    updated_at: str | None
 
     # HTML URL for the pull request review comment.
-    html_url: str
+    html_url: str | None
 
     # URL for the pull request that the review comment belongs to.
-    pull_request_url: str
+    pull_request_url: str | None
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
-    links: PullRequestReviewCommentLinks = Field(alias="_links")
+    author_association: AuthorAssociation | None
+    links: PullRequestReviewCommentLinks | None = Field(alias="_links")
 
     # The first line of the range for a multi-line comment.
     start_line: int | None = None

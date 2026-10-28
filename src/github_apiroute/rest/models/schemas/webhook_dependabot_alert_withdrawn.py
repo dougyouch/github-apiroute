@@ -20,11 +20,11 @@ __all__ = ["WebhookDependabotAlertWithdrawn"]
 
 class WebhookDependabotAlertWithdrawn(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["withdrawn"]
+    action: Literal["withdrawn"] | None
 
     # Identifiers for a withdrawn Dependabot alert, captured before deletion so that consumers
     # can reconcile external records. This is not a full alert representation.
-    alert: DependabotAlertWithdrawnWebhook
+    alert: DependabotAlertWithdrawnWebhook | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -43,7 +43,7 @@ class WebhookDependabotAlertWithdrawn(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -27,30 +27,32 @@ __all__ = ["WebhookRegistryPackageUpdatedRegistryPackagePackageVersion"]
 
 class WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    author: WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor
-    body: str
-    body_html: str
-    created_at: str
-    description: str
+    author: WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor | None
+    body: str | None
+    body_html: str | None
+    created_at: str | None
+    description: str | None
     docker_metadata: (
         list[WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem | None]
         | None
     ) = None
     draft: bool | None = None
-    html_url: str
-    id: int
-    installation_command: str
+    html_url: str | None
+    id: int | None
+    installation_command: str | None
     manifest: str | None = None
-    metadata: list[dict[str, Any]]
-    name: str
-    package_files: list[WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFilesItem]
-    package_url: str
+    metadata: list[dict[str, Any]] | None
+    name: str | None
+    package_files: (
+        list[WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFilesItem] | None
+    )
+    package_url: str | None
     prerelease: bool | None = None
     release: WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease | None = None
     rubygems_metadata: list[WebhookRubygemsMetadata] | None = None
-    summary: str
+    summary: str | None
     tag_name: str | None = None
-    target_commitish: str
-    target_oid: str
-    updated_at: str
-    version: str
+    target_commitish: str | None
+    target_oid: str | None
+    updated_at: str | None
+    version: str | None

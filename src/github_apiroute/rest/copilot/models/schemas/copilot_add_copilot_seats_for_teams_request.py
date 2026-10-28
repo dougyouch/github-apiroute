@@ -13,4 +13,4 @@ class CopilotAddCopilotSeatsForTeamsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of team names within the organization to which to grant access to GitHub Copilot.
-    selected_teams: list[str]
+    selected_teams: list[str] | None

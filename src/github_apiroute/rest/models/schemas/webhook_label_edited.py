@@ -21,7 +21,7 @@ __all__ = ["WebhookLabelEdited"]
 
 class WebhookLabelEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
+    action: Literal["edited"] | None
 
     # The changes to the label if the action was `edited`.
     changes: WebhookLabelEditedChanges | None = None
@@ -35,7 +35,7 @@ class WebhookLabelEdited(BaseModel):
     # event is configured for and sent to a GitHub App. For more information, see "[Using
     # webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-
     installation: SimpleInstallation | None = None
-    label: WebhooksLabel
+    label: WebhooksLabel | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -44,7 +44,7 @@ class WebhookLabelEdited(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

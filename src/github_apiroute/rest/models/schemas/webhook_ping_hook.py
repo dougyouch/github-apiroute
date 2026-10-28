@@ -20,27 +20,27 @@ class WebhookPingHook(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Determines whether the hook is actually triggered for the events it subscribes to.
-    active: bool
+    active: bool | None
 
     # Only included for GitHub Apps. When you register a new GitHub App, GitHub sends a ping
     # event to the webhook URL you specified during registration. The GitHub App ID sent in this
     # field is required for authenticating an app.
     app_id: int | None = None
-    config: WebhookPingHookConfig
-    created_at: str
+    config: WebhookPingHookConfig | None
+    created_at: str | None
     deliveries_url: str | None = None
 
     # Determines what events the hook is triggered for. Default: ['push'].
-    events: list[str]
+    events: list[str] | None
 
     # Unique identifier of the webhook.
-    id: int
+    id: int | None
     last_response: HookResponse | None = None
 
     # The type of webhook. The only valid value is 'web'.
-    name: Literal["web"]
+    name: Literal["web"] | None
     ping_url: str | None = None
     test_url: str | None = None
-    type_: str = Field(alias="type")
-    updated_at: str
+    type_: str | None = Field(alias="type")
+    updated_at: str | None
     url: str | None = None

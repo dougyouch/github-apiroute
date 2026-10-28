@@ -17,27 +17,27 @@ class NullableMilestone(BaseModel):
     """A collection of related issues and pull requests."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    html_url: str
-    labels_url: str
-    id: int
-    node_id: str
+    url: str | None
+    html_url: str | None
+    labels_url: str | None
+    id: int | None
+    node_id: str | None
 
     # The number of the milestone.
-    number: int
+    number: int | None
 
     # The state of the milestone.
-    state: Literal["open", "closed"]
+    state: Literal["open", "closed"] | None
 
     # The title of the milestone.
-    title: str
+    title: str | None
     description: str | None
 
     # A GitHub user.
     creator: NullableSimpleUser | None
-    open_issues: int
-    closed_issues: int
-    created_at: str
-    updated_at: str
+    open_issues: int | None
+    closed_issues: int | None
+    created_at: str | None
+    updated_at: str | None
     closed_at: str | None
     due_on: str | None

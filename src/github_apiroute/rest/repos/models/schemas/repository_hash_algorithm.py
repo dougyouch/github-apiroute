@@ -17,4 +17,4 @@ class RepositoryHashAlgorithm(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The Git hash algorithm used by this repository.
-    hash_algorithm: Literal["sha1", "sha256"]
+    hash_algorithm: Literal["sha1", "sha256"] | None

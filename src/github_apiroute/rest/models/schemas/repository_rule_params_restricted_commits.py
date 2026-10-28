@@ -15,7 +15,7 @@ class RepositoryRuleParamsRestrictedCommits(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Full or abbreviated commit hash to reject
-    oid: str
+    oid: str | None
 
     # Reason for restriction
     reason: str | None = None

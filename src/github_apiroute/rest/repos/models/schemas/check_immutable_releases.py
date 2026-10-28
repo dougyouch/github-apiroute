@@ -15,7 +15,7 @@ class CheckImmutableReleases(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether immutable releases are enabled for the repository.
-    enabled: bool
+    enabled: bool | None
 
     # Whether immutable releases are enforced by the repository owner.
-    enforced_by_owner: bool
+    enforced_by_owner: bool | None

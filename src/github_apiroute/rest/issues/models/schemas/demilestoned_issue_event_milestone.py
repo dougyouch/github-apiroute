@@ -11,4 +11,4 @@ __all__ = ["DemilestonedIssueEventMilestone"]
 
 class DemilestonedIssueEventMilestone(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    title: str
+    title: str | None

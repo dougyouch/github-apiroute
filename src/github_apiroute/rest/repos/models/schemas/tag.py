@@ -15,8 +15,8 @@ class Tag(BaseModel):
     """Tag"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    commit: TagCommit
-    zipball_url: str
-    tarball_url: str
-    node_id: str
+    name: str | None
+    commit: TagCommit | None
+    zipball_url: str | None
+    tarball_url: str | None
+    node_id: str | None

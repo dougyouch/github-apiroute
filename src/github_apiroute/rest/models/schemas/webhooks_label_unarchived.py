@@ -15,8 +15,8 @@ class WebhooksLabelUnarchived(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # 6-character hex code, without the leading #, identifying the color
-    color: str
-    default: bool
+    color: str | None
+    default: bool | None
     description: str | None
 
     # Timestamp indicating when the label was archived. This is `null` after the label is
@@ -25,11 +25,11 @@ class WebhooksLabelUnarchived(BaseModel):
 
     # The user who archived the label. This is `null` after the label is unarchived.
     archived_by: SimpleUser | None
-    id: int
+    id: int | None
 
     # The name of the label.
-    name: str
-    node_id: str
+    name: str | None
+    node_id: str | None
 
     # URL for the label
-    url: str
+    url: str | None

@@ -15,25 +15,25 @@ class PullRequestWebhookLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Hypermedia Link
-    comments: Link
+    comments: Link | None
 
     # Hypermedia Link
-    commits: Link
+    commits: Link | None
 
     # Hypermedia Link
-    statuses: Link
+    statuses: Link | None
 
     # Hypermedia Link
-    html: Link
+    html: Link | None
 
     # Hypermedia Link
-    issue: Link
+    issue: Link | None
 
     # Hypermedia Link
-    review_comments: Link
+    review_comments: Link | None
 
     # Hypermedia Link
-    review_comment: Link
+    review_comment: Link | None
 
     # Hypermedia Link
-    self: Link
+    self: Link | None

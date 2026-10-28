@@ -37,7 +37,9 @@ They're kept current by the weekly Build workflow, and released to PyPI as `gith
   - `feat:` is a minor release
   - `fix:` is a patch
   - `chore:`, `docs:`, `test:` and `ci:` produce no release
-- **Before committing:** `uv run ruff check .`, `uv run ruff format --check .` and `uv run pytest`.
+- **Before committing:** `uv run ruff check .`, `uv run ruff format --check .` and `uv run pytest`. After regenerating, also run the live tests: `GITHUB_TOKEN="$(gh auth token)" uv run pytest tests/live`.
+- **Live tests only read.** Never add a test that creates, changes, stars or deletes anything on GitHub; mutations are tested with `MockTransport`.
+- **`nullable_fields: true` stays on the REST API.** GitHub's REST description declares some fields never null that the API sends as null; the GraphQL schema is accurate and doesn't need it.
 
 ## Common tasks
 

@@ -17,17 +17,17 @@ __all__ = ["DependencyGraphDiffValueItem"]
 
 class DependencyGraphDiffValueItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    change_type: Literal["added", "removed"]
-    manifest: str
-    ecosystem: str
-    name: str
-    version: str
+    change_type: Literal["added", "removed"] | None
+    manifest: str | None
+    ecosystem: str | None
+    name: str | None
+    version: str | None
     package_url: str | None
     license: str | None
     source_repository_url: str | None
-    vulnerabilities: list[DependencyGraphDiffValueItemVulnerabilitiesItem]
+    vulnerabilities: list[DependencyGraphDiffValueItemVulnerabilitiesItem] | None
 
     # Where the dependency is utilized. `development` means that the dependency is only utilized
     # in the development environment. `runtime` means that the dependency is utilized at runtime
     # and in the development environment.
-    scope: Literal["unknown", "runtime", "development"]
+    scope: Literal["unknown", "runtime", "development"] | None

@@ -13,11 +13,11 @@ class Key(BaseModel):
     """Key"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    key: str
-    id: int
-    url: str
-    title: str
-    created_at: str
-    verified: bool
-    read_only: bool
+    key: str | None
+    id: int | None
+    url: str | None
+    title: str | None
+    created_at: str | None
+    verified: bool | None
+    read_only: bool | None
     last_used: str | None = None

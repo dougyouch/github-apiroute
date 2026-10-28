@@ -11,7 +11,7 @@ __all__ = ["PublicUserPlan"]
 
 class PublicUserPlan(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    collaborators: int
-    name: str
-    space: int
-    private_repos: int
+    collaborators: int | None
+    name: str | None
+    space: int | None
+    private_repos: int | None

@@ -16,7 +16,10 @@ class ReposCreateDeploymentStatusRequest(BaseModel):
 
     # The state of the status. When you set a transient deployment to `inactive`, the deployment
     # will be shown as `destroyed` in GitHub.
-    state: Literal["error", "failure", "inactive", "in_progress", "queued", "pending", "success"]
+    state: (
+        Literal["error", "failure", "inactive", "in_progress", "queued", "pending", "success"]
+        | None
+    )
 
     # The target URL to associate with this status. This URL should contain output to keep the
     # user updated while the task is running or serve as historical information for what

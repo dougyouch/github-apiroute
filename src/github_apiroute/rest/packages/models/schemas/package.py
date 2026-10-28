@@ -20,22 +20,22 @@ class Package(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the package.
-    id: int
+    id: int | None
 
     # The name of the package.
-    name: str
-    package_type: Literal["npm", "maven", "rubygems", "docker", "nuget", "container"]
-    url: str
-    html_url: str
+    name: str | None
+    package_type: Literal["npm", "maven", "rubygems", "docker", "nuget", "container"] | None
+    url: str | None
+    html_url: str | None
 
     # The number of versions of the package.
-    version_count: int
-    visibility: Literal["private", "public"]
+    version_count: int | None
+    visibility: Literal["private", "public"] | None
 
     # A GitHub user.
     owner: NullableSimpleUser | None = None
 
     # Minimal Repository
     repository: NullableMinimalRepository | None = None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None

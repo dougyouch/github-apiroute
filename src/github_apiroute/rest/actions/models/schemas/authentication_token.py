@@ -19,10 +19,10 @@ class AuthenticationToken(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The token used for authentication
-    token: str
+    token: str | None
 
     # The time this token expires
-    expires_at: str
+    expires_at: str | None
     permissions: dict[str, Any] | None = None
 
     # The repositories this token has access to

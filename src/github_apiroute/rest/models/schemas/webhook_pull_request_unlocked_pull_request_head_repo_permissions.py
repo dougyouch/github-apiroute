@@ -11,8 +11,8 @@ __all__ = ["WebhookPullRequestUnlockedPullRequestHeadRepoPermissions"]
 
 class WebhookPullRequestUnlockedPullRequestHeadRepoPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    admin: bool
+    admin: bool | None
     maintain: bool | None = None
-    pull: bool
-    push: bool
+    pull: bool | None
+    push: bool | None
     triage: bool | None = None

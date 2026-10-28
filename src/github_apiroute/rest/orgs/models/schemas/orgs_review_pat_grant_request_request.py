@@ -15,7 +15,7 @@ class OrgsReviewPatGrantRequestRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Action to apply to the request.
-    action: Literal["approve", "deny"]
+    action: Literal["approve", "deny"] | None
 
     # Reason for approving or denying the request. Max 1024 characters.
     reason: str | None = None

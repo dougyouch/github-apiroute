@@ -13,4 +13,4 @@ class IssuesCreateCommentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The contents of the comment.
-    body: str
+    body: str | None

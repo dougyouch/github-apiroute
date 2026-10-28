@@ -20,4 +20,4 @@ class PullsSubmitReviewRequest(BaseModel):
     # The review action you want to perform. The review actions include: `APPROVE`,
     # `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422
     # (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you
-    event: Literal["APPROVE", "REQUEST_CHANGES", "COMMENT"]
+    event: Literal["APPROVE", "REQUEST_CHANGES", "COMMENT"] | None

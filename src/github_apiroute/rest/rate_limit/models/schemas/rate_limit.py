@@ -11,7 +11,7 @@ __all__ = ["RateLimit"]
 
 class RateLimit(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    limit: int
-    remaining: int
-    reset: int
-    used: int
+    limit: int | None
+    remaining: int | None
+    reset: int | None
+    used: int | None

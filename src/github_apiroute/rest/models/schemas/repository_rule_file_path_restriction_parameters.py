@@ -16,4 +16,4 @@ class RepositoryRuleFilePathRestrictionParameters(BaseModel):
     ignored_file_paths: list[str] | None = None
 
     # The file paths that are restricted from being pushed to the commit graph.
-    restricted_file_paths: list[str]
+    restricted_file_paths: list[str] | None

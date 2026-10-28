@@ -13,7 +13,7 @@ class Email(BaseModel):
     """Email"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    email: str
-    primary: bool
-    verified: bool
+    email: str | None
+    primary: bool | None
+    verified: bool | None
     visibility: str | None

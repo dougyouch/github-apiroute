@@ -16,9 +16,12 @@ class CodespacesSetCodespacesAccessRequest(BaseModel):
 
     # Which users can access codespaces in the organization. `disabled` means that no users can
     # access codespaces in the organization.
-    visibility: Literal[
-        "disabled", "selected_members", "all_members", "all_members_and_outside_collaborators"
-    ]
+    visibility: (
+        Literal[
+            "disabled", "selected_members", "all_members", "all_members_and_outside_collaborators"
+        ]
+        | None
+    )
 
     # The usernames of the organization members who should have access to codespaces in the
     # organization. Required when `visibility` is `selected_members`. The provided list of

@@ -20,7 +20,7 @@ __all__ = ["WebhookBranchProtectionRuleCreated"]
 
 class WebhookBranchProtectionRuleCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -39,12 +39,12 @@ class WebhookBranchProtectionRuleCreated(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # The branch protection rule. Includes a `name` and all the [branch protection
     # settings](https://docs.github.com/github/administering-a-repository/defining-the-
     # mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings)
-    rule: WebhooksRule
+    rule: WebhooksRule | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

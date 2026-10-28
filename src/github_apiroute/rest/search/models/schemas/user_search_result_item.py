@@ -15,24 +15,24 @@ class UserSearchResultItem(BaseModel):
     """User Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    login: str
-    id: int
-    node_id: str
-    avatar_url: str
+    login: str | None
+    id: int | None
+    node_id: str | None
+    avatar_url: str | None
     gravatar_id: str | None
-    url: str
-    html_url: str
-    followers_url: str
-    subscriptions_url: str
-    organizations_url: str
-    repos_url: str
-    received_events_url: str
-    type_: str = Field(alias="type")
-    score: float
-    following_url: str
-    gists_url: str
-    starred_url: str
-    events_url: str
+    url: str | None
+    html_url: str | None
+    followers_url: str | None
+    subscriptions_url: str | None
+    organizations_url: str | None
+    repos_url: str | None
+    received_events_url: str | None
+    type_: str | None = Field(alias="type")
+    score: float | None
+    following_url: str | None
+    gists_url: str | None
+    starred_url: str | None
+    events_url: str | None
     public_repos: int | None = None
     public_gists: int | None = None
     followers: int | None = None
@@ -43,7 +43,7 @@ class UserSearchResultItem(BaseModel):
     bio: str | None = None
     email: str | None = None
     location: str | None = None
-    site_admin: bool
+    site_admin: bool | None
     hireable: bool | None = None
     text_matches: SearchResultTextMatches | None = None
     blog: str | None = None

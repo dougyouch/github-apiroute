@@ -15,10 +15,10 @@ class TeamMembership(BaseModel):
     """Team Membership"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
 
     # The role of the user in the team.
-    role: Literal["member", "maintainer"]
+    role: Literal["member", "maintainer"] | None
 
     # The state of the user's membership in the team.
-    state: Literal["active", "pending"]
+    state: Literal["active", "pending"] | None

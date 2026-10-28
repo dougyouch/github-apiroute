@@ -15,5 +15,5 @@ class WorkflowRunUsage(BaseModel):
     """Workflow Run Usage"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    billable: WorkflowRunUsageBillable
+    billable: WorkflowRunUsageBillable | None
     run_duration_ms: int | None = None

@@ -18,7 +18,7 @@ class IssuesCreateIssueArtifactRequest(BaseModel):
     type_: Literal["generic", "link", "plan", "embedded_html"] | None = Field(None, alias="type")
 
     # The human-readable name of the artifact.
-    name: str
+    name: str | None
 
     # The artifact content. For `embedded_html` artifacts, provide the HTML source.
-    body: str
+    body: str | None

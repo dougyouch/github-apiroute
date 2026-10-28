@@ -11,8 +11,8 @@ __all__ = ["WebhookPullRequestReviewThreadUnresolvedPullRequestHeadRepoLicense"]
 
 class WebhookPullRequestReviewThreadUnresolvedPullRequestHeadRepoLicense(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    key: str
-    name: str
-    node_id: str
-    spdx_id: str
+    key: str | None
+    name: str | None
+    node_id: str | None
+    spdx_id: str | None
     url: str | None

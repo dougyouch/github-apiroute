@@ -11,22 +11,22 @@ __all__ = ["RunnerGroupsOrg"]
 
 class RunnerGroupsOrg(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: float
-    name: str
-    visibility: str
-    default: bool
+    id: float | None
+    name: str | None
+    visibility: str | None
+    default: bool | None
 
     # Link to the selected repositories resource for this runner group. Not present unless
     # visibility was set to `selected`
     selected_repositories_url: str | None = None
-    runners_url: str
+    runners_url: str | None
     hosted_runners_url: str | None = None
 
     # The identifier of a hosted compute network configuration.
     network_configuration_id: str | None = None
-    inherited: bool
+    inherited: bool | None
     inherited_allows_public_repositories: bool | None = None
-    allows_public_repositories: bool
+    allows_public_repositories: bool | None
 
     # If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be
     # modified.

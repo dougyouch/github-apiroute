@@ -13,6 +13,6 @@ class ReferencedWorkflow(BaseModel):
     """A workflow referenced/reused by the initial caller workflow"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    path: str
-    sha: str
+    path: str | None
+    sha: str | None
     ref: str | None = None

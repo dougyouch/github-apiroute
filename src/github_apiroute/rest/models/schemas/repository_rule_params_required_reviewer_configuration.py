@@ -20,11 +20,11 @@ class RepositoryRuleParamsRequiredReviewerConfiguration(BaseModel):
 
     # Array of file patterns. Pull requests which change matching files must be approved by the
     # specified team. File patterns use fnmatch syntax.
-    file_patterns: list[str]
+    file_patterns: list[str] | None
 
     # Minimum number of approvals required from the specified team. If set to zero, the team
     # will be added to the pull request but approval is optional.
-    minimum_approvals: int
+    minimum_approvals: int | None
 
     # A required reviewing team
-    reviewer: RepositoryRuleParamsReviewer
+    reviewer: RepositoryRuleParamsReviewer | None

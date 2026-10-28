@@ -18,14 +18,16 @@ __all__ = ["BillingAiCreditUsageReportUser"]
 
 class BillingAiCreditUsageReportUser(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    time_period: BillingAiCreditUsageReportUserTimePeriod = Field(alias="timePeriod")
+    time_period: BillingAiCreditUsageReportUserTimePeriod | None = Field(alias="timePeriod")
 
     # The unique identifier of the user.
-    user: str
+    user: str | None
 
     # The product for the usage report.
     product: str | None = None
 
     # The model for the usage report.
     model: str | None = None
-    usage_items: list[BillingAiCreditUsageReportUserUsageItemsItem] = Field(alias="usageItems")
+    usage_items: list[BillingAiCreditUsageReportUserUsageItemsItem] | None = Field(
+        alias="usageItems"
+    )

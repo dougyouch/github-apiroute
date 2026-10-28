@@ -16,18 +16,18 @@ class LicenseContent(BaseModel):
     """License Content"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    path: str
-    sha: str
-    size: int
-    url: str
+    name: str | None
+    path: str | None
+    sha: str | None
+    size: int | None
+    url: str | None
     html_url: str | None
     git_url: str | None
     download_url: str | None
-    type_: str = Field(alias="type")
-    content: str
-    encoding: str
-    links: LicenseContentLinks = Field(alias="_links")
+    type_: str | None = Field(alias="type")
+    content: str | None
+    encoding: str | None
+    links: LicenseContentLinks | None = Field(alias="_links")
 
     # License Simple
     license: NullableLicenseSimple | None

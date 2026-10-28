@@ -24,44 +24,44 @@ class CodeScanningAnalysis(BaseModel):
 
     # The Git reference, formatted as `refs/pull//merge`, `refs/pull//head`, `refs/heads/` or
     # simply ``.
-    ref: CodeScanningRef
+    ref: CodeScanningRef | None
 
     # The SHA of the commit to which the analysis you are uploading relates.
-    commit_sha: CodeScanningAnalysisCommitSha
+    commit_sha: CodeScanningAnalysisCommitSha | None
 
     # Identifies the configuration under which the analysis was executed. For example, in GitHub
     # Actions this includes the workflow filename and job name.
-    analysis_key: CodeScanningAnalysisAnalysisKey
+    analysis_key: CodeScanningAnalysisAnalysisKey | None
 
     # Identifies the variable values associated with the environment in which this analysis was
     # performed.
-    environment: CodeScanningAnalysisEnvironment
+    environment: CodeScanningAnalysisEnvironment | None
 
     # Identifies the configuration under which the analysis was executed. Used to distinguish
     # between multiple analyses for the same tool and commit, but performed on different
     # languages or different parts of the code.
     category: CodeScanningAnalysisCategory | None = None
-    error: str
+    error: str | None
 
     # The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    created_at: CodeScanningAnalysisCreatedAt
+    created_at: CodeScanningAnalysisCreatedAt | None
 
     # The total number of results in the analysis.
-    results_count: int
+    results_count: int | None
 
     # The total number of rules used in the analysis.
-    rules_count: int
+    rules_count: int | None
 
     # Unique identifier for this analysis.
-    id: int
+    id: int | None
 
     # The REST API URL of the analysis resource.
-    url: CodeScanningAnalysisUrl
+    url: CodeScanningAnalysisUrl | None
 
     # An identifier for the upload.
-    sarif_id: CodeScanningAnalysisSarifId
-    tool: CodeScanningAnalysisTool
-    deletable: bool
+    sarif_id: CodeScanningAnalysisSarifId | None
+    tool: CodeScanningAnalysisTool | None
+    deletable: bool | None
 
     # Warning generated when processing the analysis
-    warning: str
+    warning: str | None

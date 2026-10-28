@@ -13,6 +13,6 @@ __all__ = ["PullRequestMinimalBase"]
 
 class PullRequestMinimalBase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    sha: str
-    repo: PullRequestMinimalBaseRepo
+    ref: str | None
+    sha: str | None
+    repo: PullRequestMinimalBaseRepo | None

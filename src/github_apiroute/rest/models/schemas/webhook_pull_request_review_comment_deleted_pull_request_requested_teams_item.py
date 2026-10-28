@@ -26,11 +26,11 @@ class WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeamsItem(BaseMo
     html_url: str | None = None
 
     # Unique identifier of the team
-    id: int
+    id: int | None
     members_url: str | None = None
 
     # Name of the team
-    name: str
+    name: str | None
     node_id: str | None = None
     parent: WebhookPullRequestReviewCommentDeletedPullRequestRequestedTeamsItemParent | None = None
 

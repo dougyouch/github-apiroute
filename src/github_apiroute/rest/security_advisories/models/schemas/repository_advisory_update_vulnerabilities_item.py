@@ -17,7 +17,7 @@ class RepositoryAdvisoryUpdateVulnerabilitiesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the package affected by the vulnerability.
-    package: RepositoryAdvisoryUpdateVulnerabilitiesItemPackage
+    package: RepositoryAdvisoryUpdateVulnerabilitiesItemPackage | None
 
     # The range of the package versions affected by the vulnerability.
     vulnerable_version_range: str | None = None

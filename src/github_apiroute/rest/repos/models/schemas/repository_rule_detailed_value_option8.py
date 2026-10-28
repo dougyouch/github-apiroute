@@ -21,7 +21,7 @@ class RepositoryRuleDetailedValueOption8(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["pull_request"] = Field(alias="type")
+    type_: Literal["pull_request"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption8Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

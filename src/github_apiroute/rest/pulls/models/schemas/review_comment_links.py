@@ -15,10 +15,10 @@ class ReviewCommentLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Hypermedia Link
-    self: Link
+    self: Link | None
 
     # Hypermedia Link
-    html: Link
+    html: Link | None
 
     # Hypermedia Link
-    pull_request: Link
+    pull_request: Link | None

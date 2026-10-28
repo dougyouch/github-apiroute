@@ -15,8 +15,8 @@ class StatusCheckPolicy(BaseModel):
     """Status Check Policy"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    strict: bool
-    contexts: list[str]
-    checks: list[StatusCheckPolicyChecksItem]
-    contexts_url: str
+    url: str | None
+    strict: bool | None
+    contexts: list[str] | None
+    checks: list[StatusCheckPolicyChecksItem] | None
+    contexts_url: str | None

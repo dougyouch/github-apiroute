@@ -13,10 +13,10 @@ class CampaignSummaryAlertStats(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of open alerts
-    open_count: int
+    open_count: int | None
 
     # The number of closed alerts
-    closed_count: int
+    closed_count: int | None
 
     # The number of in-progress alerts
-    in_progress_count: int
+    in_progress_count: int | None

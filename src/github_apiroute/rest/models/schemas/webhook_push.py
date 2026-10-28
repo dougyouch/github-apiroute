@@ -23,27 +23,27 @@ class WebhookPush(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The SHA of the most recent commit on `ref` after the push.
-    after: str
+    after: str | None
     base_ref: WebhooksNullableString | None
 
     # The SHA of the most recent commit on `ref` before the push.
-    before: str
+    before: str | None
 
     # An array of commit objects describing the pushed commits. (Pushed commits are all commits
     # that are included in the `compare` between the `before` commit and the `after` commit.)
     # The array includes a maximum of 2048 commits. If necessary, you can use the [Commits
-    commits: list[WebhookPushCommitsItem]
+    commits: list[WebhookPushCommitsItem] | None
 
     # URL that shows the changes in this `ref` update, from the `before` commit to the `after`
     # commit. For a newly created `ref` that is directly based on the default branch, this is
     # the comparison between the head of the default branch and the `after` commit. Otherwise,
-    compare: str
+    compare: str | None
 
     # Whether this push created the `ref`.
-    created: bool
+    created: bool | None
 
     # Whether this push deleted the `ref`.
-    deleted: bool
+    deleted: bool | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -51,7 +51,7 @@ class WebhookPush(BaseModel):
     enterprise: EnterpriseWebhooks | None = None
 
     # Whether this push was a force push of the `ref`.
-    forced: bool
+    forced: bool | None
     head_commit: WebhookPushHeadCommit | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
@@ -65,13 +65,13 @@ class WebhookPush(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # Metaproperties for Git author/committer information.
-    pusher: WebhookPushPusher
+    pusher: WebhookPushPusher | None
 
     # The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
-    ref: str
+    ref: str | None
 
     # A git repository
-    repository: WebhookPushRepository
+    repository: WebhookPushRepository | None
 
     # A GitHub user.
     sender: SimpleUser | None = None

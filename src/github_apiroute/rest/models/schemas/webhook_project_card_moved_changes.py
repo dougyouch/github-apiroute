@@ -13,4 +13,4 @@ __all__ = ["WebhookProjectCardMovedChanges"]
 
 class WebhookProjectCardMovedChanges(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    column_id: WebhookProjectCardMovedChangesColumnId
+    column_id: WebhookProjectCardMovedChangesColumnId | None

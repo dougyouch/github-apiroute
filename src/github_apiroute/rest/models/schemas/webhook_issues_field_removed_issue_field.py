@@ -17,10 +17,10 @@ class WebhookIssuesFieldRemovedIssueField(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the issue field.
-    id: int
+    id: int | None
 
     # The name of the issue field.
-    name: str
+    name: str | None
 
     # The data type of the issue field.
-    field_type: Literal["text", "date", "single_select", "multi_select", "number"]
+    field_type: Literal["text", "date", "single_select", "multi_select", "number"] | None

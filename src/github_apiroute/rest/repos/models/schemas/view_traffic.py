@@ -15,6 +15,6 @@ class ViewTraffic(BaseModel):
     """View Traffic"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    count: int
-    uniques: int
-    views: list[Traffic]
+    count: int | None
+    uniques: int | None
+    views: list[Traffic] | None

@@ -20,24 +20,24 @@ class WebhookPullRequestSynchronizePullRequestMilestone(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     closed_at: str | None
-    closed_issues: int
-    created_at: str
+    closed_issues: int | None
+    created_at: str | None
     creator: WebhookPullRequestSynchronizePullRequestMilestoneCreator | None
     description: str | None
     due_on: str | None
-    html_url: str
-    id: int
-    labels_url: str
-    node_id: str
+    html_url: str | None
+    id: int | None
+    labels_url: str | None
+    node_id: str | None
 
     # The number of the milestone.
-    number: int
-    open_issues: int
+    number: int | None
+    open_issues: int | None
 
     # The state of the milestone.
-    state: Literal["open", "closed"]
+    state: Literal["open", "closed"] | None
 
     # The title of the milestone.
-    title: str
-    updated_at: str
-    url: str
+    title: str | None
+    updated_at: str | None
+    url: str | None

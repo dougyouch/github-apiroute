@@ -15,7 +15,7 @@ class WebhookWorkflowJobQueuedWorkflowJobStepsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     completed_at: str | None
     conclusion: Literal["failure", "skipped", "success", "cancelled"] | None
-    name: str
-    number: int
+    name: str | None
+    number: int | None
     started_at: str | None
-    status: Literal["completed", "in_progress", "queued", "pending"]
+    status: Literal["completed", "in_progress", "queued", "pending"] | None

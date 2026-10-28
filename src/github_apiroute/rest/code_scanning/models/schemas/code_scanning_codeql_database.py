@@ -17,34 +17,34 @@ class CodeScanningCodeqlDatabase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the CodeQL database.
-    id: int
+    id: int | None
 
     # The name of the CodeQL database.
-    name: str
+    name: str | None
 
     # The language of the CodeQL database.
-    language: str
+    language: str | None
 
     # A GitHub user.
-    uploader: SimpleUser
+    uploader: SimpleUser | None
 
     # The MIME type of the CodeQL database file.
-    content_type: str
+    content_type: str | None
 
     # The size of the CodeQL database file in bytes.
-    size: int
+    size: int | None
 
     # The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-
     # DDTHH:MM:SSZ.
-    created_at: str
+    created_at: str | None
 
     # The date and time at which the CodeQL database was last updated, in ISO 8601 format':'
     # YYYY-MM-DDTHH:MM:SSZ.
-    updated_at: str
+    updated_at: str | None
 
     # The URL at which to download the CodeQL database. The `Accept` header must be set to the
     # value of the `content_type` property.
-    url: str
+    url: str | None
 
     # The commit SHA of the repository at the time the CodeQL database was created.
     commit_oid: str | None = None

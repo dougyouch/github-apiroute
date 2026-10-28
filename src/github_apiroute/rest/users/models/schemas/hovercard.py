@@ -15,4 +15,4 @@ class Hovercard(BaseModel):
     """Hovercard"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    contexts: list[HovercardContextsItem]
+    contexts: list[HovercardContextsItem] | None

@@ -24,13 +24,13 @@ class WebhookDeploymentStatusCreatedDeployment(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     creator: WebhookDeploymentStatusCreatedDeploymentCreator | None
     description: str | None
-    environment: str
-    id: int
-    node_id: str
-    original_environment: str
+    environment: str | None
+    id: int | None
+    node_id: str | None
+    original_environment: str | None
     payload: str | dict[str, Any] | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
@@ -40,11 +40,11 @@ class WebhookDeploymentStatusCreatedDeployment(BaseModel):
         WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp | None
     ) = None
     production_environment: bool | None = None
-    ref: str
-    repository_url: str
-    sha: str
-    statuses_url: str
-    task: str
+    ref: str | None
+    repository_url: str | None
+    sha: str | None
+    statuses_url: str | None
+    task: str | None
     transient_environment: bool | None = None
-    updated_at: str
-    url: str
+    updated_at: str | None
+    url: str | None

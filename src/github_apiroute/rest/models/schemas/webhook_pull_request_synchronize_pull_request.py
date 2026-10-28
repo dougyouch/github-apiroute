@@ -54,46 +54,49 @@ __all__ = ["WebhookPullRequestSynchronizePullRequest"]
 
 class WebhookPullRequestSynchronizePullRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    links: WebhookPullRequestSynchronizePullRequestLinks = Field(alias="_links")
+    links: WebhookPullRequestSynchronizePullRequestLinks | None = Field(alias="_links")
     active_lock_reason: Literal["resolved", "off-topic", "too heated", "spam"] | None
     additions: int | None = None
     assignee: WebhookPullRequestSynchronizePullRequestAssignee | None
-    assignees: list[WebhookPullRequestSynchronizePullRequestAssigneesItem | None]
+    assignees: list[WebhookPullRequestSynchronizePullRequestAssigneesItem | None] | None
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # The status of auto merging a pull request.
     auto_merge: WebhookPullRequestSynchronizePullRequestAutoMerge | None
-    base: WebhookPullRequestSynchronizePullRequestBase
+    base: WebhookPullRequestSynchronizePullRequestBase | None
     body: str | None
     changed_files: int | None = None
     closed_at: str | None
     comments: int | None = None
-    comments_url: str
+    comments_url: str | None
     commits: int | None = None
-    commits_url: str
-    created_at: str
+    commits_url: str | None
+    created_at: str | None
     deletions: int | None = None
-    diff_url: str
+    diff_url: str | None
 
     # Indicates whether or not the pull request is a draft.
-    draft: bool
-    head: WebhookPullRequestSynchronizePullRequestHead
-    html_url: str
-    id: int
-    issue_url: str
-    labels: list[WebhookPullRequestSynchronizePullRequestLabelsItem]
-    locked: bool
+    draft: bool | None
+    head: WebhookPullRequestSynchronizePullRequestHead | None
+    html_url: str | None
+    id: int | None
+    issue_url: str | None
+    labels: list[WebhookPullRequestSynchronizePullRequestLabelsItem] | None
+    locked: bool | None
 
     # Indicates whether maintainers can modify the pull request.
     maintainer_can_modify: bool | None = None
@@ -106,31 +109,34 @@ class WebhookPullRequestSynchronizePullRequest(BaseModel):
 
     # A collection of related issues and pull requests.
     milestone: WebhookPullRequestSynchronizePullRequestMilestone | None
-    node_id: str
+    node_id: str | None
 
     # Number uniquely identifying the pull request within its repository.
-    number: int
-    patch_url: str
+    number: int | None
+    patch_url: str | None
     rebaseable: bool | None = None
-    requested_reviewers: list[
-        WebhookPullRequestSynchronizePullRequestRequestedReviewersItemOption1
+    requested_reviewers: (
+        list[
+            WebhookPullRequestSynchronizePullRequestRequestedReviewersItemOption1
+            | None
+            | WebhookPullRequestSynchronizePullRequestRequestedReviewersItemOption2
+        ]
         | None
-        | WebhookPullRequestSynchronizePullRequestRequestedReviewersItemOption2
-    ]
-    requested_teams: list[WebhookPullRequestSynchronizePullRequestRequestedTeamsItem]
-    review_comment_url: str
+    )
+    requested_teams: list[WebhookPullRequestSynchronizePullRequestRequestedTeamsItem] | None
+    review_comment_url: str | None
     review_comments: int | None = None
-    review_comments_url: str
+    review_comments_url: str | None
 
     # The stack information associated with a pull request.
     stack: PullRequestStack | None = None
 
     # State of this Pull Request. Either `open` or `closed`.
-    state: Literal["open", "closed"]
-    statuses_url: str
+    state: Literal["open", "closed"] | None
+    statuses_url: str | None
 
     # The title of the pull request.
-    title: str
-    updated_at: str
-    url: str
+    title: str | None
+    updated_at: str | None
+    url: str | None
     user: WebhookPullRequestSynchronizePullRequestUser | None

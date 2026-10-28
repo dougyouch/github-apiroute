@@ -11,5 +11,5 @@ __all__ = ["PullRequestStackMinimalPullRequestsItemHead"]
 
 class PullRequestStackMinimalPullRequestsItemHead(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    sha: str
+    ref: str | None
+    sha: str | None

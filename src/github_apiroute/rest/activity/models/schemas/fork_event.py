@@ -13,5 +13,5 @@ __all__ = ["ForkEvent"]
 
 class ForkEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
-    forkee: ForkEventForkee
+    action: str | None
+    forkee: ForkEventForkee | None

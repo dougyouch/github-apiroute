@@ -13,7 +13,7 @@ class PullsCreateReviewRequestCommentsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The relative path to the file that necessitates a review comment.
-    path: str
+    path: str | None
 
     # The position in the diff where you want to add a review comment. Note this value is not
     # the same as the line number in the file. The `position` value equals the number of lines
@@ -21,7 +21,7 @@ class PullsCreateReviewRequestCommentsItem(BaseModel):
     position: int | None = None
 
     # Text of the review comment.
-    body: str
+    body: str | None
     line: int | None = None
     side: str | None = None
     start_line: int | None = None

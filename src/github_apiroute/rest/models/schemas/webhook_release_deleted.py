@@ -20,7 +20,7 @@ __all__ = ["WebhookReleaseDeleted"]
 
 class WebhookReleaseDeleted(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["deleted"]
+    action: Literal["deleted"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -38,11 +38,11 @@ class WebhookReleaseDeleted(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object.
-    release: WebhooksRelease
+    release: WebhooksRelease | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

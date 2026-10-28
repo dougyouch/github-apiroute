@@ -13,10 +13,10 @@ class InteractionsUpdatePullRequestCreationCapForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether the pull request creation cap is enabled
-    enabled: bool
+    enabled: bool | None
 
     # The maximum number of open pull requests a user can have at one time
-    max_open_pull_requests: int
+    max_open_pull_requests: int | None
 
     # Whether draft pull requests count toward the pull request creation cap
     include_drafts: bool | None = None

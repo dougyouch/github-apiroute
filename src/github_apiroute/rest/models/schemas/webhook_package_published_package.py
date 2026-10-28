@@ -21,13 +21,13 @@ class WebhookPackagePublishedPackage(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     created_at: str | None
     description: str | None
-    ecosystem: str
-    html_url: str
-    id: int
-    name: str
-    namespace: str
+    ecosystem: str | None
+    html_url: str | None
+    id: int | None
+    name: str | None
+    namespace: str | None
     owner: WebhookPackagePublishedPackageOwner | None
-    package_type: str
+    package_type: str | None
     package_version: WebhookPackagePublishedPackagePackageVersion | None
     registry: WebhookPackagePublishedPackageRegistry | None
     updated_at: str | None

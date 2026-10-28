@@ -15,10 +15,10 @@ class SecretScanningCustomPatternToCreate(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the custom pattern.
-    name: str
+    name: str | None
 
     # The regular expression of the custom pattern.
-    pattern: str
+    pattern: str | None
 
     # The start delimiter regex for the custom pattern. Defaults to `\A|[^0-9A-Za-z]` when not
     # specified.

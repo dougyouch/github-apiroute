@@ -18,7 +18,7 @@ class CopilotUsageMetrics1DayReport(BaseModel):
 
     # The URLs to download the Copilot usage metrics report for the enterprise/organization for
     # the specified day.
-    download_links: list[str]
+    download_links: list[str] | None
 
     # The day of the report in `YYYY-MM-DD` format.
-    report_day: str
+    report_day: str | None

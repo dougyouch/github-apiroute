@@ -15,4 +15,4 @@ class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Denotes whether an email is publicly visible.
-    visibility: Literal["public", "private"]
+    visibility: Literal["public", "private"] | None

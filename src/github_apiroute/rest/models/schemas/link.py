@@ -13,4 +13,4 @@ class Link(BaseModel):
     """Hypermedia Link"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    href: str
+    href: str | None

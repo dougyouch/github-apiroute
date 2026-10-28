@@ -13,4 +13,4 @@ class ProjectsAddFieldForOrgRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the IssueField to create the field for.
-    issue_field_id: int
+    issue_field_id: int | None

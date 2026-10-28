@@ -24,14 +24,14 @@ class RepositoryRulePullRequestParameters(BaseModel):
     allowed_merge_methods: list[Literal["merge", "squash", "rebase"]] | None = None
 
     # New, reviewable commits pushed will dismiss previous pull request review approvals.
-    dismiss_stale_reviews_on_push: bool
+    dismiss_stale_reviews_on_push: bool | None
 
     # Specify people, teams, or apps allowed to dismiss pull request reviews.
     dismissal_restriction: RepositoryRuleParamsDismissalRestriction | None = None
 
     # Require an approving review in pull requests that modify files that have a designated code
     # owner.
-    require_code_owner_review: bool
+    require_code_owner_review: bool | None
 
     # When Copilot opens a pull request without a human collaborator, require one more approving
     # review if a non-zero approval count is required.
@@ -39,13 +39,13 @@ class RepositoryRulePullRequestParameters(BaseModel):
 
     # Whether the most recent reviewable push must be approved by someone other than the person
     # who pushed it.
-    require_last_push_approval: bool
+    require_last_push_approval: bool | None
 
     # The number of approving reviews that are required before a pull request can be merged.
-    required_approving_review_count: int
+    required_approving_review_count: int | None
 
     # All conversations on code must be resolved before a pull request can be merged.
-    required_review_thread_resolution: bool
+    required_review_thread_resolution: bool | None
 
     # A collection of reviewers and associated file patterns. Each reviewer has a list of file
     # patterns which determine the files that reviewer is required to review.

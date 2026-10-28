@@ -15,10 +15,10 @@ class FeedLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Hypermedia Link with Type
-    timeline: LinkWithType
+    timeline: LinkWithType | None
 
     # Hypermedia Link with Type
-    user: LinkWithType
+    user: LinkWithType | None
 
     # Hypermedia Link with Type
     security_advisories: LinkWithType | None = None

@@ -11,5 +11,5 @@ __all__ = ["PagesSourceHash"]
 
 class PagesSourceHash(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    branch: str
-    path: str
+    branch: str | None
+    path: str | None

@@ -20,29 +20,29 @@ class ReviewComment(BaseModel):
     """Legacy Review Comment"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
     pull_request_review_id: int | None
-    id: int
-    node_id: str
-    diff_hunk: str
-    path: str
+    id: int | None
+    node_id: str | None
+    diff_hunk: str | None
+    path: str | None
     position: int | None
-    original_position: int
-    commit_id: str
-    original_commit_id: str
+    original_position: int | None
+    commit_id: str | None
+    original_commit_id: str | None
     in_reply_to_id: int | None = None
 
     # A GitHub user.
     user: NullableSimpleUser | None
-    body: str
-    created_at: str
-    updated_at: str
-    html_url: str
-    pull_request_url: str
+    body: str | None
+    created_at: str | None
+    updated_at: str | None
+    html_url: str | None
+    pull_request_url: str | None
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
-    links: ReviewCommentLinks = Field(alias="_links")
+    author_association: AuthorAssociation | None
+    links: ReviewCommentLinks | None = Field(alias="_links")
     body_text: str | None = None
     body_html: str | None = None
     reactions: ReactionRollup | None = None

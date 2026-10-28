@@ -15,14 +15,17 @@ class Workflow(BaseModel):
     """A GitHub Actions workflow"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    name: str
-    path: str
-    state: Literal["active", "deleted", "disabled_fork", "disabled_inactivity", "disabled_manually"]
-    created_at: str
-    updated_at: str
-    url: str
-    html_url: str
-    badge_url: str
+    id: int | None
+    node_id: str | None
+    name: str | None
+    path: str | None
+    state: (
+        Literal["active", "deleted", "disabled_fork", "disabled_inactivity", "disabled_manually"]
+        | None
+    )
+    created_at: str | None
+    updated_at: str | None
+    url: str | None
+    html_url: str | None
+    badge_url: str | None
     deleted_at: str | None = None

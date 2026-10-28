@@ -15,11 +15,11 @@ class EnterpriseTeam(BaseModel):
     """Group of enterprise owners and/or members"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    name: str
+    id: int | None
+    name: str | None
     description: str | None = None
-    slug: str
-    url: str
+    slug: str | None
+    url: str | None
 
     # Retired: this field will not be returned with GHEC enterprise teams.
     sync_to_organizations: str | None = None
@@ -28,10 +28,10 @@ class EnterpriseTeam(BaseModel):
 
     # Retired: this field will not be returned with GHEC enterprise teams.
     group_name: str | None = None
-    html_url: str
-    members_url: str
-    created_at: str
-    updated_at: str
+    html_url: str | None
+    members_url: str | None
+    created_at: str | None
+    updated_at: str | None
 
     # Whether team members will receive notifications when the team is mentioned.
     notification_setting: Literal["notifications_enabled", "notifications_disabled"] | None = None

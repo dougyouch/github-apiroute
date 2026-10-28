@@ -11,5 +11,5 @@ __all__ = ["WorkflowRunUsageBillableMACOSJobRunsItem"]
 
 class WorkflowRunUsageBillableMACOSJobRunsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    job_id: int
-    duration_ms: int
+    job_id: int | None
+    duration_ms: int | None

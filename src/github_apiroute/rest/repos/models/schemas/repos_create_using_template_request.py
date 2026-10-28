@@ -17,7 +17,7 @@ class ReposCreateUsingTemplateRequest(BaseModel):
     owner: str | None = None
 
     # The name of the new repository.
-    name: str
+    name: str | None
 
     # A short description of the new repository.
     description: str | None = None

@@ -13,4 +13,4 @@ class RepositoryRuleDetailedValueOption24Parameters(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The file extensions that are restricted from being pushed to the commit graph.
-    restricted_file_extensions: list[str]
+    restricted_file_extensions: list[str] | None

@@ -13,7 +13,7 @@ class BillingUsageSummaryReportOrgTimePeriod(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The year for the usage report.
-    year: int
+    year: int | None
 
     # The month for the usage report.
     month: int | None = None

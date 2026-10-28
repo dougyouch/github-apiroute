@@ -17,5 +17,5 @@ class WebhookPushCommitsItemCommitter(BaseModel):
     email: str | None
 
     # The git author's name.
-    name: str
+    name: str | None
     username: str | None = None

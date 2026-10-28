@@ -20,7 +20,7 @@ class ProjectsV2Field(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the field.
-    id: int
+    id: int | None
 
     # The ID of the issue field.
     issue_field_id: int | None = None
@@ -29,29 +29,32 @@ class ProjectsV2Field(BaseModel):
     node_id: str | None = None
 
     # The API URL of the project that contains the field.
-    project_url: str
+    project_url: str | None
 
     # The name of the field.
-    name: str
+    name: str | None
 
     # The field's data type.
-    data_type: Literal[
-        "assignees",
-        "linked_pull_requests",
-        "reviewers",
-        "labels",
-        "milestone",
-        "repository",
-        "title",
-        "text",
-        "single_select",
-        "number",
-        "date",
-        "iteration",
-        "issue_type",
-        "parent_issue",
-        "sub_issues_progress",
-    ]
+    data_type: (
+        Literal[
+            "assignees",
+            "linked_pull_requests",
+            "reviewers",
+            "labels",
+            "milestone",
+            "repository",
+            "title",
+            "text",
+            "single_select",
+            "number",
+            "date",
+            "iteration",
+            "issue_type",
+            "parent_issue",
+            "sub_issues_progress",
+        ]
+        | None
+    )
 
     # The options available for single select fields.
     options: list[ProjectsV2SingleSelectOptions] | None = None
@@ -60,7 +63,7 @@ class ProjectsV2Field(BaseModel):
     configuration: ProjectsV2FieldConfiguration | None = None
 
     # The time when the field was created.
-    created_at: str
+    created_at: str | None
 
     # The time when the field was last updated.
-    updated_at: str
+    updated_at: str | None

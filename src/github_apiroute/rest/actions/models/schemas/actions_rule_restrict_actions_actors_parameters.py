@@ -15,4 +15,4 @@ class ActionsRuleRestrictActionsActorsParameters(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Select the actors who can run Actions workflows.
-    allowed_actors: list[ActionsRuleParamsActor]
+    allowed_actors: list[ActionsRuleParamsActor] | None

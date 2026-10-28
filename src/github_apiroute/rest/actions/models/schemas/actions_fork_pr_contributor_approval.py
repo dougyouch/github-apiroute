@@ -15,8 +15,11 @@ class ActionsForkPrContributorApproval(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The policy that controls when fork PR workflows require approval from a maintainer.
-    approval_policy: Literal[
-        "first_time_contributors_new_to_github",
-        "first_time_contributors",
-        "all_external_contributors",
-    ]
+    approval_policy: (
+        Literal[
+            "first_time_contributors_new_to_github",
+            "first_time_contributors",
+            "all_external_contributors",
+        ]
+        | None
+    )

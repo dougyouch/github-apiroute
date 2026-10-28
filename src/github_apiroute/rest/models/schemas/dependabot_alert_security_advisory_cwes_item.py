@@ -15,7 +15,7 @@ class DependabotAlertSecurityAdvisoryCwesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique CWE ID.
-    cwe_id: str
+    cwe_id: str | None
 
     # The short, plain text name of the CWE.
-    name: str
+    name: str | None

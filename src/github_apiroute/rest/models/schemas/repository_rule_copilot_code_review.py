@@ -21,5 +21,5 @@ class RepositoryRuleCopilotCodeReview(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["copilot_code_review"] = Field(alias="type")
+    type_: Literal["copilot_code_review"] | None = Field(alias="type")
     parameters: RepositoryRuleCopilotCodeReviewParameters | None = None

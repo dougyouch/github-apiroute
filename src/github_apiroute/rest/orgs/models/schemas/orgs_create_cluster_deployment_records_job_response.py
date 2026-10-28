@@ -15,7 +15,7 @@ class OrgsCreateClusterDeploymentRecordsJobResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the created job.
-    job_id: int
+    job_id: int | None
 
     # Deployments that were rejected during authorization.
     errors: list[dict[str, Any]] | None = None

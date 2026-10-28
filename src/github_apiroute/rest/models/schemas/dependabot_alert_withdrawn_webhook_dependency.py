@@ -19,7 +19,7 @@ class DependabotAlertWithdrawnWebhookDependency(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Details for the vulnerable package.
-    package: DependabotAlertPackage
+    package: DependabotAlertPackage | None
 
     # The full path to the dependency manifest file, relative to the root of the repository.
     manifest_path: str | None

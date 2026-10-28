@@ -15,4 +15,4 @@ class RepositoryRuleRequiredLinearHistory(BaseModel):
     """Prevent merge commits from being pushed to matching refs."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["required_linear_history"] = Field(alias="type")
+    type_: Literal["required_linear_history"] | None = Field(alias="type")

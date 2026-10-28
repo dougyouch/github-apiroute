@@ -15,7 +15,7 @@ class RepositoryExternalPropertyPayload(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the repository
-    repository_name: str
+    repository_name: str | None
 
     # The value assigned to the repository. Set to `null` to unset the value for this
     # repository.

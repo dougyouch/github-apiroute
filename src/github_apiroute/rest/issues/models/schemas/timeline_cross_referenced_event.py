@@ -16,10 +16,10 @@ class TimelineCrossReferencedEvent(BaseModel):
     """Timeline Cross Referenced Event"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    event: str
+    event: str | None
 
     # A GitHub user.
     actor: SimpleUser | None = None
-    created_at: str
-    updated_at: str
-    source: TimelineCrossReferencedEventSource
+    created_at: str | None
+    updated_at: str | None
+    source: TimelineCrossReferencedEventSource | None

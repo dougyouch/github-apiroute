@@ -17,26 +17,29 @@ class OrgPrivateRegistryConfiguration(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the private registry configuration.
-    name: str
+    name: str | None
 
     # The registry type.
-    registry_type: Literal[
-        "maven_repository",
-        "nuget_feed",
-        "goproxy_server",
-        "npm_registry",
-        "rubygems_server",
-        "cargo_registry",
-        "composer_repository",
-        "docker_registry",
-        "git_source",
-        "helm_registry",
-        "hex_organization",
-        "hex_repository",
-        "pub_repository",
-        "python_index",
-        "terraform_registry",
-    ]
+    registry_type: (
+        Literal[
+            "maven_repository",
+            "nuget_feed",
+            "goproxy_server",
+            "npm_registry",
+            "rubygems_server",
+            "cargo_registry",
+            "composer_repository",
+            "docker_registry",
+            "git_source",
+            "helm_registry",
+            "hex_organization",
+            "hex_repository",
+            "pub_repository",
+            "python_index",
+            "terraform_registry",
+        ]
+        | None
+    )
 
     # The authentication type for the private registry.
     auth_type: (
@@ -65,7 +68,7 @@ class OrgPrivateRegistryConfiguration(BaseModel):
     replaces_base: bool | None = None
 
     # Which type of organization repositories have access to the private registry.
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
 
     # The tenant ID of the Azure AD application.
     tenant_id: str | None = None
@@ -113,5 +116,5 @@ class OrgPrivateRegistryConfiguration(BaseModel):
     # The GCP service account email to impersonate. If omitted, the federated token is used
     # directly (direct WIF).
     service_account: str | None = None
-    created_at: str
-    updated_at: str
+    created_at: str | None
+    updated_at: str | None

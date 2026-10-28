@@ -19,18 +19,18 @@ class PullRequestReview(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the review
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # A GitHub user.
     user: NullableSimpleUser | None
 
     # The text of the review.
-    body: str
-    state: str
-    html_url: str
-    pull_request_url: str
-    links: PullRequestReviewLinks = Field(alias="_links")
+    body: str | None
+    state: str | None
+    html_url: str | None
+    pull_request_url: str | None
+    links: PullRequestReviewLinks | None = Field(alias="_links")
     submitted_at: str | None = None
 
     # A commit SHA for the review. If the commit object was garbage collected or forcibly
@@ -40,4 +40,4 @@ class PullRequestReview(BaseModel):
     body_text: str | None = None
 
     # How the author is associated with the repository.
-    author_association: AuthorAssociation
+    author_association: AuthorAssociation | None

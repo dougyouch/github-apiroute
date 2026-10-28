@@ -15,13 +15,13 @@ class RepositoryRuleParamsWorkflowFileReference(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The path to the workflow file
-    path: str
+    path: str | None
 
     # The ref (branch or tag) of the workflow file to use
     ref: str | None = None
 
     # The ID of the repository where the workflow is defined
-    repository_id: int
+    repository_id: int | None
 
     # The commit SHA of the workflow file to use
     sha: str | None = None

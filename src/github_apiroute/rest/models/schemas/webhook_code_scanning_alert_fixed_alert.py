@@ -29,7 +29,7 @@ class WebhookCodeScanningAlertFixedAlert(BaseModel):
     assignees: list[SimpleUser] | None = None
 
     # The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
-    created_at: str
+    created_at: str | None
 
     # The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     dismissed_at: str | None
@@ -45,16 +45,16 @@ class WebhookCodeScanningAlertFixedAlert(BaseModel):
     fixed_at: Any = None
 
     # The GitHub URL of the alert resource.
-    html_url: str
+    html_url: str | None
     instances_url: str | None = None
     most_recent_instance: WebhookCodeScanningAlertFixedAlertMostRecentInstance | None = None
 
     # The code scanning alert number.
-    number: int
-    rule: WebhookCodeScanningAlertFixedAlertRule
+    number: int | None
+    rule: WebhookCodeScanningAlertFixedAlertRule | None
 
     # State of a code scanning alert. Events for alerts found outside the default branch will
     # return a `null` value until they are dismissed or fixed.
     state: Literal["fixed"] | None
-    tool: WebhookCodeScanningAlertFixedAlertTool
-    url: str
+    tool: WebhookCodeScanningAlertFixedAlertTool | None
+    url: str | None

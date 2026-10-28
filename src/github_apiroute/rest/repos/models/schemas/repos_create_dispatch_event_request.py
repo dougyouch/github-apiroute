@@ -15,7 +15,7 @@ class ReposCreateDispatchEventRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A custom webhook event name. Must be 100 characters or fewer.
-    event_type: str
+    event_type: str | None
 
     # JSON payload with extra information about the webhook event that your action or workflow
     # may use. The maximum number of top-level properties is 10. The total size of the JSON

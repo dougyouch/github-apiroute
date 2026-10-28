@@ -36,11 +36,15 @@ __all__ = ["WebhookPullRequestReviewRequestedValueOption1PullRequestLinks"]
 
 class WebhookPullRequestReviewRequestedValueOption1PullRequestLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksComments
-    commits: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksCommits
-    html: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksHtml
-    issue: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksIssue
-    review_comment: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksReviewComment
-    review_comments: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksReviewComments
-    self: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksSelf
-    statuses: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksStatuses
+    comments: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksComments | None
+    commits: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksCommits | None
+    html: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksHtml | None
+    issue: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksIssue | None
+    review_comment: (
+        WebhookPullRequestReviewRequestedValueOption1PullRequestLinksReviewComment | None
+    )
+    review_comments: (
+        WebhookPullRequestReviewRequestedValueOption1PullRequestLinksReviewComments | None
+    )
+    self: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksSelf | None
+    statuses: WebhookPullRequestReviewRequestedValueOption1PullRequestLinksStatuses | None

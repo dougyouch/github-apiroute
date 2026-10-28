@@ -16,6 +16,6 @@ __all__ = ["PackageVersionMetadata"]
 
 class PackageVersionMetadata(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    package_type: Literal["npm", "maven", "rubygems", "docker", "nuget", "container"]
+    package_type: Literal["npm", "maven", "rubygems", "docker", "nuget", "container"] | None
     container: PackageVersionMetadataContainer | None = None
     docker: PackageVersionMetadataDocker | None = None

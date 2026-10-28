@@ -15,10 +15,10 @@ class OrgsCreateArtifactStorageRecordRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the artifact.
-    name: str
+    name: str | None
 
     # The digest of the artifact (algorithm:hex-encoded-digest).
-    digest: str
+    digest: str | None
 
     # The artifact version.
     version: str | None = None
@@ -30,7 +30,7 @@ class OrgsCreateArtifactStorageRecordRequest(BaseModel):
     path: str | None = None
 
     # The base URL of the artifact registry.
-    registry_url: str
+    registry_url: str | None
 
     # The repository name within the registry.
     repository: str | None = None

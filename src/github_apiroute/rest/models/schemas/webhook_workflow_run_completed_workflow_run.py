@@ -36,11 +36,11 @@ __all__ = ["WebhookWorkflowRunCompletedWorkflowRun"]
 class WebhookWorkflowRunCompletedWorkflowRun(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     actor: WebhookWorkflowRunCompletedWorkflowRunActor | None
-    artifacts_url: str
-    cancel_url: str
-    check_suite_id: int
-    check_suite_node_id: str
-    check_suite_url: str
+    artifacts_url: str | None
+    cancel_url: str | None
+    check_suite_id: int | None
+    check_suite_node_id: str | None
+    check_suite_url: str | None
     conclusion: (
         Literal[
             "action_required",
@@ -55,35 +55,35 @@ class WebhookWorkflowRunCompletedWorkflowRun(BaseModel):
         ]
         | None
     )
-    created_at: str
-    event: str
+    created_at: str | None
+    event: str | None
     head_branch: str | None
-    head_commit: WebhookWorkflowRunCompletedWorkflowRunHeadCommit
-    head_repository: WebhookWorkflowRunCompletedWorkflowRunHeadRepository
-    head_sha: str
-    html_url: str
-    id: int
-    jobs_url: str
-    logs_url: str
+    head_commit: WebhookWorkflowRunCompletedWorkflowRunHeadCommit | None
+    head_repository: WebhookWorkflowRunCompletedWorkflowRunHeadRepository | None
+    head_sha: str | None
+    html_url: str | None
+    id: int | None
+    jobs_url: str | None
+    logs_url: str | None
     name: str | None
-    node_id: str
-    path: str
+    node_id: str | None
+    path: str | None
     previous_attempt_url: str | None
-    pull_requests: list[WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem | None]
+    pull_requests: list[WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem | None] | None
     referenced_workflows: (
         list[WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem] | None
     ) = None
-    repository: WebhookWorkflowRunCompletedWorkflowRunRepository
-    rerun_url: str
-    run_attempt: int
-    run_number: int
-    run_started_at: str
-    status: Literal["requested", "in_progress", "completed", "queued", "pending", "waiting"]
+    repository: WebhookWorkflowRunCompletedWorkflowRunRepository | None
+    rerun_url: str | None
+    run_attempt: int | None
+    run_number: int | None
+    run_started_at: str | None
+    status: Literal["requested", "in_progress", "completed", "queued", "pending", "waiting"] | None
     triggering_actor: WebhookWorkflowRunCompletedWorkflowRunTriggeringActor | None
-    updated_at: str
-    url: str
-    workflow_id: int
-    workflow_url: str
+    updated_at: str | None
+    url: str | None
+    workflow_id: int | None
+    workflow_url: str | None
 
     # The event-specific title associated with the run or the run-name if set, or the value of
     # `run-name` if it is set in the workflow.

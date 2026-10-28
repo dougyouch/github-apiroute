@@ -13,4 +13,4 @@ class PullRequestMergeAsyncResultDetailsOption3(BaseModel):
     """When the asynchronous merge request failed"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    message: str
+    message: str | None

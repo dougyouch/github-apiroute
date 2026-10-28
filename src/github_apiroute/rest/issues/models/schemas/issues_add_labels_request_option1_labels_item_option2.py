@@ -15,7 +15,7 @@ class IssuesAddLabelsRequestOption1LabelsItemOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the label to add.
-    name: str
+    name: str | None
 
     # Optional reasoning for adding this label.
     rationale: str | None = None

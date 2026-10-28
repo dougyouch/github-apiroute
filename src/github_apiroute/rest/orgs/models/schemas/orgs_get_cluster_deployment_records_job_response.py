@@ -15,10 +15,10 @@ class OrgsGetClusterDeploymentRecordsJobResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the job.
-    job_id: int
+    job_id: int | None
 
     # The current status of the job.
-    status: Literal["pending", "processing", "completed", "failed"]
+    status: Literal["pending", "processing", "completed", "failed"] | None
 
     # When the job started processing (only present when processing, completed, or failed).
     started_at: str | None = None

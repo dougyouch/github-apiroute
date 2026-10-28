@@ -17,4 +17,6 @@ class EnterpriseRulesetConditionsOrganizationPropertyTarget(BaseModel):
     """Parameters for a organization property condition"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    organization_property: EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
+    organization_property: (
+        EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty | None
+    )

@@ -17,4 +17,4 @@ class RepositoryRuleParamsProofOfPresence(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The level of authentication required before a pull request can be merged.
-    required_authentication_level: Literal["reauth", "mfa"]
+    required_authentication_level: Literal["reauth", "mfa"] | None

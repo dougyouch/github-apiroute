@@ -15,10 +15,10 @@ class AgentAutomationsGetRepoAutomationResponseTriggersWorkflowRun(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Workflow names matched against the name in each workflow YAML file.
-    workflows: list[str]
+    workflows: list[str] | None
 
     # Workflow conclusions to match. The current trigger supports failure.
-    conclusions: list[Literal["failure"]]
+    conclusions: list[Literal["failure"]] | None
 
     # A GitHub issue or pull request search query.
     query: str | None = None

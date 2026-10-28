@@ -23,6 +23,6 @@ class ActionsPolicyEnterpriseConditionsValueOption1(BaseModel):
     """Conditions to target organizations by name and repositories by name"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    organization_name: ActionsPolicyEnterpriseConditionsValueOption1OrganizationName
-    repository_name: ActionsPolicyEnterpriseConditionsValueOption1RepositoryName
+    organization_name: ActionsPolicyEnterpriseConditionsValueOption1OrganizationName | None
+    repository_name: ActionsPolicyEnterpriseConditionsValueOption1RepositoryName | None
     workflow_path: ActionsPolicyEnterpriseConditionsValueOption1WorkflowPath | None = None

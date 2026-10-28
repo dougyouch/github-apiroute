@@ -14,4 +14,4 @@ class PullsPullRequestStacksAddRequest(BaseModel):
 
     # An ordered list of pull request numbers to append to the stack, from the current top
     # upward.
-    pull_requests: list[int]
+    pull_requests: list[int] | None

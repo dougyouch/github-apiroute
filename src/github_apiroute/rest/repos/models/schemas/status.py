@@ -15,16 +15,16 @@ class Status(BaseModel):
     """The status of a commit."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
     avatar_url: str | None
-    id: int
-    node_id: str
-    state: str
+    id: int | None
+    node_id: str | None
+    state: str | None
     description: str | None
     target_url: str | None
-    context: str
-    created_at: str
-    updated_at: str
+    context: str | None
+    created_at: str | None
+    updated_at: str | None
 
     # A GitHub user.
     creator: NullableSimpleUser | None

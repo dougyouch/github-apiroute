@@ -17,5 +17,5 @@ class ConcurrencyGroupList(BaseModel):
     """A list of active concurrency groups for a repository."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    concurrency_groups: list[ConcurrencyGroupListConcurrencyGroupsItem]
+    total_count: int | None
+    concurrency_groups: list[ConcurrencyGroupListConcurrencyGroupsItem] | None

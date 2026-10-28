@@ -13,4 +13,4 @@ __all__ = ["WebhooksChanges8"]
 
 class WebhooksChanges8(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    tier: WebhooksChanges8Tier
+    tier: WebhooksChanges8Tier | None

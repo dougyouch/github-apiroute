@@ -43,33 +43,33 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersion(BaseModel):
         WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata | None
     ) = None
     created_at: str | None = None
-    description: str
+    description: str | None
     docker_metadata: (
         list[WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem] | None
     ) = None
     draft: bool | None = None
-    html_url: str
-    id: int
-    installation_command: str
+    html_url: str | None
+    id: int | None
+    installation_command: str | None
     manifest: str | None = None
-    metadata: list[dict[str, Any]]
-    name: str
+    metadata: list[dict[str, Any]] | None
+    name: str | None
     npm_metadata: WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata | None = (
         None
     )
     nuget_metadata: (
         list[WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem] | None
     ) = None
-    package_files: list[
-        WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem
-    ]
-    package_url: str
+    package_files: (
+        list[WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem] | None
+    )
+    package_url: str | None
     prerelease: bool | None = None
     release: WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease | None = None
     rubygems_metadata: list[WebhookRubygemsMetadata] | None = None
-    summary: str
+    summary: str | None
     tag_name: str | None = None
     target_commitish: str | None = None
     target_oid: str | None = None
     updated_at: str | None = None
-    version: str
+    version: str | None

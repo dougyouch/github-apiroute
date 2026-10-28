@@ -15,4 +15,4 @@ __all__ = ["WebhookRepositoryTransferredChangesOwner"]
 
 class WebhookRepositoryTransferredChangesOwner(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    from_: WebhookRepositoryTransferredChangesOwnerFrom = Field(alias="from")
+    from_: WebhookRepositoryTransferredChangesOwnerFrom | None = Field(alias="from")

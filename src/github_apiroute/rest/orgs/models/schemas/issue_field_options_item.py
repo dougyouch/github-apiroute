@@ -15,10 +15,10 @@ class IssueFieldOptionsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the option.
-    id: int
+    id: int | None
 
     # The name of the option.
-    name: str
+    name: str | None
 
     # The description of the option.
     description: str | None = None

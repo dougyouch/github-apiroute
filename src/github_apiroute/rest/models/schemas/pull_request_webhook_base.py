@@ -14,12 +14,12 @@ __all__ = ["PullRequestWebhookBase"]
 
 class PullRequestWebhookBase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    label: str
-    ref: str
+    label: str | None
+    ref: str | None
 
     # A repository on GitHub.
-    repo: Repository
-    sha: str
+    repo: Repository | None
+    sha: str | None
 
     # A GitHub user.
-    user: SimpleUser
+    user: SimpleUser | None

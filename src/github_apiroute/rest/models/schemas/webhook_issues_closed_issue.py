@@ -27,41 +27,41 @@ class WebhookIssuesClosedIssue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     active_lock_reason: str | None
     assignee: dict[str, Any] | None = None
-    assignees: list[dict[str, Any] | None]
-    author_association: str
+    assignees: list[dict[str, Any] | None] | None
+    author_association: str | None
     body: str | None
     closed_at: str | None
-    comments: int
-    comments_url: str
-    created_at: str
+    comments: int | None
+    comments_url: str | None
+    created_at: str | None
     draft: bool | None = None
-    events_url: str
-    html_url: str
-    id: int
+    events_url: str | None
+    html_url: str | None
+    id: int | None
     labels: list[WebhookIssuesClosedIssueLabelsItem | None] | None = None
-    labels_url: str
+    labels_url: str | None
     locked: bool | None = None
     milestone: dict[str, Any] | None
-    node_id: str
-    number: int
+    node_id: str | None
+    number: int | None
     performed_via_github_app: dict[str, Any] | None = None
     pull_request: WebhookIssuesClosedIssuePullRequest | None = None
-    reactions: WebhookIssuesClosedIssueReactions
-    repository_url: str
+    reactions: WebhookIssuesClosedIssueReactions | None
+    repository_url: str | None
 
     # Comments provide a way for people to collaborate on an issue.
     pinned_comment: NullableIssueComment | None = None
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
-    state: Literal["closed", "open"]
+    state: Literal["closed", "open"] | None
     state_reason: str | None = None
     timeline_url: str | None = None
-    title: str
+    title: str | None
 
     # The type assigned to the issue. This is only present for issues in repositories where
     # issue types are supported.
     type_: IssueType | None = Field(None, alias="type")
-    updated_at: str
-    url: str
-    user: WebhookIssuesClosedIssueUser
+    updated_at: str | None
+    url: str | None
+    user: WebhookIssuesClosedIssueUser | None

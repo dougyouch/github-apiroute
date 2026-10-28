@@ -15,4 +15,4 @@ class CopilotSpacesListResourcesForUserResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The list of resources attached to this Copilot Space.
-    resources: list[CopilotSpaceResource]
+    resources: list[CopilotSpaceResource] | None

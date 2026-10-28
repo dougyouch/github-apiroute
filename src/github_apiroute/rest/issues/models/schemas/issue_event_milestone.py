@@ -13,4 +13,4 @@ class IssueEventMilestone(BaseModel):
     """Issue Event Milestone"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    title: str
+    title: str | None

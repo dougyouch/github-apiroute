@@ -16,12 +16,12 @@ class WebhooksDeployKey(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     added_by: str | None = None
-    created_at: str
-    id: int
-    key: str
+    created_at: str | None
+    id: int | None
+    key: str | None
     last_used: str | None = None
-    read_only: bool
-    title: str
-    url: str
-    verified: bool
+    read_only: bool | None
+    title: str | None
+    url: str | None
+    verified: bool | None
     enabled: bool | None = None

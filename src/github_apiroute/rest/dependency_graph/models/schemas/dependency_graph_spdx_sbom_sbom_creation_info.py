@@ -13,7 +13,7 @@ class DependencyGraphSpdxSbomSbomCreationInfo(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The date and time the SPDX document was created.
-    created: str
+    created: str | None
 
     # The tools that were used to generate the SPDX document.
-    creators: list[str]
+    creators: list[str] | None

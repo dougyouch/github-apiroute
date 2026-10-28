@@ -27,8 +27,8 @@ class ProtectedBranchPullRequestReview(BaseModel):
     bypass_pull_request_allowances: (
         ProtectedBranchPullRequestReviewBypassPullRequestAllowances | None
     ) = None
-    dismiss_stale_reviews: bool
-    require_code_owner_reviews: bool
+    dismiss_stale_reviews: bool | None
+    require_code_owner_reviews: bool | None
     required_approving_review_count: int | None = None
 
     # Whether the most recent push must be approved by someone other than the person who pushed

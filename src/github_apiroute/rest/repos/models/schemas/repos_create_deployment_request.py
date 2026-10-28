@@ -15,7 +15,7 @@ class ReposCreateDeploymentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ref to deploy. This can be a branch, tag, or SHA.
-    ref: str
+    ref: str | None
 
     # Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
     task: str | None = None

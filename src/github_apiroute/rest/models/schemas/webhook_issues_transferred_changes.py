@@ -18,7 +18,7 @@ class WebhookIssuesTransferredChanges(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-    new_issue: WebhookIssuesTransferredChangesNewIssue
+    new_issue: WebhookIssuesTransferredChangesNewIssue | None
 
     # A git repository
-    new_repository: WebhookIssuesTransferredChangesNewRepository
+    new_repository: WebhookIssuesTransferredChangesNewRepository | None

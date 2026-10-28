@@ -13,5 +13,5 @@ __all__ = ["ActionsListJobsForWorkflowRunResponse"]
 
 class ActionsListJobsForWorkflowRunResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    jobs: list[Job]
+    total_count: int | None
+    jobs: list[Job] | None

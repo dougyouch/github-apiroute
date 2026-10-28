@@ -16,10 +16,10 @@ class CodeScanningVariantAnalysisScannedRepositoriesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Repository Identifier
-    repository: CodeScanningVariantAnalysisRepository
+    repository: CodeScanningVariantAnalysisRepository | None
 
     # The new status of the CodeQL variant analysis repository task.
-    analysis_status: CodeScanningVariantAnalysisStatus
+    analysis_status: CodeScanningVariantAnalysisStatus | None
 
     # The number of results in the case of a successful analysis. This is only available for
     # successful analyses.

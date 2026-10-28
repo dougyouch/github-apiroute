@@ -15,15 +15,15 @@ class ActionsCreateOrgVariableRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the variable.
-    name: str
+    name: str | None
 
     # The value of the variable.
-    value: str
+    value: str | None
 
     # The type of repositories in the organization that can access the variable. `selected`
     # means only the repositories specified by `selected_repository_ids` can access the
     # variable.
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
 
     # An array of repository ids that can access the organization variable. You can only provide
     # a list of repository ids when the `visibility` is set to `selected`.

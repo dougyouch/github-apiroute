@@ -18,7 +18,7 @@ class ActionsRepositoryPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether GitHub Actions is enabled on the repository.
-    enabled: ActionsEnabled
+    enabled: ActionsEnabled | None
 
     # The permissions policy that controls the actions and reusable workflows that are allowed
     # to run.

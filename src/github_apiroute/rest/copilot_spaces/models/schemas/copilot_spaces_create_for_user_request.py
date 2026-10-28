@@ -19,7 +19,7 @@ class CopilotSpacesCreateForUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the Copilot Space.
-    name: str
+    name: str | None
 
     # A description of the Copilot Space.
     description: str | None = None

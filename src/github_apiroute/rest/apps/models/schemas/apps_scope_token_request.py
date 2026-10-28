@@ -15,7 +15,7 @@ class AppsScopeTokenRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The access token used to authenticate to the GitHub API.
-    access_token: str
+    access_token: str | None
 
     # The name of the user or organization to scope the user access token to. **Required**
     # unless `target_id` is specified.

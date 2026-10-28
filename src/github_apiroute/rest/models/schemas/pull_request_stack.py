@@ -15,7 +15,7 @@ class PullRequestStack(BaseModel):
     """The stack information associated with a pull request."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    base: PullRequestStackBase
+    base: PullRequestStackBase | None
 
     # The total number of pull requests in the stack.
     size: int | None = None

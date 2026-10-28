@@ -11,6 +11,6 @@ __all__ = ["GitTagTagger"]
 
 class GitTagTagger(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    date: str
-    email: str
-    name: str
+    date: str | None
+    email: str | None
+    name: str | None

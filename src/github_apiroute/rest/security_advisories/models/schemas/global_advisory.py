@@ -25,31 +25,31 @@ class GlobalAdvisory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The GitHub Security Advisory ID.
-    ghsa_id: str
+    ghsa_id: str | None
 
     # The Common Vulnerabilities and Exposures (CVE) ID.
     cve_id: str | None
 
     # The API URL for the advisory.
-    url: str
+    url: str | None
 
     # The URL for the advisory.
-    html_url: str
+    html_url: str | None
 
     # The API URL for the repository advisory.
     repository_advisory_url: str | None
 
     # A short summary of the advisory.
-    summary: str
+    summary: str | None
 
     # A detailed description of what the advisory entails.
     description: str | None
 
     # The type of advisory.
-    type_: Literal["reviewed", "unreviewed", "malware"] = Field(alias="type")
+    type_: Literal["reviewed", "unreviewed", "malware"] | None = Field(alias="type")
 
     # The severity of the advisory.
-    severity: Literal["critical", "high", "medium", "low", "unknown"]
+    severity: Literal["critical", "high", "medium", "low", "unknown"] | None
 
     # The URL of the advisory's source code.
     source_code_location: str | None
@@ -57,10 +57,10 @@ class GlobalAdvisory(BaseModel):
     references: list[str] | None
 
     # The date and time of when the advisory was published, in ISO 8601 format.
-    published_at: str
+    published_at: str | None
 
     # The date and time of when the advisory was last updated, in ISO 8601 format.
-    updated_at: str
+    updated_at: str | None
 
     # The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.
     github_reviewed_at: str | None

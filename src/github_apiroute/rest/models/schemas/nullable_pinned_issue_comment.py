@@ -15,7 +15,7 @@ class NullablePinnedIssueComment(BaseModel):
     """Context around who pinned an issue comment and when it was pinned."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    pinned_at: str
+    pinned_at: str | None
 
     # A GitHub user.
     pinned_by: NullableSimpleUser | None

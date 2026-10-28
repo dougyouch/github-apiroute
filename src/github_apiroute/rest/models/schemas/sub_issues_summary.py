@@ -11,6 +11,6 @@ __all__ = ["SubIssuesSummary"]
 
 class SubIssuesSummary(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total: int
-    completed: int
-    percent_completed: int
+    total: int | None
+    completed: int | None
+    percent_completed: int | None

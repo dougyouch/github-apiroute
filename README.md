@@ -96,7 +96,7 @@ Nothing under `src/github_apiroute/` is written by hand except `auth.py` and `__
    - Upgrades apiroute to its newest release.
    - Downloads GitHub's REST description and introspects the GraphQL schema into [`specs/`](specs).
    - Regenerates the clients with `apiroute generate`.
-   - Runs the lint and tests.
+   - Runs the lint and tests, then the live tests: read-only calls that check the typed models against what GitHub actually sends.
 2. If anything changed, it commits the result to `main`:
    - `feat(specs): ...` when GitHub changed a spec or schema, which produces a minor release.
    - `fix(codegen): ...` when only a newer apiroute changed the generated code, which produces a patch release.
@@ -113,10 +113,11 @@ uv sync
 GITHUB_TOKEN="$(gh auth token)" uv run python scripts/generate.py --fetch   # latest specs, regenerate
 uv run python scripts/generate.py --only graphql   # regenerate one API from its committed spec
 uv run pytest
+GITHUB_TOKEN="$(gh auth token)" uv run pytest tests/live   # read-only calls against api.github.com
 uv run ruff check . && uv run ruff format --check .
 ```
 
-Fetching the GraphQL schema needs a token in `GITHUB_TOKEN`; regenerating from the committed specs doesn't. Auth lives in [`src/github_apiroute/auth.py`](src/github_apiroute/auth.py), which the generated clients extend.
+Fetching the GraphQL schema needs a token in `GITHUB_TOKEN`; regenerating from the committed specs doesn't. The live tests in `tests/live` check the typed models against what GitHub actually sends: they only read, keep lists to a few items, and are skipped without a token. Auth lives in [`src/github_apiroute/auth.py`](src/github_apiroute/auth.py), which the generated clients extend.
 
 ## License
 

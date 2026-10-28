@@ -19,13 +19,13 @@ class IssueType(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the issue type.
-    id: int
+    id: int | None
 
     # The node identifier of the issue type.
-    node_id: str
+    node_id: str | None
 
     # The name of the issue type.
-    name: str
+    name: str | None
 
     # The description of the issue type.
     description: str | None

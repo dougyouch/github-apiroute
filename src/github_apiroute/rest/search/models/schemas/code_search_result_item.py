@@ -16,16 +16,16 @@ class CodeSearchResultItem(BaseModel):
     """Code Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    path: str
-    sha: str
-    url: str
-    git_url: str
-    html_url: str
+    name: str | None
+    path: str | None
+    sha: str | None
+    url: str | None
+    git_url: str | None
+    html_url: str | None
 
     # Minimal Repository
-    repository: MinimalRepository
-    score: float
+    repository: MinimalRepository | None
+    score: float | None
     file_size: int | None = None
     language: str | None = None
     last_modified_at: str | None = None

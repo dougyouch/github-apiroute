@@ -14,5 +14,5 @@ __all__ = ["WebhooksReviewLinks"]
 
 class WebhooksReviewLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: WebhooksReviewLinksHtml
-    pull_request: WebhooksReviewLinksPullRequest
+    html: WebhooksReviewLinksHtml | None
+    pull_request: WebhooksReviewLinksPullRequest | None

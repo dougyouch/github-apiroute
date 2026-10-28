@@ -51,61 +51,67 @@ __all__ = ["WebhookPullRequestReviewDismissedPullRequest"]
 
 class WebhookPullRequestReviewDismissedPullRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    links: WebhookPullRequestReviewDismissedPullRequestLinks = Field(alias="_links")
+    links: WebhookPullRequestReviewDismissedPullRequestLinks | None = Field(alias="_links")
     active_lock_reason: Literal["resolved", "off-topic", "too heated", "spam"] | None
     assignee: WebhookPullRequestReviewDismissedPullRequestAssignee | None
-    assignees: list[WebhookPullRequestReviewDismissedPullRequestAssigneesItem | None]
+    assignees: list[WebhookPullRequestReviewDismissedPullRequestAssigneesItem | None] | None
 
     # How the author is associated with the repository.
-    author_association: Literal[
-        "COLLABORATOR",
-        "CONTRIBUTOR",
-        "FIRST_TIMER",
-        "FIRST_TIME_CONTRIBUTOR",
-        "MANNEQUIN",
-        "MEMBER",
-        "NONE",
-        "OWNER",
-    ]
+    author_association: (
+        Literal[
+            "COLLABORATOR",
+            "CONTRIBUTOR",
+            "FIRST_TIMER",
+            "FIRST_TIME_CONTRIBUTOR",
+            "MANNEQUIN",
+            "MEMBER",
+            "NONE",
+            "OWNER",
+        ]
+        | None
+    )
 
     # The status of auto merging a pull request.
     auto_merge: WebhookPullRequestReviewDismissedPullRequestAutoMerge | None
-    base: WebhookPullRequestReviewDismissedPullRequestBase
+    base: WebhookPullRequestReviewDismissedPullRequestBase | None
     body: str | None
     closed_at: str | None
-    comments_url: str
-    commits_url: str
-    created_at: str
-    diff_url: str
-    draft: bool
-    head: WebhookPullRequestReviewDismissedPullRequestHead
-    html_url: str
-    id: int
-    issue_url: str
-    labels: list[WebhookPullRequestReviewDismissedPullRequestLabelsItem]
-    locked: bool
+    comments_url: str | None
+    commits_url: str | None
+    created_at: str | None
+    diff_url: str | None
+    draft: bool | None
+    head: WebhookPullRequestReviewDismissedPullRequestHead | None
+    html_url: str | None
+    id: int | None
+    issue_url: str | None
+    labels: list[WebhookPullRequestReviewDismissedPullRequestLabelsItem] | None
+    locked: bool | None
     merge_commit_sha: str | None
     merged_at: str | None
 
     # A collection of related issues and pull requests.
     milestone: WebhookPullRequestReviewDismissedPullRequestMilestone | None
-    node_id: str
-    number: int
-    patch_url: str
-    requested_reviewers: list[
-        WebhookPullRequestReviewDismissedPullRequestRequestedReviewersItemOption1
+    node_id: str | None
+    number: int | None
+    patch_url: str | None
+    requested_reviewers: (
+        list[
+            WebhookPullRequestReviewDismissedPullRequestRequestedReviewersItemOption1
+            | None
+            | WebhookPullRequestReviewDismissedPullRequestRequestedReviewersItemOption2
+        ]
         | None
-        | WebhookPullRequestReviewDismissedPullRequestRequestedReviewersItemOption2
-    ]
-    requested_teams: list[WebhookPullRequestReviewDismissedPullRequestRequestedTeamsItem]
-    review_comment_url: str
-    review_comments_url: str
+    )
+    requested_teams: list[WebhookPullRequestReviewDismissedPullRequestRequestedTeamsItem] | None
+    review_comment_url: str | None
+    review_comments_url: str | None
 
     # The stack information associated with a pull request.
     stack: PullRequestStack | None = None
-    state: Literal["open", "closed"]
-    statuses_url: str
-    title: str
-    updated_at: str
-    url: str
+    state: Literal["open", "closed"] | None
+    statuses_url: str | None
+    title: str | None
+    updated_at: str | None
+    url: str | None
     user: WebhookPullRequestReviewDismissedPullRequestUser | None

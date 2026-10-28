@@ -22,17 +22,17 @@ class WebhookDeploymentStatusCreatedDeploymentStatus(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     creator: WebhookDeploymentStatusCreatedDeploymentStatusCreator | None
-    deployment_url: str
+    deployment_url: str | None
 
     # The optional human-readable description added to the status.
-    description: str
-    environment: str
+    description: str | None
+    environment: str | None
     environment_url: str | None = None
-    id: int
+    id: int | None
     log_url: str | None = None
-    node_id: str
+    node_id: str | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come
@@ -40,12 +40,12 @@ class WebhookDeploymentStatusCreatedDeploymentStatus(BaseModel):
     performed_via_github_app: (
         WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp | None
     ) = None
-    repository_url: str
+    repository_url: str | None
 
     # The new state. Can be `pending`, `success`, `failure`, or `error`.
-    state: str
+    state: str | None
 
     # The optional link added to the status.
-    target_url: str
-    updated_at: str
-    url: str
+    target_url: str | None
+    updated_at: str | None
+    url: str | None

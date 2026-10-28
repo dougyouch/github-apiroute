@@ -15,4 +15,4 @@ __all__ = ["WebhookProjectsV2ItemEditedChangesOption2"]
 
 class WebhookProjectsV2ItemEditedChangesOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    body: WebhookProjectsV2ItemEditedChangesOption2Body
+    body: WebhookProjectsV2ItemEditedChangesOption2Body | None

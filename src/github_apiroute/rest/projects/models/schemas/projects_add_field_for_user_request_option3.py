@@ -17,10 +17,10 @@ class ProjectsAddFieldForUserRequestOption3(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the field.
-    name: str
+    name: str | None
 
     # The field's data type.
-    data_type: Literal["iteration"]
+    data_type: Literal["iteration"] | None
 
     # The configuration for iteration fields.
-    iteration_configuration: ProjectsV2FieldIterationConfiguration
+    iteration_configuration: ProjectsV2FieldIterationConfiguration | None

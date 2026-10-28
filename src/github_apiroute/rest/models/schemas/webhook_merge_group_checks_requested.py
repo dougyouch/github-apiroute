@@ -19,7 +19,7 @@ __all__ = ["WebhookMergeGroupChecksRequested"]
 
 class WebhookMergeGroupChecksRequested(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["checks_requested"]
+    action: Literal["checks_requested"] | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -27,7 +27,7 @@ class WebhookMergeGroupChecksRequested(BaseModel):
     installation: SimpleInstallation | None = None
 
     # A group of pull requests that the merge queue has grouped together to be merged.
-    merge_group: MergeGroup
+    merge_group: MergeGroup | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a

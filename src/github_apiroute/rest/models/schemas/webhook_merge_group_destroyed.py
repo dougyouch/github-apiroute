@@ -19,7 +19,7 @@ __all__ = ["WebhookMergeGroupDestroyed"]
 
 class WebhookMergeGroupDestroyed(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["destroyed"]
+    action: Literal["destroyed"] | None
 
     # Explains why the merge group is being destroyed. The group could have been merged, removed
     # from the queue (dequeued), or invalidated by an earlier queue entry being dequeued
@@ -32,7 +32,7 @@ class WebhookMergeGroupDestroyed(BaseModel):
     installation: SimpleInstallation | None = None
 
     # A group of pull requests that the merge queue has grouped together to be merged.
-    merge_group: MergeGroup
+    merge_group: MergeGroup | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a

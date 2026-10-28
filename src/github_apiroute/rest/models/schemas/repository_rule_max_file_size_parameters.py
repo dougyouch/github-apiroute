@@ -17,4 +17,4 @@ class RepositoryRuleMaxFileSizeParameters(BaseModel):
 
     # The maximum file size allowed in megabytes. This limit does not apply to Git Large File
     # Storage (Git LFS).
-    max_file_size: int
+    max_file_size: int | None

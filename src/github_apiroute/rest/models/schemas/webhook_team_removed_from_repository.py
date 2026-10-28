@@ -22,7 +22,7 @@ __all__ = ["WebhookTeamRemovedFromRepository"]
 
 class WebhookTeamRemovedFromRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["removed_from_repository"]
+    action: Literal["removed_from_repository"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -37,13 +37,13 @@ class WebhookTeamRemovedFromRepository(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # A git repository
     repository: WebhookTeamRemovedFromRepositoryRepository | None = None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None
 
     # Groups of organization members that gives permissions on specified repositories.
-    team: WebhooksTeam1
+    team: WebhooksTeam1 | None

@@ -14,10 +14,10 @@ __all__ = ["WebhooksWorkflowJobRun"]
 class WebhooksWorkflowJobRun(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     conclusion: Any
-    created_at: str
-    environment: str
-    html_url: str
-    id: int
+    created_at: str | None
+    environment: str | None
+    html_url: str | None
+    id: int | None
     name: Any
-    status: str
-    updated_at: str
+    status: str | None
+    updated_at: str | None

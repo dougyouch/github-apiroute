@@ -19,10 +19,12 @@ class AgentAutomationsListAvailableRepoAutomationToolsResponseToolGroupsItem(Bas
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the group.
-    id: str
+    id: str | None
 
     # The human-readable name of the group.
-    title: str
+    title: str | None
 
     # The tools currently available in this group.
-    tools: list[AgentAutomationsListAvailableRepoAutomationToolsResponseToolGroupsItemToolsItem]
+    tools: (
+        list[AgentAutomationsListAvailableRepoAutomationToolsResponseToolGroupsItemToolsItem] | None
+    )

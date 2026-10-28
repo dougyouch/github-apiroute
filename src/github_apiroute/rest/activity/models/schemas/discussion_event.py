@@ -13,7 +13,7 @@ __all__ = ["DiscussionEvent"]
 
 class DiscussionEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
+    action: str | None
 
     # A Discussion in a repository.
-    discussion: Discussion
+    discussion: Discussion | None

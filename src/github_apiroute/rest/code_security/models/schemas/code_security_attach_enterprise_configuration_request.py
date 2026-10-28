@@ -15,4 +15,4 @@ class CodeSecurityAttachEnterpriseConfigurationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The type of repositories to attach the configuration to.
-    scope: Literal["all", "all_without_configurations"]
+    scope: Literal["all", "all_without_configurations"] | None

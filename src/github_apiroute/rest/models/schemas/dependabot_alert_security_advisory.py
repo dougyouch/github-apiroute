@@ -29,28 +29,28 @@ class DependabotAlertSecurityAdvisory(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique GitHub Security Advisory ID assigned to the advisory.
-    ghsa_id: str
+    ghsa_id: str | None
 
     # The unique CVE ID assigned to the advisory.
     cve_id: str | None
 
     # A short, plain text summary of the advisory.
-    summary: str
+    summary: str | None
 
     # A long-form Markdown-supported description of the advisory.
-    description: str
+    description: str | None
 
     # Vulnerable version range information for the advisory.
-    vulnerabilities: list[DependabotAlertSecurityVulnerability]
+    vulnerabilities: list[DependabotAlertSecurityVulnerability] | None
 
     # The severity of the advisory.
-    severity: Literal["low", "medium", "high", "critical"]
+    severity: Literal["low", "medium", "high", "critical"] | None
 
     # The classification of the advisory.
     classification: Literal["general", "malware"] | None = None
 
     # Details for the advisory pertaining to the Common Vulnerability Scoring System.
-    cvss: DependabotAlertSecurityAdvisoryCvss
+    cvss: DependabotAlertSecurityAdvisoryCvss | None
     cvss_severities: CvssSeverities | None = None
 
     # The EPSS scores as calculated by the [Exploit Prediction Scoring
@@ -58,19 +58,19 @@ class DependabotAlertSecurityAdvisory(BaseModel):
     epss: SecurityAdvisoryEpss | None = None
 
     # Details for the advisory pertaining to Common Weakness Enumeration.
-    cwes: list[DependabotAlertSecurityAdvisoryCwesItem]
+    cwes: list[DependabotAlertSecurityAdvisoryCwesItem] | None
 
     # Values that identify this advisory among security information sources.
-    identifiers: list[DependabotAlertSecurityAdvisoryIdentifiersItem]
+    identifiers: list[DependabotAlertSecurityAdvisoryIdentifiersItem] | None
 
     # Links to additional advisory information.
-    references: list[DependabotAlertSecurityAdvisoryReferencesItem]
+    references: list[DependabotAlertSecurityAdvisoryReferencesItem] | None
 
     # The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    published_at: str
+    published_at: str | None
 
     # The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    updated_at: str
+    updated_at: str | None
 
     # The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     withdrawn_at: str | None

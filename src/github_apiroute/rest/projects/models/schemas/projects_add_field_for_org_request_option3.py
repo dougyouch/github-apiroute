@@ -17,11 +17,11 @@ class ProjectsAddFieldForOrgRequestOption3(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the field.
-    name: str
+    name: str | None
 
     # The field's data type.
-    data_type: Literal["single_select"]
+    data_type: Literal["single_select"] | None
 
     # The options available for single select fields. At least one option must be provided when
     # creating a single select field.
-    single_select_options: list[ProjectsV2FieldSingleSelectOption]
+    single_select_options: list[ProjectsV2FieldSingleSelectOption] | None

@@ -27,19 +27,19 @@ class CodeScanningVariantAnalysis(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the variant analysis.
-    id: int
+    id: int | None
 
     # A GitHub repository.
-    controller_repo: SimpleRepository
+    controller_repo: SimpleRepository | None
 
     # A GitHub user.
-    actor: SimpleUser
+    actor: SimpleUser | None
 
     # The language targeted by the CodeQL query
-    query_language: CodeScanningVariantAnalysisLanguage
+    query_language: CodeScanningVariantAnalysisLanguage | None
 
     # The download url for the query pack.
-    query_pack_url: str
+    query_pack_url: str | None
 
     # The date and time at which the variant analysis was created, in ISO 8601 format':' YYYY-
     # MM-DDTHH:MM:SSZ.
@@ -53,7 +53,7 @@ class CodeScanningVariantAnalysis(BaseModel):
     # MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this
     # information is not available.
     completed_at: str | None = None
-    status: Literal["in_progress", "succeeded", "failed", "cancelled"]
+    status: Literal["in_progress", "succeeded", "failed", "cancelled"] | None
 
     # The GitHub Actions workflow run used to execute this variant analysis. This is only
     # available if the workflow run has started.

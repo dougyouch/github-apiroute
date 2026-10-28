@@ -11,13 +11,13 @@ __all__ = ["WebhooksWorkflow"]
 
 class WebhooksWorkflow(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    badge_url: str
-    created_at: str
-    html_url: str
-    id: int
-    name: str
-    node_id: str
-    path: str
-    state: str
-    updated_at: str
-    url: str
+    badge_url: str | None
+    created_at: str | None
+    html_url: str | None
+    id: int | None
+    name: str | None
+    node_id: str | None
+    path: str | None
+    state: str | None
+    updated_at: str | None
+    url: str | None

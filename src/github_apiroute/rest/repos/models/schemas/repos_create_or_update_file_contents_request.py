@@ -20,10 +20,10 @@ class ReposCreateOrUpdateFileContentsRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The commit message.
-    message: str
+    message: str | None
 
     # The new file content, using Base64 encoding.
-    content: str
+    content: str | None
 
     # **Required if you are updating a file**. The blob SHA of the file being replaced.
     sha: str | None = None

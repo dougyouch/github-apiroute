@@ -13,7 +13,7 @@ __all__ = ["MemberEvent"]
 
 class MemberEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: str
+    action: str | None
 
     # A GitHub user.
-    member: SimpleUser
+    member: SimpleUser | None

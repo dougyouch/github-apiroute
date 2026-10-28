@@ -21,6 +21,6 @@ __all__ = ["WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks"]
 
 class WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    html: WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml
-    pull_request: WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest
-    self: WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf
+    html: WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml | None
+    pull_request: WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest | None
+    self: WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf | None

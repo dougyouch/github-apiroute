@@ -20,7 +20,7 @@ __all__ = ["WebhookSubIssuesParentIssueAdded"]
 
 class WebhookSubIssuesParentIssueAdded(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["parent_issue_added"]
+    action: Literal["parent_issue_added"] | None
 
     # The ID of the parent issue.
     parent_issue_id: float | None = None
@@ -32,10 +32,10 @@ class WebhookSubIssuesParentIssueAdded(BaseModel):
     parent_issue_repo: Repository | None = None
 
     # The ID of the sub-issue.
-    sub_issue_id: float
+    sub_issue_id: float | None
 
     # Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-    sub_issue: Issue
+    sub_issue: Issue | None
 
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
@@ -49,7 +49,7 @@ class WebhookSubIssuesParentIssueAdded(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

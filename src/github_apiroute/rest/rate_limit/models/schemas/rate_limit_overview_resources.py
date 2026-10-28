@@ -13,9 +13,9 @@ __all__ = ["RateLimitOverviewResources"]
 
 class RateLimitOverviewResources(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    core: RateLimit
+    core: RateLimit | None
     graphql: RateLimit | None = None
-    search: RateLimit
+    search: RateLimit | None
     code_search: RateLimit | None = None
     source_import: RateLimit | None = None
     integration_manifest: RateLimit | None = None

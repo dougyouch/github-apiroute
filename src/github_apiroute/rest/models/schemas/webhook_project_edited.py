@@ -21,7 +21,7 @@ __all__ = ["WebhookProjectEdited"]
 
 class WebhookProjectEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
+    action: Literal["edited"] | None
 
     # The changes to the project if the action was `edited`.
     changes: WebhookProjectEditedChanges | None = None
@@ -40,7 +40,7 @@ class WebhookProjectEdited(BaseModel):
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
     organization: OrganizationSimpleWebhooks | None = None
-    project: WebhooksProject
+    project: WebhooksProject | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.

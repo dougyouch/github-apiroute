@@ -22,6 +22,6 @@ class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItem(BaseMo
         WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion
         | None
     )
-    package: WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItemPackage
-    severity: str
-    vulnerable_version_range: str
+    package: WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItemPackage | None
+    severity: str | None
+    vulnerable_version_range: str | None

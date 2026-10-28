@@ -17,28 +17,31 @@ class Budget(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier for the budget
-    id: str
+    id: str | None
 
     # The type of pricing for the budget
-    budget_type: Literal["SkuPricing"] | Literal["ProductPricing"]
+    budget_type: Literal["SkuPricing"] | Literal["ProductPricing"] | None
 
     # The budget amount limit in whole dollars. For license-based products, this represents the
     # number of licenses.
-    budget_amount: int
+    budget_amount: int | None
 
     # The type of limit enforcement for the budget
-    prevent_further_usage: bool
+    prevent_further_usage: bool | None
 
     # The scope of the budget
-    budget_scope: Literal[
-        "enterprise",
-        "organization",
-        "repository",
-        "cost_center",
-        "multi_user_customer",
-        "multi_user_cost_center",
-        "user",
-    ]
+    budget_scope: (
+        Literal[
+            "enterprise",
+            "organization",
+            "repository",
+            "cost_center",
+            "multi_user_customer",
+            "multi_user_cost_center",
+            "user",
+        ]
+        | None
+    )
 
     # The name of the entity for the budget (enterprise does not require a name).
     budget_entity_name: str | None = None
@@ -51,8 +54,8 @@ class Budget(BaseModel):
     consumed_amount: float | None = None
 
     # A single product or sku to apply the budget to.
-    budget_product_sku: str
-    budget_alerting: BudgetBudgetAlerting
+    budget_product_sku: str | None
+    budget_alerting: BudgetBudgetAlerting | None
 
     # The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are
     # accepted. If not provided, the budget will not expire. Only supported for budgets with

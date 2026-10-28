@@ -22,25 +22,25 @@ class WebhookDeploymentCreatedDeployment(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     creator: WebhookDeploymentCreatedDeploymentCreator | None
     description: str | None
-    environment: str
-    id: int
-    node_id: str
-    original_environment: str
-    payload: dict[str, Any] | str
+    environment: str | None
+    id: int | None
+    node_id: str | None
+    original_environment: str | None
+    payload: dict[str, Any] | str | None
 
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come
     # with granular permissions and built-in webhooks. GitHub apps are first class actors within
     performed_via_github_app: WebhookDeploymentCreatedDeploymentPerformedViaGithubApp | None = None
     production_environment: bool | None = None
-    ref: str
-    repository_url: str
-    sha: str
-    statuses_url: str
-    task: str
+    ref: str | None
+    repository_url: str | None
+    sha: str | None
+    statuses_url: str | None
+    task: str | None
     transient_environment: bool | None = None
-    updated_at: str
-    url: str
+    updated_at: str | None
+    url: str | None

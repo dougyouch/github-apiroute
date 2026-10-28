@@ -19,12 +19,12 @@ class ReposUpdateBranchProtectionRequestRequiredStatusChecks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Require branches to be up to date before merging.
-    strict: bool
+    strict: bool | None
 
     # **Closing down notice**: The list of status checks to require in order to merge into this
     # branch. If any of these checks have recently been set by a particular GitHub App, they
     # will be required to come from that app in future for the branch to merge. Use `checks`
-    contexts: list[str]
+    contexts: list[str] | None
 
     # The list of status checks to require in order to merge into this branch.
     checks: list[ReposUpdateBranchProtectionRequestRequiredStatusChecksChecksItem] | None = None

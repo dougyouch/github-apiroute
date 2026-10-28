@@ -28,8 +28,8 @@ class WebhookPullRequestReviewRequestRemovedValueOption2PullRequestRequestedRevi
     gists_url: str | None = None
     gravatar_id: str | None = None
     html_url: str | None = None
-    id: int
-    login: str
+    id: int | None
+    login: str | None
     name: str | None = None
     node_id: str | None = None
     organizations_url: str | None = None

@@ -11,6 +11,6 @@ __all__ = ["EnvironmentProtectionRulesItemOption3"]
 
 class EnvironmentProtectionRulesItemOption3(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    node_id: str
-    type_: str = Field(alias="type")
+    id: int | None
+    node_id: str | None
+    type_: str | None = Field(alias="type")

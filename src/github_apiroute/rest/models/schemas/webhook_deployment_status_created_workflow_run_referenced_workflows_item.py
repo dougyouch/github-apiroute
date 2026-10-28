@@ -11,6 +11,6 @@ __all__ = ["WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem"]
 
 class WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    path: str
+    path: str | None
     ref: str | None = None
-    sha: str
+    sha: str | None

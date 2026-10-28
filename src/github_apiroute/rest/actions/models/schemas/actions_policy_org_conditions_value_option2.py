@@ -20,5 +20,5 @@ class ActionsPolicyOrgConditionsValueOption2(BaseModel):
     """Parameters for a repository ID condition"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    repository_id: ActionsPolicyOrgConditionsValueOption2RepositoryId
+    repository_id: ActionsPolicyOrgConditionsValueOption2RepositoryId | None
     workflow_path: ActionsPolicyOrgConditionsValueOption2WorkflowPath | None = None

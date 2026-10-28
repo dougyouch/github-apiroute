@@ -11,8 +11,8 @@ __all__ = ["FullRepositoryPermissions"]
 
 class FullRepositoryPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    admin: bool
+    admin: bool | None
     maintain: bool | None = None
-    push: bool
+    push: bool | None
     triage: bool | None = None
-    pull: bool
+    pull: bool | None

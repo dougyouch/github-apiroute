@@ -17,15 +17,15 @@ class WebhookOrganizationMemberInvitedInvitation(BaseModel):
     """The invitation for the user or email if the action is `member_invited`."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     email: str | None
     failed_at: str | None
     failed_reason: str | None
-    id: float
-    invitation_teams_url: str
+    id: float | None
+    invitation_teams_url: str | None
     inviter: WebhookOrganizationMemberInvitedInvitationInviter | None
     login: str | None
-    node_id: str
-    role: str
-    team_count: float
+    node_id: str | None
+    role: str | None
+    team_count: float | None
     invitation_source: str | None = None

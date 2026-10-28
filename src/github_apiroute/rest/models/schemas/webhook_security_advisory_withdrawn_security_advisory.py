@@ -30,16 +30,18 @@ class WebhookSecurityAdvisoryWithdrawnSecurityAdvisory(BaseModel):
     """The details of the security advisory, including summary, description, and severity."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    cvss: WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss
+    cvss: WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss | None
     cvss_severities: CvssSeverities | None = None
-    cwes: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwesItem]
-    description: str
-    ghsa_id: str
-    identifiers: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifiersItem]
-    published_at: str
-    references: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferencesItem]
-    severity: str
-    summary: str
-    updated_at: str
-    vulnerabilities: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItem]
-    withdrawn_at: str
+    cwes: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwesItem] | None
+    description: str | None
+    ghsa_id: str | None
+    identifiers: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifiersItem] | None
+    published_at: str | None
+    references: list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferencesItem] | None
+    severity: str | None
+    summary: str | None
+    updated_at: str | None
+    vulnerabilities: (
+        list[WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesItem] | None
+    )
+    withdrawn_at: str | None

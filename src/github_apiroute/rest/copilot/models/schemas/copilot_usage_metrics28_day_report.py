@@ -18,10 +18,10 @@ class CopilotUsageMetrics28DayReport(BaseModel):
 
     # The URLs to download the latest Copilot usage metrics report for the
     # enterprise/organization.
-    download_links: list[str]
+    download_links: list[str] | None
 
     # The start date of the report period in `YYYY-MM-DD` format.
-    report_start_day: str
+    report_start_day: str | None
 
     # The end date of the report period in `YYYY-MM-DD` format.
-    report_end_day: str
+    report_end_day: str | None

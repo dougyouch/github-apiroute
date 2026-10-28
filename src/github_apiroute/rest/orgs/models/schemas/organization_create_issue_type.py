@@ -15,10 +15,10 @@ class OrganizationCreateIssueType(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Name of the issue type.
-    name: str
+    name: str | None
 
     # Whether or not the issue type is enabled at the organization level.
-    is_enabled: bool
+    is_enabled: bool | None
 
     # Description of the issue type.
     description: str | None = None

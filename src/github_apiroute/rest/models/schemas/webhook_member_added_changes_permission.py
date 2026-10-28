@@ -22,4 +22,4 @@ class WebhookMemberAddedChangesPermission(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    to: Literal["write", "admin", "read"]
+    to: Literal["write", "admin", "read"] | None

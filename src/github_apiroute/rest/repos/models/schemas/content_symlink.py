@@ -17,14 +17,14 @@ class ContentSymlink(BaseModel):
     """An object describing a symlink"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["symlink"] = Field(alias="type")
-    target: str
-    size: int
-    name: str
-    path: str
-    sha: str
-    url: str
+    type_: Literal["symlink"] | None = Field(alias="type")
+    target: str | None
+    size: int | None
+    name: str | None
+    path: str | None
+    sha: str | None
+    url: str | None
     git_url: str | None
     html_url: str | None
     download_url: str | None
-    links: ContentSymlinkLinks = Field(alias="_links")
+    links: ContentSymlinkLinks | None = Field(alias="_links")

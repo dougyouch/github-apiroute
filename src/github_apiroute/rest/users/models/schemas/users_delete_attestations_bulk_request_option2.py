@@ -13,4 +13,4 @@ class UsersDeleteAttestationsBulkRequestOption2(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # List of unique IDs associated with the artifact attestations to delete.
-    attestation_ids: list[int]
+    attestation_ids: list[int] | None

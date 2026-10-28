@@ -13,7 +13,7 @@ class SshSigningKey(BaseModel):
     """A public SSH key used to sign Git commits"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    key: str
-    id: int
-    title: str
-    created_at: str
+    key: str | None
+    id: int | None
+    title: str | None
+    created_at: str | None

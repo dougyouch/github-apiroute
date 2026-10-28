@@ -13,4 +13,4 @@ __all__ = ["WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcemen
 
 class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    from_: Literal["off", "non_admins", "everyone"] = Field(alias="from")
+    from_: Literal["off", "non_admins", "everyone"] | None = Field(alias="from")

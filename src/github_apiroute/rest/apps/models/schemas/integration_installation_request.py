@@ -18,10 +18,10 @@ class IntegrationInstallationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Unique identifier of the request installation.
-    id: int
+    id: int | None
     node_id: str | None = None
-    account: SimpleUser | Enterprise
+    account: SimpleUser | Enterprise | None
 
     # A GitHub user.
-    requester: SimpleUser
-    created_at: str
+    requester: SimpleUser | None
+    created_at: str | None

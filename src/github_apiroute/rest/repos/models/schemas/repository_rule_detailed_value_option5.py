@@ -19,7 +19,7 @@ class RepositoryRuleDetailedValueOption5(BaseModel):
     """Merges must be performed via a merge queue."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["merge_queue"] = Field(alias="type")
+    type_: Literal["merge_queue"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption5Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

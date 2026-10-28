@@ -11,7 +11,7 @@ __all__ = ["DeleteEvent"]
 
 class DeleteEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    ref_type: str
-    full_ref: str
-    pusher_type: str
+    ref: str | None
+    ref_type: str | None
+    full_ref: str | None
+    pusher_type: str | None

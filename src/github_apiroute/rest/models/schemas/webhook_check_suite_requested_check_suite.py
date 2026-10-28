@@ -28,9 +28,9 @@ class WebhookCheckSuiteRequestedCheckSuite(BaseModel):
     # GitHub apps are a new way to extend GitHub. They can be installed directly on
     # organizations and user accounts and granted access to specific repositories. They come
     # with granular permissions and built-in webhooks. GitHub apps are first class actors within
-    app: WebhookCheckSuiteRequestedCheckSuiteApp
+    app: WebhookCheckSuiteRequestedCheckSuiteApp | None
     before: str | None
-    check_runs_url: str
+    check_runs_url: str | None
 
     # The summary conclusion for all check runs that are part of the check suite. This value
     # will be `null` until the check run has completed.
@@ -47,29 +47,29 @@ class WebhookCheckSuiteRequestedCheckSuite(BaseModel):
         ]
         | None
     )
-    created_at: str
+    created_at: str | None
 
     # The head branch name the changes are on.
     head_branch: str | None
-    head_commit: WebhookCheckSuiteRequestedCheckSuiteHeadCommit
+    head_commit: WebhookCheckSuiteRequestedCheckSuiteHeadCommit | None
 
     # The SHA of the head commit that is being checked.
-    head_sha: str
-    id: int
-    latest_check_runs_count: int
-    node_id: str
+    head_sha: str | None
+    id: int | None
+    latest_check_runs_count: int | None
+    node_id: str | None
 
     # An array of pull requests that match this check suite. A pull request matches a check
     # suite if they have the same `head_sha` and `head_branch`. When the check suite's
     # `head_branch` is in a forked repository it will be `null` and the `pull_requests` array
-    pull_requests: list[WebhookCheckSuiteRequestedCheckSuitePullRequestsItem]
+    pull_requests: list[WebhookCheckSuiteRequestedCheckSuitePullRequestsItem] | None
     rerequestable: bool | None = None
     runs_rerequestable: bool | None = None
 
     # The summary status for all check runs that are part of the check suite. Can be
     # `requested`, `in_progress`, or `completed`.
     status: Literal["requested", "in_progress", "completed", "queued"] | None
-    updated_at: str
+    updated_at: str | None
 
     # URL that points to the check suite API resource.
-    url: str
+    url: str | None

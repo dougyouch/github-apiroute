@@ -14,4 +14,4 @@ class WebhookSponsorshipEditedChangesPrivacyLevel(BaseModel):
 
     # The `edited` event types include the details about the change when someone edits a
     # sponsorship to change the privacy.
-    from_: str = Field(alias="from")
+    from_: str | None = Field(alias="from")

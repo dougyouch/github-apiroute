@@ -13,4 +13,4 @@ class CodeSecurityDetachConfigurationRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # An array of repository IDs to detach from configurations. Up to 250 IDs can be provided.
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

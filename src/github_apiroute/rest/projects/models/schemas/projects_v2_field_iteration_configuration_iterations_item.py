@@ -13,10 +13,10 @@ class ProjectsV2FieldIterationConfigurationIterationsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The title of the iteration.
-    title: str
+    title: str | None
 
     # The start date of the iteration.
-    start_date: str
+    start_date: str | None
 
     # The duration of the iteration in days.
-    duration: int
+    duration: int | None

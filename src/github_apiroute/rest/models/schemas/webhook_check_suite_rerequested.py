@@ -20,10 +20,10 @@ __all__ = ["WebhookCheckSuiteRerequested"]
 
 class WebhookCheckSuiteRerequested(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["rerequested"]
+    action: Literal["rerequested"] | None
 
     # The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
-    check_suite: WebhookCheckSuiteRerequestedCheckSuite
+    check_suite: WebhookCheckSuiteRerequestedCheckSuite | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -42,7 +42,7 @@ class WebhookCheckSuiteRerequested(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

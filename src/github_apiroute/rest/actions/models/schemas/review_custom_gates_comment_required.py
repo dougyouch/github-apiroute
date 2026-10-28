@@ -13,8 +13,8 @@ class ReviewCustomGatesCommentRequired(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the environment to approve or reject.
-    environment_name: str
+    environment_name: str | None
 
     # Comment associated with the pending deployment protection rule. **Required when state is
     # not provided.**
-    comment: str
+    comment: str | None

@@ -11,8 +11,8 @@ __all__ = ["RepositoryWebhooksPermissions"]
 
 class RepositoryWebhooksPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    admin: bool
-    pull: bool
+    admin: bool | None
+    pull: bool | None
     triage: bool | None = None
-    push: bool
+    push: bool | None
     maintain: bool | None = None

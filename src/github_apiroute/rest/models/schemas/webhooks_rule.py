@@ -21,42 +21,42 @@ class WebhooksRule(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    admin_enforced: bool
-    allow_deletions_enforcement_level: Literal["off", "non_admins", "everyone"]
-    allow_force_pushes_enforcement_level: Literal["off", "non_admins", "everyone"]
-    authorized_actor_names: list[str]
-    authorized_actors_only: bool
-    authorized_dismissal_actors_only: bool
+    admin_enforced: bool | None
+    allow_deletions_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    allow_force_pushes_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    authorized_actor_names: list[str] | None
+    authorized_actors_only: bool | None
+    authorized_dismissal_actors_only: bool | None
     create_protected: bool | None = None
-    created_at: str
-    dismiss_stale_reviews_on_push: bool
-    id: int
-    ignore_approvals_from_contributors: bool
-    linear_history_requirement_enforcement_level: Literal["off", "non_admins", "everyone"]
+    created_at: str | None
+    dismiss_stale_reviews_on_push: bool | None
+    id: int | None
+    ignore_approvals_from_contributors: bool | None
+    linear_history_requirement_enforcement_level: Literal["off", "non_admins", "everyone"] | None
 
     # The enforcement level of the branch lock setting. `off` means the branch is not locked,
     # `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch
     # is read-only for everyone.
-    lock_branch_enforcement_level: Literal["off", "non_admins", "everyone"]
+    lock_branch_enforcement_level: Literal["off", "non_admins", "everyone"] | None
 
     # Whether users can pull changes from upstream when the branch is locked. Set to `true` to
     # allow users to pull changes from upstream when the branch is locked. This setting is only
     # applicable for forks.
     lock_allows_fork_sync: bool | None = None
-    merge_queue_enforcement_level: Literal["off", "non_admins", "everyone"]
-    name: str
-    pull_request_reviews_enforcement_level: Literal["off", "non_admins", "everyone"]
-    repository_id: int
-    require_code_owner_review: bool
+    merge_queue_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    name: str | None
+    pull_request_reviews_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    repository_id: int | None
+    require_code_owner_review: bool | None
 
     # Whether the most recent push must be approved by someone other than the person who pushed
     # it
     require_last_push_approval: bool | None = None
-    required_approving_review_count: int
-    required_conversation_resolution_level: Literal["off", "non_admins", "everyone"]
-    required_deployments_enforcement_level: Literal["off", "non_admins", "everyone"]
-    required_status_checks: list[str]
-    required_status_checks_enforcement_level: Literal["off", "non_admins", "everyone"]
-    signature_requirement_enforcement_level: Literal["off", "non_admins", "everyone"]
-    strict_required_status_checks_policy: bool
-    updated_at: str
+    required_approving_review_count: int | None
+    required_conversation_resolution_level: Literal["off", "non_admins", "everyone"] | None
+    required_deployments_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    required_status_checks: list[str] | None
+    required_status_checks_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    signature_requirement_enforcement_level: Literal["off", "non_admins", "everyone"] | None
+    strict_required_status_checks_policy: bool | None
+    updated_at: str | None

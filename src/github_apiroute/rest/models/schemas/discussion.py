@@ -40,27 +40,27 @@ class Discussion(BaseModel):
         ]
         | None
     ) = None
-    body: str
-    category: DiscussionCategory
-    comments: int
-    created_at: str
-    html_url: str
-    id: int
-    locked: bool
-    node_id: str
-    number: int
+    body: str | None
+    category: DiscussionCategory | None
+    comments: int | None
+    created_at: str | None
+    html_url: str | None
+    id: int | None
+    locked: bool | None
+    node_id: str | None
+    number: int | None
     reactions: DiscussionReactions | None = None
-    repository_url: str
+    repository_url: str | None
 
     # The current state of the discussion. `converting` means that the discussion is being
     # converted from an issue. `transferring` means that the discussion is being transferred
     # from another repository.
-    state: Literal["open", "closed", "locked", "converting", "transferring"]
+    state: Literal["open", "closed", "locked", "converting", "transferring"] | None
 
     # The reason for the current state
     state_reason: Literal["resolved", "outdated", "duplicate", "reopened"] | None
     timeline_url: str | None = None
-    title: str
-    updated_at: str
+    title: str | None
+    updated_at: str | None
     user: DiscussionUser | None
     labels: list[Label] | None = None

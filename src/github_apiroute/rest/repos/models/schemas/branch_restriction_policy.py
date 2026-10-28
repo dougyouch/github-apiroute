@@ -17,10 +17,10 @@ class BranchRestrictionPolicy(BaseModel):
     """Branch Restriction Policy"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    users_url: str
-    teams_url: str
-    apps_url: str
-    users: list[BranchRestrictionPolicyUsersItem]
-    teams: list[Team]
-    apps: list[BranchRestrictionPolicyAppsItem]
+    url: str | None
+    users_url: str | None
+    teams_url: str | None
+    apps_url: str | None
+    users: list[BranchRestrictionPolicyUsersItem] | None
+    teams: list[Team] | None
+    apps: list[BranchRestrictionPolicyAppsItem] | None

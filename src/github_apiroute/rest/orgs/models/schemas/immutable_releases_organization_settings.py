@@ -17,7 +17,7 @@ class ImmutableReleasesOrganizationSettings(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The policy that controls how immutable releases are enforced in the organization.
-    enforced_repositories: Literal["all", "none", "selected"]
+    enforced_repositories: Literal["all", "none", "selected"] | None
 
     # The API URL to use to get or set the selected repositories for immutable releases
     # enforcement, when `enforced_repositories` is set to `selected`.

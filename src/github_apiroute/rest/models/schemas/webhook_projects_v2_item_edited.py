@@ -24,7 +24,7 @@ __all__ = ["WebhookProjectsV2ItemEdited"]
 
 class WebhookProjectsV2ItemEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
+    action: Literal["edited"] | None
 
     # The changes made to the item may involve modifications in the item's fields and draft
     # issue body. It includes altered values for text, number, date, single select, and
@@ -41,10 +41,10 @@ class WebhookProjectsV2ItemEdited(BaseModel):
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
     # repository owned by an organization.
-    organization: OrganizationSimpleWebhooks
+    organization: OrganizationSimpleWebhooks | None
 
     # An item belonging to a project
-    projects_v2_item: ProjectsV2Item
+    projects_v2_item: ProjectsV2Item | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

@@ -13,6 +13,6 @@ class CommitActivity(BaseModel):
     """Commit Activity"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    days: list[int]
-    total: int
-    week: int
+    days: list[int] | None
+    total: int | None
+    week: int | None

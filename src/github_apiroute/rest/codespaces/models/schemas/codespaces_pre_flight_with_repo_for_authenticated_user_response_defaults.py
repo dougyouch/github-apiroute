@@ -11,5 +11,5 @@ __all__ = ["CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults"]
 
 class CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    location: str
+    location: str | None
     devcontainer_path: str | None

@@ -13,12 +13,12 @@ __all__ = ["WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseP
 
 class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    bullets: list[str]
-    description: str
-    has_free_trial: bool
-    id: int
-    monthly_price_in_cents: int
-    name: str
-    price_model: Literal["FREE", "FLAT_RATE", "PER_UNIT"]
+    bullets: list[str] | None
+    description: str | None
+    has_free_trial: bool | None
+    id: int | None
+    monthly_price_in_cents: int | None
+    name: str | None
+    price_model: Literal["FREE", "FLAT_RATE", "PER_UNIT"] | None
     unit_name: str | None
-    yearly_price_in_cents: int
+    yearly_price_in_cents: int | None

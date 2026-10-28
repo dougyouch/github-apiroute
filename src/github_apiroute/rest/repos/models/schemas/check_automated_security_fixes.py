@@ -15,7 +15,7 @@ class CheckAutomatedSecurityFixes(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether Dependabot security updates are enabled for the repository.
-    enabled: bool
+    enabled: bool | None
 
     # Whether Dependabot security updates are paused for the repository.
-    paused: bool
+    paused: bool | None

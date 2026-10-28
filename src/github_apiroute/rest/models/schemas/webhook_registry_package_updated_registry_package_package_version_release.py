@@ -15,14 +15,14 @@ __all__ = ["WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease"]
 
 class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    author: WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor
-    created_at: str
-    draft: bool
-    html_url: str
-    id: int
-    name: str
-    prerelease: bool
-    published_at: str
-    tag_name: str
-    target_commitish: str
-    url: str
+    author: WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor | None
+    created_at: str | None
+    draft: bool | None
+    html_url: str | None
+    id: int | None
+    name: str | None
+    prerelease: bool | None
+    published_at: str | None
+    tag_name: str | None
+    target_commitish: str | None
+    url: str | None

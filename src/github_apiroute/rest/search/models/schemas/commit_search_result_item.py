@@ -20,21 +20,21 @@ class CommitSearchResultItem(BaseModel):
     """Commit Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    sha: str
-    html_url: str
-    comments_url: str
-    commit: CommitSearchResultItemCommit
+    url: str | None
+    sha: str | None
+    html_url: str | None
+    comments_url: str | None
+    commit: CommitSearchResultItemCommit | None
 
     # A GitHub user.
     author: NullableSimpleUser | None
 
     # Metaproperties for Git author/committer information.
     committer: NullableGitUser | None
-    parents: list[CommitSearchResultItemParentsItem]
+    parents: list[CommitSearchResultItemParentsItem] | None
 
     # Minimal Repository
-    repository: MinimalRepository
-    score: float
-    node_id: str
+    repository: MinimalRepository | None
+    score: float | None
+    node_id: str | None
     text_matches: SearchResultTextMatches | None = None

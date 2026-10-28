@@ -20,7 +20,7 @@ __all__ = ["WebhookDeployKeyCreated"]
 
 class WebhookDeployKeyCreated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["created"]
+    action: Literal["created"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -34,7 +34,7 @@ class WebhookDeployKeyCreated(BaseModel):
 
     # The [`deploy key`](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key)
     # resource.
-    key: WebhooksDeployKey
+    key: WebhooksDeployKey | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -43,7 +43,7 @@ class WebhookDeployKeyCreated(BaseModel):
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

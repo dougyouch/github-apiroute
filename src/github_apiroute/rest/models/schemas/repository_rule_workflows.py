@@ -19,5 +19,5 @@ class RepositoryRuleWorkflows(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["workflows"] = Field(alias="type")
+    type_: Literal["workflows"] | None = Field(alias="type")
     parameters: RepositoryRuleWorkflowsParameters | None = None

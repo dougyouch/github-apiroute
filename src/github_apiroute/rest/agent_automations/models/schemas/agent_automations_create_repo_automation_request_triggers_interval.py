@@ -15,7 +15,7 @@ class AgentAutomationsCreateRepoAutomationRequestTriggersInterval(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # One or more schedules on which the Automation runs.
-    cadence: list[Literal["hourly", "daily", "weekly"]]
+    cadence: list[Literal["hourly", "daily", "weekly"]] | None
 
     # UTC hour anchor (0 through 23) for daily and weekly schedules. Omitted daily and weekly
     # values default to `0` (midnight UTC).

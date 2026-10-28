@@ -15,13 +15,13 @@ __all__ = ["SearchIssuesAndPullRequestsResponse"]
 
 class SearchIssuesAndPullRequestsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    incomplete_results: bool
-    items: list[IssueSearchResultItem]
+    total_count: int | None
+    incomplete_results: bool | None
+    items: list[IssueSearchResultItem] | None
 
     # The type of search that was performed. Possible values are `lexical`, `semantic`, or
     # `hybrid`.
-    search_type: Literal["lexical", "semantic", "hybrid"]
+    search_type: Literal["lexical", "semantic", "hybrid"] | None
 
     # When a semantic or hybrid search falls back to lexical search, this field contains the
     # reasons for the fallback. Only present when a fallback occurred.

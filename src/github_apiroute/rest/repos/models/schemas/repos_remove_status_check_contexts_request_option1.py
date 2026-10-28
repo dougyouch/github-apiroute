@@ -13,4 +13,4 @@ class ReposRemoveStatusCheckContextsRequestOption1(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the status checks
-    contexts: list[str]
+    contexts: list[str] | None

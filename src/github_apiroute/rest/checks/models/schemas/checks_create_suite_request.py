@@ -13,4 +13,4 @@ class ChecksCreateSuiteRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The sha of the head commit.
-    head_sha: str
+    head_sha: str | None

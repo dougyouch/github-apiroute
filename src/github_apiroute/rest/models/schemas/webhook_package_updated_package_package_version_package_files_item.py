@@ -11,14 +11,14 @@ __all__ = ["WebhookPackageUpdatedPackagePackageVersionPackageFilesItem"]
 
 class WebhookPackageUpdatedPackagePackageVersionPackageFilesItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    content_type: str
-    created_at: str
-    download_url: str
-    id: int
+    content_type: str | None
+    created_at: str | None
+    download_url: str | None
+    id: int | None
     md5: str | None
-    name: str
+    name: str | None
     sha1: str | None
-    sha256: str
-    size: int
-    state: str
-    updated_at: str
+    sha256: str | None
+    size: int | None
+    state: str | None
+    updated_at: str | None

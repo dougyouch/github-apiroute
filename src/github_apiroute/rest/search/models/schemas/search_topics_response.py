@@ -13,6 +13,6 @@ __all__ = ["SearchTopicsResponse"]
 
 class SearchTopicsResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    incomplete_results: bool
-    items: list[TopicSearchResultItem]
+    total_count: int | None
+    incomplete_results: bool | None
+    items: list[TopicSearchResultItem] | None

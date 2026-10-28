@@ -13,7 +13,7 @@ class PullRequestStackBase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The base ref of the stack this pull request belongs to.
-    ref: str
+    ref: str | None
 
     # The base SHA of the stack this pull request belongs to.
-    sha: str
+    sha: str | None

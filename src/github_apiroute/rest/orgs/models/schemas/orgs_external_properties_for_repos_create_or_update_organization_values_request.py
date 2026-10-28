@@ -15,7 +15,7 @@ class OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequest(Base
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The names of repositories that the external custom property values will be applied to.
-    repository_names: list[str]
+    repository_names: list[str] | None
 
     # List of external custom property names and associated values to apply to the repositories.
-    properties: list[CustomPropertyValue]
+    properties: list[CustomPropertyValue] | None

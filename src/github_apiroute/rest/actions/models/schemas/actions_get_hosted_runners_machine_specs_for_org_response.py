@@ -13,5 +13,5 @@ __all__ = ["ActionsGetHostedRunnersMachineSpecsForOrgResponse"]
 
 class ActionsGetHostedRunnersMachineSpecsForOrgResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    machine_specs: list[ActionsHostedRunnerMachineSpec]
+    total_count: int | None
+    machine_specs: list[ActionsHostedRunnerMachineSpec] | None

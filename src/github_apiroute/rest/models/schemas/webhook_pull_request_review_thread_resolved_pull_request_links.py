@@ -36,11 +36,11 @@ __all__ = ["WebhookPullRequestReviewThreadResolvedPullRequestLinks"]
 
 class WebhookPullRequestReviewThreadResolvedPullRequestLinks(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    comments: WebhookPullRequestReviewThreadResolvedPullRequestLinksComments
-    commits: WebhookPullRequestReviewThreadResolvedPullRequestLinksCommits
-    html: WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml
-    issue: WebhookPullRequestReviewThreadResolvedPullRequestLinksIssue
-    review_comment: WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComment
-    review_comments: WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments
-    self: WebhookPullRequestReviewThreadResolvedPullRequestLinksSelf
-    statuses: WebhookPullRequestReviewThreadResolvedPullRequestLinksStatuses
+    comments: WebhookPullRequestReviewThreadResolvedPullRequestLinksComments | None
+    commits: WebhookPullRequestReviewThreadResolvedPullRequestLinksCommits | None
+    html: WebhookPullRequestReviewThreadResolvedPullRequestLinksHtml | None
+    issue: WebhookPullRequestReviewThreadResolvedPullRequestLinksIssue | None
+    review_comment: WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComment | None
+    review_comments: WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments | None
+    self: WebhookPullRequestReviewThreadResolvedPullRequestLinksSelf | None
+    statuses: WebhookPullRequestReviewThreadResolvedPullRequestLinksStatuses | None

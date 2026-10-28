@@ -11,8 +11,8 @@ __all__ = ["PushEvent"]
 
 class PushEvent(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    repository_id: int
-    push_id: int
-    ref: str
-    head: str
-    before: str
+    repository_id: int | None
+    push_id: int | None
+    ref: str | None
+    head: str | None
+    before: str | None

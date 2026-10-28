@@ -16,7 +16,7 @@ class OidcCustomSub(BaseModel):
 
     # Array of unique strings. Each claim key can only contain alphanumeric characters and
     # underscores.
-    include_claim_keys: list[str]
+    include_claim_keys: list[str] | None
 
     # Whether to opt in to the immutable OIDC subject claim format for the organization. When
     # `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the

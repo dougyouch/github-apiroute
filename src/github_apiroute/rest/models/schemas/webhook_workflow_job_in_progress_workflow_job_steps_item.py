@@ -15,7 +15,7 @@ class WebhookWorkflowJobInProgressWorkflowJobStepsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     completed_at: str | None
     conclusion: str | None
-    name: str
-    number: int
+    name: str | None
+    number: int | None
     started_at: str | None
-    status: Literal["in_progress", "completed", "pending", "queued"]
+    status: Literal["in_progress", "completed", "pending", "queued"] | None

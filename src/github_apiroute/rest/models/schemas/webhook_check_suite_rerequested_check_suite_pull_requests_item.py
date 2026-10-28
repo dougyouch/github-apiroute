@@ -18,8 +18,8 @@ __all__ = ["WebhookCheckSuiteRerequestedCheckSuitePullRequestsItem"]
 
 class WebhookCheckSuiteRerequestedCheckSuitePullRequestsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    base: WebhookCheckSuiteRerequestedCheckSuitePullRequestsItemBase
-    head: WebhookCheckSuiteRerequestedCheckSuitePullRequestsItemHead
-    id: int
-    number: int
-    url: str
+    base: WebhookCheckSuiteRerequestedCheckSuitePullRequestsItemBase | None
+    head: WebhookCheckSuiteRerequestedCheckSuitePullRequestsItemHead | None
+    id: int | None
+    number: int | None
+    url: str | None

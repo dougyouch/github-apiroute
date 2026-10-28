@@ -13,4 +13,4 @@ class RepositoryRuleUpdateParameters(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Branch can pull changes from its upstream repository
-    update_allows_fetch_and_merge: bool
+    update_allows_fetch_and_merge: bool | None

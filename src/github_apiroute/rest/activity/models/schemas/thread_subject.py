@@ -11,7 +11,7 @@ __all__ = ["ThreadSubject"]
 
 class ThreadSubject(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    title: str
-    url: str
-    latest_comment_url: str
-    type_: str = Field(alias="type")
+    title: str | None
+    url: str | None
+    latest_comment_url: str | None
+    type_: str | None = Field(alias="type")

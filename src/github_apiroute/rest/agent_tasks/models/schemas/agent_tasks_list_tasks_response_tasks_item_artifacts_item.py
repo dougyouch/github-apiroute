@@ -24,13 +24,14 @@ class AgentTasksListTasksResponseTasksItemArtifactsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Provider namespace
-    provider: Literal["github"]
+    provider: Literal["github"] | None
 
     # Type of artifact. Available Values: `pull`, `branch`.
-    type_: Literal["pull", "branch"] = Field(alias="type")
+    type_: Literal["pull", "branch"] | None = Field(alias="type")
 
     # Resource data (shape depends on type)
     data: (
         AgentTasksListTasksResponseTasksItemArtifactsItemDataOption1
         | AgentTasksListTasksResponseTasksItemArtifactsItemDataOption2
+        | None
     )

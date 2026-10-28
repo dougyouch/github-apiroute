@@ -15,9 +15,9 @@ class OrgRepoCustomPropertyValues(BaseModel):
     """List of custom property values for a repository"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    repository_id: int
-    repository_name: str
-    repository_full_name: str
+    repository_id: int | None
+    repository_name: str | None
+    repository_full_name: str | None
 
     # List of custom property names and associated values
-    properties: list[CustomPropertyValue]
+    properties: list[CustomPropertyValue] | None

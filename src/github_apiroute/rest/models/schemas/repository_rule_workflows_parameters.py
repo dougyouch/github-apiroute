@@ -20,4 +20,4 @@ class RepositoryRuleWorkflowsParameters(BaseModel):
     do_not_enforce_on_create: bool | None = None
 
     # Workflows that must pass for this rule to pass.
-    workflows: list[RepositoryRuleParamsWorkflowFileReference]
+    workflows: list[RepositoryRuleParamsWorkflowFileReference] | None

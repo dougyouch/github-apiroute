@@ -11,8 +11,8 @@ __all__ = ["WebhooksMarketplacePurchaseAccount"]
 
 class WebhooksMarketplacePurchaseAccount(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
-    login: str
-    node_id: str
+    id: int | None
+    login: str | None
+    node_id: str | None
     organization_billing_email: str | None
-    type_: str = Field(alias="type")
+    type_: str | None = Field(alias="type")

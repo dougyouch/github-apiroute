@@ -17,22 +17,22 @@ class NullableCodespaceMachine(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the machine.
-    name: str
+    name: str | None
 
     # The display name of the machine includes cores, memory, and storage.
-    display_name: str
+    display_name: str | None
 
     # The operating system of the machine.
-    operating_system: str
+    operating_system: str | None
 
     # How much storage is available to the codespace.
-    storage_in_bytes: int
+    storage_in_bytes: int | None
 
     # How much memory is available to the codespace.
-    memory_in_bytes: int
+    memory_in_bytes: int | None
 
     # How many cores are available to the codespace.
-    cpus: int
+    cpus: int | None
 
     # Whether a prebuild is currently available when creating a codespace for this machine and
     # repository. If a branch was not specified as a ref, the default branch will be assumed.

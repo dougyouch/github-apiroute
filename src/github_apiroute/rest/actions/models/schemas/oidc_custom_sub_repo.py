@@ -16,7 +16,7 @@ class OidcCustomSubRepo(BaseModel):
 
     # Whether to use the default template or not. If `true`, the `include_claim_keys` field is
     # ignored.
-    use_default: bool
+    use_default: bool | None
 
     # Array of unique strings. Each claim key can only contain alphanumeric characters and
     # underscores.

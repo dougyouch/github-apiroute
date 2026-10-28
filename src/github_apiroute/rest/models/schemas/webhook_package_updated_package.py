@@ -19,15 +19,15 @@ class WebhookPackageUpdatedPackage(BaseModel):
     """Information about the package."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    created_at: str
+    created_at: str | None
     description: str | None
-    ecosystem: str
-    html_url: str
-    id: int
-    name: str
-    namespace: str
+    ecosystem: str | None
+    html_url: str | None
+    id: int | None
+    name: str | None
+    namespace: str | None
     owner: WebhookPackageUpdatedPackageOwner | None
-    package_type: str
-    package_version: WebhookPackageUpdatedPackagePackageVersion
+    package_type: str | None
+    package_version: WebhookPackageUpdatedPackagePackageVersion | None
     registry: WebhookPackageUpdatedPackageRegistry | None
-    updated_at: str
+    updated_at: str | None

@@ -19,7 +19,7 @@ class ProtectedBranchRequiredStatusCheck(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     url: str | None = None
     enforcement_level: str | None = None
-    contexts: list[str]
-    checks: list[ProtectedBranchRequiredStatusCheckChecksItem]
+    contexts: list[str] | None
+    checks: list[ProtectedBranchRequiredStatusCheckChecksItem] | None
     contexts_url: str | None = None
     strict: bool | None = None

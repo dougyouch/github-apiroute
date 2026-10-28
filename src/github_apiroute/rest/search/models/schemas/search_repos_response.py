@@ -13,6 +13,6 @@ __all__ = ["SearchReposResponse"]
 
 class SearchReposResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
-    incomplete_results: bool
-    items: list[RepoSearchResultItem]
+    total_count: int | None
+    incomplete_results: bool | None
+    items: list[RepoSearchResultItem] | None

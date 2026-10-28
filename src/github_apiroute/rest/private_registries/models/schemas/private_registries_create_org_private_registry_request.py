@@ -15,26 +15,29 @@ class PrivateRegistriesCreateOrgPrivateRegistryRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The registry type.
-    registry_type: Literal[
-        "maven_repository",
-        "nuget_feed",
-        "goproxy_server",
-        "npm_registry",
-        "rubygems_server",
-        "cargo_registry",
-        "composer_repository",
-        "docker_registry",
-        "git_source",
-        "helm_registry",
-        "hex_organization",
-        "hex_repository",
-        "pub_repository",
-        "python_index",
-        "terraform_registry",
-    ]
+    registry_type: (
+        Literal[
+            "maven_repository",
+            "nuget_feed",
+            "goproxy_server",
+            "npm_registry",
+            "rubygems_server",
+            "cargo_registry",
+            "composer_repository",
+            "docker_registry",
+            "git_source",
+            "helm_registry",
+            "hex_organization",
+            "hex_repository",
+            "pub_repository",
+            "python_index",
+            "terraform_registry",
+        ]
+        | None
+    )
 
     # The URL of the private registry.
-    url: str
+    url: str | None
 
     # The username to use when authenticating with the private registry. This field should be
     # omitted if the private registry does not require a username for authentication.
@@ -57,7 +60,7 @@ class PrivateRegistriesCreateOrgPrivateRegistryRequest(BaseModel):
     # Which type of organization repositories have access to the private registry. `selected`
     # means only the repositories specified by `selected_repository_ids` can access the private
     # registry.
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
 
     # An array of repository IDs that can access the organization private registry. You can only
     # provide a list of repository IDs when `visibility` is set to `selected`. You can manage

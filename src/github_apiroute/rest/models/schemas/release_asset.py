@@ -17,23 +17,23 @@ class ReleaseAsset(BaseModel):
     """Data related to a release."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    browser_download_url: str
-    id: int
-    node_id: str
+    url: str | None
+    browser_download_url: str | None
+    id: int | None
+    node_id: str | None
 
     # The file name of the asset.
-    name: str
+    name: str | None
     label: str | None
 
     # State of the release asset.
-    state: Literal["uploaded", "open"]
-    content_type: str
-    size: int
+    state: Literal["uploaded", "open"] | None
+    content_type: str | None
+    size: int | None
     digest: str | None
-    download_count: int
-    created_at: str
-    updated_at: str
+    download_count: int | None
+    created_at: str | None
+    updated_at: str | None
 
     # A GitHub user.
     uploader: NullableSimpleUser | None

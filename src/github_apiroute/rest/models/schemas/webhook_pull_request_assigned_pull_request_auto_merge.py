@@ -28,4 +28,4 @@ class WebhookPullRequestAssignedPullRequestAutoMerge(BaseModel):
     enabled_by: WebhookPullRequestAssignedPullRequestAutoMergeEnabledBy | None
 
     # The merge method to use.
-    merge_method: Literal["merge", "squash", "rebase"]
+    merge_method: Literal["merge", "squash", "rebase"] | None

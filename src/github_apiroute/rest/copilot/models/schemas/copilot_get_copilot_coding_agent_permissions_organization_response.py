@@ -16,7 +16,7 @@ class CopilotGetCopilotCodingAgentPermissionsOrganizationResponse(BaseModel):
 
     # The policy for which repositories can use Copilot cloud agent. Can be one of `all`,
     # `selected`, or `none`.
-    enabled_repositories: Literal["all", "selected", "none"]
+    enabled_repositories: Literal["all", "selected", "none"] | None
 
     # The URL for the selected repositories endpoint. Only present when `enabled_repositories`
     # is `selected`.

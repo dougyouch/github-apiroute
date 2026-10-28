@@ -13,4 +13,4 @@ class GistsCreateRequestFilesValue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Content of the file
-    content: str
+    content: str | None

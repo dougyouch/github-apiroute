@@ -11,8 +11,8 @@ __all__ = ["TeamOrganizationPlan"]
 
 class TeamOrganizationPlan(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
-    space: int
-    private_repos: int
+    name: str | None
+    space: int | None
+    private_repos: int | None
     filled_seats: int | None = None
     seats: int | None = None

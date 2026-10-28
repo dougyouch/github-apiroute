@@ -13,4 +13,4 @@ class UsersDeleteSocialAccountForAuthenticatedUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Full URLs for the social media profiles to delete.
-    account_urls: list[str]
+    account_urls: list[str] | None

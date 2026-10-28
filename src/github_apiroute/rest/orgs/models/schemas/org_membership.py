@@ -19,14 +19,14 @@ class OrgMembership(BaseModel):
     """Org Membership"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
 
     # The state of the member in the organization. The `pending` state indicates the user has
     # not yet accepted an invitation.
-    state: Literal["active", "pending"]
+    state: Literal["active", "pending"] | None
 
     # The user's membership type in the organization.
-    role: Literal["admin", "member", "billing_manager"]
+    role: Literal["admin", "member", "billing_manager"] | None
 
     # Whether the user has direct membership in the organization.
     direct_membership: bool | None = None
@@ -34,10 +34,10 @@ class OrgMembership(BaseModel):
     # The slugs of the enterprise teams providing the user with indirect membership in the
     # organization. A limit of 100 enterprise team slugs is returned.
     enterprise_teams_providing_indirect_membership: list[str] | None = None
-    organization_url: str
+    organization_url: str | None
 
     # A GitHub organization.
-    organization: OrganizationSimple
+    organization: OrganizationSimple | None
 
     # A GitHub user.
     user: NullableSimpleUser | None

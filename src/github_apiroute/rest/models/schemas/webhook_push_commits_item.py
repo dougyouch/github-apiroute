@@ -20,17 +20,17 @@ class WebhookPushCommitsItem(BaseModel):
     added: list[str] | None = None
 
     # Metaproperties for Git author/committer information.
-    author: WebhookPushCommitsItemAuthor
+    author: WebhookPushCommitsItemAuthor | None
 
     # Metaproperties for Git author/committer information.
-    committer: WebhookPushCommitsItemCommitter
+    committer: WebhookPushCommitsItemCommitter | None
 
     # Whether this commit is distinct from any that have been pushed before.
-    distinct: bool
-    id: str
+    distinct: bool | None
+    id: str | None
 
     # The commit message.
-    message: str
+    message: str | None
 
     # An array of files modified by the commit. A maximum of 3000 changed files will be reported
     # per commit.
@@ -41,8 +41,8 @@ class WebhookPushCommitsItem(BaseModel):
     removed: list[str] | None = None
 
     # The ISO 8601 timestamp of the commit.
-    timestamp: str
-    tree_id: str
+    timestamp: str | None
+    tree_id: str | None
 
     # URL that points to the commit API resource.
-    url: str
+    url: str | None

@@ -15,4 +15,4 @@ class CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest(BaseModel):
     # An array of repository ids for which a codespace can access the secret. You can manage the
     # list of selected repositories using the [List selected repositories for a user
     # secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-
-    selected_repository_ids: list[int]
+    selected_repository_ids: list[int] | None

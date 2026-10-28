@@ -19,7 +19,7 @@ class OrgsReviewPatGrantRequestsInBulkRequest(BaseModel):
     pat_request_ids: list[int] | None = None
 
     # Action to apply to the requests.
-    action: Literal["approve", "deny"]
+    action: Literal["approve", "deny"] | None
 
     # Reason for approving or denying the requests. Max 1024 characters.
     reason: str | None = None

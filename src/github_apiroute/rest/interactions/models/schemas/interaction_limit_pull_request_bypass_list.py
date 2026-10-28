@@ -15,4 +15,4 @@ class InteractionLimitPullRequestBypassList(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A list of user logins to add or remove from the bypass list.
-    users: list[str]
+    users: list[str] | None

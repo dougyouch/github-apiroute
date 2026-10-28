@@ -15,14 +15,14 @@ class PullsCreateReviewCommentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The text of the review comment.
-    body: str
+    body: str | None
 
     # The SHA of the commit needing a comment. Not using the latest commit SHA may render your
     # comment outdated if a subsequent commit modifies the line you specify as the `position`.
-    commit_id: str
+    commit_id: str | None
 
     # The relative path to the file that necessitates a comment.
-    path: str
+    path: str | None
 
     # **This parameter is closing down. Use `line` instead**. The position in the diff where you
     # want to add a review comment. Note this value is not the same as the line number in the

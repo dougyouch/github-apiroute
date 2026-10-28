@@ -17,17 +17,17 @@ class GitCreateTagRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The tag's name. This is typically a version (e.g., "v0.0.1").
-    tag: str
+    tag: str | None
 
     # The tag message.
-    message: str
+    message: str | None
 
     # The SHA of the git object this is tagging.
-    object: str
+    object: str | None
 
     # The type of the object we're tagging. Normally this is a `commit` but it can also be a
     # `tree` or a `blob`.
-    type_: Literal["commit", "tree", "blob"] = Field(alias="type")
+    type_: Literal["commit", "tree", "blob"] | None = Field(alias="type")
 
     # An object with information about the individual creating the tag.
     tagger: GitCreateTagRequestTagger | None = None

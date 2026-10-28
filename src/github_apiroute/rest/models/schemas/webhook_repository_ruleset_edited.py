@@ -21,7 +21,7 @@ __all__ = ["WebhookRepositoryRulesetEdited"]
 
 class WebhookRepositoryRulesetEdited(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["edited"]
+    action: Literal["edited"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -43,8 +43,8 @@ class WebhookRepositoryRulesetEdited(BaseModel):
     repository: RepositoryWebhooks | None = None
 
     # A set of rules to apply when specified conditions are met.
-    repository_ruleset: RepositoryRuleset
+    repository_ruleset: RepositoryRuleset | None
     changes: WebhookRepositoryRulesetEditedChanges | None = None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

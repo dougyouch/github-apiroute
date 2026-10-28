@@ -19,10 +19,10 @@ class NullableProjectsV2StatusUpdate(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the status update.
-    id: float
+    id: float | None
 
     # The node ID of the status update.
-    node_id: str
+    node_id: str | None
 
     # The node ID of the project that this status update belongs to.
     project_node_id: str | None = None
@@ -31,10 +31,10 @@ class NullableProjectsV2StatusUpdate(BaseModel):
     creator: SimpleUser | None = None
 
     # The time when the status update was created.
-    created_at: str
+    created_at: str | None
 
     # The time when the status update was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # The current status.
     status: Literal["INACTIVE", "ON_TRACK", "AT_RISK", "OFF_TRACK", "COMPLETE"] | None = None

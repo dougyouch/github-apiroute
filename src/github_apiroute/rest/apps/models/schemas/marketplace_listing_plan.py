@@ -15,16 +15,16 @@ class MarketplaceListingPlan(BaseModel):
     """Marketplace Listing Plan"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
-    accounts_url: str
-    id: int
-    number: int
-    name: str
-    description: str
-    monthly_price_in_cents: int
-    yearly_price_in_cents: int
-    price_model: Literal["FREE", "FLAT_RATE", "PER_UNIT"]
-    has_free_trial: bool
+    url: str | None
+    accounts_url: str | None
+    id: int | None
+    number: int | None
+    name: str | None
+    description: str | None
+    monthly_price_in_cents: int | None
+    yearly_price_in_cents: int | None
+    price_model: Literal["FREE", "FLAT_RATE", "PER_UNIT"] | None
+    has_free_trial: bool | None
     unit_name: str | None
-    state: str
-    bullets: list[str]
+    state: str | None
+    bullets: list[str] | None

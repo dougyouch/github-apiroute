@@ -17,32 +17,32 @@ __all__ = ["WebhookWorkflowJobQueuedWorkflowJob"]
 
 class WebhookWorkflowJobQueuedWorkflowJob(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    check_run_url: str
+    check_run_url: str | None
     completed_at: str | None
     conclusion: str | None
 
     # The time that the job created.
-    created_at: str
-    head_sha: str
-    html_url: str
-    id: int
-    labels: list[str]
-    name: str
-    node_id: str
-    run_attempt: int
-    run_id: float
-    run_url: str
+    created_at: str | None
+    head_sha: str | None
+    html_url: str | None
+    id: int | None
+    labels: list[str] | None
+    name: str | None
+    node_id: str | None
+    run_attempt: int | None
+    run_id: float | None
+    run_url: str | None
     runner_group_id: int | None
     runner_group_name: str | None
     runner_id: int | None
     runner_name: str | None
-    started_at: str
-    status: Literal["queued", "in_progress", "completed", "waiting"]
+    started_at: str | None
+    status: Literal["queued", "in_progress", "completed", "waiting"] | None
 
     # The name of the current branch.
     head_branch: str | None
 
     # The name of the workflow.
     workflow_name: str | None
-    steps: list[WebhookWorkflowJobQueuedWorkflowJobStepsItem]
-    url: str
+    steps: list[WebhookWorkflowJobQueuedWorkflowJobStepsItem] | None
+    url: str | None

@@ -13,4 +13,4 @@ class PullsUpdateReviewCommentRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The text of the reply to the review comment.
-    body: str
+    body: str | None

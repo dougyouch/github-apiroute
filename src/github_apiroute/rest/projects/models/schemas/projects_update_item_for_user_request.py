@@ -17,4 +17,4 @@ class ProjectsUpdateItemForUserRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # A list of field updates to apply.
-    fields: list[ProjectsUpdateItemForUserRequestFieldsItem]
+    fields: list[ProjectsUpdateItemForUserRequestFieldsItem] | None

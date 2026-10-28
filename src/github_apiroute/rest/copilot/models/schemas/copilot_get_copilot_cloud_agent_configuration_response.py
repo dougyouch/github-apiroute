@@ -24,27 +24,27 @@ class CopilotGetCopilotCloudAgentConfigurationResponse(BaseModel):
     mcp_configuration: dict[str, Any] | None
 
     # The enabled review tools for Copilot cloud agent.
-    enabled_tools: CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools
+    enabled_tools: CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools | None
 
     # Whether Actions workflow approval is required for Copilot cloud agent pull requests.
-    require_actions_workflow_approval: bool
+    require_actions_workflow_approval: bool | None
 
     # Whether the firewall is enabled.
-    is_firewall_enabled: bool
+    is_firewall_enabled: bool | None
 
     # Whether the firewall recommended allowlist is enabled.
-    is_firewall_recommended_allowlist_enabled: bool
+    is_firewall_recommended_allowlist_enabled: bool | None
 
     # A list of custom allowlist entries, as hosts or URLs, that the firewall will allow the
     # Copilot cloud agent to access.
-    custom_allowlist: list[str]
+    custom_allowlist: list[str] | None
 
     # Whether automations are enabled in this repository. When true, users can create
     # automations that automatically run agents on a schedule or in response to events like new
     # issues or updated pull requests.
-    is_automations_enabled: bool
+    is_automations_enabled: bool | None
 
     # Whether write access is required for automation triggers. When true, automations will only
     # run if the user triggering the event has write access to the repository. When false, users
     # can create automations that listen for events triggered by users without write access.
-    require_write_access_for_automation_triggers: bool
+    require_write_access_for_automation_triggers: bool | None

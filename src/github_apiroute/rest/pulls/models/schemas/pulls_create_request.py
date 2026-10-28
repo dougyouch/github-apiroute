@@ -17,7 +17,7 @@ class PullsCreateRequest(BaseModel):
 
     # The name of the branch where your changes are implemented. For cross-repository pull
     # requests in the same network, namespace `head` with a user like this: `username:branch`.
-    head: str
+    head: str | None
 
     # The name of the repository where the changes in the pull request were made. This field is
     # required for cross-repository pull requests if both repositories are owned by the same
@@ -27,7 +27,7 @@ class PullsCreateRequest(BaseModel):
     # The name of the branch you want the changes pulled into. This should be an existing branch
     # on the current repository. You cannot submit a pull request to one repository that
     # requests a merge to a base of another repository.
-    base: str
+    base: str | None
 
     # The contents of the pull request.
     body: str | None = None

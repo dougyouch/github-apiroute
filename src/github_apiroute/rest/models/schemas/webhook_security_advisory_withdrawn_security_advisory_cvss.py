@@ -11,5 +11,5 @@ __all__ = ["WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss"]
 
 class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    score: float
+    score: float | None
     vector_string: str | None

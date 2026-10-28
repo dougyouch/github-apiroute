@@ -21,9 +21,9 @@ __all__ = ["WebhookInstallationTargetRenamed"]
 
 class WebhookInstallationTargetRenamed(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    account: WebhookInstallationTargetRenamedAccount
-    action: Literal["renamed"]
-    changes: WebhookInstallationTargetRenamedChanges
+    account: WebhookInstallationTargetRenamedAccount | None
+    action: Literal["renamed"] | None
+    changes: WebhookInstallationTargetRenamedChanges | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -33,7 +33,7 @@ class WebhookInstallationTargetRenamed(BaseModel):
     # The GitHub App installation. Webhook payloads contain the `installation` property when the
     # event is configured for and sent to a GitHub App. For more information, see "[Using
     # webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-
-    installation: SimpleInstallation
+    installation: SimpleInstallation | None
 
     # A GitHub organization. Webhook payloads contain the `organization` property when the
     # webhook is configured for an organization, or when the event occurs from activity in a
@@ -46,4 +46,4 @@ class WebhookInstallationTargetRenamed(BaseModel):
 
     # A GitHub user.
     sender: SimpleUser | None = None
-    target_type: str
+    target_type: str | None

@@ -17,7 +17,7 @@ class Manifest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the manifest.
-    name: str
+    name: str | None
     file: ManifestFile | None = None
 
     # User-defined metadata to store domain-specific information limited to 8 keys with scalar

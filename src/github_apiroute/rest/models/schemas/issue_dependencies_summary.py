@@ -11,7 +11,7 @@ __all__ = ["IssueDependenciesSummary"]
 
 class IssueDependenciesSummary(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    blocked_by: int
-    blocking: int
-    total_blocked_by: int
-    total_blocking: int
+    blocked_by: int | None
+    blocking: int | None
+    total_blocked_by: int | None
+    total_blocking: int | None

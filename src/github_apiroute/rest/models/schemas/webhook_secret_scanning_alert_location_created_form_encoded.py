@@ -14,4 +14,4 @@ class WebhookSecretScanningAlertLocationCreatedFormEncoded(BaseModel):
 
     # A URL-encoded string of the secret_scanning_alert_location.created JSON payload. The
     # decoded payload is a JSON object.
-    payload: str
+    payload: str | None

@@ -17,15 +17,15 @@ class BranchWithProtection(BaseModel):
     """Branch With Protection"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    name: str
+    name: str | None
 
     # Commit
-    commit: Commit
-    links: BranchWithProtectionLinks = Field(alias="_links")
-    protected: bool
+    commit: Commit | None
+    links: BranchWithProtectionLinks | None = Field(alias="_links")
+    protected: bool | None
 
     # Branch Protection
-    protection: BranchProtection
-    protection_url: str
+    protection: BranchProtection | None
+    protection_url: str | None
     pattern: str | None = None
     required_approving_review_count: int | None = None

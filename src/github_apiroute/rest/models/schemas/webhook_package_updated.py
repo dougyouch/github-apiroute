@@ -20,7 +20,7 @@ __all__ = ["WebhookPackageUpdated"]
 
 class WebhookPackageUpdated(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    action: Literal["updated"]
+    action: Literal["updated"] | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -38,11 +38,11 @@ class WebhookPackageUpdated(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # Information about the package.
-    package: WebhookPackageUpdatedPackage
+    package: WebhookPackageUpdatedPackage | None
 
     # The repository on GitHub where the event occurred. Webhook payloads contain the
     # `repository` property when the event occurs from activity in a repository.
-    repository: RepositoryWebhooks
+    repository: RepositoryWebhooks | None
 
     # A GitHub user.
-    sender: SimpleUser
+    sender: SimpleUser | None

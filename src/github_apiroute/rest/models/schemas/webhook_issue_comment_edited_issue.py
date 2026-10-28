@@ -30,39 +30,39 @@ class WebhookIssueCommentEditedIssue(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
     active_lock_reason: str | None
     assignee: WebhookIssueCommentEditedIssueAssignee | None
-    assignees: list[dict[str, Any] | None]
-    author_association: str
+    assignees: list[dict[str, Any] | None] | None
+    author_association: str | None
     body: str | None
     closed_at: str | None
-    comments: int
-    comments_url: str
-    created_at: str
+    comments: int | None
+    comments_url: str | None
+    created_at: str | None
     draft: bool | None = None
-    events_url: str
-    html_url: str
-    id: int
-    labels: list[WebhookIssueCommentEditedIssueLabelsItem]
-    labels_url: str
-    locked: bool
+    events_url: str | None
+    html_url: str | None
+    id: int | None
+    labels: list[WebhookIssueCommentEditedIssueLabelsItem] | None
+    labels_url: str | None
+    locked: bool | None
     milestone: dict[str, Any] | None
-    node_id: str
-    number: int
+    node_id: str | None
+    number: int | None
     performed_via_github_app: dict[str, Any] | None = None
     pull_request: WebhookIssueCommentEditedIssuePullRequest | None = None
-    reactions: WebhookIssueCommentEditedIssueReactions
-    repository_url: str
+    reactions: WebhookIssueCommentEditedIssueReactions | None
+    repository_url: str | None
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
 
     # State of the issue; either 'open' or 'closed'
-    state: Literal["open", "closed"]
+    state: Literal["open", "closed"] | None
     state_reason: str | None = None
     timeline_url: str | None = None
-    title: str
+    title: str | None
 
     # The type assigned to the issue. This is only present for issues in repositories where
     # issue types are supported.
     type_: IssueType | None = Field(None, alias="type")
-    updated_at: str
-    url: str
-    user: WebhookIssueCommentEditedIssueUser
+    updated_at: str | None
+    url: str | None
+    user: WebhookIssueCommentEditedIssueUser | None

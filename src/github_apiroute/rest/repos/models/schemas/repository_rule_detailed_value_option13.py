@@ -19,7 +19,7 @@ class RepositoryRuleDetailedValueOption13(BaseModel):
     """Parameters to be used for the committer_email_pattern rule"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["committer_email_pattern"] = Field(alias="type")
+    type_: Literal["committer_email_pattern"] | None = Field(alias="type")
     parameters: RepositoryRuleDetailedValueOption13Parameters | None = None
 
     # The type of source for the ruleset that includes this rule.

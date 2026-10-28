@@ -20,23 +20,23 @@ class CampaignSummary(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The number of the newly created campaign
-    number: int
+    number: int | None
 
     # The date and time the campaign was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-    created_at: str
+    created_at: str | None
 
     # The date and time the campaign was last updated, in ISO 8601 format':' YYYY-MM-
     # DDTHH:MM:SSZ.
-    updated_at: str
+    updated_at: str | None
 
     # The campaign name
     name: str | None = None
 
     # The campaign description
-    description: str
+    description: str | None
 
     # The campaign managers
-    managers: list[SimpleUser]
+    managers: list[SimpleUser] | None
 
     # The campaign team managers
     team_managers: list[Team] | None = None
@@ -45,14 +45,14 @@ class CampaignSummary(BaseModel):
     published_at: str | None = None
 
     # The date and time the campaign has ended, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
-    ends_at: str
+    ends_at: str | None
 
     # The date and time the campaign was closed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
     # Will be null if the campaign is still open.
     closed_at: str | None = None
 
     # Indicates whether a campaign is open or closed
-    state: CampaignState
+    state: CampaignState | None
 
     # The contact link of the campaign.
     contact_link: str | None

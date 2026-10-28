@@ -16,10 +16,10 @@ class GitCreateCommitRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The commit message
-    message: str
+    message: str | None
 
     # The SHA of the tree object this commit points to
-    tree: str
+    tree: str | None
 
     # The full SHAs of the commits that were the parents of this commit. If omitted or empty,
     # the commit will be written as a root commit. For a single parent, an array of one SHA

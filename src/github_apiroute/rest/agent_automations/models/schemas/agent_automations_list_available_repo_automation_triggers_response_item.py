@@ -19,13 +19,13 @@ class AgentAutomationsListAvailableRepoAutomationTriggersResponseItem(BaseModel)
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The unique identifier of the trigger.
-    id: str
+    id: str | None
 
     # The human-readable name of the trigger.
-    title: str
+    title: str | None
 
     # A short description of when the trigger fires.
-    description: str
+    description: str | None
 
     # The fields that can be specified to configure this trigger.
-    fields: list[AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItem]
+    fields: list[AgentAutomationsListAvailableRepoAutomationTriggersResponseItemFieldsItem] | None

@@ -17,23 +17,23 @@ class DeploymentSimple(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    url: str
+    url: str | None
 
     # Unique identifier of the deployment
-    id: int
-    node_id: str
+    id: int | None
+    node_id: str | None
 
     # Parameter to specify a task to execute
-    task: str
+    task: str | None
     original_environment: str | None = None
 
     # Name for the target deployment environment.
-    environment: str
+    environment: str | None
     description: str | None
-    created_at: str
-    updated_at: str
-    statuses_url: str
-    repository_url: str
+    created_at: str | None
+    updated_at: str | None
+    statuses_url: str | None
+    repository_url: str | None
 
     # Specifies if the given environment is will no longer exist at some point in the future.
     # Default: false.

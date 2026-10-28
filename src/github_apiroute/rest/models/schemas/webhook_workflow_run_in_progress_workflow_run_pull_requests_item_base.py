@@ -15,6 +15,6 @@ __all__ = ["WebhookWorkflowRunInProgressWorkflowRunPullRequestsItemBase"]
 
 class WebhookWorkflowRunInProgressWorkflowRunPullRequestsItemBase(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    ref: str
-    repo: WebhookWorkflowRunInProgressWorkflowRunPullRequestsItemBaseRepo
-    sha: str
+    ref: str | None
+    repo: WebhookWorkflowRunInProgressWorkflowRunPullRequestsItemBaseRepo | None
+    sha: str | None

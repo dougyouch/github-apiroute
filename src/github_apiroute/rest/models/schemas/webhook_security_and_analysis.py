@@ -18,7 +18,7 @@ __all__ = ["WebhookSecurityAndAnalysis"]
 
 class WebhookSecurityAndAnalysis(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    changes: WebhookSecurityAndAnalysisChanges
+    changes: WebhookSecurityAndAnalysisChanges | None
 
     # An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the
     # webhook is configured on an enterprise account or an organization that's part of an
@@ -36,7 +36,7 @@ class WebhookSecurityAndAnalysis(BaseModel):
     organization: OrganizationSimpleWebhooks | None = None
 
     # Full Repository
-    repository: FullRepository
+    repository: FullRepository | None
 
     # A GitHub user.
     sender: SimpleUser | None = None

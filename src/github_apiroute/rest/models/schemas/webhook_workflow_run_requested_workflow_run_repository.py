@@ -15,55 +15,55 @@ __all__ = ["WebhookWorkflowRunRequestedWorkflowRunRepository"]
 
 class WebhookWorkflowRunRequestedWorkflowRunRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    archive_url: str
-    assignees_url: str
-    blobs_url: str
-    branches_url: str
-    collaborators_url: str
-    comments_url: str
-    commits_url: str
-    compare_url: str
-    contents_url: str
-    contributors_url: str
-    deployments_url: str
+    archive_url: str | None
+    assignees_url: str | None
+    blobs_url: str | None
+    branches_url: str | None
+    collaborators_url: str | None
+    comments_url: str | None
+    commits_url: str | None
+    compare_url: str | None
+    contents_url: str | None
+    contributors_url: str | None
+    deployments_url: str | None
     description: str | None
-    downloads_url: str
-    events_url: str
-    fork: bool
-    forks_url: str
-    full_name: str
-    git_commits_url: str
-    git_refs_url: str
-    git_tags_url: str
-    hooks_url: str
-    html_url: str
+    downloads_url: str | None
+    events_url: str | None
+    fork: bool | None
+    forks_url: str | None
+    full_name: str | None
+    git_commits_url: str | None
+    git_refs_url: str | None
+    git_tags_url: str | None
+    hooks_url: str | None
+    html_url: str | None
 
     # Unique identifier of the repository
-    id: int
-    issue_comment_url: str
-    issue_events_url: str
-    issues_url: str
-    keys_url: str
-    labels_url: str
-    languages_url: str
-    merges_url: str
-    milestones_url: str
+    id: int | None
+    issue_comment_url: str | None
+    issue_events_url: str | None
+    issues_url: str | None
+    keys_url: str | None
+    labels_url: str | None
+    languages_url: str | None
+    merges_url: str | None
+    milestones_url: str | None
 
     # The name of the repository.
-    name: str
-    node_id: str
-    notifications_url: str
+    name: str | None
+    node_id: str | None
+    notifications_url: str | None
     owner: WebhookWorkflowRunRequestedWorkflowRunRepositoryOwner | None
 
     # Whether the repository is private or public.
-    private: bool
-    pulls_url: str
-    releases_url: str
-    stargazers_url: str
-    statuses_url: str
-    subscribers_url: str
-    subscription_url: str
-    tags_url: str
-    teams_url: str
-    trees_url: str
-    url: str
+    private: bool | None
+    pulls_url: str | None
+    releases_url: str | None
+    stargazers_url: str | None
+    statuses_url: str | None
+    subscribers_url: str | None
+    subscription_url: str | None
+    tags_url: str | None
+    teams_url: str | None
+    trees_url: str | None
+    url: str | None

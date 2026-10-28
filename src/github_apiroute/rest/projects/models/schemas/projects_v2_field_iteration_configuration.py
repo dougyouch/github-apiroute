@@ -19,11 +19,11 @@ class ProjectsV2FieldIterationConfiguration(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The start date of the first iteration.
-    start_date: str
+    start_date: str | None
 
     # The default duration for iterations in days. Individual iterations can override this
     # value.
-    duration: int
+    duration: int | None
 
     # Zero or more iterations for the field.
     iterations: list[ProjectsV2FieldIterationConfigurationIterationsItem] | None = None

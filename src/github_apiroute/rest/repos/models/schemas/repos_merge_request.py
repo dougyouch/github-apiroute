@@ -13,10 +13,10 @@ class ReposMergeRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the base branch that the head will be merged into.
-    base: str
+    base: str | None
 
     # The head to merge. This can be a branch name or a commit SHA1.
-    head: str
+    head: str | None
 
     # Commit message to use for the merge commit. If omitted, a default message will be used.
     commit_message: str | None = None

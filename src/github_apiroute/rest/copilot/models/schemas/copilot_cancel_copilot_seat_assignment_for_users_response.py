@@ -13,4 +13,4 @@ class CopilotCancelCopilotSeatAssignmentForUsersResponse(BaseModel):
     """The total number of seats set to "pending cancellation" for the specified users."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    seats_cancelled: int
+    seats_cancelled: int | None

@@ -38,31 +38,31 @@ class DependabotAlertWithRepository(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The security alert number.
-    number: AlertNumber
+    number: AlertNumber | None
 
     # The state of the Dependabot alert.
-    state: Literal["auto_dismissed", "dismissed", "fixed", "open"]
+    state: Literal["auto_dismissed", "dismissed", "fixed", "open"] | None
 
     # Details for the vulnerable dependency.
-    dependency: DependabotAlertWithRepositoryDependency
+    dependency: DependabotAlertWithRepositoryDependency | None
 
     # Details for the GitHub Security Advisory.
-    security_advisory: DependabotAlertSecurityAdvisory
+    security_advisory: DependabotAlertSecurityAdvisory | None
 
     # Details pertaining to one vulnerable version range for the advisory.
-    security_vulnerability: DependabotAlertSecurityVulnerability
+    security_vulnerability: DependabotAlertSecurityVulnerability | None
 
     # The REST API URL of the alert resource.
-    url: AlertUrl
+    url: AlertUrl | None
 
     # The GitHub URL of the alert resource.
-    html_url: AlertHtmlUrl
+    html_url: AlertHtmlUrl | None
 
     # The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    created_at: AlertCreatedAt
+    created_at: AlertCreatedAt | None
 
     # The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    updated_at: AlertUpdatedAt
+    updated_at: AlertUpdatedAt | None
 
     # The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     dismissed_at: AlertDismissedAt | None
@@ -96,4 +96,4 @@ class DependabotAlertWithRepository(BaseModel):
     reachability: DependabotAlertWithRepositoryReachability | None = None
 
     # A GitHub repository.
-    repository: SimpleRepository
+    repository: SimpleRepository | None

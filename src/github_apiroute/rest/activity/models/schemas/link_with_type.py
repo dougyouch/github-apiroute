@@ -13,5 +13,5 @@ class LinkWithType(BaseModel):
     """Hypermedia Link with Type"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    href: str
-    type_: str = Field(alias="type")
+    href: str | None
+    type_: str | None = Field(alias="type")

@@ -26,7 +26,7 @@ class ReposCreatePagesDeploymentRequest(BaseModel):
     environment: str | None = None
 
     # A unique string that represents the version of the build for this deployment.
-    pages_build_version: str
+    pages_build_version: str | None
 
     # The OIDC token issued by GitHub Actions certifying the origin of the deployment.
-    oidc_token: str
+    oidc_token: str | None

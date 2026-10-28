@@ -17,4 +17,4 @@ class CodeScanningAiScanEnablement(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # Whether AI Scan is enabled for the repository.
-    pr_scan: Literal["enabled", "disabled"]
+    pr_scan: Literal["enabled", "disabled"] | None

@@ -18,8 +18,8 @@ __all__ = ["WebhookWorkflowRunRequestedWorkflowRunPullRequestsItem"]
 
 class WebhookWorkflowRunRequestedWorkflowRunPullRequestsItem(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    base: WebhookWorkflowRunRequestedWorkflowRunPullRequestsItemBase
-    head: WebhookWorkflowRunRequestedWorkflowRunPullRequestsItemHead
-    id: float
-    number: float
-    url: str
+    base: WebhookWorkflowRunRequestedWorkflowRunPullRequestsItemBase | None
+    head: WebhookWorkflowRunRequestedWorkflowRunPullRequestsItemHead | None
+    id: float | None
+    number: float | None
+    url: str | None

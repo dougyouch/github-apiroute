@@ -17,14 +17,14 @@ class AgentsCreateOrUpdateOrgSecretRequest(BaseModel):
     # Value for your secret, encrypted with
     # [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the
     # public key retrieved from the [Get an organization public
-    encrypted_value: str
+    encrypted_value: str | None
 
     # ID of the key you used to encrypt the secret.
-    key_id: str
+    key_id: str | None
 
     # Which type of organization repositories have access to the organization secret. `selected`
     # means only the repositories specified by `selected_repository_ids` can access the secret.
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
 
     # An array of repository ids that can access the organization secret. You can only provide a
     # list of repository ids when the `visibility` is set to `selected`. You can manage the list

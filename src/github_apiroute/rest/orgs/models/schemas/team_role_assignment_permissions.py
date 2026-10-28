@@ -11,8 +11,8 @@ __all__ = ["TeamRoleAssignmentPermissions"]
 
 class TeamRoleAssignmentPermissions(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    pull: bool
-    triage: bool
-    push: bool
-    maintain: bool
-    admin: bool
+    pull: bool | None
+    triage: bool | None
+    push: bool | None
+    maintain: bool | None
+    admin: bool | None

@@ -15,6 +15,6 @@ __all__ = ["AppsListInstallationReposForAuthenticatedUserResponse"]
 
 class AppsListInstallationReposForAuthenticatedUserResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    total_count: int
+    total_count: int | None
     repository_selection: str | None = None
-    repositories: list[AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem]
+    repositories: list[AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem] | None

@@ -11,8 +11,8 @@ __all__ = ["GitCommitVerification"]
 
 class GitCommitVerification(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    verified: bool
-    reason: str
+    verified: bool | None
+    reason: str | None
     signature: str | None
     payload: str | None
     verified_at: str | None

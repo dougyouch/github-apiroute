@@ -13,4 +13,4 @@ class ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The names of the custom labels to add to the runner.
-    labels: list[str]
+    labels: list[str] | None

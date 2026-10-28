@@ -33,22 +33,22 @@ class CodeScanningOrganizationAlertItems(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The security alert number.
-    number: AlertNumber
+    number: AlertNumber | None
 
     # The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-    created_at: AlertCreatedAt
+    created_at: AlertCreatedAt | None
 
     # The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     updated_at: AlertUpdatedAt | None = None
 
     # The REST API URL of the alert resource.
-    url: AlertUrl
+    url: AlertUrl | None
 
     # The GitHub URL of the alert resource.
-    html_url: AlertHtmlUrl
+    html_url: AlertHtmlUrl | None
 
     # The REST API URL for fetching the list of instances for an alert.
-    instances_url: AlertInstancesUrl
+    instances_url: AlertInstancesUrl | None
 
     # State of a code scanning alert.
     state: CodeScanningAlertState | None
@@ -68,12 +68,12 @@ class CodeScanningOrganizationAlertItems(BaseModel):
 
     # The dismissal comment associated with the dismissal of the alert.
     dismissed_comment: CodeScanningAlertDismissedComment | None = None
-    rule: CodeScanningAlertRuleSummary
-    tool: CodeScanningAnalysisTool
-    most_recent_instance: CodeScanningAlertInstance
+    rule: CodeScanningAlertRuleSummary | None
+    tool: CodeScanningAnalysisTool | None
+    most_recent_instance: CodeScanningAlertInstance | None
 
     # A GitHub repository.
-    repository: SimpleRepository
+    repository: SimpleRepository | None
 
     # A GitHub user.
     dismissal_approved_by: NullableSimpleUser | None = None

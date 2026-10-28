@@ -15,9 +15,9 @@ class GitTree(BaseModel):
     """The hierarchy between files in a Git repository."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    sha: str
+    sha: str | None
     url: str | None = None
-    truncated: bool
+    truncated: bool | None
 
     # Objects specifying a tree structure
-    tree: list[GitTreeTreeItem]
+    tree: list[GitTreeTreeItem] | None

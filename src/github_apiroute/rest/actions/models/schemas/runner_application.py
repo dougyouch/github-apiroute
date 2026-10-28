@@ -13,10 +13,10 @@ class RunnerApplication(BaseModel):
     """Runner Application"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    os: str
-    architecture: str
-    download_url: str
-    filename: str
+    os: str | None
+    architecture: str | None
+    download_url: str | None
+    filename: str | None
 
     # A short lived bearer token used to download the runner, if needed.
     temp_download_token: str | None = None

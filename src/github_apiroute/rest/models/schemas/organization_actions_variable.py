@@ -17,19 +17,19 @@ class OrganizationActionsVariable(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The name of the variable.
-    name: str
+    name: str | None
 
     # The value of the variable.
-    value: str
+    value: str | None
 
     # The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-
     # DDTHH:MM:SSZ.
-    created_at: str
+    created_at: str | None
 
     # The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-
     # DDTHH:MM:SSZ.
-    updated_at: str
+    updated_at: str | None
 
     # Visibility of a variable
-    visibility: Literal["all", "private", "selected"]
+    visibility: Literal["all", "private", "selected"] | None
     selected_repositories_url: str | None = None

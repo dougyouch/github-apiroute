@@ -19,4 +19,4 @@ class WebhookIssuesOpenedChanges(BaseModel):
     old_issue: WebhookIssuesOpenedChangesOldIssue | None
 
     # A git repository
-    old_repository: WebhookIssuesOpenedChangesOldRepository
+    old_repository: WebhookIssuesOpenedChangesOldRepository | None

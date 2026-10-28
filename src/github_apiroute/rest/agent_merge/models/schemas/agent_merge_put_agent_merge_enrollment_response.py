@@ -21,13 +21,13 @@ class AgentMergePutAgentMergeEnrollmentResponse(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The set of actions which Copilot may perform on the pull request.
-    allowed_actions: list[Literal["fix_ci", "resolve_merge_conflicts"]]
+    allowed_actions: list[Literal["fix_ci", "resolve_merge_conflicts"]] | None
 
     # Timestamp when the pull request was enrolled for Agent Merge.
-    created_at: str
+    created_at: str | None
 
     # Timestamp when the Agent Merge enrollment was last updated.
-    updated_at: str
+    updated_at: str | None
 
     # The user who most recently enabled Agent Merge for the pull request
-    user: AgentMergePutAgentMergeEnrollmentResponseUser
+    user: AgentMergePutAgentMergeEnrollmentResponseUser | None

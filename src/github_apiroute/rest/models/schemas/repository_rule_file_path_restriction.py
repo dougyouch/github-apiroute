@@ -21,5 +21,5 @@ class RepositoryRuleFilePathRestriction(BaseModel):
     """
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    type_: Literal["file_path_restriction"] = Field(alias="type")
+    type_: Literal["file_path_restriction"] | None = Field(alias="type")
     parameters: RepositoryRuleFilePathRestrictionParameters | None = None

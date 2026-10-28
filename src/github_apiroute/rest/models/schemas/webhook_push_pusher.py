@@ -17,5 +17,5 @@ class WebhookPushPusher(BaseModel):
     email: str | None = None
 
     # The git author's name.
-    name: str
+    name: str | None
     username: str | None = None

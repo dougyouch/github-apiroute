@@ -19,22 +19,22 @@ class SecretScanningCustomPattern(BaseModel):
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
     # The ID of the custom pattern.
-    id: int
+    id: int | None
 
     # The name of the custom pattern.
-    name: str
+    name: str | None
 
     # The regular expression of the custom pattern.
-    pattern: str
+    pattern: str | None
 
     # A URL-friendly identifier for the custom pattern, derived from its name.
-    slug: str
+    slug: str | None
 
     # The state of the custom pattern.
-    state: Literal["published", "unpublished"]
+    state: Literal["published", "unpublished"] | None
 
     # Whether push protection is enabled for this custom pattern.
-    push_protection_enabled: bool
+    push_protection_enabled: bool | None
 
     # The start delimiter regex for the custom pattern.
     start_delimiter: str | None = None

@@ -16,26 +16,26 @@ class Migration(BaseModel):
     """A migration."""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
-    id: int
+    id: int | None
 
     # A GitHub user.
     owner: NullableSimpleUser | None
-    guid: str
-    state: str
-    lock_repositories: bool
-    exclude_metadata: bool
-    exclude_git_data: bool
-    exclude_attachments: bool
-    exclude_releases: bool
-    exclude_owner_projects: bool
-    org_metadata_only: bool
+    guid: str | None
+    state: str | None
+    lock_repositories: bool | None
+    exclude_metadata: bool | None
+    exclude_git_data: bool | None
+    exclude_attachments: bool | None
+    exclude_releases: bool | None
+    exclude_owner_projects: bool | None
+    org_metadata_only: bool | None
 
     # The repositories included in the migration. Only returned for export migrations.
-    repositories: list[Repository]
-    url: str
-    created_at: str
-    updated_at: str
-    node_id: str
+    repositories: list[Repository] | None
+    url: str | None
+    created_at: str | None
+    updated_at: str | None
+    node_id: str | None
     archive_url: str | None = None
 
     # Exclude related items from being returned in the response in order to improve performance
