@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Software Development :: Version Control :: Git",
     "Typing :: Typed",
 ]
-dependencies = ["apiroute>=2.2.1", "pydantic>=2.6"]
+dependencies = ["apiroute>=2.2.2", "pydantic>=2.6"]
 
 [project.urls]
 Homepage = "https://github.com/dougyouch/github-apiroute"
@@ -32,7 +32,7 @@ Issues = "https://github.com/dougyouch/github-apiroute/issues"
 Changelog = "https://github.com/dougyouch/github-apiroute/blob/main/CHANGELOG.md"
 
 [dependency-groups]
-dev = ["apiroute[codegen]>=2.2.1", "pytest>=8", "ruff>=0.6"]
+dev = ["apiroute[codegen]>=2.2.2", "pytest>=8", "ruff>=0.6"]
 
 [build-system]
 requires = ["hatchling"]
