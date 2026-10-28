@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Software Development :: Version Control :: Git",
     "Typing :: Typed",
 ]
-dependencies = ["apiroute>=2.2.2", "pydantic>=2.6"]
+dependencies = ["apiroute>=2.3.0", "pydantic>=2.6"]
 
 [project.urls]
 Homepage = "https://github.com/dougyouch/github-apiroute"
