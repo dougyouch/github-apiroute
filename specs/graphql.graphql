@@ -34644,9 +34644,14 @@ enum RepositoryPermission {
   WRITE
 
   """
-  Can read and clone this repository. Can also manage issues and pull requests, plus additional triage abilities
+  Can read and clone this repository. Can also moderate and edit issues and manage pull requests without write access
   """
-  TRIAGE_PLUS
+  MODERATE
+
+  """
+  Can read and clone this repository. Can also moderate and edit issues and manage pull requests without write access
+  """
+  TRIAGE_PLUS @deprecated(reason: "TRIAGE_PLUS has been renamed to MODERATE. Use MODERATE instead. Removal on 2027-04-01 UTC.")
 
   """
   Can read and clone this repository. Can also manage issues and pull requests
