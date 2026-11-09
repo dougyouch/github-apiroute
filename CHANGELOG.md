@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0](https://github.com/dougyouch/github-apiroute/compare/v0.6.0...v0.7.0) (2026-11-09)
+
+### Features
+
+- feat(specs): update clients from GitHub's latest API specs (e45c3a7)
+
 ## [0.6.0](https://github.com/dougyouch/github-apiroute/compare/v0.5.0...v0.6.0) (2026-11-02)
 
 ### Features
