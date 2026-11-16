@@ -31,6 +31,11 @@ class IssuesUpdateRequest(BaseModel):
     # The open or closed state of the issue.
     state: Literal["open", "closed"] | None = None
 
+    # The status to give the issue. Can be `Backlog`, `Todo`, `In progress`, `In review`,
+    # `Done`, `Not planned`, or `Duplicate`. If omitted, the current status is preserved unless
+    # `state` or `state_reason` changes. Setting a status also updates `state` and
+    status: str | None = None
+
     # The reason for the state change. Ignored unless `state` is changed.
     state_reason: Literal["completed", "not_planned", "duplicate", "reopened"] | None = None
 

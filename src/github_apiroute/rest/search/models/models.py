@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from .schemas.issue_search_result_item import IssueSearchResultItem
     from .schemas.issue_search_result_item_labels_item import IssueSearchResultItemLabelsItem
     from .schemas.issue_search_result_item_pull_request import IssueSearchResultItemPullRequest
+    from .schemas.issue_search_result_item_status import IssueSearchResultItemStatus
     from .schemas.label_search_result_item import LabelSearchResultItem
     from .schemas.repo_search_result_item import RepoSearchResultItem
     from .schemas.repo_search_result_item_permissions import RepoSearchResultItemPermissions
@@ -54,6 +55,7 @@ __all__ = [
     "IssueSearchResultItem",
     "IssueSearchResultItemLabelsItem",
     "IssueSearchResultItemPullRequest",
+    "IssueSearchResultItemStatus",
     "LabelSearchResultItem",
     "RepoSearchResultItem",
     "RepoSearchResultItemPermissions",
@@ -87,6 +89,7 @@ __getattr__, __dir__ = lazy_exports(
         "IssueSearchResultItem": ".schemas.issue_search_result_item",
         "IssueSearchResultItemLabelsItem": ".schemas.issue_search_result_item_labels_item",
         "IssueSearchResultItemPullRequest": ".schemas.issue_search_result_item_pull_request",
+        "IssueSearchResultItemStatus": ".schemas.issue_search_result_item_status",
         "LabelSearchResultItem": ".schemas.label_search_result_item",
         "RepoSearchResultItem": ".schemas.repo_search_result_item",
         "RepoSearchResultItemPermissions": ".schemas.repo_search_result_item_permissions",

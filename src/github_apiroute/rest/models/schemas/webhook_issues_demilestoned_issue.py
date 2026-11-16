@@ -26,6 +26,7 @@ from .webhook_issues_demilestoned_issue_pull_request import (
     WebhookIssuesDemilestonedIssuePullRequest,
 )
 from .webhook_issues_demilestoned_issue_reactions import WebhookIssuesDemilestonedIssueReactions
+from .webhook_issues_demilestoned_issue_status import WebhookIssuesDemilestonedIssueStatus
 from .webhook_issues_demilestoned_issue_user import WebhookIssuesDemilestonedIssueUser
 
 __all__ = ["WebhookIssuesDemilestonedIssue"]
@@ -86,6 +87,10 @@ class WebhookIssuesDemilestonedIssue(BaseModel):
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: WebhookIssuesDemilestonedIssueStatus | None = None
 
     # State of the issue; either 'open' or 'closed'
     state: Literal["open", "closed"] | None = None

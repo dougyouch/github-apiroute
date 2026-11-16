@@ -7,6 +7,8 @@ from typing import TYPE_CHECKING
 from apiroute import lazy_exports
 
 if TYPE_CHECKING:
+    from ...models.schemas.issue_type import IssueType
+    from ...models.schemas.issue_type_request import IssueTypeRequest
     from ...models.schemas.public_user import PublicUser
     from ...models.schemas.simple_user import SimpleUser
     from .schemas.email import Email
@@ -22,6 +24,12 @@ if TYPE_CHECKING:
     from .schemas.private_user_plan import PrivateUserPlan
     from .schemas.social_account import SocialAccount
     from .schemas.ssh_signing_key import SshSigningKey
+    from .schemas.user_create_issue_field import UserCreateIssueField
+    from .schemas.user_create_issue_field_options_item import UserCreateIssueFieldOptionsItem
+    from .schemas.user_issue_field import UserIssueField
+    from .schemas.user_issue_field_options_item import UserIssueFieldOptionsItem
+    from .schemas.user_update_issue_field import UserUpdateIssueField
+    from .schemas.user_update_issue_field_options_item import UserUpdateIssueFieldOptionsItem
     from .schemas.users_add_email_for_authenticated_user_request_option1 import (
         UsersAddEmailForAuthenticatedUserRequestOption1,
     )
@@ -80,6 +88,8 @@ __all__ = [
     "GpgKeySubkeysItemEmailsItem",
     "Hovercard",
     "HovercardContextsItem",
+    "IssueType",
+    "IssueTypeRequest",
     "Key",
     "KeySimple",
     "PrivateUser",
@@ -88,6 +98,12 @@ __all__ = [
     "SimpleUser",
     "SocialAccount",
     "SshSigningKey",
+    "UserCreateIssueField",
+    "UserCreateIssueFieldOptionsItem",
+    "UserIssueField",
+    "UserIssueFieldOptionsItem",
+    "UserUpdateIssueField",
+    "UserUpdateIssueFieldOptionsItem",
     "UsersAddEmailForAuthenticatedUserRequestOption1",
     "UsersAddSocialAccountForAuthenticatedUserRequest",
     "UsersCreateGpgKeyForAuthenticatedUserRequest",
@@ -119,6 +135,8 @@ __getattr__, __dir__ = lazy_exports(
         "GpgKeySubkeysItemEmailsItem": ".schemas.gpg_key_subkeys_item_emails_item",
         "Hovercard": ".schemas.hovercard",
         "HovercardContextsItem": ".schemas.hovercard_contexts_item",
+        "IssueType": "...models.schemas.issue_type",
+        "IssueTypeRequest": "...models.schemas.issue_type_request",
         "Key": ".schemas.key",
         "KeySimple": ".schemas.key_simple",
         "PrivateUser": ".schemas.private_user",
@@ -127,6 +145,12 @@ __getattr__, __dir__ = lazy_exports(
         "SimpleUser": "...models.schemas.simple_user",
         "SocialAccount": ".schemas.social_account",
         "SshSigningKey": ".schemas.ssh_signing_key",
+        "UserCreateIssueField": ".schemas.user_create_issue_field",
+        "UserCreateIssueFieldOptionsItem": ".schemas.user_create_issue_field_options_item",
+        "UserIssueField": ".schemas.user_issue_field",
+        "UserIssueFieldOptionsItem": ".schemas.user_issue_field_options_item",
+        "UserUpdateIssueField": ".schemas.user_update_issue_field",
+        "UserUpdateIssueFieldOptionsItem": ".schemas.user_update_issue_field_options_item",
         "UsersAddEmailForAuthenticatedUserRequestOption1": ".schemas.users_add_email_for_authenticated_user_request_option1",
         "UsersAddSocialAccountForAuthenticatedUserRequest": ".schemas.users_add_social_account_for_authenticated_user_request",
         "UsersCreateGpgKeyForAuthenticatedUserRequest": ".schemas.users_create_gpg_key_for_authenticated_user_request",

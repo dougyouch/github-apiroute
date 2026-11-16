@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from ...models.schemas.hook_delivery_item import HookDeliveryItem
     from ...models.schemas.installation import Installation
     from ...models.schemas.issue_type import IssueType
+    from ...models.schemas.issue_type_request import IssueTypeRequest
     from ...models.schemas.minimal_repository import MinimalRepository
     from ...models.schemas.organization_invitation import OrganizationInvitation
     from ...models.schemas.organization_simple import OrganizationSimple
@@ -48,7 +49,6 @@ if TYPE_CHECKING:
     from .schemas.organization_create_issue_field_options_item import (
         OrganizationCreateIssueFieldOptionsItem,
     )
-    from .schemas.organization_create_issue_type import OrganizationCreateIssueType
     from .schemas.organization_external_property_installation import (
         OrganizationExternalPropertyInstallation,
     )
@@ -72,7 +72,6 @@ if TYPE_CHECKING:
     from .schemas.organization_update_issue_field_options_item import (
         OrganizationUpdateIssueFieldOptionsItem,
     )
-    from .schemas.organization_update_issue_type import OrganizationUpdateIssueType
     from .schemas.orgs_convert_member_to_outside_collaborator_request import (
         OrgsConvertMemberToOutsideCollaboratorRequest,
     )
@@ -223,6 +222,7 @@ __all__ = [
     "IssueField",
     "IssueFieldOptionsItem",
     "IssueType",
+    "IssueTypeRequest",
     "MinimalRepository",
     "OrgHook",
     "OrgHookConfig",
@@ -231,7 +231,6 @@ __all__ = [
     "OrgRepoCustomPropertyValues",
     "OrganizationCreateIssueField",
     "OrganizationCreateIssueFieldOptionsItem",
-    "OrganizationCreateIssueType",
     "OrganizationExternalPropertyInstallation",
     "OrganizationExternalPropertyInstallationInstallation",
     "OrganizationFull",
@@ -245,7 +244,6 @@ __all__ = [
     "OrganizationSimple",
     "OrganizationUpdateIssueField",
     "OrganizationUpdateIssueFieldOptionsItem",
-    "OrganizationUpdateIssueType",
     "OrgsConvertMemberToOutsideCollaboratorRequest",
     "OrgsCreateArtifactDeploymentRecordRequest",
     "OrgsCreateArtifactDeploymentRecordResponse",
@@ -333,6 +331,7 @@ __getattr__, __dir__ = lazy_exports(
         "IssueField": ".schemas.issue_field",
         "IssueFieldOptionsItem": ".schemas.issue_field_options_item",
         "IssueType": "...models.schemas.issue_type",
+        "IssueTypeRequest": "...models.schemas.issue_type_request",
         "MinimalRepository": "...models.schemas.minimal_repository",
         "OrgHook": ".schemas.org_hook",
         "OrgHookConfig": ".schemas.org_hook_config",
@@ -341,7 +340,6 @@ __getattr__, __dir__ = lazy_exports(
         "OrgRepoCustomPropertyValues": ".schemas.org_repo_custom_property_values",
         "OrganizationCreateIssueField": ".schemas.organization_create_issue_field",
         "OrganizationCreateIssueFieldOptionsItem": ".schemas.organization_create_issue_field_options_item",
-        "OrganizationCreateIssueType": ".schemas.organization_create_issue_type",
         "OrganizationExternalPropertyInstallation": ".schemas.organization_external_property_installation",
         "OrganizationExternalPropertyInstallationInstallation": ".schemas.organization_external_property_installation_installation",
         "OrganizationFull": ".schemas.organization_full",
@@ -355,7 +353,6 @@ __getattr__, __dir__ = lazy_exports(
         "OrganizationSimple": "...models.schemas.organization_simple",
         "OrganizationUpdateIssueField": ".schemas.organization_update_issue_field",
         "OrganizationUpdateIssueFieldOptionsItem": ".schemas.organization_update_issue_field_options_item",
-        "OrganizationUpdateIssueType": ".schemas.organization_update_issue_type",
         "OrgsConvertMemberToOutsideCollaboratorRequest": ".schemas.orgs_convert_member_to_outside_collaborator_request",
         "OrgsCreateArtifactDeploymentRecordRequest": ".schemas.orgs_create_artifact_deployment_record_request",
         "OrgsCreateArtifactDeploymentRecordResponse": ".schemas.orgs_create_artifact_deployment_record_response",

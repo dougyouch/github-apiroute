@@ -19,6 +19,7 @@ from .webhooks_issue_milestone import WebhooksIssueMilestone
 from .webhooks_issue_performed_via_github_app import WebhooksIssuePerformedViaGithubApp
 from .webhooks_issue_pull_request import WebhooksIssuePullRequest
 from .webhooks_issue_reactions import WebhooksIssueReactions
+from .webhooks_issue_status import WebhooksIssueStatus
 from .webhooks_issue_user import WebhooksIssueUser
 from .webhooks_label import WebhooksLabel
 
@@ -80,6 +81,10 @@ class WebhooksIssue(BaseModel):
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: WebhooksIssueStatus | None = None
 
     # State of the issue; either 'open' or 'closed'
     state: Literal["open", "closed"] | None = None

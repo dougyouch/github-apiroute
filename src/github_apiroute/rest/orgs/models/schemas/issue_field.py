@@ -14,7 +14,7 @@ __all__ = ["IssueField"]
 
 
 class IssueField(BaseModel):
-    """A custom attribute defined at the organization level for attaching structured data to
+    """A custom attribute defined by a repository owner for attaching structured data to
     issues.
     """
 
@@ -35,9 +35,10 @@ class IssueField(BaseModel):
     # The data type of the issue field.
     data_type: Literal["text", "date", "single_select", "multi_select", "number"] | None
 
-    # The visibility of the issue field. Can be `organization_members_only` (visible only within
-    # the organization) or `all` (visible to all users who can see issues).
-    visibility: Literal["organization_members_only", "all"] | None = None
+    # The visibility of the issue field. Organization-owned fields return
+    # `organization_members_only` for restricted visibility (visible to organization members and
+    # to collaborators on the repository the field is read through), or `all` (visible to all
+    visibility: Literal["organization_members_only", "all", "restricted"] | None = None
 
     # Available options for single select and multi select fields.
     options: list[IssueFieldOptionsItem] | None = None

@@ -20,6 +20,7 @@ from ....models.schemas.simple_user import SimpleUser
 from ....models.schemas.sub_issues_summary import SubIssuesSummary
 from .issue_search_result_item_labels_item import IssueSearchResultItemLabelsItem
 from .issue_search_result_item_pull_request import IssueSearchResultItemPullRequest
+from .issue_search_result_item_status import IssueSearchResultItemStatus
 from .search_result_text_matches import SearchResultTextMatches
 
 __all__ = ["IssueSearchResultItem"]
@@ -29,6 +30,10 @@ class IssueSearchResultItem(BaseModel):
     """Issue Search Result Item"""
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: IssueSearchResultItemStatus | None = None
     url: str | None
     repository_url: str | None
     labels_url: str | None

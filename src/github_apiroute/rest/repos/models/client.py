@@ -61,6 +61,7 @@ if TYPE_CHECKING:
         PagesDeploymentStatus,
         PagesHealthCheck,
         ParticipationStats,
+        PlanningStatus,
         ProtectedBranch,
         ProtectedBranchAdminEnforced,
         ProtectedBranchPullRequestReview,
@@ -2679,6 +2680,14 @@ class ReposModels(TypedClient):
     ) -> PagesHealthCheck:
         """Get a DNS health check for GitHub Pages"""
         return self._call("get_pages_health_check", "PagesHealthCheck", owner=owner, repo=repo)
+
+    def list_planning_statuses(
+        self,
+        owner: str,
+        repo: str,
+    ) -> list[PlanningStatus]:
+        """List planning statuses for a repository"""
+        return self._call("list_planning_statuses", "list[PlanningStatus]", owner=owner, repo=repo)
 
     def check_private_vulnerability_reporting(
         self,

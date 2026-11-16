@@ -19,4 +19,4 @@ class InteractionsUpdatePullRequestCreationCapForRepoResponse(BaseModel):
     max_open_pull_requests: int | None
 
     # Whether draft pull requests count toward the pull request creation cap
-    include_drafts: bool | None = None
+    include_drafts: bool | None

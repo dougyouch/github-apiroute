@@ -22,6 +22,7 @@ from ....models.schemas.simple_user import SimpleUser
 from .alert_instances_url import AlertInstancesUrl
 from .code_scanning_alert_dismissed_reason import CodeScanningAlertDismissedReason
 from .code_scanning_alert_instance import CodeScanningAlertInstance
+from .code_scanning_alert_linked_issue import CodeScanningAlertLinkedIssue
 from .code_scanning_alert_rule import CodeScanningAlertRule
 from .code_scanning_alert_state import CodeScanningAlertState
 from .code_scanning_analysis_tool import CodeScanningAnalysisTool
@@ -78,3 +79,6 @@ class CodeScanningAlert(BaseModel):
 
     # Pull requests linked to this alert.
     linked_pull_requests: list[PullRequestSimple] | None = None
+
+    # Issues linked to this alert.
+    linked_issues: list[CodeScanningAlertLinkedIssue] | None = None

@@ -14,6 +14,8 @@ if TYPE_CHECKING:
         Email,
         GpgKey,
         Hovercard,
+        IssueType,
+        IssueTypeRequest,
         Key,
         KeySimple,
         PrivateUser,
@@ -21,6 +23,8 @@ if TYPE_CHECKING:
         SimpleUser,
         SocialAccount,
         SshSigningKey,
+        UserCreateIssueField,
+        UserIssueField,
         UsersAddEmailForAuthenticatedUserRequestOption1,
         UsersAddSocialAccountForAuthenticatedUserRequest,
         UsersCreateGpgKeyForAuthenticatedUserRequest,
@@ -35,6 +39,7 @@ if TYPE_CHECKING:
         UsersListAttestationsResponse,
         UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest,
         UsersUpdateAuthenticatedRequest,
+        UserUpdateIssueField,
     )
 
 
@@ -263,6 +268,82 @@ class UsersModels(TypedClient):
     ) -> None:
         """Delete a GPG key for the authenticated user"""
         return self._call("delete_gpg_key_for_authenticated_user", None, gpg_key_id=gpg_key_id)
+
+    def list_issue_fields_for_authenticated_user(
+        self,
+    ) -> builtins.list[UserIssueField | None]:
+        """List issue fields"""
+        return self._call("list_issue_fields_for_authenticated_user", "list[UserIssueField | None]")
+
+    def create_issue_field_for_authenticated_user(
+        self,
+        *,
+        body: UserCreateIssueField,
+    ) -> UserIssueField | None:
+        """Create an issue field"""
+        return self._call(
+            "create_issue_field_for_authenticated_user", "UserIssueField | None", body=body
+        )
+
+    def delete_issue_field_for_authenticated_user(
+        self,
+        issue_field_id: int,
+    ) -> None:
+        """Delete an issue field"""
+        return self._call(
+            "delete_issue_field_for_authenticated_user", None, issue_field_id=issue_field_id
+        )
+
+    def update_issue_field_for_authenticated_user(
+        self,
+        issue_field_id: int,
+        *,
+        body: UserUpdateIssueField,
+    ) -> UserIssueField | None:
+        """Update an issue field"""
+        return self._call(
+            "update_issue_field_for_authenticated_user",
+            "UserIssueField | None",
+            issue_field_id=issue_field_id,
+            body=body,
+        )
+
+    def list_issue_types_for_authenticated_user(
+        self,
+    ) -> builtins.list[IssueType | None]:
+        """List issue types"""
+        return self._call("list_issue_types_for_authenticated_user", "list[IssueType | None]")
+
+    def create_issue_type_for_authenticated_user(
+        self,
+        *,
+        body: IssueTypeRequest,
+    ) -> IssueType | None:
+        """Create an issue type"""
+        return self._call("create_issue_type_for_authenticated_user", "IssueType | None", body=body)
+
+    def update_issue_type_for_authenticated_user(
+        self,
+        issue_type_id: int,
+        *,
+        body: IssueTypeRequest,
+    ) -> IssueType | None:
+        """Update an issue type"""
+        return self._call(
+            "update_issue_type_for_authenticated_user",
+            "IssueType | None",
+            issue_type_id=issue_type_id,
+            body=body,
+        )
+
+    def delete_issue_type_for_authenticated_user(
+        self,
+        issue_type_id: int,
+    ) -> None:
+        """Delete an issue type"""
+        return self._call(
+            "delete_issue_type_for_authenticated_user", None, issue_type_id=issue_type_id
+        )
 
     def list_public_ssh_keys_for_authenticated_user(
         self,

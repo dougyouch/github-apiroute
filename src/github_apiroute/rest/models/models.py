@@ -35,7 +35,6 @@ if TYPE_CHECKING:
     from .schemas.code_scanning_alert_assignees import CodeScanningAlertAssignees
     from .schemas.code_scanning_alert_create_request import CodeScanningAlertCreateRequest
     from .schemas.code_scanning_alert_dismissed_comment import CodeScanningAlertDismissedComment
-    from .schemas.code_scanning_alert_linked_issue import CodeScanningAlertLinkedIssue
     from .schemas.code_scanning_alert_set_state import CodeScanningAlertSetState
     from .schemas.code_scanning_default_setup_update_response import (
         CodeScanningDefaultSetupUpdateResponse,
@@ -147,7 +146,9 @@ if TYPE_CHECKING:
     from .schemas.issue_pull_request import IssuePullRequest
     from .schemas.issue_reference import IssueReference
     from .schemas.issue_reference_issue_type import IssueReferenceIssueType
+    from .schemas.issue_status import IssueStatus
     from .schemas.issue_type import IssueType
+    from .schemas.issue_type_request import IssueTypeRequest
     from .schemas.label import Label
     from .schemas.link import Link
     from .schemas.merge_group import MergeGroup
@@ -1359,6 +1360,7 @@ if TYPE_CHECKING:
         WebhookIssuesClosedIssuePullRequest,
     )
     from .schemas.webhook_issues_closed_issue_reactions import WebhookIssuesClosedIssueReactions
+    from .schemas.webhook_issues_closed_issue_status import WebhookIssuesClosedIssueStatus
     from .schemas.webhook_issues_closed_issue_user import WebhookIssuesClosedIssueUser
     from .schemas.webhook_issues_deleted import WebhookIssuesDeleted
     from .schemas.webhook_issues_deleted_issue import WebhookIssuesDeletedIssue
@@ -1386,6 +1388,7 @@ if TYPE_CHECKING:
         WebhookIssuesDeletedIssuePullRequest,
     )
     from .schemas.webhook_issues_deleted_issue_reactions import WebhookIssuesDeletedIssueReactions
+    from .schemas.webhook_issues_deleted_issue_status import WebhookIssuesDeletedIssueStatus
     from .schemas.webhook_issues_deleted_issue_user import WebhookIssuesDeletedIssueUser
     from .schemas.webhook_issues_demilestoned import WebhookIssuesDemilestoned
     from .schemas.webhook_issues_demilestoned_issue import WebhookIssuesDemilestonedIssue
@@ -1419,6 +1422,9 @@ if TYPE_CHECKING:
     from .schemas.webhook_issues_demilestoned_issue_reactions import (
         WebhookIssuesDemilestonedIssueReactions,
     )
+    from .schemas.webhook_issues_demilestoned_issue_status import (
+        WebhookIssuesDemilestonedIssueStatus,
+    )
     from .schemas.webhook_issues_demilestoned_issue_user import WebhookIssuesDemilestonedIssueUser
     from .schemas.webhook_issues_edited import WebhookIssuesEdited
     from .schemas.webhook_issues_edited_changes import WebhookIssuesEditedChanges
@@ -1446,6 +1452,7 @@ if TYPE_CHECKING:
         WebhookIssuesEditedIssuePullRequest,
     )
     from .schemas.webhook_issues_edited_issue_reactions import WebhookIssuesEditedIssueReactions
+    from .schemas.webhook_issues_edited_issue_status import WebhookIssuesEditedIssueStatus
     from .schemas.webhook_issues_edited_issue_user import WebhookIssuesEditedIssueUser
     from .schemas.webhook_issues_field_added import WebhookIssuesFieldAdded
     from .schemas.webhook_issues_field_added_changes import WebhookIssuesFieldAddedChanges
@@ -1510,6 +1517,7 @@ if TYPE_CHECKING:
         WebhookIssuesLabeledIssuePullRequest,
     )
     from .schemas.webhook_issues_labeled_issue_reactions import WebhookIssuesLabeledIssueReactions
+    from .schemas.webhook_issues_labeled_issue_status import WebhookIssuesLabeledIssueStatus
     from .schemas.webhook_issues_labeled_issue_user import WebhookIssuesLabeledIssueUser
     from .schemas.webhook_issues_locked import WebhookIssuesLocked
     from .schemas.webhook_issues_locked_issue import WebhookIssuesLockedIssue
@@ -1535,6 +1543,7 @@ if TYPE_CHECKING:
         WebhookIssuesLockedIssuePullRequest,
     )
     from .schemas.webhook_issues_locked_issue_reactions import WebhookIssuesLockedIssueReactions
+    from .schemas.webhook_issues_locked_issue_status import WebhookIssuesLockedIssueStatus
     from .schemas.webhook_issues_locked_issue_user import WebhookIssuesLockedIssueUser
     from .schemas.webhook_issues_milestoned import WebhookIssuesMilestoned
     from .schemas.webhook_issues_milestoned_issue import WebhookIssuesMilestonedIssue
@@ -1568,6 +1577,7 @@ if TYPE_CHECKING:
     from .schemas.webhook_issues_milestoned_issue_reactions import (
         WebhookIssuesMilestonedIssueReactions,
     )
+    from .schemas.webhook_issues_milestoned_issue_status import WebhookIssuesMilestonedIssueStatus
     from .schemas.webhook_issues_milestoned_issue_user import WebhookIssuesMilestonedIssueUser
     from .schemas.webhook_issues_opened import WebhookIssuesOpened
     from .schemas.webhook_issues_opened_changes import WebhookIssuesOpenedChanges
@@ -1601,6 +1611,9 @@ if TYPE_CHECKING:
     )
     from .schemas.webhook_issues_opened_changes_old_issue_reactions import (
         WebhookIssuesOpenedChangesOldIssueReactions,
+    )
+    from .schemas.webhook_issues_opened_changes_old_issue_status import (
+        WebhookIssuesOpenedChangesOldIssueStatus,
     )
     from .schemas.webhook_issues_opened_changes_old_issue_user import (
         WebhookIssuesOpenedChangesOldIssueUser,
@@ -1640,6 +1653,7 @@ if TYPE_CHECKING:
         WebhookIssuesOpenedIssuePullRequest,
     )
     from .schemas.webhook_issues_opened_issue_reactions import WebhookIssuesOpenedIssueReactions
+    from .schemas.webhook_issues_opened_issue_status import WebhookIssuesOpenedIssueStatus
     from .schemas.webhook_issues_opened_issue_user import WebhookIssuesOpenedIssueUser
     from .schemas.webhook_issues_pinned import WebhookIssuesPinned
     from .schemas.webhook_issues_reopened import WebhookIssuesReopened
@@ -1668,7 +1682,23 @@ if TYPE_CHECKING:
         WebhookIssuesReopenedIssuePullRequest,
     )
     from .schemas.webhook_issues_reopened_issue_reactions import WebhookIssuesReopenedIssueReactions
+    from .schemas.webhook_issues_reopened_issue_status import WebhookIssuesReopenedIssueStatus
     from .schemas.webhook_issues_reopened_issue_user import WebhookIssuesReopenedIssueUser
+    from .schemas.webhook_issues_status_changed import WebhookIssuesStatusChanged
+    from .schemas.webhook_issues_status_changed_changes import WebhookIssuesStatusChangedChanges
+    from .schemas.webhook_issues_status_changed_changes_state import (
+        WebhookIssuesStatusChangedChangesState,
+    )
+    from .schemas.webhook_issues_status_changed_changes_state_reason import (
+        WebhookIssuesStatusChangedChangesStateReason,
+    )
+    from .schemas.webhook_issues_status_changed_changes_status import (
+        WebhookIssuesStatusChangedChangesStatus,
+    )
+    from .schemas.webhook_issues_status_changed_changes_status_from import (
+        WebhookIssuesStatusChangedChangesStatusFrom,
+    )
+    from .schemas.webhook_issues_status_changed_status import WebhookIssuesStatusChangedStatus
     from .schemas.webhook_issues_transferred import WebhookIssuesTransferred
     from .schemas.webhook_issues_transferred_changes import WebhookIssuesTransferredChanges
     from .schemas.webhook_issues_transferred_changes_new_issue import (
@@ -1703,6 +1733,9 @@ if TYPE_CHECKING:
     )
     from .schemas.webhook_issues_transferred_changes_new_issue_reactions import (
         WebhookIssuesTransferredChangesNewIssueReactions,
+    )
+    from .schemas.webhook_issues_transferred_changes_new_issue_status import (
+        WebhookIssuesTransferredChangesNewIssueStatus,
     )
     from .schemas.webhook_issues_transferred_changes_new_issue_user import (
         WebhookIssuesTransferredChangesNewIssueUser,
@@ -1748,6 +1781,7 @@ if TYPE_CHECKING:
         WebhookIssuesUnlockedIssuePullRequest,
     )
     from .schemas.webhook_issues_unlocked_issue_reactions import WebhookIssuesUnlockedIssueReactions
+    from .schemas.webhook_issues_unlocked_issue_status import WebhookIssuesUnlockedIssueStatus
     from .schemas.webhook_issues_unlocked_issue_user import WebhookIssuesUnlockedIssueUser
     from .schemas.webhook_issues_unpinned import WebhookIssuesUnpinned
     from .schemas.webhook_issues_untyped import WebhookIssuesUntyped
@@ -5388,6 +5422,7 @@ if TYPE_CHECKING:
     )
     from .schemas.webhooks_issue2_pull_request import WebhooksIssue2PullRequest
     from .schemas.webhooks_issue2_reactions import WebhooksIssue2Reactions
+    from .schemas.webhooks_issue2_status import WebhooksIssue2Status
     from .schemas.webhooks_issue2_user import WebhooksIssue2User
     from .schemas.webhooks_issue_assignee import WebhooksIssueAssignee
     from .schemas.webhooks_issue_assignees_item import WebhooksIssueAssigneesItem
@@ -5405,6 +5440,7 @@ if TYPE_CHECKING:
     )
     from .schemas.webhooks_issue_pull_request import WebhooksIssuePullRequest
     from .schemas.webhooks_issue_reactions import WebhooksIssueReactions
+    from .schemas.webhooks_issue_status import WebhooksIssueStatus
     from .schemas.webhooks_issue_user import WebhooksIssueUser
     from .schemas.webhooks_label import WebhooksLabel
     from .schemas.webhooks_label_archived import WebhooksLabelArchived
@@ -5589,7 +5625,6 @@ __all__ = [
     "CodeScanningAlertAssignees",
     "CodeScanningAlertCreateRequest",
     "CodeScanningAlertDismissedComment",
-    "CodeScanningAlertLinkedIssue",
     "CodeScanningAlertSetState",
     "CodeScanningDefaultSetupUpdateResponse",
     "CodeScanningRef",
@@ -5665,7 +5700,9 @@ __all__ = [
     "IssuePullRequest",
     "IssueReference",
     "IssueReferenceIssueType",
+    "IssueStatus",
     "IssueType",
+    "IssueTypeRequest",
     "Label",
     "Link",
     "MergeGroup",
@@ -6243,6 +6280,7 @@ __all__ = [
     "WebhookIssuesClosedIssueLabelsItem",
     "WebhookIssuesClosedIssuePullRequest",
     "WebhookIssuesClosedIssueReactions",
+    "WebhookIssuesClosedIssueStatus",
     "WebhookIssuesClosedIssueUser",
     "WebhookIssuesDeleted",
     "WebhookIssuesDeletedIssue",
@@ -6256,6 +6294,7 @@ __all__ = [
     "WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesDeletedIssuePullRequest",
     "WebhookIssuesDeletedIssueReactions",
+    "WebhookIssuesDeletedIssueStatus",
     "WebhookIssuesDeletedIssueUser",
     "WebhookIssuesDemilestoned",
     "WebhookIssuesDemilestonedIssue",
@@ -6269,6 +6308,7 @@ __all__ = [
     "WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesDemilestonedIssuePullRequest",
     "WebhookIssuesDemilestonedIssueReactions",
+    "WebhookIssuesDemilestonedIssueStatus",
     "WebhookIssuesDemilestonedIssueUser",
     "WebhookIssuesEdited",
     "WebhookIssuesEditedChanges",
@@ -6284,6 +6324,7 @@ __all__ = [
     "WebhookIssuesEditedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesEditedIssuePullRequest",
     "WebhookIssuesEditedIssueReactions",
+    "WebhookIssuesEditedIssueStatus",
     "WebhookIssuesEditedIssueUser",
     "WebhookIssuesFieldAdded",
     "WebhookIssuesFieldAddedChanges",
@@ -6312,6 +6353,7 @@ __all__ = [
     "WebhookIssuesLabeledIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesLabeledIssuePullRequest",
     "WebhookIssuesLabeledIssueReactions",
+    "WebhookIssuesLabeledIssueStatus",
     "WebhookIssuesLabeledIssueUser",
     "WebhookIssuesLocked",
     "WebhookIssuesLockedIssue",
@@ -6325,6 +6367,7 @@ __all__ = [
     "WebhookIssuesLockedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesLockedIssuePullRequest",
     "WebhookIssuesLockedIssueReactions",
+    "WebhookIssuesLockedIssueStatus",
     "WebhookIssuesLockedIssueUser",
     "WebhookIssuesMilestoned",
     "WebhookIssuesMilestonedIssue",
@@ -6338,6 +6381,7 @@ __all__ = [
     "WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesMilestonedIssuePullRequest",
     "WebhookIssuesMilestonedIssueReactions",
+    "WebhookIssuesMilestonedIssueStatus",
     "WebhookIssuesMilestonedIssueUser",
     "WebhookIssuesOpened",
     "WebhookIssuesOpenedChanges",
@@ -6352,6 +6396,7 @@ __all__ = [
     "WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesOpenedChangesOldIssuePullRequest",
     "WebhookIssuesOpenedChangesOldIssueReactions",
+    "WebhookIssuesOpenedChangesOldIssueStatus",
     "WebhookIssuesOpenedChangesOldIssueUser",
     "WebhookIssuesOpenedChangesOldRepository",
     "WebhookIssuesOpenedChangesOldRepositoryLicense",
@@ -6368,6 +6413,7 @@ __all__ = [
     "WebhookIssuesOpenedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesOpenedIssuePullRequest",
     "WebhookIssuesOpenedIssueReactions",
+    "WebhookIssuesOpenedIssueStatus",
     "WebhookIssuesOpenedIssueUser",
     "WebhookIssuesPinned",
     "WebhookIssuesReopened",
@@ -6382,7 +6428,15 @@ __all__ = [
     "WebhookIssuesReopenedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesReopenedIssuePullRequest",
     "WebhookIssuesReopenedIssueReactions",
+    "WebhookIssuesReopenedIssueStatus",
     "WebhookIssuesReopenedIssueUser",
+    "WebhookIssuesStatusChanged",
+    "WebhookIssuesStatusChangedChanges",
+    "WebhookIssuesStatusChangedChangesState",
+    "WebhookIssuesStatusChangedChangesStateReason",
+    "WebhookIssuesStatusChangedChangesStatus",
+    "WebhookIssuesStatusChangedChangesStatusFrom",
+    "WebhookIssuesStatusChangedStatus",
     "WebhookIssuesTransferred",
     "WebhookIssuesTransferredChanges",
     "WebhookIssuesTransferredChangesNewIssue",
@@ -6396,6 +6450,7 @@ __all__ = [
     "WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesTransferredChangesNewIssuePullRequest",
     "WebhookIssuesTransferredChangesNewIssueReactions",
+    "WebhookIssuesTransferredChangesNewIssueStatus",
     "WebhookIssuesTransferredChangesNewIssueUser",
     "WebhookIssuesTransferredChangesNewRepository",
     "WebhookIssuesTransferredChangesNewRepositoryLicense",
@@ -6416,6 +6471,7 @@ __all__ = [
     "WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissions",
     "WebhookIssuesUnlockedIssuePullRequest",
     "WebhookIssuesUnlockedIssueReactions",
+    "WebhookIssuesUnlockedIssueStatus",
     "WebhookIssuesUnlockedIssueUser",
     "WebhookIssuesUnpinned",
     "WebhookIssuesUntyped",
@@ -7800,6 +7856,7 @@ __all__ = [
     "WebhooksIssue2PerformedViaGithubAppPermissions",
     "WebhooksIssue2PullRequest",
     "WebhooksIssue2Reactions",
+    "WebhooksIssue2Status",
     "WebhooksIssue2User",
     "WebhooksIssueAssignee",
     "WebhooksIssueAssigneesItem",
@@ -7813,6 +7870,7 @@ __all__ = [
     "WebhooksIssuePerformedViaGithubAppPermissions",
     "WebhooksIssuePullRequest",
     "WebhooksIssueReactions",
+    "WebhooksIssueStatus",
     "WebhooksIssueUser",
     "WebhooksLabel",
     "WebhooksLabelArchived",
@@ -7958,7 +8016,6 @@ __getattr__, __dir__ = lazy_exports(
         "CodeScanningAlertAssignees": ".schemas.code_scanning_alert_assignees",
         "CodeScanningAlertCreateRequest": ".schemas.code_scanning_alert_create_request",
         "CodeScanningAlertDismissedComment": ".schemas.code_scanning_alert_dismissed_comment",
-        "CodeScanningAlertLinkedIssue": ".schemas.code_scanning_alert_linked_issue",
         "CodeScanningAlertSetState": ".schemas.code_scanning_alert_set_state",
         "CodeScanningDefaultSetupUpdateResponse": ".schemas.code_scanning_default_setup_update_response",
         "CodeScanningRef": ".schemas.code_scanning_ref",
@@ -8034,7 +8091,9 @@ __getattr__, __dir__ = lazy_exports(
         "IssuePullRequest": ".schemas.issue_pull_request",
         "IssueReference": ".schemas.issue_reference",
         "IssueReferenceIssueType": ".schemas.issue_reference_issue_type",
+        "IssueStatus": ".schemas.issue_status",
         "IssueType": ".schemas.issue_type",
+        "IssueTypeRequest": ".schemas.issue_type_request",
         "Label": ".schemas.label",
         "Link": ".schemas.link",
         "MergeGroup": ".schemas.merge_group",
@@ -8612,6 +8671,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesClosedIssueLabelsItem": ".schemas.webhook_issues_closed_issue_labels_item",
         "WebhookIssuesClosedIssuePullRequest": ".schemas.webhook_issues_closed_issue_pull_request",
         "WebhookIssuesClosedIssueReactions": ".schemas.webhook_issues_closed_issue_reactions",
+        "WebhookIssuesClosedIssueStatus": ".schemas.webhook_issues_closed_issue_status",
         "WebhookIssuesClosedIssueUser": ".schemas.webhook_issues_closed_issue_user",
         "WebhookIssuesDeleted": ".schemas.webhook_issues_deleted",
         "WebhookIssuesDeletedIssue": ".schemas.webhook_issues_deleted_issue",
@@ -8625,6 +8685,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_deleted_issue_performed_via_github_app_permissions",
         "WebhookIssuesDeletedIssuePullRequest": ".schemas.webhook_issues_deleted_issue_pull_request",
         "WebhookIssuesDeletedIssueReactions": ".schemas.webhook_issues_deleted_issue_reactions",
+        "WebhookIssuesDeletedIssueStatus": ".schemas.webhook_issues_deleted_issue_status",
         "WebhookIssuesDeletedIssueUser": ".schemas.webhook_issues_deleted_issue_user",
         "WebhookIssuesDemilestoned": ".schemas.webhook_issues_demilestoned",
         "WebhookIssuesDemilestonedIssue": ".schemas.webhook_issues_demilestoned_issue",
@@ -8638,6 +8699,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesDemilestonedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_demilestoned_issue_performed_via_github_app_permissions",
         "WebhookIssuesDemilestonedIssuePullRequest": ".schemas.webhook_issues_demilestoned_issue_pull_request",
         "WebhookIssuesDemilestonedIssueReactions": ".schemas.webhook_issues_demilestoned_issue_reactions",
+        "WebhookIssuesDemilestonedIssueStatus": ".schemas.webhook_issues_demilestoned_issue_status",
         "WebhookIssuesDemilestonedIssueUser": ".schemas.webhook_issues_demilestoned_issue_user",
         "WebhookIssuesEdited": ".schemas.webhook_issues_edited",
         "WebhookIssuesEditedChanges": ".schemas.webhook_issues_edited_changes",
@@ -8653,6 +8715,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesEditedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_edited_issue_performed_via_github_app_permissions",
         "WebhookIssuesEditedIssuePullRequest": ".schemas.webhook_issues_edited_issue_pull_request",
         "WebhookIssuesEditedIssueReactions": ".schemas.webhook_issues_edited_issue_reactions",
+        "WebhookIssuesEditedIssueStatus": ".schemas.webhook_issues_edited_issue_status",
         "WebhookIssuesEditedIssueUser": ".schemas.webhook_issues_edited_issue_user",
         "WebhookIssuesFieldAdded": ".schemas.webhook_issues_field_added",
         "WebhookIssuesFieldAddedChanges": ".schemas.webhook_issues_field_added_changes",
@@ -8681,6 +8744,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesLabeledIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_labeled_issue_performed_via_github_app_permissions",
         "WebhookIssuesLabeledIssuePullRequest": ".schemas.webhook_issues_labeled_issue_pull_request",
         "WebhookIssuesLabeledIssueReactions": ".schemas.webhook_issues_labeled_issue_reactions",
+        "WebhookIssuesLabeledIssueStatus": ".schemas.webhook_issues_labeled_issue_status",
         "WebhookIssuesLabeledIssueUser": ".schemas.webhook_issues_labeled_issue_user",
         "WebhookIssuesLocked": ".schemas.webhook_issues_locked",
         "WebhookIssuesLockedIssue": ".schemas.webhook_issues_locked_issue",
@@ -8694,6 +8758,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesLockedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_locked_issue_performed_via_github_app_permissions",
         "WebhookIssuesLockedIssuePullRequest": ".schemas.webhook_issues_locked_issue_pull_request",
         "WebhookIssuesLockedIssueReactions": ".schemas.webhook_issues_locked_issue_reactions",
+        "WebhookIssuesLockedIssueStatus": ".schemas.webhook_issues_locked_issue_status",
         "WebhookIssuesLockedIssueUser": ".schemas.webhook_issues_locked_issue_user",
         "WebhookIssuesMilestoned": ".schemas.webhook_issues_milestoned",
         "WebhookIssuesMilestonedIssue": ".schemas.webhook_issues_milestoned_issue",
@@ -8707,6 +8772,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_milestoned_issue_performed_via_github_app_permissions",
         "WebhookIssuesMilestonedIssuePullRequest": ".schemas.webhook_issues_milestoned_issue_pull_request",
         "WebhookIssuesMilestonedIssueReactions": ".schemas.webhook_issues_milestoned_issue_reactions",
+        "WebhookIssuesMilestonedIssueStatus": ".schemas.webhook_issues_milestoned_issue_status",
         "WebhookIssuesMilestonedIssueUser": ".schemas.webhook_issues_milestoned_issue_user",
         "WebhookIssuesOpened": ".schemas.webhook_issues_opened",
         "WebhookIssuesOpenedChanges": ".schemas.webhook_issues_opened_changes",
@@ -8721,6 +8787,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_opened_changes_old_issue_performed_via_github_app_permissions",
         "WebhookIssuesOpenedChangesOldIssuePullRequest": ".schemas.webhook_issues_opened_changes_old_issue_pull_request",
         "WebhookIssuesOpenedChangesOldIssueReactions": ".schemas.webhook_issues_opened_changes_old_issue_reactions",
+        "WebhookIssuesOpenedChangesOldIssueStatus": ".schemas.webhook_issues_opened_changes_old_issue_status",
         "WebhookIssuesOpenedChangesOldIssueUser": ".schemas.webhook_issues_opened_changes_old_issue_user",
         "WebhookIssuesOpenedChangesOldRepository": ".schemas.webhook_issues_opened_changes_old_repository",
         "WebhookIssuesOpenedChangesOldRepositoryLicense": ".schemas.webhook_issues_opened_changes_old_repository_license",
@@ -8737,6 +8804,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesOpenedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_opened_issue_performed_via_github_app_permissions",
         "WebhookIssuesOpenedIssuePullRequest": ".schemas.webhook_issues_opened_issue_pull_request",
         "WebhookIssuesOpenedIssueReactions": ".schemas.webhook_issues_opened_issue_reactions",
+        "WebhookIssuesOpenedIssueStatus": ".schemas.webhook_issues_opened_issue_status",
         "WebhookIssuesOpenedIssueUser": ".schemas.webhook_issues_opened_issue_user",
         "WebhookIssuesPinned": ".schemas.webhook_issues_pinned",
         "WebhookIssuesReopened": ".schemas.webhook_issues_reopened",
@@ -8751,7 +8819,15 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesReopenedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_reopened_issue_performed_via_github_app_permissions",
         "WebhookIssuesReopenedIssuePullRequest": ".schemas.webhook_issues_reopened_issue_pull_request",
         "WebhookIssuesReopenedIssueReactions": ".schemas.webhook_issues_reopened_issue_reactions",
+        "WebhookIssuesReopenedIssueStatus": ".schemas.webhook_issues_reopened_issue_status",
         "WebhookIssuesReopenedIssueUser": ".schemas.webhook_issues_reopened_issue_user",
+        "WebhookIssuesStatusChanged": ".schemas.webhook_issues_status_changed",
+        "WebhookIssuesStatusChangedChanges": ".schemas.webhook_issues_status_changed_changes",
+        "WebhookIssuesStatusChangedChangesState": ".schemas.webhook_issues_status_changed_changes_state",
+        "WebhookIssuesStatusChangedChangesStateReason": ".schemas.webhook_issues_status_changed_changes_state_reason",
+        "WebhookIssuesStatusChangedChangesStatus": ".schemas.webhook_issues_status_changed_changes_status",
+        "WebhookIssuesStatusChangedChangesStatusFrom": ".schemas.webhook_issues_status_changed_changes_status_from",
+        "WebhookIssuesStatusChangedStatus": ".schemas.webhook_issues_status_changed_status",
         "WebhookIssuesTransferred": ".schemas.webhook_issues_transferred",
         "WebhookIssuesTransferredChanges": ".schemas.webhook_issues_transferred_changes",
         "WebhookIssuesTransferredChangesNewIssue": ".schemas.webhook_issues_transferred_changes_new_issue",
@@ -8765,6 +8841,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_transferred_changes_new_issue_performed_via_github_app_permissions",
         "WebhookIssuesTransferredChangesNewIssuePullRequest": ".schemas.webhook_issues_transferred_changes_new_issue_pull_request",
         "WebhookIssuesTransferredChangesNewIssueReactions": ".schemas.webhook_issues_transferred_changes_new_issue_reactions",
+        "WebhookIssuesTransferredChangesNewIssueStatus": ".schemas.webhook_issues_transferred_changes_new_issue_status",
         "WebhookIssuesTransferredChangesNewIssueUser": ".schemas.webhook_issues_transferred_changes_new_issue_user",
         "WebhookIssuesTransferredChangesNewRepository": ".schemas.webhook_issues_transferred_changes_new_repository",
         "WebhookIssuesTransferredChangesNewRepositoryLicense": ".schemas.webhook_issues_transferred_changes_new_repository_license",
@@ -8785,6 +8862,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissions": ".schemas.webhook_issues_unlocked_issue_performed_via_github_app_permissions",
         "WebhookIssuesUnlockedIssuePullRequest": ".schemas.webhook_issues_unlocked_issue_pull_request",
         "WebhookIssuesUnlockedIssueReactions": ".schemas.webhook_issues_unlocked_issue_reactions",
+        "WebhookIssuesUnlockedIssueStatus": ".schemas.webhook_issues_unlocked_issue_status",
         "WebhookIssuesUnlockedIssueUser": ".schemas.webhook_issues_unlocked_issue_user",
         "WebhookIssuesUnpinned": ".schemas.webhook_issues_unpinned",
         "WebhookIssuesUntyped": ".schemas.webhook_issues_untyped",
@@ -10169,6 +10247,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhooksIssue2PerformedViaGithubAppPermissions": ".schemas.webhooks_issue2_performed_via_github_app_permissions",
         "WebhooksIssue2PullRequest": ".schemas.webhooks_issue2_pull_request",
         "WebhooksIssue2Reactions": ".schemas.webhooks_issue2_reactions",
+        "WebhooksIssue2Status": ".schemas.webhooks_issue2_status",
         "WebhooksIssue2User": ".schemas.webhooks_issue2_user",
         "WebhooksIssueAssignee": ".schemas.webhooks_issue_assignee",
         "WebhooksIssueAssigneesItem": ".schemas.webhooks_issue_assignees_item",
@@ -10182,6 +10261,7 @@ __getattr__, __dir__ = lazy_exports(
         "WebhooksIssuePerformedViaGithubAppPermissions": ".schemas.webhooks_issue_performed_via_github_app_permissions",
         "WebhooksIssuePullRequest": ".schemas.webhooks_issue_pull_request",
         "WebhooksIssueReactions": ".schemas.webhooks_issue_reactions",
+        "WebhooksIssueStatus": ".schemas.webhooks_issue_status",
         "WebhooksIssueUser": ".schemas.webhooks_issue_user",
         "WebhooksLabel": ".schemas.webhooks_label",
         "WebhooksLabelArchived": ".schemas.webhooks_label_archived",

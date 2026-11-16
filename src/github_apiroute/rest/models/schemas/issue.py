@@ -13,6 +13,7 @@ from .issue_dependencies_summary import IssueDependenciesSummary
 from .issue_field_value import IssueFieldValue
 from .issue_labels_item_option2 import IssueLabelsItemOption2
 from .issue_pull_request import IssuePullRequest
+from .issue_status import IssueStatus
 from .issue_type import IssueType
 from .nullable_integration import NullableIntegration
 from .nullable_issue_comment import NullableIssueComment
@@ -48,6 +49,10 @@ class Issue(BaseModel):
 
     # State of the issue; either 'open' or 'closed'
     state: str | None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: IssueStatus | None = None
 
     # The reason for the current state
     state_reason: Literal["completed", "reopened", "not_planned", "duplicate"] | None = None

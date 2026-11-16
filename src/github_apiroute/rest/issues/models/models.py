@@ -114,6 +114,7 @@ if TYPE_CHECKING:
         IssuesUpdateResponseLabelsItemOption2,
     )
     from .schemas.issues_update_response_pull_request import IssuesUpdateResponsePullRequest
+    from .schemas.issues_update_response_status import IssuesUpdateResponseStatus
     from .schemas.issues_update_response_suggestions import IssuesUpdateResponseSuggestions
     from .schemas.issues_update_response_suggestions_assignees_item import (
         IssuesUpdateResponseSuggestionsAssigneesItem,
@@ -145,6 +146,7 @@ if TYPE_CHECKING:
     from .schemas.nullable_issue_pull_request import NullableIssuePullRequest
     from .schemas.nullable_issue_reference import NullableIssueReference
     from .schemas.nullable_issue_reference_issue_type import NullableIssueReferenceIssueType
+    from .schemas.nullable_issue_status import NullableIssueStatus
     from .schemas.parent_issue_added_issue_event import ParentIssueAddedIssueEvent
     from .schemas.parent_issue_removed_issue_event import ParentIssueRemovedIssueEvent
     from .schemas.removed_from_project_issue_event import RemovedFromProjectIssueEvent
@@ -259,6 +261,7 @@ __all__ = [
     "IssuesUpdateResponse",
     "IssuesUpdateResponseLabelsItemOption2",
     "IssuesUpdateResponsePullRequest",
+    "IssuesUpdateResponseStatus",
     "IssuesUpdateResponseSuggestions",
     "IssuesUpdateResponseSuggestionsAssigneesItem",
     "IssuesUpdateResponseSuggestionsIssueFieldValuesItem",
@@ -280,6 +283,7 @@ __all__ = [
     "NullableIssuePullRequest",
     "NullableIssueReference",
     "NullableIssueReferenceIssueType",
+    "NullableIssueStatus",
     "ParentIssueAddedIssueEvent",
     "ParentIssueRemovedIssueEvent",
     "RemovedFromProjectIssueEvent",
@@ -392,6 +396,7 @@ __getattr__, __dir__ = lazy_exports(
         "IssuesUpdateResponse": ".schemas.issues_update_response",
         "IssuesUpdateResponseLabelsItemOption2": ".schemas.issues_update_response_labels_item_option2",
         "IssuesUpdateResponsePullRequest": ".schemas.issues_update_response_pull_request",
+        "IssuesUpdateResponseStatus": ".schemas.issues_update_response_status",
         "IssuesUpdateResponseSuggestions": ".schemas.issues_update_response_suggestions",
         "IssuesUpdateResponseSuggestionsAssigneesItem": ".schemas.issues_update_response_suggestions_assignees_item",
         "IssuesUpdateResponseSuggestionsIssueFieldValuesItem": ".schemas.issues_update_response_suggestions_issue_field_values_item",
@@ -413,6 +418,7 @@ __getattr__, __dir__ = lazy_exports(
         "NullableIssuePullRequest": ".schemas.nullable_issue_pull_request",
         "NullableIssueReference": ".schemas.nullable_issue_reference",
         "NullableIssueReferenceIssueType": ".schemas.nullable_issue_reference_issue_type",
+        "NullableIssueStatus": ".schemas.nullable_issue_status",
         "ParentIssueAddedIssueEvent": ".schemas.parent_issue_added_issue_event",
         "ParentIssueRemovedIssueEvent": ".schemas.parent_issue_removed_issue_event",
         "RemovedFromProjectIssueEvent": ".schemas.removed_from_project_issue_event",

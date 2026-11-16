@@ -17,7 +17,9 @@ class PullRequestReviewCommentCopilotCodeReviewSourcesItem(BaseModel):
     # The kind of contributing source.
     kind: Literal["SKILL", "MCP", "CUSTOM_INSTRUCTIONS"] | None
 
-    # The reported source name, or "custom instructions" for CUSTOM_INSTRUCTIONS.
+    # The reported source name, or "custom instructions" for CUSTOM_INSTRUCTIONS. Copilot
+    # Dreaming's reviewer agent and checks skill are reported as one SKILL source named "Copilot
+    # dreaming".
     name: str | None
 
     # The validated repository-relative source path, if available. Commit OIDs are not exposed.

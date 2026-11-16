@@ -29,6 +29,7 @@ if TYPE_CHECKING:
     from .schemas.code_scanning_alert_instance_message import CodeScanningAlertInstanceMessage
     from .schemas.code_scanning_alert_instance_state import CodeScanningAlertInstanceState
     from .schemas.code_scanning_alert_items import CodeScanningAlertItems
+    from .schemas.code_scanning_alert_linked_issue import CodeScanningAlertLinkedIssue
     from .schemas.code_scanning_alert_location import CodeScanningAlertLocation
     from .schemas.code_scanning_alert_rule import CodeScanningAlertRule
     from .schemas.code_scanning_alert_rule_summary import CodeScanningAlertRuleSummary
@@ -84,6 +85,7 @@ if TYPE_CHECKING:
         CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos,
     )
     from .schemas.code_scanning_variant_analysis_status import CodeScanningVariantAnalysisStatus
+    from .schemas.pull_requests_on_alerts import PullRequestsOnAlerts
 
 __all__ = [
     "AlertInstancesUrl",
@@ -102,6 +104,7 @@ __all__ = [
     "CodeScanningAlertInstanceMessage",
     "CodeScanningAlertInstanceState",
     "CodeScanningAlertItems",
+    "CodeScanningAlertLinkedIssue",
     "CodeScanningAlertLocation",
     "CodeScanningAlertRule",
     "CodeScanningAlertRuleSummary",
@@ -147,6 +150,7 @@ __all__ = [
     "CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos",
     "CodeScanningVariantAnalysisStatus",
     "EmptyObject",
+    "PullRequestsOnAlerts",
 ]
 
 __getattr__, __dir__ = lazy_exports(
@@ -168,6 +172,7 @@ __getattr__, __dir__ = lazy_exports(
         "CodeScanningAlertInstanceMessage": ".schemas.code_scanning_alert_instance_message",
         "CodeScanningAlertInstanceState": ".schemas.code_scanning_alert_instance_state",
         "CodeScanningAlertItems": ".schemas.code_scanning_alert_items",
+        "CodeScanningAlertLinkedIssue": ".schemas.code_scanning_alert_linked_issue",
         "CodeScanningAlertLocation": ".schemas.code_scanning_alert_location",
         "CodeScanningAlertRule": ".schemas.code_scanning_alert_rule",
         "CodeScanningAlertRuleSummary": ".schemas.code_scanning_alert_rule_summary",
@@ -213,5 +218,6 @@ __getattr__, __dir__ = lazy_exports(
         "CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos": ".schemas.code_scanning_variant_analysis_skipped_repositories_not_found_repos",
         "CodeScanningVariantAnalysisStatus": ".schemas.code_scanning_variant_analysis_status",
         "EmptyObject": "...models.schemas.empty_object",
+        "PullRequestsOnAlerts": ".schemas.pull_requests_on_alerts",
     },
 )

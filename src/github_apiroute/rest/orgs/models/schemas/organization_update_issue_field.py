@@ -22,10 +22,10 @@ class OrganizationUpdateIssueField(BaseModel):
     # Description of the issue field.
     description: str | None = None
 
-    # The visibility of the issue field. Can be `organization_members_only` (visible only within
-    # the organization) or `all` (visible to all users who can see issues). Only used when the
-    # visibility settings feature is enabled.
-    visibility: Literal["organization_members_only", "all"] | None = None
+    # The visibility of the issue field. Can be `restricted` (visible to organization members
+    # and to collaborators on the repository the field is read through) or `all` (visible to all
+    # users who can see issues). `organization_members_only` is deprecated. Use `restricted`
+    visibility: Literal["organization_members_only", "all", "restricted"] | None = None
 
     # Options for select fields. Only applicable when updating single_select or multi_select
     # fields. When provided, this array **replaces** the entire existing set of options rather

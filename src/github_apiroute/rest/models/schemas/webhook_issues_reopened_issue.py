@@ -22,6 +22,7 @@ from .webhook_issues_reopened_issue_performed_via_github_app import (
 )
 from .webhook_issues_reopened_issue_pull_request import WebhookIssuesReopenedIssuePullRequest
 from .webhook_issues_reopened_issue_reactions import WebhookIssuesReopenedIssueReactions
+from .webhook_issues_reopened_issue_status import WebhookIssuesReopenedIssueStatus
 from .webhook_issues_reopened_issue_user import WebhookIssuesReopenedIssueUser
 
 __all__ = ["WebhookIssuesReopenedIssue"]
@@ -82,6 +83,10 @@ class WebhookIssuesReopenedIssue(BaseModel):
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: WebhookIssuesReopenedIssueStatus | None = None
 
     # State of the issue; either 'open' or 'closed'
     state: Literal["open", "closed"] | None

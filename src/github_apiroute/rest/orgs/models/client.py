@@ -28,9 +28,9 @@ if TYPE_CHECKING:
         Installation,
         IssueField,
         IssueType,
+        IssueTypeRequest,
         MinimalRepository,
         OrganizationCreateIssueField,
-        OrganizationCreateIssueType,
         OrganizationExternalPropertyInstallation,
         OrganizationFull,
         OrganizationInvitation,
@@ -39,7 +39,6 @@ if TYPE_CHECKING:
         OrganizationRole,
         OrganizationSimple,
         OrganizationUpdateIssueField,
-        OrganizationUpdateIssueType,
         OrgHook,
         OrgMembership,
         OrgRepoCustomPropertyValues,
@@ -1068,7 +1067,7 @@ class OrgsModels(TypedClient):
         self,
         org: str,
         *,
-        body: OrganizationCreateIssueType,
+        body: IssueTypeRequest,
     ) -> IssueType | None:
         """Create issue type for an organization"""
         return self._call("create_issue_type", "IssueType | None", org=org, body=body)
@@ -1078,7 +1077,7 @@ class OrgsModels(TypedClient):
         org: str,
         issue_type_id: int,
         *,
-        body: OrganizationUpdateIssueType,
+        body: IssueTypeRequest,
     ) -> IssueType | None:
         """Update issue type for an organization"""
         return self._call(

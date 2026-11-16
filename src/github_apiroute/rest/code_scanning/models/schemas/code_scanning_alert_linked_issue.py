@@ -6,8 +6,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict
 
-from .issue_type import IssueType
-from .simple_repository import SimpleRepository
+from ....models.schemas.issue_type import IssueType
+from ....models.schemas.simple_repository import SimpleRepository
 
 __all__ = ["CodeScanningAlertLinkedIssue"]
 

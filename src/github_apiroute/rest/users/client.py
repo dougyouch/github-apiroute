@@ -293,6 +293,92 @@ class UsersSection(Section):
         """Delete a GPG key for the authenticated user"""
         ...
 
+    @route("GET", "/user/issue-fields", operation="users/list-issue-fields-for-authenticated-user")
+    def list_issue_fields_for_authenticated_user(
+        self,
+    ) -> builtins.list[Any]:
+        """List issue fields"""
+        ...
+
+    @route(
+        "POST", "/user/issue-fields", operation="users/create-issue-field-for-authenticated-user"
+    )
+    def create_issue_field_for_authenticated_user(
+        self,
+        *,
+        body: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Create an issue field"""
+        ...
+
+    @route(
+        "DELETE",
+        "/user/issue-fields/{issue_field_id}",
+        operation="users/delete-issue-field-for-authenticated-user",
+    )
+    def delete_issue_field_for_authenticated_user(
+        self,
+        issue_field_id: int,
+    ) -> None:
+        """Delete an issue field"""
+        ...
+
+    @route(
+        "PATCH",
+        "/user/issue-fields/{issue_field_id}",
+        operation="users/update-issue-field-for-authenticated-user",
+    )
+    def update_issue_field_for_authenticated_user(
+        self,
+        issue_field_id: int,
+        *,
+        body: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Update an issue field"""
+        ...
+
+    @route("GET", "/user/issue-types", operation="users/list-issue-types-for-authenticated-user")
+    def list_issue_types_for_authenticated_user(
+        self,
+    ) -> builtins.list[Any]:
+        """List issue types"""
+        ...
+
+    @route("POST", "/user/issue-types", operation="users/create-issue-type-for-authenticated-user")
+    def create_issue_type_for_authenticated_user(
+        self,
+        *,
+        body: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Create an issue type"""
+        ...
+
+    @route(
+        "PUT",
+        "/user/issue-types/{issue_type_id}",
+        operation="users/update-issue-type-for-authenticated-user",
+    )
+    def update_issue_type_for_authenticated_user(
+        self,
+        issue_type_id: int,
+        *,
+        body: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Update an issue type"""
+        ...
+
+    @route(
+        "DELETE",
+        "/user/issue-types/{issue_type_id}",
+        operation="users/delete-issue-type-for-authenticated-user",
+    )
+    def delete_issue_type_for_authenticated_user(
+        self,
+        issue_type_id: int,
+    ) -> None:
+        """Delete an issue type"""
+        ...
+
     @route("GET", "/user/keys", operation="users/list-public-ssh-keys-for-authenticated-user")
     def list_public_ssh_keys_for_authenticated_user(
         self,

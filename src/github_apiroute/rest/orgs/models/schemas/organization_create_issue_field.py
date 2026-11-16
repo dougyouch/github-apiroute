@@ -25,10 +25,10 @@ class OrganizationCreateIssueField(BaseModel):
     # The data type of the issue field.
     data_type: Literal["text", "date", "single_select", "multi_select", "number"] | None
 
-    # The visibility of the issue field. Can be `organization_members_only` (visible only within
-    # the organization) or `all` (visible to all users who can see issues). Only used when the
-    # visibility settings feature is enabled. Defaults to `organization_members_only`.
-    visibility: Literal["organization_members_only", "all"] | None = None
+    # The visibility of the issue field. Can be `restricted` (visible to organization members
+    # and to collaborators on the repository the field is read through) or `all` (visible to all
+    # users who can see issues). `organization_members_only` is deprecated. Use `restricted`
+    visibility: Literal["organization_members_only", "all", "restricted"] | None = None
 
     # Options for select fields. Required when data_type is 'single_select' or 'multi_select'.
     options: list[OrganizationCreateIssueFieldOptionsItem] | None = None

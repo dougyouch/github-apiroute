@@ -34,6 +34,9 @@ from .webhook_issues_transferred_changes_new_issue_pull_request import (
 from .webhook_issues_transferred_changes_new_issue_reactions import (
     WebhookIssuesTransferredChangesNewIssueReactions,
 )
+from .webhook_issues_transferred_changes_new_issue_status import (
+    WebhookIssuesTransferredChangesNewIssueStatus,
+)
 from .webhook_issues_transferred_changes_new_issue_user import (
     WebhookIssuesTransferredChangesNewIssueUser,
 )
@@ -98,6 +101,10 @@ class WebhookIssuesTransferredChangesNewIssue(BaseModel):
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: WebhookIssuesTransferredChangesNewIssueStatus | None = None
 
     # State of the issue; either 'open' or 'closed'
     state: Literal["open", "closed"] | None = None

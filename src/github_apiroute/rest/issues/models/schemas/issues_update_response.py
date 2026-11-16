@@ -22,6 +22,7 @@ from ....models.schemas.simple_user import SimpleUser
 from ....models.schemas.sub_issues_summary import SubIssuesSummary
 from .issues_update_response_labels_item_option2 import IssuesUpdateResponseLabelsItemOption2
 from .issues_update_response_pull_request import IssuesUpdateResponsePullRequest
+from .issues_update_response_status import IssuesUpdateResponseStatus
 from .issues_update_response_suggestions import IssuesUpdateResponseSuggestions
 
 __all__ = ["IssuesUpdateResponse"]
@@ -49,6 +50,10 @@ class IssuesUpdateResponse(BaseModel):
 
     # State of the issue; either 'open' or 'closed'
     state: str | None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: IssuesUpdateResponseStatus | None = None
 
     # The reason for the current state
     state_reason: Literal["completed", "reopened", "not_planned", "duplicate"] | None = None

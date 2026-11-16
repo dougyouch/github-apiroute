@@ -2442,6 +2442,17 @@ class ReposSection(Section):
         ...
 
     @route(
+        "GET", "/repos/{owner}/{repo}/planning-statuses", operation="repos/list-planning-statuses"
+    )
+    def list_planning_statuses(
+        self,
+        owner: str,
+        repo: str,
+    ) -> list[Any]:
+        """List planning statuses for a repository"""
+        ...
+
+    @route(
         "GET",
         "/repos/{owner}/{repo}/private-vulnerability-reporting",
         operation="repos/check-private-vulnerability-reporting",

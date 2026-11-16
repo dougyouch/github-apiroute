@@ -16,6 +16,7 @@ from .sub_issues_summary import SubIssuesSummary
 from .webhook_issues_closed_issue_labels_item import WebhookIssuesClosedIssueLabelsItem
 from .webhook_issues_closed_issue_pull_request import WebhookIssuesClosedIssuePullRequest
 from .webhook_issues_closed_issue_reactions import WebhookIssuesClosedIssueReactions
+from .webhook_issues_closed_issue_status import WebhookIssuesClosedIssueStatus
 from .webhook_issues_closed_issue_user import WebhookIssuesClosedIssueUser
 
 __all__ = ["WebhookIssuesClosedIssue"]
@@ -54,6 +55,10 @@ class WebhookIssuesClosedIssue(BaseModel):
     sub_issues_summary: SubIssuesSummary | None = None
     issue_dependencies_summary: IssueDependenciesSummary | None = None
     issue_field_values: list[IssueFieldValue] | None = None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: WebhookIssuesClosedIssueStatus | None = None
     state: Literal["closed", "open"] | None
     state_reason: str | None = None
     timeline_url: str | None = None

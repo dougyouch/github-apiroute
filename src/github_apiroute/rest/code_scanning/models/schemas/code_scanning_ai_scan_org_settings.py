@@ -20,3 +20,8 @@ class CodeScanningAiScanOrgSettings(BaseModel):
     # respects enterprise policy, and repositories inherit it: when disabled, repositories
     # cannot enable AI Scan; when enabled, repositories can still opt out.
     pr_scan: Literal["enabled", "disabled"] | None
+
+    # Whether the full repository AI Scan is enabled for the organization. The organization
+    # setting respects enterprise policy, and repositories inherit it: when disabled,
+    # repositories cannot enable the full repository AI Scan; when enabled, repositories can
+    repository_scan: Literal["enabled", "disabled"] | None = None

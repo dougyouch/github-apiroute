@@ -21,9 +21,11 @@ from ....models.schemas.simple_user import SimpleUser
 from .alert_instances_url import AlertInstancesUrl
 from .code_scanning_alert_dismissed_reason import CodeScanningAlertDismissedReason
 from .code_scanning_alert_instance import CodeScanningAlertInstance
+from .code_scanning_alert_linked_issue import CodeScanningAlertLinkedIssue
 from .code_scanning_alert_rule_summary import CodeScanningAlertRuleSummary
 from .code_scanning_alert_state import CodeScanningAlertState
 from .code_scanning_analysis_tool import CodeScanningAnalysisTool
+from .pull_requests_on_alerts import PullRequestsOnAlerts
 
 __all__ = ["CodeScanningAlertItems"]
 
@@ -74,3 +76,9 @@ class CodeScanningAlertItems(BaseModel):
     # A GitHub user.
     dismissal_approved_by: NullableSimpleUser | None = None
     assignees: list[SimpleUser] | None = None
+
+    # Pull requests linked to this alert.
+    linked_pull_requests: list[PullRequestsOnAlerts] | None = None
+
+    # Issues linked to this alert.
+    linked_issues: list[CodeScanningAlertLinkedIssue] | None = None

@@ -21,6 +21,11 @@ class IssuesCreateRequest(BaseModel):
     # The contents of the issue.
     body: str | None = None
 
+    # The initial status of the issue. Can be `Backlog`, `Todo`, `In progress`, or `In review`.
+    # If omitted, the issue starts in `Backlog`. If you do not have permission to set the
+    # status, the supplied value is ignored and the issue starts in `Backlog`. Cannot be `null`
+    status: str | None = None
+
     # Login for the user that this issue should be assigned to. _NOTE: Only users with push
     # access can set the assignee for new issues. The assignee is silently dropped otherwise.
     # **This field is closing down.**_
@@ -36,8 +41,8 @@ class IssuesCreateRequest(BaseModel):
     assignees: list[str] | None = None
 
     # An array of issue field values to set on this issue. Each field value must include the
-    # field ID and the value to set. Issue fields are only available for organization-owned
-    # repositories with the feature enabled. Field values are silently dropped otherwise.
+    # field ID and the value to set. Issue fields must be enabled for the repository owner.
+    # Field values are silently dropped otherwise.
     issue_field_values: list[IssuesCreateRequestIssueFieldValuesItem] | None = None
 
     # The name of the issue type to associate with this issue. _NOTE: Only users with push

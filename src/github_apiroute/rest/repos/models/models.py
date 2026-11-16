@@ -132,6 +132,7 @@ if TYPE_CHECKING:
     from .schemas.pages_https_certificate import PagesHttpsCertificate
     from .schemas.pages_source_hash import PagesSourceHash
     from .schemas.participation_stats import ParticipationStats
+    from .schemas.planning_status import PlanningStatus
     from .schemas.prevent_self_review import PreventSelfReview
     from .schemas.protected_branch import ProtectedBranch
     from .schemas.protected_branch_admin_enforced import ProtectedBranchAdminEnforced
@@ -587,6 +588,7 @@ __all__ = [
     "PagesHttpsCertificate",
     "PagesSourceHash",
     "ParticipationStats",
+    "PlanningStatus",
     "PreventSelfReview",
     "ProtectedBranch",
     "ProtectedBranchAdminEnforced",
@@ -886,6 +888,7 @@ __getattr__, __dir__ = lazy_exports(
         "PagesHttpsCertificate": ".schemas.pages_https_certificate",
         "PagesSourceHash": ".schemas.pages_source_hash",
         "ParticipationStats": ".schemas.participation_stats",
+        "PlanningStatus": ".schemas.planning_status",
         "PreventSelfReview": ".schemas.prevent_self_review",
         "ProtectedBranch": ".schemas.protected_branch",
         "ProtectedBranchAdminEnforced": ".schemas.protected_branch_admin_enforced",

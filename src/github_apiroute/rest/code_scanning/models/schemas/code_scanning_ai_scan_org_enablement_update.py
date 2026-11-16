@@ -16,7 +16,12 @@ class CodeScanningAiScanOrgEnablementUpdate(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
-    # Whether AI Scan is enabled for the organization. Organization respects enterprise policy.
-    # Disabled organizations prevent repositories from enabling AI Scan. Enabled organizations
-    # enable AI Scan for their repositories, but individual repositories can opt out.
+    # Whether AI Scan on pull requests is enabled for the organization. Organization respects
+    # enterprise policy. Disabled organizations prevent repositories from enabling AI Scan.
+    # Enabled organizations enable AI Scan for their repositories, but individual repositories
     pr_scan: Literal["enabled", "disabled"] | None = None
+
+    # Whether the full repository AI Scan is enabled for the organization. Organization respects
+    # enterprise policy. Disabled organizations prevent repositories from enabling the full
+    # repository AI Scan. Enabled organizations enable it for their repositories, but individual
+    repository_scan: Literal["enabled", "disabled"] | None = None

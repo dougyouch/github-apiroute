@@ -16,5 +16,8 @@ class CodeScanningAiScanEnablementUpdate(BaseModel):
 
     model_config = ConfigDict(defer_build=True, populate_by_name=True, protected_namespaces=())
 
-    # Whether to enable or disable AI Scan for the repository.
+    # Whether to enable or disable AI Scan on pull requests for the repository.
     pr_scan: Literal["enabled", "disabled"] | None = None
+
+    # Whether to enable or disable the full repository AI Scan for the repository.
+    repository_scan: Literal["enabled", "disabled"] | None = None

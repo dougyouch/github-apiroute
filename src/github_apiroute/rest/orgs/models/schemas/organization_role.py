@@ -28,7 +28,7 @@ class OrganizationRole(BaseModel):
     description: str | None = None
 
     # The system role from which this role inherits permissions.
-    base_role: Literal["read", "triage", "write", "maintain", "admin"] | None = None
+    base_role: Literal["read", "triage", "moderate", "write", "maintain", "admin"] | None = None
 
     # Source answers the question, "where did this role come from?"
     source: Literal["Organization", "Enterprise", "Predefined"] | None = None

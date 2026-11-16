@@ -22,6 +22,7 @@ from ....models.schemas.simple_user import SimpleUser
 from ....models.schemas.sub_issues_summary import SubIssuesSummary
 from .nullable_issue_labels_item_option2 import NullableIssueLabelsItemOption2
 from .nullable_issue_pull_request import NullableIssuePullRequest
+from .nullable_issue_status import NullableIssueStatus
 
 __all__ = ["NullableIssue"]
 
@@ -48,6 +49,10 @@ class NullableIssue(BaseModel):
 
     # State of the issue; either 'open' or 'closed'
     state: str | None
+
+    # The status of the issue, or `null` if it has none. Issue statuses are in preview and only
+    # available to accounts enrolled in the preview.
+    status: NullableIssueStatus | None = None
 
     # The reason for the current state
     state_reason: Literal["completed", "reopened", "not_planned", "duplicate"] | None = None

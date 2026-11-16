@@ -87,7 +87,7 @@ class ReposUpdateRequest(BaseModel):
 
     # Either `true` to allow squash-merge commits to use pull request title, or `false` to use
     # commit message. **This property is closing down. Please use `squash_merge_commit_title`
-    # instead.
+    # instead.**
     use_squash_pr_title_as_default: bool | None = None
 
     # Required when using `squash_merge_commit_message`. The default value for a squash merge
