@@ -48,6 +48,9 @@ if TYPE_CHECKING:
     from .schemas.secret_scanning_custom_pattern_to_update import (
         SecretScanningCustomPatternToUpdate,
     )
+    from .schemas.secret_scanning_custom_pattern_with_dry_run import (
+        SecretScanningCustomPatternWithDryRun,
+    )
     from .schemas.secret_scanning_pattern_configuration import SecretScanningPatternConfiguration
     from .schemas.secret_scanning_pattern_override import SecretScanningPatternOverride
     from .schemas.secret_scanning_push_protection_bypass import SecretScanningPushProtectionBypass
@@ -92,6 +95,7 @@ __all__ = [
     "SecretScanningCustomPatternToCreate",
     "SecretScanningCustomPatternToDelete",
     "SecretScanningCustomPatternToUpdate",
+    "SecretScanningCustomPatternWithDryRun",
     "SecretScanningLocation",
     "SecretScanningPatternConfiguration",
     "SecretScanningPatternOverride",
@@ -128,6 +132,7 @@ __getattr__, __dir__ = lazy_exports(
         "SecretScanningCustomPatternToCreate": ".schemas.secret_scanning_custom_pattern_to_create",
         "SecretScanningCustomPatternToDelete": ".schemas.secret_scanning_custom_pattern_to_delete",
         "SecretScanningCustomPatternToUpdate": ".schemas.secret_scanning_custom_pattern_to_update",
+        "SecretScanningCustomPatternWithDryRun": ".schemas.secret_scanning_custom_pattern_with_dry_run",
         "SecretScanningLocation": "...models.schemas.secret_scanning_location",
         "SecretScanningPatternConfiguration": ".schemas.secret_scanning_pattern_configuration",
         "SecretScanningPatternOverride": ".schemas.secret_scanning_pattern_override",

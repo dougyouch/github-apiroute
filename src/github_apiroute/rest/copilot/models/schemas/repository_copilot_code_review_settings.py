@@ -40,3 +40,6 @@ class RepositoryCopilotCodeReviewSettings(BaseModel):
 
     # Whether reviews can use MCP servers.
     mcp_enabled: bool | None
+
+    # Whether reviews can use public repository search.
+    cross_repo_context_enabled: bool | None

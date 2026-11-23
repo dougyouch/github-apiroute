@@ -23,6 +23,7 @@ if TYPE_CHECKING:
         SecretScanningCreatePushProtectionBypassRequest,
         SecretScanningCustomPattern,
         SecretScanningCustomPatternToUpdate,
+        SecretScanningCustomPatternWithDryRun,
         SecretScanningLocation,
         SecretScanningPatternConfiguration,
         SecretScanningPushProtectionBypass,
@@ -149,11 +150,11 @@ class SecretScanningModels(TypedClient):
         direction: Literal["asc", "desc"] | None = None,
         before: str | None = None,
         after: str | None = None,
-    ) -> list[SecretScanningCustomPattern]:
+    ) -> list[SecretScanningCustomPatternWithDryRun]:
         """List organization custom patterns"""
         return self._call(
             "list_org_custom_patterns",
-            "list[SecretScanningCustomPattern]",
+            "list[SecretScanningCustomPatternWithDryRun]",
             org=org,
             state=state,
             push_protection=push_protection,
@@ -418,11 +419,11 @@ class SecretScanningModels(TypedClient):
         direction: Literal["asc", "desc"] | None = None,
         before: str | None = None,
         after: str | None = None,
-    ) -> list[SecretScanningCustomPattern]:
+    ) -> list[SecretScanningCustomPatternWithDryRun]:
         """List repository custom patterns"""
         return self._call(
             "list_repo_custom_patterns",
-            "list[SecretScanningCustomPattern]",
+            "list[SecretScanningCustomPatternWithDryRun]",
             owner=owner,
             repo=repo,
             state=state,

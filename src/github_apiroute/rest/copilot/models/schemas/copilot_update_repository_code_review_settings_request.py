@@ -28,3 +28,7 @@ class CopilotUpdateRepositoryCodeReviewSettingsRequest(BaseModel):
 
     # Whether reviews can use MCP servers.
     mcp_enabled: bool | None = None
+
+    # Whether reviews can use public repository search. Can only be set when the public
+    # repository search setting is available for the repository.
+    cross_repo_context_enabled: bool | None = None

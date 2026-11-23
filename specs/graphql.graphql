@@ -4890,7 +4890,7 @@ enum CopilotCodeReviewEffort {
   MAX
 
   """Copilot picks the effort for each pull request."""
-  DYNAMIC
+  ADAPTIVE
 }
 
 """
@@ -4907,7 +4907,7 @@ enum CopilotCodeReviewEffortLevel {
   MAX
 
   """Copilot picks the effort for each pull request."""
-  DYNAMIC
+  ADAPTIVE
 }
 
 """
@@ -4981,6 +4981,18 @@ enum CopilotCodeReviewRunnerType {
 
   """Runners that match the configured labels or runner group."""
   LABELED
+}
+
+"""The severity Copilot code review assigned to a review comment."""
+enum CopilotCodeReviewSeverity {
+  """Low severity."""
+  LOW
+
+  """Medium severity."""
+  MEDIUM
+
+  """High severity."""
+  HIGH
 }
 
 """Which review comment severities Copilot code review leaves out."""
@@ -5631,7 +5643,7 @@ input CreateIssueInput {
   issueFields: [IssueFieldCreateOrUpdateInput!]
 
   """
-  The Node ID of the planning status the issue starts in. It must be an open one listed in the owner's planningStatuses. If you don't have permission to set the status, it's ignored and the issue starts in Backlog. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  The Node ID of the planning status the issue starts in. It must be an open one listed in the owner's planningStatuses. If you don't have permission to set the status, it's ignored and the issue starts in Backlog. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   statusId: ID
 
@@ -13390,7 +13402,7 @@ type Issue implements Assignable & Closable & Comment & Deletable & Labelable & 
   ): IssueStateReason
 
   """
-  The status of this issue, or null when it has none or issue statuses aren't available in the repository. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  The status of this issue, or null when it has none or issue statuses aren't available in the repository. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   status: PlanningStatus
 
@@ -13574,7 +13586,7 @@ type Issue implements Assignable & Closable & Comment & Deletable & Labelable & 
   viewerCanSetMilestone: Boolean!
 
   """
-  Whether the viewer can set this issue's status. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  Whether the viewer can set this issue's status. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   viewerCanSetStatus: Boolean!
 
@@ -18566,7 +18578,7 @@ type Mutation {
   ): SetIssueFieldValuePayload
 
   """
-  Sets the status of an issue, closing or reopening it when the status calls for it. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  Sets the status of an issue, closing or reopening it when the status calls for it. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   setIssueStatus(
     """Parameters for SetIssueStatus"""
@@ -22016,7 +22028,7 @@ type Organization implements Actor & MemberStatusable & Node & PackageOwner & Pr
   pinnedItemsRemaining: Int!
 
   """
-  The planning statuses issues in the organization's repositories can be in, or null when issue statuses aren't available. Planning statuses are returned in display order. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  The planning statuses issues in the organization's repositories can be in, or null when issue statuses aren't available. Planning statuses are returned in display order. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   planningStatuses(
     """Returns the elements in the list that come after the specified cursor."""
@@ -22764,7 +22776,7 @@ enum OrganizationCopilotCodeReviewEffortSetting {
   MAX
 
   """Copilot picks the effort for each pull request."""
-  DYNAMIC
+  ADAPTIVE
 }
 
 """
@@ -24268,7 +24280,7 @@ enum PinnedIssueFieldOrderField {
 }
 
 """
-A planning status an issue can be in. Issue statuses are in preview and only available to accounts enrolled in the preview.
+A planning status an issue can be in. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
 """
 type PlanningStatus implements Node {
   """
@@ -24284,11 +24296,11 @@ type PlanningStatus implements Node {
 }
 
 """
-The category of a planning status, which decides whether the issue is open or closed. Issue statuses are in preview and only available to accounts enrolled in the preview.
+The category of a planning status, which decides whether the issue is open or closed. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
 """
 type PlanningStatusCategory {
   """
-  A stable identifier for the category, such as `new`, `backlog`, `planned`, `started`, `completed`, `not_planned` or `duplicate`. Clients should expect new keys to be added.
+  A stable identifier for the category, such as `backlog`, `planned`, `started`, `completed`, `not_planned` or `duplicate`. Clients should expect new keys to be added.
   """
   key: String!
 
@@ -28562,6 +28574,11 @@ type PullRequestReviewComment implements Comment & Deletable & Minimizable & Nod
   """Identifies the commit associated with the comment."""
   commit: Commit
 
+  """
+  The Copilot code review severity of this comment, or null if unavailable.
+  """
+  copilotCodeReviewSeverity: CopilotCodeReviewSeverity
+
   """Sources reported as contributing to this comment; may be incomplete."""
   copilotCodeReviewSources: [CopilotCodeReviewSource!]!
 
@@ -28922,6 +28939,11 @@ type PullRequestReviewThread implements Node {
 
   """Identifies the repository associated with this thread."""
   repository: Repository!
+
+  """
+  The reason this thread was resolved, if one was recorded. Currently only Copilot code review threads record a reason.
+  """
+  resolutionReason: PullRequestReviewThreadResolutionReason
 
   """The user who resolved this thread"""
   resolvedBy: User
@@ -33769,7 +33791,7 @@ type Repository implements Node & PackageOwner & ProjectOwner & ProjectV2Recent 
   planFeatures: RepositoryPlanFeatures!
 
   """
-  The planning statuses issues in this repository can be in, or null when issue statuses aren't available for this repository or viewer. Planning statuses are returned in display order. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  The planning statuses issues in this repository can be in, or null when issue statuses aren't available for this repository or viewer. Planning statuses are returned in display order. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   planningStatuses(
     """Returns the elements in the list that come after the specified cursor."""
@@ -34496,7 +34518,7 @@ enum RepositoryCopilotCodeReviewEffortSetting {
   MAX
 
   """Copilot picks the effort for each pull request."""
-  DYNAMIC
+  ADAPTIVE
 }
 
 """
@@ -34507,6 +34529,9 @@ type RepositoryCopilotCodeReviewSettings {
   The review efforts that can currently be set for this repository, in display order.
   """
   availableReviewEfforts: [CopilotCodeReviewEffortLevel!]!
+
+  """Whether reviews can use public repository search."""
+  crossRepoContextEnabled: Boolean!
 
   """Whether reviews use the repository's custom instructions."""
   customInstructionsEnabled: Boolean!
@@ -43253,7 +43278,7 @@ input UpdateIssueInput {
   stateInput: IssueStateUpdateInput
 
   """
-  The Node ID of the planning status to move the issue into. It must be one listed in the owner's planningStatuses. The planning status decides whether the issue is open or closed and why, so the issue is closed or reopened if needed. `state` or `stateInput` can also be sent, but only with the same state and close reason as the planning status, and without `suggest: true`. When the planning status closes the issue, `stateInput.rationale` is used as the close rationale, and a Duplicate planning status takes the issue it duplicates from `stateInput.duplicateIssueId`. The issue's status can't be cleared. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  The Node ID of the planning status to move the issue into. It must be one listed in the owner's planningStatuses. The planning status decides whether the issue is open or closed and why, so the issue is closed or reopened if needed. `state` or `stateInput` can also be sent, but only with the same state and close reason as the planning status, and without `suggest: true`. When the planning status closes the issue, `stateInput.rationale` is used as the close rationale, and a Duplicate planning status takes the issue it duplicates from `stateInput.duplicateIssueId`. The issue's status can't be cleared. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   statusId: ID
 
@@ -44095,6 +44120,11 @@ input UpdateRepositoryCopilotCodeReviewSettingsInput {
 
   """Whether reviews can use MCP servers."""
   mcpEnabled: Boolean
+
+  """
+  Whether reviews can use public repository search. Can only be set when the public repository search setting is available for the repository.
+  """
+  crossRepoContextEnabled: Boolean
 }
 
 """
@@ -45033,7 +45063,7 @@ type User implements Actor & Agentic & Node & PackageOwner & ProfileOwner & Proj
   pinnedItemsRemaining: Int!
 
   """
-  The planning statuses issues in the user's repositories can be in, or null when issue statuses aren't available. Planning statuses are returned in display order. Issue statuses are in preview and only available to accounts enrolled in the preview.
+  The planning statuses issues in the user's repositories can be in, or null when issue statuses aren't available. Planning statuses are returned in display order. Issue statuses are in public preview and subject to change. They're rolling out gradually, so they might not be available in your repositories yet.
   """
   planningStatuses(
     """Returns the elements in the list that come after the specified cursor."""
